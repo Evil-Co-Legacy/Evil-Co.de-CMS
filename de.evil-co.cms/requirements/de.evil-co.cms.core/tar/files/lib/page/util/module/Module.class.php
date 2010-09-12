@@ -25,6 +25,12 @@ interface Module {
 	public $stylesheet;
 	
 	/**
+	 * Defines custom head contents that should show up in html code
+	 * @var string
+	 */
+	public $additionalHeadContents;
+	
+	/**
 	 * Creates a new Module object
 	 * @param	integer	$pageID
 	 */

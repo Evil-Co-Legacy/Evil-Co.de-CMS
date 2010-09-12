@@ -8,7 +8,8 @@
 		{@$page->additionalHeadContent}
 		
 		{foreach from=$modules item='module'}
-			<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_CMS_DIR}style/{@$module->stylesheet}" />
+			{if $module->stylesheet != ''}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_CMS_DIR}style/{@$module->stylesheet}" />{/if}
+			{if $module->additionalHeadContents != ''}{@$module->additionalHeadContents}{/if}
 		{/foreach}
 	</head>
 	<body{if $templateName|isset} id="tpl{$templateName|ucfirst}">

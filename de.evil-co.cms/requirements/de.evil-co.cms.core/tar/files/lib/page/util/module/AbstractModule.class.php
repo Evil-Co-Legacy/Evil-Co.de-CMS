@@ -25,6 +25,11 @@ abstract class AbstractModule implements Module {
 	public $stylesheet = '';
 	
 	/**
+	 * @see Module::$additionalHeadContents
+	 */
+	public $additionalHeadContents = '';
+	
+	/**
 	 * Contains the pageID of the parent page
 	 * @var integer
 	 */
