@@ -9,7 +9,7 @@
  |   |
  |   +--[/] Page system
  |   |
- |   `--[/] Module system
+ |   `--[X] Module system
  `--[ ] de.evil-co.cms.seo
      |
      `--[ ] Dynamic Page SEO (DPS)
