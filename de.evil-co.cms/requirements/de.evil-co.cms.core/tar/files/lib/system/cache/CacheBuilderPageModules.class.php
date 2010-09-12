@@ -13,12 +13,13 @@ class CacheBuilderPageModules extends CacheBuilder {
 	 * @see CacheBuilder::getData()
 	 */
 	public function getData($cacheResource) {
-		list($cache, $pageID) = explode('-', $cacheResource['cache']);
+		list($cache, $pageID, $packageID) = explode('-', $cacheResource['cache']);
 		
 		$sql = "SELECT
 					module.*
 				FROM
-					wcf".WCF_N."_page_module module
+					wcf".WCF_N."_page_module module,
+					wcf".WCF_N."_package_dependency package_dependency
 				JOIN
 					wcf".WCF_N."_page_module_to_page page_module
 				ON
@@ -26,7 +27,11 @@ class CacheBuilderPageModules extends CacheBuilder {
 				WHERE
 					page_module.pageID = ".$pageID."
 				AND
-					page_module.isVisble = 1";
+					page_module.isVisble = 1
+				AND
+					page_module.packageID = package_dependency.dependency
+				AND
+					package_dependency.packageID = ".$packageID."";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$data = array();
