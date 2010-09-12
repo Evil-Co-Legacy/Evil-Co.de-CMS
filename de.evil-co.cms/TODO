@@ -1,0 +1,15 @@
+[ ] Evil-Co.de CMS
+ |
+ +--[ ] de.evil-co.cms
+ |   |
+ |   +--[ ] Administration
+ |   |
+ |   `--[X] Page display
+ +--[ ] de.evil-co.cms.core
+ |   |
+ |   +--[/] Page system
+ |   |
+ |   `--[/] Module system
+ `--[ ] de.evil-co.cms.seo
+     |
+     `--[ ] Dynamic Page SEO (DPS)
