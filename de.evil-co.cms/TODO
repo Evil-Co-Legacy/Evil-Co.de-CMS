@@ -8,6 +8,10 @@
  +--[ ] de.evil-co.cms.core
  |   |
  |   +--[/] Page system
+ |   |   |
+ |   |   +--[/] Backend
+ |   |   |
+ |   |   `--[ ] Administration
  |   |
  |   `--[X] Module system
  `--[ ] de.evil-co.cms.seo
