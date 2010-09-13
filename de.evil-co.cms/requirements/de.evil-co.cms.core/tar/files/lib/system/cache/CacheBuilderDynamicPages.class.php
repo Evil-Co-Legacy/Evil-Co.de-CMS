@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
-require_once(WCF_DIR.'lib/data/page/Page.class.php');
+require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
 
 /**
  * Caches all pages
@@ -23,7 +23,7 @@ class CacheBuilderDynamicPages extends CacheBuilder {
 		$data = array();
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
-			$data[] = new Page(null, $row);
+			$data[] = new DynamicPage(null, $row);
 		}
 		
 		return $data;

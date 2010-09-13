@@ -1,6 +1,6 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/data/page/Page.class.php');
+require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
 
 /**
  * Provides functions for basic page management
