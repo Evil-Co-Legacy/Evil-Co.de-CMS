@@ -31,6 +31,9 @@ class CMSPage extends AbstractModulePage {
 		// validate
 		if (!$this->page->pageID) throw new IllegalLinkException();
 		
+		// throw permission denied exception if the page isn't plublic ;-)
+		if (!WCF::getUser()->getPermission('admin.system.page.canSeePrivatePages') && !$this->page->isPublic) throw new PermissionDeniedException;
+		
 		// call parent class' function (execute module functions)
 		parent::readParameters();
 	}
