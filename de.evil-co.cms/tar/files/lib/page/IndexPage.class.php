@@ -16,8 +16,7 @@ class IndexPage extends AbstractPage {
 	public function show() {
 		$pageManager = new DynamicPageManager();
 		
-		header("HTTP/1.1 301 Moved Permanently");
-		header("Location: index.php?page=".$pageManager->getDefaultPage()->getPageName());
+		HeaderUtil::redirect("index.php?page=CMS&pageID=".$pageManager->getDefaultPage()->getPageID().SID_ARG_2ND_NOT_ENCODED);
 	}
 }
 ?>
