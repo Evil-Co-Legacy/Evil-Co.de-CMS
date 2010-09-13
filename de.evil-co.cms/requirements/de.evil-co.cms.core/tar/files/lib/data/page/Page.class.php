@@ -49,5 +49,20 @@ class Page extends DatabaseObject {
 		
 		if (!$this->pageID) $this->data['pageID'] = 0;
 	}
+	
+	/**
+	 * Wrapper for get class (Such as getPageID())
+	 * @param	string	$name
+	 * @param	array	$args
+	 */
+	public function __call($name, $args) {
+		if (substr($name, 0, 3) == 'get') {
+			$variable = substr($name, 3);
+			$variable{0} = strtolower($variable{0});
+			return $this->{$variable};
+		}
+		
+		throw new SystemException("method '".$method."' does not exist in class Page");
+	}
 }
 ?>
