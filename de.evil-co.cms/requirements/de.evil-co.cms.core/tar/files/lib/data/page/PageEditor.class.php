@@ -5,6 +5,41 @@ require_once(WCF_DIR.'lib/data/page/Page.class.php');
 class PageEditor extends Page {
 	
 	/**
+	 * Creates a new page
+	 * @param	string	$title
+	 * @param	boolean	$allowSpidersToIndexThisPage
+	 * @param	string	$additionalHeadContent
+	 * @param	integer	$menuItemID
+	 * @param	boolean	$isPublic
+	 * @param	boolean	$isDefaultPage
+	 */
+	public static function create($title, $allowSpidersToIndexThisPage = true, $additionalHeadContent = '', $menuItemID = 0, $isPublic = true, $isDefaultPage = false) {
+		$sql = "INSERT INTO
+					wcf".WCF_N."_page (title, allowSpidersToIndexThisPage, additionalHeadContent, menuItemID, isPublic, isDefaultPage)
+				VALUES ('".escapeString($title)."',
+						".$allowSpidersToIndexThisPage."
+						'".escapeString($additionalHeadContent)."',
+						".$menuItemID.",
+						".$isPublic.",
+						".$isDefaultPage.")";
+		WCF::getDB()->sendQuery($sql);
+		
+		$page = new Page(WCF::getDB()->getInsertID());
+		
+		if ($isDefaultPage) {
+			$sql = "UPDATE
+						wcf".WCF_N."_page
+					SET
+						isDefaultPage = 0
+					WHERE
+						pageID NOT IN (".$page->pageID.")";
+			WCF::getDB()->sendQuery($sql);
+		}
+		
+		return $page;
+	}
+	
+	/**
 	 * Writes variables of this class to database
 	 */
 	public function update() {
