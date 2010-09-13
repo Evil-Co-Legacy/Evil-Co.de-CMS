@@ -9,9 +9,13 @@
  |   |
  |   +--[/] Page system
  |   |   |
- |   |   +--[/] Backend
+ |   |   +--[X] Backend
  |   |   |
  |   |   `--[ ] Administration
+ |   |       |
+ |   |       +--[ ] Pages, Templates, ...
+ |   |       |
+ |   |       `--[ ] Languages
  |   |
  |   `--[X] Module system
  `--[ ] de.evil-co.cms.seo
