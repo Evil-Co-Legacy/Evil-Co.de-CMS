@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/acpMenu.dtd">
+<data>	
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.content.host">
+			<parent>wcf.acp.menu.link.content</parent>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.content.host.list">
+			<link>index.php?page=DynamicHostList</link>
+			<parent>wcf.acp.menu.link.content.host</parent>
+			<permissions>admin.content.cms.canListHosts</permissions>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.content.host.add">
+			<link>index.php?form=DynamicHostAdd</link>
+			<parent>wcf.acp.menu.link.content.host</parent>
+			<permissions>admin.content.cms.canAddHosts</permissions>
+			<showorder>2</showorder>
+		</acpmenuitem>
+	</import>
+</data>
