@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
-<package name="de.evil-co.cms>
+<package name="de.evil-co.cms">
 	<packageinformation>
 		<packagename><![CDATA[Evil-Co.de CMS]]></packagename>
 		<packagedescription><![CDATA[]]></packagedescription>
