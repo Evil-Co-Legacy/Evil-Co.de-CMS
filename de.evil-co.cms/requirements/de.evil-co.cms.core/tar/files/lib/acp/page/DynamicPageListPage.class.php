@@ -85,7 +85,7 @@ class DynamicPageListPage extends SortablePage {
 	 */
 	public function show() {
 		// enable acpmenu entry
-		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.host.list');
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.host.list');
 		
 		parent::show();
 	}
