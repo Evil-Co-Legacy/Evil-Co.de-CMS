@@ -44,7 +44,7 @@ class CMSACP extends WCFACP {
 
 		self::getTPL()->assign(array(
 			// add jump to app link
-			'additionalHeaderButtons' => '<li><a href="'.RELATIVE_WWW_DIR.'index.php?page=Index"><img src="'.RELATIVE_WWW_DIR.'icon/indexS.png" alt="" /> <span>'.WCF::getLanguage()->get('www.acp.jumpToWWW').'</span></a></li>',
+			'additionalHeaderButtons' => '<li><a href="'.RELATIVE_CMS_DIR.'index.php?page=Index"><img src="'.RELATIVE_CMS_DIR.'icon/indexS.png" alt="" /> <span>'.WCF::getLanguage()->get('cms.acp.jumpToCMS').'</span></a></li>',
 			// individual page title
 			'pageTitle' => StringUtil::encodeHTML(PAGE_TITLE . ' - ' . PACKAGE_NAME . ' ' . PACKAGE_VERSION)
 		));
