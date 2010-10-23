@@ -27,7 +27,7 @@
 
 		<!-- XML PiPs -->
 		<acpmenu>install/xml/acpmenu.xml</acpmenu>
-		<groupoptions>install/groupoptions.xml</groupoptions>
+		<groupoptions>install/xml/groupoptions.xml</groupoptions>
 
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
