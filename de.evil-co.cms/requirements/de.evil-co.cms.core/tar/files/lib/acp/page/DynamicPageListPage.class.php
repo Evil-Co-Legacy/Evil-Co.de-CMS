@@ -123,7 +123,10 @@ class DynamicPageListPage extends SortablePage {
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		WCF::getTPL()->assign('pages', $this->pages);
+		WCF::getTPL()->assign(array(
+			'pages' 		=>		$this->pages,
+			'host'			=>		$this->host
+		));
 	}
 	
 	/**
