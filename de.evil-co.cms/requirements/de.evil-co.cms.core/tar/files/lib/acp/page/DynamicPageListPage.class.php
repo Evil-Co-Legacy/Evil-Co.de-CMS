@@ -2,6 +2,7 @@
 // wcf imports
 require_once(WCF_DIR.'lib/page/SortablePage.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/data/host/Host.class.php');
 
 /**
  * Lists all pages
