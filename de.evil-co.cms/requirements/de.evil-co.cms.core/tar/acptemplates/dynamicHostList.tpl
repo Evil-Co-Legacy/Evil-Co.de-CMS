@@ -1,19 +1,19 @@
 {include file='header'}
 
 <div class="mainHeadline">
-	<img src="{@RELATIVE_WCF_DIR}icon/bugtrackerCategory{$action|ucfirst}L.png" alt="" />
+	<img src="{@RELATIVE_WCF_DIR}icon/hostListL.png" alt="" />
 	<div class="headlineContainer">
-		<h2>{lang}wcf.bugtracker.acp.category.{$action}.title{/lang}</h2>
+		<h2>{lang}wcf.cms.host.list.title{/lang}</h2>
 	</div>
 </div>
 
-{if $this->user->getPermission('admin.bugtracker.canAddCategories') || $additionalLargeButtons|isset}
+{if $this->user->getPermission('admin.content.cms.canAddHosts') || $additionalLargeButtons|isset}
 	<div class="contentHeader">
 		<div class="largeButtons">
 			<ul>
-				{if $this->user->getPermission('admin.bugtracker.canAddCategories')}
+				{if $this->user->getPermission('admin.content.cms.canAddHosts')}
 					<li>
-						<a href="index.php?page=BugtrackerCategoryList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.bugtracker.acp.categoryList.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/bugtrackerCategoryM.png" alt="" /> <span>{lang}wcf.bugtracker.acp.categoryList.title{/lang}</span></a>
+						<a href="index.php?form=DynamicHostAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostAddM.png" alt="" /> <span>{lang}wcf.cms.host.add.title{/lang}</span></a>
 					</li>
 				{/if}
 				{if $additionalLargeButtons|isset}{@$additionalLargeButtons}{/if}
@@ -41,5 +41,20 @@
 	 	{@SID_INPUT_TAG}
 	 </div>
 </form>
+
+{if $this->user->getPermission('admin.content.cms.canAddHosts') || $additionalLargeButtons|isset}
+	<div class="contentFooter">
+		<div class="largeButtons">
+			<ul>
+				{if $this->user->getPermission('admin.content.cms.canAddHosts')}
+					<li>
+						<a href="index.php?form=DynamicHostAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostAddM.png" alt="" /> <span>{lang}wcf.cms.host.add.title{/lang}</span></a>
+					</li>
+				{/if}
+				{if $additionalLargeButtons|isset}{@$additionalLargeButtons}{/if}
+			</ul>
+		</div>
+	</div>
+{/if}
 
 {include file='footer'}
