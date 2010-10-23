@@ -42,7 +42,6 @@
 	
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
-		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		<input type="hidden" name="page" value="DynamicPageList" />
 	 	{@SID_INPUT_TAG}
