@@ -37,11 +37,40 @@ class DynamicPageListPage extends SortablePage {
 	public $pages = array();
 	
 	/**
+	 * Contains the hostID of all pages that should appear in list
+	 * @var	integer
+	 */
+	public $hostID = 0;
+	
+	/**
+	 * Contains an instance of type Host
+	 * @var	Host
+	 */
+	public $host = null;
+	
+	/**
+	 * @see	Page::readParameters()
+	 */
+	public function readParameters() {
+		parent::readParameters();
+		
+		// read query arguments
+		if (isset($_REQUEST['hostID'])) $this->hostID = intval($_REQUEST['hostID']);
+		
+		// read host
+		$this->host = new Host($this->hostID);
+		
+		// validate host
+		if (!$this->host->hostID) throw new IllegalLinkException;
+	}
+	
+	/**
 	 * @see Page::readData()
 	 */
 	public function readData() {
 		parent::readData();
 		
+		// read pages for the given host
 		$this->readPages();
 	}
 	
@@ -50,7 +79,7 @@ class DynamicPageListPage extends SortablePage {
 	 */
 	public function show() {
 		// enable acpmenu entry
-		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.dynamicPage.view');
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.host.list');
 		
 		parent::show();
 	}
@@ -62,7 +91,9 @@ class DynamicPageListPage extends SortablePage {
 		parent::countItems();
 		
 		$sql = "SELECT	COUNT(*) AS count
-			FROM	wcf".WCF_N."_page";
+			FROM	wcf".WCF_N."_page
+			WHERE
+				hostID = ".$this->host->hostID;
 		$row = WCF::getDB()->getFirstRow($sql);
 		return $row['count'];
 	}
@@ -98,7 +129,9 @@ class DynamicPageListPage extends SortablePage {
 				FROM
 					wcf".WCF_N."_page
 				ORDER BY
-					".$this->sortField." ".$this->sortOrder;
+					".$this->sortField." ".$this->sortOrder."
+				WHERE
+					hostID = ".$this->host->hostID;
 		$result = WCF::getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo - 1) * $this->itemsPerPage);
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
