@@ -5,7 +5,7 @@ CREATE TABLE `wcf1_host` (
 	`hostname` VARCHAR (255) NOT NULL,
 	`isDisabled` TINYINT (1) NOT NULL DEFAULT '0',
 	`isFallback` TINYINT (1) NOT NULL DEFAULT '0',
-	`languageCode` VARCHAR (20) NOT NULL
+	`languageCode` VARCHAR (20) NULL
 );
 
 DROP TABLE IF EXISTS `wcf1_page`;
