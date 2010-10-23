@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/page/util/DynamicHostManager.class.php');
 
 /**
  * Provides functions for basic page management
@@ -21,13 +22,39 @@ class DynamicPageManager {
 	protected $defaultPage = null;
 	
 	/**
+	 * Contains the current host
+	 * @var Object
+	 */
+	protected $host = null;
+	
+	/**
+	 * Contains the current host manager
+	 * @var Object
+	 */
+	protected $hostManager = null;
+	
+	/**
 	 * Creates a new instance of this class
 	 */
 	public function __construct() {
+		// init host manager
+		$this->initDynamicHostManager();
+		
+		// get host
+		$this->host = $this->hostManager->getHost();
+		
+		// load cache
 		$this->loadCache();
 		
 		// catch errors that can occour if a user modifies the database manualy
 		if (!$this->defaultPage) throw new SystemException("No default page specified!");
+	}
+	
+	/**
+	 * Creates a new DynamicHostManager object
+	 */
+	protected function initDynamicHostManager() {
+		$this->hostManager = new DynamicHostManager();
 	}
 	
 	/**
@@ -59,8 +86,8 @@ class DynamicPageManager {
 	 * Returnes the content of current cache file (or reloads it)
 	 */
 	public function getCache() {
-		WCF::getCache()->addResource('dynamicPages', WCF_DIR.'cache/cache.dynamicPages.php', WCF_DIR.'lib/system/CacheBuilderDynamicPages.class.php');
-		return WCF::getCache()->get('dynamicPages');
+		WCF::getCache()->addResource('dynamicPages-'.$this->host->hostID, WCF_DIR.'cache/cache.dynamicPages.php', WCF_DIR.'lib/system/CacheBuilderDynamicPages.class.php');
+		return WCF::getCache()->get('dynamicPages-'.$this->host->hostID);
 	}
 }
 ?>

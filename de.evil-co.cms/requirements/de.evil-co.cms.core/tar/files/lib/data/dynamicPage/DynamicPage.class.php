@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/data/DatabaseObject.class.php');
+require_once(WCF_DIR.'lib/page/util/module/ModuleManager.class.php');
 
 /**
  * Implements an object that represents a page
@@ -11,6 +12,8 @@ class DynamicPage extends DatabaseObject {
 	protected $sqlJoins = '';
 	protected $sqlSelects = '';
 	protected $sqlGroupBy = '';
+	
+	protected $moduleManager = null;
 	
 	/**
 	 * Reads a page row from database
@@ -47,7 +50,10 @@ class DynamicPage extends DatabaseObject {
 	protected function handleData($data) {
 		parent::handleData($data);
 		
-		if (!$this->pageID) $this->data['pageID'] = 0;
+		if (!$this->pageID)
+			$this->data['pageID'] = 0;
+		else
+			$this->moduleManager = new ModuleManager($this->pageID);
 	}
 	
 	/**
@@ -63,6 +69,13 @@ class DynamicPage extends DatabaseObject {
 		}
 		
 		throw new SystemException("method '".$method."' does not exist in class Page");
+	}
+	
+	/**
+	 * Returnes the module manager for this page
+	 */
+	public function getModuleManager() {
+		return $this->moduleManager;
 	}
 }
 ?>

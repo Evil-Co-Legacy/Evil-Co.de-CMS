@@ -15,6 +15,10 @@
  |   |       |
  |   |       +--[ ] Pages, Templates, ...
  |   |       |
+ |   |       +--[ ] ACP Menu Items
+ |   |       |   |
+ |   |       |   `--[ ] (wcf.acp.menu.link.dynamicPage.view) wcf.acp.menu.link.content
+ |   |       |
  |   |       `--[ ] Languages
  |   |
  |   `--[X] Module system

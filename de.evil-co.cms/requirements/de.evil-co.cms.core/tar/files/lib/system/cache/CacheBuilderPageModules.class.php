@@ -21,17 +21,23 @@ class CacheBuilderPageModules extends CacheBuilder {
 					wcf".WCF_N."_page_module module,
 					wcf".WCF_N."_package_dependency package_dependency
 				JOIN
-					wcf".WCF_N."_page_module_to_page page_module
+					wcf".WCF_N."_page_module_own module_own
 				ON
-					module.moduleID = page_module.moduleID
+					module.moduleID = page_module_own.moduleTemplateID
+				JOIN
+					wcf".WCF_N."_page_module_to_page module_page
+				ON
+					module_own.moduleID = module_page.moduleID
 				WHERE
-					page_module.pageID = ".$pageID."
+					module_page.pageID = ".$pageID."
 				AND
 					page_module.isVisble = 1
 				AND
 					page_module.packageID = package_dependency.dependency
 				AND
-					package_dependency.packageID = ".$packageID."";
+					package_dependency.packageID = ".$packageID."
+				ORDER BY
+					module_page.sortOrder ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$data = array();
