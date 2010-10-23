@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-{if $categories|count}
+{if $pages|count}
 	<div class="border content">
 		<div class="container-1">
 			<ol class="itemList" id="pageList">
