@@ -17,6 +17,11 @@ class DynamicPageListPage extends SortablePage {
 	public $templateName = 'dynamicPageList';
 	
 	/**
+	 * @see	Page::$neededPermissions
+	 */
+	public $neededPermissions = 'admin.content.cms.canListPages';
+	
+	/**
 	 * @see MultipleLinkPage::$itemsPerPage
 	 */
 	public $itemsPerPage = 50;
