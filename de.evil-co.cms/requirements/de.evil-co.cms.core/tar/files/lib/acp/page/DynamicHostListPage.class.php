@@ -9,7 +9,7 @@ require_once(WCF_DIR.'lib/data/host/Host.class.php');
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
  */
-class DynamicPageListPage extends AbstractPage {
+class DynamicHostListPage extends AbstractPage {
 	/**
 	 * @see Page::$templateName
 	 */
