@@ -24,6 +24,7 @@
 		<!-- File-PiPs -->
 		<files>tar/files.tar</files>
 		<acptemplates>tar/acptemplates.tar</acptemplates>
+		<packageinstallationplugin>tar/pip.tar</packageinstallationplugin>
 
 		<!-- XML PiPs -->
 		<acpmenu>install/xml/acpmenu.xml</acpmenu>
