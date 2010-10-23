@@ -7,6 +7,7 @@ require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
  * Lists all pages
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
  */
 class DynamicPageListPage extends SortablePage {
 	/**
