@@ -32,7 +32,7 @@ class DynamicPageListPage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 		
-		// read pages for the given host
+		// read hosts from database
 		$this->readHosts();
 	}
 	
@@ -58,7 +58,7 @@ class DynamicPageListPage extends AbstractPage {
 	/**
 	 * Reads all pages form database
 	 */
-	protected function readPages() {
+	protected function readHosts() {
 		$sql = "SELECT
 					*
 				FROM
