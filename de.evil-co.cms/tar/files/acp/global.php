@@ -1,7 +1,6 @@
 <?php
-
 // define paths
-define('RELATIVE_WWW_DIR', '../');
+define('RELATIVE_CMS_DIR', '../');
 
 //initialize package array
 $packageDirs = array();
@@ -11,10 +10,10 @@ require_once(dirname(dirname(__FILE__)).'/config.inc.php');
 
 //include WCF
 require_once(RELATIVE_WCF_DIR.'global.php');
-if(!count($packageDirs)) $packageDirs[] = WWW_DIR;
+if(!count($packageDirs)) $packageDirs[] = CMS_DIR;
 $packageDirs[] = WCF_DIR;
 
 // starting acp
-require_once(WWW_DIR.'lib/system/WWWACP.class.php');
-new WWWACP();
+require_once(CMS_DIR.'lib/system/CMSACP.class.php');
+new CMSACP();
 ?>
