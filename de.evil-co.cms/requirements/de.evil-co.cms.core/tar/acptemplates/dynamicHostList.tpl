@@ -49,19 +49,4 @@
 	 </div>
 </form>
 
-{if $this->user->getPermission('admin.content.cms.canAddHosts') || $additionalLargeButtons|isset}
-	<div class="contentFooter">
-		<div class="largeButtons">
-			<ul>
-				{if $this->user->getPermission('admin.content.cms.canAddHosts')}
-					<li>
-						<a href="index.php?form=DynamicHostAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostAddM.png" alt="" /> <span>{lang}wcf.cms.host.add.title{/lang}</span></a>
-					</li>
-				{/if}
-				{if $additionalLargeButtons|isset}{@$additionalLargeButtons}{/if}
-			</ul>
-		</div>
-	</div>
-{/if}
-
 {include file='footer'}
