@@ -15,6 +15,14 @@
 				<a href="index.php?page=DynamicHostList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.list.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostListM.png" alt="" /> <span>{lang}wcf.cms.host.list.title{/lang}</span></a>
 			</li>
 			
+			<li>
+				<a href="index.php?form=DynamicHostEdit&amp;hostID={$host->hostID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.edit.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostEditM.png" alt="" /> <span>{lang}wcf.cms.host.edit.title{/lang}</span></a>
+			</li>
+			
+			<li>
+				<a href="index.php?action=DynamicHostDelete&amp;hostID={$host->hostID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.delete{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostDeleteM.png" alt="" /> <span>{lang}wcf.cms.host.delete{/lang}</span></a>
+			</li>
+			
 			{if $this->user->getPermission('admin.content.cms.canAddPages')}
 				<li>
 					<a href="index.php?form=DynamicPageAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/pageAddM.png" alt="" /> <span>{lang}wcf.cms.page.add.title{/lang}</span></a>
