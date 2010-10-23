@@ -10,7 +10,7 @@ class CMSACP extends WCFACP {
 	 * @see WCF::getOptionsFilename()
 	 */
 	protected function getOptionsFilename() {
-		return WWW_DIR.'options.inc.php';
+		return CMS_DIR.'options.inc.php';
 	}
 
 	/**
