@@ -21,13 +21,13 @@ class CacheBuilderPageModules extends CacheBuilder {
 					wcf".WCF_N."_page_module module,
 					wcf".WCF_N."_package_dependency package_dependency
 				JOIN
-					wcf".WCF_N."_page_module_own module_own
+					wcf".WCF_N."_page_module_custom module_custom
 				ON
-					module.moduleID = page_module_own.moduleTemplateID
+					module.moduleID = page_module_custom.moduleTemplateID
 				JOIN
 					wcf".WCF_N."_page_module_to_page module_page
 				ON
-					module_own.moduleID = module_page.moduleID
+					module_custom.moduleID = module_page.moduleID
 				WHERE
 					module_page.pageID = ".$pageID."
 				AND
