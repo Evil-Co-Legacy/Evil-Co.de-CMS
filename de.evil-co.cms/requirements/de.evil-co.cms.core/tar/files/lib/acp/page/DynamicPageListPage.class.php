@@ -102,7 +102,8 @@ class DynamicPageListPage extends MultipleLinkPage {
 		
 		WCF::getTPL()->assign(array(
 			'pageList' 		=>		$this->pageList,
-			'host'			=>		$this->host
+			'host'			=>		$this->host,
+			'hostID'		=>		$this->hostID
 		));
 	}
 	
