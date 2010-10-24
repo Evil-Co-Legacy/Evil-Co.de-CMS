@@ -23,7 +23,7 @@ class CacheBuilderPageModules implements CacheBuilder {
 				JOIN
 					wcf".WCF_N."_page_module_custom module_custom
 				ON
-					module.moduleID = page_module_custom.moduleTemplateID
+					module.moduleID = module_custom.moduleTemplateID
 				JOIN
 					wcf".WCF_N."_page_module_to_page module_page
 				ON
@@ -31,9 +31,9 @@ class CacheBuilderPageModules implements CacheBuilder {
 				WHERE
 					module_page.pageID = ".$pageID."
 				AND
-					page_module.isVisble = 1
+					module_page.isVisible = 1
 				AND
-					page_module.packageID = package_dependency.dependency
+					module.packageID = package_dependency.dependency
 				AND
 					package_dependency.packageID = ".$packageID."
 				ORDER BY
