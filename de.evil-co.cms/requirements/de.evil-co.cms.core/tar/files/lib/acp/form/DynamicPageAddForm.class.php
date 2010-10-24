@@ -101,12 +101,6 @@ class DynamicPageAddForm extends ACPForm {
 	public $menuItemTitle = '';
 	
 	/**
-	 * Contains the sort order for the new menu item
-	 * @var	integer
-	 */
-	public $menuItemSortOrder = 0;
-	
-	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
