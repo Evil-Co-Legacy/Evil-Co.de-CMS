@@ -146,7 +146,7 @@ class DynamicPageAddForm extends ACPForm {
 		parent::validate();
 		
 		// validate title
-		if (empty($this->title)) throw new UserInputException('title');
+		if (empty($this->title)) throw new UserInputException('title', 'empty');
 		
 		// validate menu entry position
 		switch($this->menuItemPosition) {
