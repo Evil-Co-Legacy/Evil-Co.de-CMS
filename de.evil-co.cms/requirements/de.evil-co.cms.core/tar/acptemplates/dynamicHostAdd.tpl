@@ -85,6 +85,7 @@
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
 		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+		{if $action == 'edit'}<input type="hidden" name="hostID" value="{@$hostID}" />{/if}
 	 	{@SID_INPUT_TAG}
 	 </div>
 </form>
