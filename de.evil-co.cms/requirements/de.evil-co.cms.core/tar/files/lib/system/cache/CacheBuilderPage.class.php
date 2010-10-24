@@ -8,7 +8,7 @@ require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  */
-class CacheBuilderPage extends CacheBuilder {
+class CacheBuilderPage implements CacheBuilder {
 	
 	/**
 	 * @see CacheBuilder::getData()

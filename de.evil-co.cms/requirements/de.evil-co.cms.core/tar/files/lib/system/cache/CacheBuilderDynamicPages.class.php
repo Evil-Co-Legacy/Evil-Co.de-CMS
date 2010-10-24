@@ -9,7 +9,7 @@ require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms
  */
-class CacheBuilderDynamicPages extends CacheBuilder {
+class CacheBuilderDynamicPages implements CacheBuilder {
 	
 	/**
 	 * @see CacheBuilder::getData()

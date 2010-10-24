@@ -7,7 +7,7 @@ require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  */
-class CacheBuilderPageModules extends CacheBuilder {
+class CacheBuilderPageModules implements CacheBuilder {
 	
 	/**
 	 * @see CacheBuilder::getData()
