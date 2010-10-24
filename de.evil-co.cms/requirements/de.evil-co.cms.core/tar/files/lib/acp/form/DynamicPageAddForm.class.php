@@ -180,7 +180,7 @@ class DynamicPageAddForm extends ACPForm {
 			require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
 			
 			$menuItem = PageMenuItemEditor::create((empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle), '', $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
-			$menuItemID = $item->menuItemID;
+			$menuItemID = $menuItem->menuItemID;
 		}
 		
 		// create dynamic page
