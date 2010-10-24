@@ -22,6 +22,8 @@ class CacheBuilderHosts implements CacheBuilder {
 					IFNULL(title,hostname) AS title
 				FROM
 					wcf".WCF_N."_host
+				WHERE
+					packageID = ".PACKAGE_ID."
 				ORDER BY
 					IFNULL(title,hostname) ASC";
 		$result = WCF::getDB()->sendQuery($sql);
