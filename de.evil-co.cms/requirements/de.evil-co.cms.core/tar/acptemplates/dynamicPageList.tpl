@@ -38,7 +38,7 @@
 	<div class="border content">
 		<div class="container-1">
 			<ol class="itemList" id="pageList">
-				{foreach from=$pages item=$page}
+				{foreach from=$pageList item=$page}
 					{assign var=pageID value=$page->pageID}
 					
 					<li id="item_{@$categoryID}" class="deletable">
