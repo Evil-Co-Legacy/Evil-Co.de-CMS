@@ -60,6 +60,12 @@ class Host extends DatabaseObject {
 		parent::handleData($data);
 		
 		if (!$this->hostID) $this->data['hostID'] = 0;
+		
+		if ($this->hostID) {
+			// change var types
+			$this->isFallback = (bool) $this->isFallback;
+			$this->isDisabled = (bool) $this->isDisabled;
+		}
 	}
 	
 	/**
