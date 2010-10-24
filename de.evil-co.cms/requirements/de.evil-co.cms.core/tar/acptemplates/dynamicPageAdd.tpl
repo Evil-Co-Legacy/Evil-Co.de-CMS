@@ -213,7 +213,7 @@
 	</fieldset>
 	
 	<div class="formSubmit">
-		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
+		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
 		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		{if $action == 'edit'}<input type="hidden" name="pageID" value="{@$pageID}" />{/if}
