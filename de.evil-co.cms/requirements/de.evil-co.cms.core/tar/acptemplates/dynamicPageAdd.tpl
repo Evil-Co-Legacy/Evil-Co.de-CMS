@@ -41,7 +41,7 @@
 					<input type="text" class="inputText" name="title" value="{$title}" />
 					{if $errorField == 'title'}
 						<p class="innerError">
-							{lang}wcf.global.error.empty{/lang}
+							{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
 						</p>
 					{/if}
 				</div>
