@@ -2,7 +2,7 @@
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/data/host/Host.class.php');
-require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
 
 /**
  * Implements a form that adds a new page
