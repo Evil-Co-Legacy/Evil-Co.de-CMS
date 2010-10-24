@@ -47,20 +47,22 @@
 		</div>
 	</fieldset>
 	<fieldset>
-		<legend><a href="javascript:void(openList('expertSettingsContent',{ openTitle: '{lang}wcf.cms.host.add.expertSettings.show{/lang}', closeTitle: '{lang}wcf.cms.host.add.expertSettings.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="expertSettingsImage" alt="" title="{lang}wcf.cms.host.add.expertSettings.show{/lang}" /> <span>{lang}wcf.cms.host.add.expertSettings{/lang}</span></a></legend>
+		<legend><a href="javascript:void(openList('expertSettingsContent',{ openTitle: '{lang}wcf.cms.host.add.expertSettings.show{/lang}', closeTitle: '{lang}wcf.cms.host.add.expertSettings.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="expertSettingsContentImage" alt="" title="{lang}wcf.cms.host.add.expertSettings.show{/lang}" /> <span>{lang}wcf.cms.host.add.expertSettings{/lang}</span></a></legend>
 	
-		<div class="formElement">
-			<div class="formFieldLabel">
-				<label for="isFallback"><input type="checkbox" value="{if $isFallback}1{else}0{/if}" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
+		<div id="expertSettingsContent" style="display: none;">
+			<div class="formElement">
+				<div class="formField">
+					<label for="isFallback"><input type="checkbox" {if $isFallback}checked="checked" {/if}value="1" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
+				</div>
 			</div>
-		</div>
-		
-		<div class="formElement">
-			<div class="formFieldLabel">
-				<label for="languageCode">{lang}wcf.cms.host.add.expertSettings.languageCode{/lang}</label>
-			</div>
-			<div class="formField">
-				<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
+			
+			<div class="formElement">
+				<div class="formFieldLabel">
+					<label for="languageCode">{lang}wcf.cms.host.add.expertSettings.languageCode{/lang}</label>
+				</div>
+				<div class="formField">
+					<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
+				</div>
 			</div>
 		</div>
 	</fieldset>
