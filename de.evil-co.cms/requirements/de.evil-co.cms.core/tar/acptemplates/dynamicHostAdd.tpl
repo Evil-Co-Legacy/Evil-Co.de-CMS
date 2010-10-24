@@ -3,9 +3,13 @@
 <div class="mainHeadline">
 	<img src="{@RELATIVE_WCF_DIR}icon/host{$action}L.png" alt="" />
 	<div class="headlineContainer">
-		<h2>{lang}wcf.cms.page.{$action}.title{/lang}</h2>
+		<h2>{lang}wcf.cms.host.{$action}.title{/lang}</h2>
 	</div>
 </div>
+
+{if $success|isset}
+	<p class="success">{lang}wcf.cms.host.{$action}.success{/lang}</p>
+{/if}
 
 
 <div class="contentHeader">
@@ -22,11 +26,11 @@
 
 <form action="index.php?form=DynamicHostAdd" method="post">
 	<fieldset>
-		<legend>{lang}wcf.cms.page.add.general{/lang}</legend>
+		<legend>{lang}wcf.cms.host.add.general{/lang}</legend>
 		
 		<div class="formElement">
 			<div class="formFieldLabel">
-				<label for="title">{lang}wcf.cms.page.add.general.title{/lang}</label>
+				<label for="title">{lang}wcf.cms.host.add.general.title{/lang}</label>
 			</div>
 			<div class="formField">
 				<input type="text" class="inputText" value="{$title}" name="title" />
@@ -35,7 +39,7 @@
 		
 		<div class="formElement">
 			<div class="formFieldLabel">
-				<label for="hostname">{lang}wcf.cms.page.add.general.hostname{/lang}</label>
+				<label for="hostname">{lang}wcf.cms.host.add.general.hostname{/lang}</label>
 			</div>
 			<div class="formField">
 				<input type="text" class="inputText" value="{$hostname}" name="hostname" />
@@ -43,17 +47,17 @@
 		</div>
 	</fieldset>
 	<fieldset>
-		<legend><a href="javascript:void(openList('expertSettingsContent',{ openTitle: '{lang}wcf.cms.page.add.expertSettings.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.expertSettings.hide{/lang}' }));"><img src="{icon}plusS.png{/icon}" id="expertSettingsImage" alt="" title="{lang}wcf.cms.page.add.expertSettings.show{/lang}" /> <span>{lang}wcf.cms.page.add.expertSettings{/lang}</span></a></legend>
+		<legend><a href="javascript:void(openList('expertSettingsContent',{ openTitle: '{lang}wcf.cms.host.add.expertSettings.show{/lang}', closeTitle: '{lang}wcf.cms.host.add.expertSettings.hide{/lang}' }));"><img src="{icon}plusS.png{/icon}" id="expertSettingsImage" alt="" title="{lang}wcf.cms.host.add.expertSettings.show{/lang}" /> <span>{lang}wcf.cms.host.add.expertSettings{/lang}</span></a></legend>
 	
 		<div class="formElement">
 			<div class="formFieldLabel">
-				<label for="isFallback"><input type="checkbox" value="{if $isFallback}1{else}0{/if}" name="isFallback" /> {lang}wcf.cms.page.add.expertSettings.isFallback{/lang}</label>
+				<label for="isFallback"><input type="checkbox" value="{if $isFallback}1{else}0{/if}" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
 			</div>
 		</div>
 		
 		<div class="formElement">
 			<div class="formFieldLabel">
-				<label for="languageCode">{lang}wcf.cms.page.add.expertSettings.languageCode{/lang}</label>
+				<label for="languageCode">{lang}wcf.cms.host.add.expertSettings.languageCode{/lang}</label>
 			</div>
 			<div class="formField">
 				<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
