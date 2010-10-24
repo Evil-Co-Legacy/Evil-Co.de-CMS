@@ -56,111 +56,113 @@
 		</div>
 	</fieldset>
 	
-	<fieldset>
-		<legend><a href="javascript:void(openList('menuContent',{ openTitle: '{lang}wcf.cms.page.add.menu.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.menu.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="menuContentImage" alt="" title="{lang}wcf.cms.page.add.menu.show{/lang}" /> <span>{lang}wcf.cms.page.add.menu{/lang}</span></a></legend>
-		
-		<div id="menuContent" style="display: none;">
-			<div class="formElement">
-				<div class="formField">
-					<label for="createMenuItem"><input type="checkbox" value="1" name="createMenuItem" {if $createMenuItem}checked="checked" {/if}/> {lang}wcf.cms.page.add.menu.createMenuItem{/lang}</label>
-				</div>
-				<div class="formFieldDesc" id="createMenuItemHelpMessage">
-					{lang}wcf.cms.page.add.menu.createMenuItem.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('createMenuItem');
-			</script>
+	{if $action == 'add'}
+		<fieldset>
+			<legend><a href="javascript:void(openList('menuContent',{ openTitle: '{lang}wcf.cms.page.add.menu.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.menu.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="menuContentImage" alt="" title="{lang}wcf.cms.page.add.menu.show{/lang}" /> <span>{lang}wcf.cms.page.add.menu{/lang}</span></a></legend>
 			
-			<div class="formElement">
-				<div class="formFieldLabel">
-					<label for="menuItemPosition">{lang}wcf.cms.page.add.menu.menuItemPosition{/lang}</label>
+			<div id="menuContent" style="display: none;">
+				<div class="formElement">
+					<div class="formField">
+						<label for="createMenuItem"><input type="checkbox" value="1" name="createMenuItem" {if $createMenuItem}checked="checked" {/if}/> {lang}wcf.cms.page.add.menu.createMenuItem{/lang}</label>
+					</div>
+					<div class="formFieldDesc" id="createMenuItemHelpMessage">
+						{lang}wcf.cms.page.add.menu.createMenuItem.description{/lang}
+					</div>
 				</div>
-				<div class="formField">
-					<select name="menuItemPosition">
-						<option value="header" {if $menuItemPosition == 'header'}selected="selected"{/if}>{lang}wcf.cms.page.add.menu.menuItemPosition.header{/lang}</option>
-						<option value="footer" {if $menuItemPosition == 'footer'}selected="selected"{/if}>{lang}wcf.cms.page.add.menu.menuItemPosition.footer{/lang}</option>
-					</select>
+				<script type="text/javascript">
+					inlineHelp.register('createMenuItem');
+				</script>
+				
+				<div class="formElement">
+					<div class="formFieldLabel">
+						<label for="menuItemPosition">{lang}wcf.cms.page.add.menu.menuItemPosition{/lang}</label>
+					</div>
+					<div class="formField">
+						<select name="menuItemPosition">
+							<option value="header" {if $menuItemPosition == 'header'}selected="selected"{/if}>{lang}wcf.cms.page.add.menu.menuItemPosition.header{/lang}</option>
+							<option value="footer" {if $menuItemPosition == 'footer'}selected="selected"{/if}>{lang}wcf.cms.page.add.menu.menuItemPosition.footer{/lang}</option>
+						</select>
+					</div>
+					<div class="formFieldDesc" id="menuItemPositionHelpMessage">
+						{lang}wcf.cms.page.add.menu.menuItemPosition.description{/lang}
+					</div>
 				</div>
-				<div class="formFieldDesc" id="menuItemPositionHelpMessage">
-					{lang}wcf.cms.page.add.menu.menuItemPosition.description{/lang}
+				<script type="text/javascript">
+					inlineHelp.register('menuItemPosition');
+				</script>
+				
+				<div class="formElement">
+					<div class="formFieldLabel">
+						<label for="menuItemSortOrder">{lang}wcf.cms.page.add.menu.menuItemSortOrder{/lang}</label>
+					</div>
+					<div class="formField">
+						<input type="text" name="menuItemSortOrder" class="inputText" value="{$menuItemSortOrder}" />
+					</div>
+					<div class="formFieldDesc" id="menuItemSortOrderHelpMessage">
+						{lang}wcf.cms.page.add.menu.menuItemSortOrder.description{/lang}
+					</div>
 				</div>
+				<script type="text/javascript">
+					inlineHelp.register('menuItemSortOrder');
+				</script>
+				
+				<div class="formElement{if $errorField == 'menuItemIconS'} formError{/if}">
+					<div class="formFieldLabel">
+						<label for="menuItemIconS">{lang}wcf.cms.page.add.menu.menuItemIconS{/lang}</label>
+					</div>
+					<div class="formField">
+						<input type="text" name="menuItemIconS" class="inputText" value="{$menuItemIconS}" />
+						{if $errorField == 'menuItemIconS'}
+							<p class="innerError">
+								{lang}wcf.global.error.empty{/lang}
+							</p>
+						{/if}
+					</div>
+					<div class="formFieldDesc" id="menuItemIconSHelpMessage">
+						{lang}wcf.cms.page.add.menu.menuItemIconS.description{/lang}
+					</div>
+				</div>
+				<script type="text/javascript">
+					inlineHelp.register('menuItemIconS');
+				</script>
+				
+				<div class="formElement{if $errorField == 'menuItemIconM'} formError{/if}">
+					<div class="formFieldLabel">
+						<label for="menuItemIconM">{lang}wcf.cms.page.add.menu.menuItemIconM{/lang}</label>
+					</div>
+					<div class="formField">
+						<input type="text" name="menuItemIconM" class="inputText" value="{$menuItemIconM}" />
+						{if $errorField == 'menuItemIconM'}
+							<p class="innerError">
+								{lang}wcf.global.error.empty{/lang}
+							</p>
+						{/if}
+					</div>
+					<div class="formFieldDesc" id="menuItemIconMHelpMessage">
+						{lang}wcf.cms.page.add.menu.menuItemIconM.description{/lang}
+					</div>
+				</div>
+				<script type="text/javascript">
+					inlineHelp.register('menuItemIconM');
+				</script>
+				
+				<div class="formElement">
+					<div class="formFieldLabel">
+						<label for="menuItemTitle">{lang}wcf.cms.page.add.menu.menuItemTitle{/lang}</label>
+					</div>
+					<div class="formField">
+						<input type="text" name="menuItemTitle" class="inputText" value="{$menuItemTitle}" />
+					</div>
+					<div class="formFieldDesc" id="menuItemTitleHelpMessage">
+						{lang}wcf.cms.page.add.menu.menuItemTitle.description{/lang}
+					</div>
+				</div>
+				<script type="text/javascript">
+					inlineHelp.register('menuItemTitle');
+				</script>
 			</div>
-			<script type="text/javascript">
-				inlineHelp.register('menuItemPosition');
-			</script>
-			
-			<div class="formElement">
-				<div class="formFieldLabel">
-					<label for="menuItemSortOrder">{lang}wcf.cms.page.add.menu.menuItemSortOrder{/lang}</label>
-				</div>
-				<div class="formField">
-					<input type="text" name="menuItemSortOrder" class="inputText" value="{$menuItemSortOrder}" />
-				</div>
-				<div class="formFieldDesc" id="menuItemSortOrderHelpMessage">
-					{lang}wcf.cms.page.add.menu.menuItemSortOrder.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('menuItemSortOrder');
-			</script>
-			
-			<div class="formElement{if $errorField == 'menuItemIconS'} formError{/if}">
-				<div class="formFieldLabel">
-					<label for="menuItemIconS">{lang}wcf.cms.page.add.menu.menuItemIconS{/lang}</label>
-				</div>
-				<div class="formField">
-					<input type="text" name="menuItemIconS" class="inputText" value="{$menuItemIconS}" />
-					{if $errorField == 'menuItemIconS'}
-						<p class="innerError">
-							{lang}wcf.global.error.empty{/lang}
-						</p>
-					{/if}
-				</div>
-				<div class="formFieldDesc" id="menuItemIconSHelpMessage">
-					{lang}wcf.cms.page.add.menu.menuItemIconS.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('menuItemIconS');
-			</script>
-			
-			<div class="formElement{if $errorField == 'menuItemIconM'} formError{/if}">
-				<div class="formFieldLabel">
-					<label for="menuItemIconM">{lang}wcf.cms.page.add.menu.menuItemIconM{/lang}</label>
-				</div>
-				<div class="formField">
-					<input type="text" name="menuItemIconM" class="inputText" value="{$menuItemIconM}" />
-					{if $errorField == 'menuItemIconM'}
-						<p class="innerError">
-							{lang}wcf.global.error.empty{/lang}
-						</p>
-					{/if}
-				</div>
-				<div class="formFieldDesc" id="menuItemIconMHelpMessage">
-					{lang}wcf.cms.page.add.menu.menuItemIconM.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('menuItemIconM');
-			</script>
-			
-			<div class="formElement">
-				<div class="formFieldLabel">
-					<label for="menuItemTitle">{lang}wcf.cms.page.add.menu.menuItemTitle{/lang}</label>
-				</div>
-				<div class="formField">
-					<input type="text" name="menuItemTitle" class="inputText" value="{$menuItemTitle}" />
-				</div>
-				<div class="formFieldDesc" id="menuItemTitleHelpMessage">
-					{lang}wcf.cms.page.add.menu.menuItemTitle.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('menuItemTitle');
-			</script>
-		</div>
-	</fieldset>
+		</fieldset>
+	{/if}
 		
 	<fieldset>
 			<legend><a href="javascript:void(openList('publishContent',{ openTitle: '{lang}wcf.cms.page.add.publish.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.publish.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="publishContentImage" alt="" title="{lang}wcf.cms.page.add.publish.hide{/lang}" /> <span>{lang}wcf.cms.page.add.publish{/lang}</span></a></legend>
