@@ -159,7 +159,7 @@ class DynamicPageAddForm extends ACPForm {
 		}
 		
 		// validate menu item options
-		if ($this->createMenuItem) {
+		if ($this->createMenuItem and $this->action == 'add') {
 			// validate menu item icon s
 			if (empty($this->menuItemIconS) and $this->menuItemPosition == 'footer') throw new UserInputException('menuItemIconS');
 			
