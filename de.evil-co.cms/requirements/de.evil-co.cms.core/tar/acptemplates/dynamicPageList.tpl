@@ -52,7 +52,7 @@
 	</div>
 </fieldset>
 
-{if $pages|count}
+{if $pageList|count}
 	<div class="border content">
 		<div class="container-1">
 			<ol class="itemList" id="pageList">
