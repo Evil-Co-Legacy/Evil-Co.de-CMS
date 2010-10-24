@@ -31,7 +31,7 @@
 						<label for="hostID">{lang}wcf.cms.host.list.hostID{/lang}</label>
 					</div>
 					<div class="formField">
-						<select name="hostID">
+						<select name="hostID" onchange="this.submit();">
 							{foreach from=$hosts item=$host}
 								<option value="{$host->hostID}">{lang}{$host->getTitle()}{/lang}</option>
 							{/foreach}
