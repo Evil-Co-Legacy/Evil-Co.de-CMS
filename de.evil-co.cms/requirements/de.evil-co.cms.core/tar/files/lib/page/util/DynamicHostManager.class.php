@@ -26,14 +26,14 @@ class DynamicHostManager {
 	 * Returnes the host object for the current request host
 	 */
 	public function getHost() {
-		$host = $_SERVER['HTTP_HOST'];
+		$requestHost = $_SERVER['HTTP_HOST'];
 		
 		foreach($this->hosts as $key => $host) {
-			if (preg_match('~'.str_replace('~', '\~', $host->hostname).'~', $host)) return $this->hosts[$key];
+			if (preg_match('~'.str_replace('~', '\~', $host->hostname).'~', $requestHost)) return $this->hosts[$key];
 		}
 		
 		foreach($this->hosts as $key => $host) {
-			if ($host->fallback) return $this->hosts[$key];
+			if ($host->isFallback) return $this->hosts[$key];
 		}
 		
 		throw new NamedUserException(WCF::getLanguage()->get('cms.global.unknownPage'));
