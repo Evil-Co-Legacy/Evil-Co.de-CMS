@@ -101,6 +101,11 @@ class DynamicPageAddForm extends ACPForm {
 	public $menuItemTitle = '';
 	
 	/**
+	 * @see	Page::$action
+	 */
+	public $action = 'add';
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
@@ -216,7 +221,9 @@ class DynamicPageAddForm extends ACPForm {
 			'menuItemIconS'					=>		$this->menuItemIconS,
 			'menuItemIconM'					=>		$this->menuItemIconM,
 			'menuItemSortOrder'				=>		$this->menuItemSortOrder,
-			'menuItemPosition'				=>		$this->menuItemPosition
+			'menuItemPosition'				=>		$this->menuItemPosition,
+			'host'							=>		$this->host,
+			'hostID'						=>		$this->hostID
 		));
 	}
 }
