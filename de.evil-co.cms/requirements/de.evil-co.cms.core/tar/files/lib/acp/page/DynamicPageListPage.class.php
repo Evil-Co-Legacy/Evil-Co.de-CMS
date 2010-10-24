@@ -1,6 +1,6 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/page/SortablePage.class.php');
+require_once(WCF_DIR.'lib/page/MultipleLinkPage.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 require_once(WCF_DIR.'lib/data/host/Host.class.php');
 
@@ -10,7 +10,7 @@ require_once(WCF_DIR.'lib/data/host/Host.class.php');
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
  */
-class DynamicPageListPage extends SortablePage {
+class DynamicPageListPage extends MultipleLinkPage {
 	/**
 	 * @see Page::$templateName
 	 */
@@ -27,20 +27,10 @@ class DynamicPageListPage extends SortablePage {
 	public $itemsPerPage = 50;
 	
 	/**
-	 * @see SortablePage::$defaultSortField
-	 */
-	public $defaultSortField = 'title';
-	
-	/**
-	 * @see SortablePage::$defaultSortOrder
-	 */
-	public $defaultSortOrder = 'ASC';
-	
-	/**
 	 * Contains all pages
 	 * @var array
 	 */
-	public $pages = array();
+	public $pageList = array();
 	
 	/**
 	 * Contains the hostID of all pages that should appear in list
@@ -105,26 +95,13 @@ class DynamicPageListPage extends SortablePage {
 	}
 	
 	/**
-	 * @see SortablePage::validateSortField()
-	 */
-	public function validateSortField() {
-		parent::validateSortField();
-		
-		switch ($this->sortField) {
-			case 'pageID':
-			case 'title': break;
-			default: $this->sortField = $this->defaultSortField;
-		}
-	}
-	
-	/**
 	 * @see Page::assignVariables()
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'pages' 		=>		$this->pages,
+			'pageList' 		=>		$this->pageList,
 			'host'			=>		$this->host
 		));
 	}
@@ -140,11 +117,11 @@ class DynamicPageListPage extends SortablePage {
 				WHERE
 					hostID = ".$this->host->hostID."
 				ORDER BY
-					".$this->sortField." ".$this->sortOrder;
+					title ASC";
 		$result = WCF::getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo - 1) * $this->itemsPerPage);
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
-			$this->pages[] = new DynamicPage(null, $row);
+			$this->pageList[] = new DynamicPage(null, $row);
 		}
 	}
 }
