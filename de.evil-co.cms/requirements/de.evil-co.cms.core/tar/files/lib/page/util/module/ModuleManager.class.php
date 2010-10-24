@@ -20,7 +20,7 @@ class ModuleManager {
 	public function __construct($pageID) {
 		// load page module cache
 		WCF::getCache()->addResource('pageModules-'.$pageID.'-'.PACKAGE_ID, WCF_DIR.'cache/cache.pageModules-'.$pageID.'-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderPageModules.class.php');
-		$modules = WCF::getCache()->get('pageModules-'.$pageID);
+		$modules = WCF::getCache()->get('pageModules-'.$pageID.'-'.PACKAGE_ID);
 		
 		// init modules
 		foreach($modules as $module) {
