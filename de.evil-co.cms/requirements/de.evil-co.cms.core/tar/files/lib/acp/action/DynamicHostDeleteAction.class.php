@@ -4,6 +4,12 @@ require_once(WCF_DIR.'lib/action/AbstractAction.class.php');
 require_once(WCF_DIR.'lib/data/host/HostEditor.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
 
+/**
+ * Implements an action that removes a host row
+ * @author		Johannes Donath
+ * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms
+ */
 class DynamicHostDeleteAction extends AbstractAction {
 	
 	/**
