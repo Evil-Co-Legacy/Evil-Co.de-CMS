@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
 {if !$allowSpidersToIndexThisPage|isset}<meta name="robots" content="noindex,nofollow" />{/if}
 
-<script type="text/javascript" src="{@RELATIVE_WWW_DIR}js/jquery-1.4.1.js"></script>
-<script type="text/javascript" src="{@RELATIVE_WWW_DIR}js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="{@RELATIVE_CMS_DIR}js/jquery-1.4.1.js"></script>
+<script type="text/javascript" src="{@RELATIVE_CMS_DIR}js/jquery-ui-1.8.4.custom.min.js"></script>
 <!-- Thanck you Woltlab for this workaround -.- (Woltlab uses protoaculous but we use jquery ...) -->
 <script type="text/javascript">
 window.$j = jQuery.noConflict();
@@ -17,9 +17,9 @@ window.$j = jQuery.noConflict();
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/PopupMenuList.class.js"></script>
 <script type="text/javascript" src="{@RELATIVE_WCF_DIR}js/AjaxRequest.class.js"></script>
 
-<!-- www styles
-	Senseless ... we haven't own css code :-P
-<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WWW_DIR}style/www.css" /> -->
+<!-- cms styles -->
+{* Currently we haven't own css code *}
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_CMS_DIR}style/cms.css" /> -->
 
 {if $specialStyles|isset}
 	<!-- special styles -->
