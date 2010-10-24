@@ -31,9 +31,9 @@ class HostEditor extends Host {
 		}
 		
 		$sql = "INSERT INTO
-					wcf".WCF_N."_host (`title`, `hostname`, `isDisabled`, `isFallback`, `languageCode`)
+					wcf".WCF_N."_host (`title`, `hostname`, `isDisabled`, `isFallback`, `languageCode`, `packageID`)
 				VALUES
-					('".escapeString($title)."', '".escapeString($hostname)."', ".($isDisabled ? 1 : 0).", ".($isFallback ? 1 : 0).", ".($languageCode !== null ? "'".escapeString($languageCode)."'" : "NULL").")";
+					('".escapeString($title)."', '".escapeString($hostname)."', ".($isDisabled ? 1 : 0).", ".($isFallback ? 1 : 0).", ".($languageCode !== null ? "'".escapeString($languageCode)."'" : "NULL").", ".PACKAGE_ID.")";
 		WCF::getDB()->sendQuery($sql);
 		
 		return new Host(WCF::getDB()->getInsertID());
