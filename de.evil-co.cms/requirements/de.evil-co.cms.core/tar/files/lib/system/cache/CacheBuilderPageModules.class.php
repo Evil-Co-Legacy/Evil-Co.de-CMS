@@ -18,14 +18,14 @@ class CacheBuilderPageModules implements CacheBuilder {
 		$sql = "SELECT
 					module.*
 				FROM
-					wcf".WCF_N."_page_module module,
-					wcf".WCF_N."_package_dependency package_dependency
-				JOIN
-					wcf".WCF_N."_page_module_custom module_custom
+					wcf".WCF_N."_page_module AS module,
+					wcf".WCF_N."_package_dependency AS package_dependency
+				LEFT JOIN
+					wcf".WCF_N."_page_module_custom AS module_custom
 				ON
 					module.moduleID = module_custom.moduleTemplateID
-				JOIN
-					wcf".WCF_N."_page_module_to_page module_page
+				LEFT JOIN
+					wcf".WCF_N."_page_module_to_page AS module_page
 				ON
 					module_custom.moduleID = module_page.moduleID
 				WHERE
