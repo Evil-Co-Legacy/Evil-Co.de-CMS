@@ -2,6 +2,12 @@
 // wcf imports
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
+/**
+ * Represents a dynamic page row and provides functions to add, update and edit rows
+ * @author		Johannes Donath
+ * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms
+ */
 class DynamicPageEditor extends DynamicPage {
 	
 	/**
