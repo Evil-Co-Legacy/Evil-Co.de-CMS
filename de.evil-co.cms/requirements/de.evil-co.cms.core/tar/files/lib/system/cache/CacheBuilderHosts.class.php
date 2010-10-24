@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
-require_once(WCF_DIR.'lib/data/host/Host.class.class.php');
+require_once(WCF_DIR.'lib/data/host/Host.class.php');
 
 /**
  * Caches all hosts
