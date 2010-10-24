@@ -32,7 +32,7 @@
 	<fieldset>
 		<legend><a href="javascript:void(openList('detailsContent',{ openTitle: '{lang}wcf.cms.page.add.details.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.details.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="detailsContentImage" alt="" title="{lang}wcf.cms.page.add.details.hide{/lang}" /> <span>{lang}wcf.cms.page.add.details{/lang}</span></a></legend>
 		
-		<div class="detailsContent">
+		<div id="detailsContent">
 			<div class="formElement{if $errorField == 'title'} formError{/if}">
 				<div class="formFieldLabel">
 					<label for="title">{lang}wcf.cms.page.add.details.title{/lang}</label>
