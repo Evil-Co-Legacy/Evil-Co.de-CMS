@@ -52,7 +52,7 @@ class DynamicPageDeleteAction extends AbstractAction {
 		DynamicPageEditor::clearCache($this->pageID, $this->page->hostID);
 		
 		// send redirect headers
-		HeaderUtil::redirect('index.php?page=DynamicPageList&hostID='.$this->page->hostID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
+		if (!isset($_REQUEST['ajax'])) HeaderUtil::redirect('index.php?page=DynamicPageList&hostID='.$this->page->hostID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
 		
 		// call event
 		$this->executed();
