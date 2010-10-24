@@ -19,15 +19,16 @@ class DynamicPageEditor extends DynamicPage {
 	 * @param	boolean	$isPublic
 	 * @param	boolean	$isDefaultPage
 	 */
-	public static function create($title, $allowSpidersToIndexThisPage = true, $additionalHeadContent = '', $menuItemID = 0, $isPublic = true, $isDefaultPage = false) {
+	public static function create($title, $allowSpidersToIndexThisPage = true, $additionalHeadContent = '', $menuItemID = 0, $isPublic = true, $isDefaultPage = false, $hostID = 0) {
 		$sql = "INSERT INTO
-					wcf".WCF_N."_page (title, allowSpidersToIndexThisPage, additionalHeadContent, menuItemID, isPublic, isDefaultPage)
+					wcf".WCF_N."_page (title, allowSpidersToIndexThisPage, additionalHeadContent, menuItemID, isPublic, isDefaultPage, hostID)
 				VALUES ('".escapeString($title)."',
 						".($allowSpidersToIndexThisPage ? 1 : 0).",
 						'".escapeString($additionalHeadContent)."',
 						".$menuItemID.",
 						".($isPublic ? 1 : 0).",
-						".($isDefaultPage ? 1 : 0).")";
+						".($isDefaultPage ? 1 : 0).",
+						".$hostID.")";
 		WCF::getDB()->sendQuery($sql);
 		
 		$page = new DynamicPageEditor(WCF::getDB()->getInsertID());
