@@ -148,10 +148,8 @@
 			</script>
 		</div>
 	</fieldset>
-	
-	<fieldset>
 		
-	</fieldset>
+	<fieldset>
 			<legend><a href="javascript:void(openList('publishContent',{ openTitle: '{lang}wcf.cms.page.add.publish.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.publish.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="publishContentImage" alt="" title="{lang}wcf.cms.page.add.publish.hide{/lang}" /> <span>{lang}wcf.cms.page.add.publish{/lang}</span></a></legend>
 	
 			<div id="publishContent">
@@ -179,6 +177,8 @@
 					inlineHelp.register('isDefaultPage');
 				</script>
 			</div>
+	</fieldset>
+	
 	<fieldset>
 		<legend><a href="javascript:void(openList('expertContent',{ openTitle: '{lang}wcf.cms.page.add.expert.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.expert.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="expertContentImage" alt="" title="{lang}wcf.cms.page.add.expert.show{/lang}" /> <span>{lang}wcf.cms.page.add.expert{/lang}</span></a></legend>
 		
