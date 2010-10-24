@@ -73,10 +73,7 @@ class DynamicHostAddForm extends ACPForm {
 		
 		// validate hostname
 		if (empty($this->hostname)) throw new UserInputException('hostname', 'empty');
-		if (!preg_match('~(.*)\.(.*)~', $this->hostname)) throw new UserInputException('hostname', 'invalid'); // Basic domain name check for DAUs
-		
-		// validate language code
-		if (empty($this->languageCode)) throw new UserInputException('languageCode');
+		if (!preg_match('~(.*)\.(.*)~', $this->hostname) and $this->hostname != 'localhost') throw new UserInputException('hostname', 'invalid'); // Basic domain name check for DAUs
 	}
 	
 	/**
@@ -97,6 +94,16 @@ class DynamicHostAddForm extends ACPForm {
 		
 		// call event
 		$this->saved();
+	}
+	
+	/**
+	 * @see Page::show()
+	 */
+	public function show() {
+		// enable acpmenu entry
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.host.add');
+		
+		parent::show();
 	}
 	
 	/**
