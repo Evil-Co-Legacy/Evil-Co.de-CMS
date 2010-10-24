@@ -224,7 +224,7 @@ class DynamicPageAddForm extends ACPForm {
 			'menuItemPosition'				=>		$this->menuItemPosition,
 			'host'							=>		$this->host,
 			'hostID'						=>		$this->hostID,
-			'createMenuItem'				=>		$this->createMenuitem
+			'createMenuItem'				=>		$this->createMenuItem
 		));
 	}
 }
