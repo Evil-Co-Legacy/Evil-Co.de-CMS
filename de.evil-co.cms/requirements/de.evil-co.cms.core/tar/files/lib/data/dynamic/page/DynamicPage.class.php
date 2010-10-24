@@ -20,7 +20,7 @@ class DynamicPage extends DatabaseObject {
 	 * @param	integer	$pageID
 	 * @param	array	$row
 	 */
-	public function __construct($typeID, $row = null) {
+	public function __construct($pageID, $row = null) {
 		$this->sqlSelects .= 'page.*'; 
 		
 		// create sql conditions
