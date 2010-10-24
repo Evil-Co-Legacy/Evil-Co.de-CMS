@@ -104,12 +104,17 @@
 				inlineHelp.register('menuItemSortOrder');
 			</script>
 			
-			<div class="formElement">
+			<div class="formElement{if $errorField == 'menuItemIconS'} formError{/if}">
 				<div class="formFieldLabel">
 					<label for="menuItemIconS">{lang}wcf.cms.page.add.menu.menuItemIconS{/lang}</label>
 				</div>
 				<div class="formField">
 					<input type="text" name="menuItemIconS" class="inputText" value="{$menuItemIconS}" />
+					{if $errorField == 'menuItemIconS'}
+						<p class="innerError">
+							{lang}wcf.global.error.empty{/lang}
+						</p>
+					{/if}
 				</div>
 				<div class="formFieldDesc" id="menuItemIconSHelpMessage">
 					{lang}wcf.cms.page.add.menu.menuItemIconS.description{/lang}
