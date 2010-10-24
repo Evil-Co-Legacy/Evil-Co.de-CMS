@@ -68,7 +68,7 @@ class DynamicPage extends DatabaseObject {
 			return $this->{$variable};
 		}
 		
-		throw new SystemException("method '".$method."' does not exist in class Page");
+		throw new SystemException("method '".$name."' does not exist in class Page");
 	}
 	
 	/**
