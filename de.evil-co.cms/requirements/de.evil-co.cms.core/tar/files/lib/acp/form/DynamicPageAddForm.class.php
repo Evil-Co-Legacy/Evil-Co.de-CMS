@@ -223,7 +223,8 @@ class DynamicPageAddForm extends ACPForm {
 			'menuItemSortOrder'				=>		$this->menuItemSortOrder,
 			'menuItemPosition'				=>		$this->menuItemPosition,
 			'host'							=>		$this->host,
-			'hostID'						=>		$this->hostID
+			'hostID'						=>		$this->hostID,
+			'createMenuItem'				=>		$this->createMenuitem
 		));
 	}
 }
