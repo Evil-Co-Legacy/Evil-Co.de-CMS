@@ -23,7 +23,7 @@ class DynamicPageEditor extends DynamicPage {
 		$sql = "INSERT INTO
 					wcf".WCF_N."_page (title, allowSpidersToIndexThisPage, additionalHeadContent, menuItemID, isPublic, isDefaultPage)
 				VALUES ('".escapeString($title)."',
-						".$allowSpidersToIndexThisPage."
+						".$allowSpidersToIndexThisPage.",
 						'".escapeString($additionalHeadContent)."',
 						".$menuItemID.",
 						".$isPublic.",
