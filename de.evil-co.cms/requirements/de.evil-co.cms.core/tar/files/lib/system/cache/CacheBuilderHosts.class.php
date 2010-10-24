@@ -15,6 +15,7 @@ class CacheBuilderHosts implements CacheBuilder {
 	 * @see CacheBuilder::getData()
 	 */
 	public function getData($cacheResource) {
+		list($cache, $packageID) = explode('-', $cacheResource['cache']);
 		$data = array();
 		
 		$sql = "SELECT
@@ -23,7 +24,7 @@ class CacheBuilderHosts implements CacheBuilder {
 				FROM
 					wcf".WCF_N."_host
 				WHERE
-					packageID = ".PACKAGE_ID."
+					packageID = ".$packageID."
 				ORDER BY
 					IFNULL(title,hostname) ASC";
 		$result = WCF::getDB()->sendQuery($sql);
