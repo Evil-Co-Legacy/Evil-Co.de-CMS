@@ -195,7 +195,7 @@ class DynamicPageAddForm extends ACPForm {
 			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 			
 			// save language variable
-			$language = new LanguageEditor(WCF::getUser()->getLanguage()->languageID);
+			$language = new LanguageEditor(WCF::getLanguage()->languageID);
 			$language->updateItems(array($lang => $title));
 		}
 		
