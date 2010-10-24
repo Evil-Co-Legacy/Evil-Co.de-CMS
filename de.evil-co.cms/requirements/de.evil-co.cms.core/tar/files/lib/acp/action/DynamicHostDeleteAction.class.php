@@ -32,6 +32,8 @@ class DynamicHostDeleteAction extends AbstractAction {
 		
 		if (isset($_REQUEST['hostID'])) $this->hostID = intval($_REQUEST['hostID']);
 		
+		WCF::getUser()->checkPermission('admin.content.cms.canEditHosts');
+		
 		// create editor object
 		$this->host = new HostEditor($this->hostID);
 		
