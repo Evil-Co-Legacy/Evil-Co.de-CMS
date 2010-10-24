@@ -30,7 +30,7 @@ class DynamicPageEditor extends DynamicPage {
 						".($isDefaultPage ? 1 : 0).")";
 		WCF::getDB()->sendQuery($sql);
 		
-		$page = new DynamicPage(WCF::getDB()->getInsertID());
+		$page = new DynamicPageEditor(WCF::getDB()->getInsertID());
 		
 		if ($isDefaultPage) {
 			$sql = "UPDATE
