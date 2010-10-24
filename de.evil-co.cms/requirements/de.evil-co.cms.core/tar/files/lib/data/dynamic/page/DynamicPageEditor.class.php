@@ -23,11 +23,11 @@ class DynamicPageEditor extends DynamicPage {
 		$sql = "INSERT INTO
 					wcf".WCF_N."_page (title, allowSpidersToIndexThisPage, additionalHeadContent, menuItemID, isPublic, isDefaultPage)
 				VALUES ('".escapeString($title)."',
-						".$allowSpidersToIndexThisPage.",
+						".($allowSpidersToIndexThisPage ? 1 : 0).",
 						'".escapeString($additionalHeadContent)."',
 						".$menuItemID.",
-						".$isPublic.",
-						".$isDefaultPage.")";
+						".($isPublic ? 1 : 0).",
+						".($isDefaultPage ? 1 : 0).")";
 		WCF::getDB()->sendQuery($sql);
 		
 		$page = new DynamicPage(WCF::getDB()->getInsertID());
