@@ -28,7 +28,7 @@
 	<p class="error">{lang}wcf.global.form.error{/lang}</p>
 {/if}
 
-<form action="index.php?form=DynamicPage{$action}" method="post">
+<form action="index.php?form=DynamicPage{$action|ucfirst}" method="post">
 	<fieldset>
 		<legend><a href="javascript:void(openList('detailsContent',{ openTitle: '{lang}wcf.cms.page.add.details.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.details.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="detailsContentImage" alt="" title="{lang}wcf.cms.page.add.details.hide{/lang}" /> <span>{lang}wcf.cms.page.add.details{/lang}</span></a></legend>
 		
