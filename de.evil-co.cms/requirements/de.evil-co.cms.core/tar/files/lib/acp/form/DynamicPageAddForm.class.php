@@ -177,7 +177,7 @@ class DynamicPageAddForm extends ACPForm {
 		$menuItemID = 0;
 		
 		// create dynamic page
-		$item = DynamicPageEditor::create($this->title, $this->allowSpidersToIndexThisPage, $this->additionalHeadContent, $menuItemID, $this->isPublic, $this->isDefaultPage);
+		$item = DynamicPageEditor::create($this->title, $this->allowSpidersToIndexThisPage, $this->additionalHeadContent, $menuItemID, $this->isPublic, $this->isDefaultPage, $this->hostID);
 		
 		// create menu item
 		if ($this->createMenuItem) {
