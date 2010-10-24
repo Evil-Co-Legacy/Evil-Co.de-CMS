@@ -58,7 +58,7 @@ class DynamicPageEditor extends DynamicPage {
 		if (!empty($sqlUpdate)) $sqlUpdate .= ",";
 		$sqlUpdate .= "allowSpidersToIndexThisPage = ".$this->allowSpidersToIndexThisPage;
 		
-		$sqlUpdate .= ",additionalHeadContent = '".escapeString($this->additionalHeadContent);
+		$sqlUpdate .= ",additionalHeadContent = '".escapeString($this->additionalHeadContent)."'";
 		
 		$sqlUpdate .= ",menuItemID = ".$this->menuItemID;
 		
