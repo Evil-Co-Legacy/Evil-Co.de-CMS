@@ -13,7 +13,7 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	/**
 	 * @see	Page::$action
 	 */
-	public $action = "edit";
+	public $action = 'edit';
 	
 	/**
 	 * Contains the ID of the page row that should updated
