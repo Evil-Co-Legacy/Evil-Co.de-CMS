@@ -86,7 +86,7 @@ class DynamicPageManager {
 	 * Returnes the content of current cache file (or reloads it)
 	 */
 	public function getCache() {
-		WCF::getCache()->addResource('dynamicPages-'.$this->host->hostID, WCF_DIR.'cache/cache.dynamicPages.php', WCF_DIR.'lib/system/CacheBuilderDynamicPages.class.php');
+		WCF::getCache()->addResource('dynamicPages-'.$this->host->hostID, WCF_DIR.'cache/cache.dynamicPages.php', WCF_DIR.'lib/system/cache/CacheBuilderDynamicPages.class.php');
 		return WCF::getCache()->get('dynamicPages-'.$this->host->hostID);
 	}
 }
