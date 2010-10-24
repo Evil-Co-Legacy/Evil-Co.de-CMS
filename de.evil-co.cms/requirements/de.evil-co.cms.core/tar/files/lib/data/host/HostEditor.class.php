@@ -19,6 +19,17 @@ class HostEditor extends Host {
 	 * @param	string	$languageCode
 	 */
 	public static function create($title, $hostname, $isDisabled = false, $isFallback = false, $languageCode = null) {
+		if ($isFallback) {
+			// remove old fallback
+			$sql = "UPDATE
+						wcf".WCF_N."_host
+					SET
+						isFallback = 0
+					WHERE
+						isFallback = 1";
+			WCF::getDB()->sendQuery($sql);
+		}
+		
 		$sql = "INSERT INTO
 					wcf".WCF_N."_host (`title`, `hostname`, `isDisabled`, `isFallback`, `languageCode`)
 				VALUES
