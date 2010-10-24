@@ -182,7 +182,7 @@
 	<fieldset>
 		<legend><a href="javascript:void(openList('expertContent',{ openTitle: '{lang}wcf.cms.page.add.expert.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.expert.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="expertContentImage" alt="" title="{lang}wcf.cms.page.add.expert.show{/lang}" /> <span>{lang}wcf.cms.page.add.expert{/lang}</span></a></legend>
 		
-		<div class="expertContent" style="display: none;">
+		<div id="expertContent" style="display: none;">
 			<div class="formElement">
 				<div class="formField">
 					<label for="allowSpidersToIndexThisPage"><input type="checkbox" value="1" name="allowSpidersToIndexThisPage" {if $allowSpidersToIndexThisPage}checked="checked"{/if} /> {lang}wcf.cms.page.add.expert.allowSpidersToIndexThisPage{/lang}</label>
