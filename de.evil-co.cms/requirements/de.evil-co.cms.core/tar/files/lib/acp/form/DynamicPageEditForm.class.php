@@ -80,7 +80,7 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	 * @see	Page::assignVariables()
 	 */
 	public function assignVariables() {
-		parent::assgignVariables();
+		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
 			'pageID'			=>		$this->pageID,
