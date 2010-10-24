@@ -50,7 +50,7 @@ class DynamicHostManager {
 	 * Returnes the content of the current cache file
 	 */
 	public static function getCache() {
-		WCF::getCache()->addResource('hosts', WCF_DIR.'cache/cache.hosts.php', WCF_DIR.'lib/system/cache/CacheBuilderHosts.class.php');
+		WCF::getCache()->addResource('hosts-'.PACKAGE_ID, WCF_DIR.'cache/cache.hosts-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderHosts.class.php');
 		return WCF::getCache()->get('hosts');
 	}
 }
