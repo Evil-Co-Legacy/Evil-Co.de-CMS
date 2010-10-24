@@ -80,5 +80,17 @@ class DynamicPageEditor extends DynamicPage {
 					pageID ".(is_array($pageID) ? 'IN ('.implode(',', $pageID).')' : '= '.$pageID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Removes all page entries with given hostID
+	 * @param	mixed	$hostID
+	 */
+	public static function removeFromHost($hostID) {
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page
+				WHERE
+					pageID ".(is_array($hostID) ? "IN (".implode(',', $hostID).")" : "= ".$hostID);
+		WCF::getDB()->sendQuery($sql);
+	}
 }
 ?>
