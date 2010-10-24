@@ -124,12 +124,17 @@
 				inlineHelp.register('menuItemIconS');
 			</script>
 			
-			<div class="formElement">
+			<div class="formElement{if $errorField == 'menuItemIconM'} formError{/if}">
 				<div class="formFieldLabel">
 					<label for="menuItemIconM">{lang}wcf.cms.page.add.menu.menuItemIconM{/lang}</label>
 				</div>
 				<div class="formField">
 					<input type="text" name="menuItemIconM" class="inputText" value="{$menuItemIconM}" />
+					{if $errorField == 'menuItemIconM'}
+						<p class="innerError">
+							{lang}wcf.global.error.empty{/lang}
+						</p>
+					{/if}
 				</div>
 				<div class="formFieldDesc" id="menuItemIconMHelpMessage">
 					{lang}wcf.cms.page.add.menu.menuItemIconM.description{/lang}
