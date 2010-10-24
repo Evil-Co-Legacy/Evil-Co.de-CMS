@@ -18,8 +18,11 @@ class CacheBuilderPageModules implements CacheBuilder {
 		$sql = "SELECT
 					module.*
 				FROM
-					wcf".WCF_N."_page_module AS module,
+					wcf".WCF_N."_page_module AS module
+				LEFT JOIN
 					wcf".WCF_N."_package_dependency AS package_dependency
+				ON
+					module.packageID = package_dependency.dependency
 				LEFT JOIN
 					wcf".WCF_N."_page_module_custom AS module_custom
 				ON
@@ -32,8 +35,6 @@ class CacheBuilderPageModules implements CacheBuilder {
 					module_page.pageID = ".$pageID."
 				AND
 					module_page.isVisible = 1
-				AND
-					module.packageID = package_dependency.dependency
 				AND
 					package_dependency.packageID = ".$packageID."
 				ORDER BY
