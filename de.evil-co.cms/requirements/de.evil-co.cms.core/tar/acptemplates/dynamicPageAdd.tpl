@@ -39,9 +39,11 @@
 				</div>
 				<div class="formField">
 					<input type="text" class="inputText" name="title" value="{$title}" />
-					<p class="innerError">
-						{lang}wcf.global.error.empty{/lang}
-					</p>
+					{if $errorField == 'title'}
+						<p class="innerError">
+							{lang}wcf.global.error.empty{/lang}
+						</p>
+					{/if}
 				</div>
 				<div class="formFieldDesc" id="titleHelpMessage">
 					{lang}wcf.cms.page.add.details.title.description{/lang}
