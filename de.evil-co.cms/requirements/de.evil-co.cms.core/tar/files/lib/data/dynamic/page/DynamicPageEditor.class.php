@@ -120,5 +120,12 @@ class DynamicPageEditor extends DynamicPage {
 		
 		return true;
 	}
+	
+	/**
+	 * Removes the cache for the given page
+	 */
+	public static function clearCache($pageID, $hostID) {
+		// TODO: Implement
+	}
 }
 ?>
