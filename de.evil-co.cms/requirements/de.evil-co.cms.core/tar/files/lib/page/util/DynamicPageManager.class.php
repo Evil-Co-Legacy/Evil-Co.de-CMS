@@ -47,7 +47,7 @@ class DynamicPageManager {
 		$this->loadCache();
 		
 		// catch errors that can occour if a user modifies the database manualy
-		if (!$this->defaultPage) throw new SystemException("No default page specified!");
+		if (!$this->defaultPage) throw new NamedUserException(WCF::getLanguage()->get('cms.global.noDefaultPage'));
 	}
 	
 	/**
