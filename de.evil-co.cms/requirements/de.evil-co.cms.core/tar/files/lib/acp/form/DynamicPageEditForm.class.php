@@ -23,7 +23,7 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	
 	/**
 	 * Contains the object that represents the page row that should updated
-	 * @var	PageEditor
+	 * @var	DynamicPageEditor
 	 */
 	public $page = null;
 	
