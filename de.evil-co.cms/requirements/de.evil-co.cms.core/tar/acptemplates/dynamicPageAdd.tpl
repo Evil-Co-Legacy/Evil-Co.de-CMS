@@ -42,6 +42,7 @@
 					{if $errorField == 'title'}
 						<p class="innerError">
 							{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+							{if $errorType == 'notAvailable'}{lang}wcf.cms.page.add.details.title.notAvailable{/lang}{/if}
 						</p>
 					{/if}
 				</div>
