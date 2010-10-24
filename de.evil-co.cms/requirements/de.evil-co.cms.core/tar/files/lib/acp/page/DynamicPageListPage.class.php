@@ -137,10 +137,10 @@ class DynamicPageListPage extends SortablePage {
 					*
 				FROM
 					wcf".WCF_N."_page
-				ORDER BY
-					".$this->sortField." ".$this->sortOrder."
 				WHERE
-					hostID = ".$this->host->hostID;
+					hostID = ".$this->host->hostID."
+				ORDER BY
+					".$this->sortField." ".$this->sortOrder;
 		$result = WCF::getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo - 1) * $this->itemsPerPage);
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
