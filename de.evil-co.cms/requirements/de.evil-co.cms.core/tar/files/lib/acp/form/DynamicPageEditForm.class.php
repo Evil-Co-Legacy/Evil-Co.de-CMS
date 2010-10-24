@@ -31,7 +31,7 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	 * @see Page::readParameters()
 	 */
 	public function readParameters() {
-		parent::readParameters();
+		ACPForm::readParameters();
 		
 		if (isset($_REQUEST['pageID'])) $this->pageID = intval($_REQUEST['pageID']);
 		
