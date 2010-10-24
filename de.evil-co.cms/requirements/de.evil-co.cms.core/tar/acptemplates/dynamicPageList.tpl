@@ -34,6 +34,24 @@
 	</div>
 </div>
 
+<fieldset>
+	<legend>{lang}wcf.cms.page.list.details{/lang}</legend>
+	
+	{if $host->getTitle() != ""}
+		<div class="formElement">
+			<p class="formFieldLabel">{lang}wcf.cms.page.list.details.title{/lang}</p>
+			<p class="formField">{lang}{$host->getTitle()}{/lang}</p>
+		</div>
+	{/if}
+	
+	<div class="formElement">
+		<div class="formElement">
+			<p class="formFieldLabel">{lang}wcf.cms.page.list.details.hostname{/lang}</p>
+			<p class="formField">{$host->getHostname()}</p>
+		</div>
+	</div>
+</fieldset>
+
 {if $pages|count}
 	<div class="border content">
 		<div class="container-1">
