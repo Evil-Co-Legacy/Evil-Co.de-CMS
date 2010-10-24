@@ -27,7 +27,7 @@
 	<p class="success">{lang}wcf.cms.host.{$action}.success{/lang}</p>
 {/if}
 
-<form action="index.php?form=DynamicHostAdd" method="post">
+<form action="index.php?form=DynamicHost{$action|ucfirst}" method="post">
 	<fieldset>
 		<legend>{lang}wcf.cms.host.add.general{/lang}</legend>
 		
