@@ -14,10 +14,19 @@ class ModuleManager {
 	protected $modules = array();
 	
 	/**
+	 * Contains the ID of the page
+	 * @var	integer
+	 */
+	protected $pageID = 0;
+	
+	/**
 	 * Creates a new ModuleManager instance with all modules for page $pageName
 	 * @param	string	$pageName
 	 */
 	public function __construct($pageID) {
+		// write variables
+		$this->pageID = $pageID;
+		
 		// load page module cache
 		WCF::getCache()->addResource('pageModules-'.$pageID.'-'.PACKAGE_ID, WCF_DIR.'cache/cache.pageModules-'.$pageID.'-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderPageModules.class.php');
 		$modules = WCF::getCache()->get('pageModules-'.$pageID.'-'.PACKAGE_ID);
@@ -72,6 +81,21 @@ class ModuleManager {
 		}
 		
 		return $modules;
+	}
+	
+	/**
+	 * Removes all entries for the parent page
+	 */
+	public function remove() {
+		// delete to_page table entries
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_module_to_page
+				WHERE
+					pageID = ".$this->pageID;
+		WCF::getDB()->sendQuery($sql);
+		
+		// remove cache
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$this->pageID.'-'.PACKAGE_ID.'.php');
 	}
 }
 ?>
