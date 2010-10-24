@@ -56,15 +56,15 @@ class DynamicPageEditor extends DynamicPage {
 		}
 		
 		if (!empty($sqlUpdate)) $sqlUpdate .= ",";
-		$sqlUpdate .= "allowSpidersToIndexThisPage = ".$this->allowSpidersToIndexThisPage;
+		$sqlUpdate .= "allowSpidersToIndexThisPage = ".($this->allowSpidersToIndexThisPage ? 1 : 0);
 		
 		$sqlUpdate .= ",additionalHeadContent = '".escapeString($this->additionalHeadContent)."'";
 		
 		$sqlUpdate .= ",menuItemID = ".$this->menuItemID;
 		
-		$sqlUpdate .= ",isPublic = ".$this->isPublic;
+		$sqlUpdate .= ",isPublic = ".($this->isPublic ? 1 : 0);
 		
-		$sqlUpdate .= ",isDefaultPage = ".$this->isDefaultPage;
+		$sqlUpdate .= ",isDefaultPage = ".($this->isDefaultPage ? 1 : 0);
 		
 		$sql = "UPDATE
 					wcf".WCF_N."_page
