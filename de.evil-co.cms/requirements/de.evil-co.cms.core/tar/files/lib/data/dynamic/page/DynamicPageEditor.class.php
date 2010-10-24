@@ -98,5 +98,26 @@ class DynamicPageEditor extends DynamicPage {
 					pageID ".(is_array($hostID) ? "IN (".implode(',', $hostID).")" : "= ".$hostID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Returnes true if a page title is available
+	 * @param	string	$title
+	 * @param	integer	$hostID
+	 */
+	public static function isAvailable($title, $hostID) {
+		$sql = "SELECT
+					COUNT(*) AS count
+				FROM
+					wcf".WCF_N."_page
+				WHERE
+					title = '".escapeString($title)."'
+				AND
+					hostID = ".$hostID;
+		$result = WCF::getDB()->getFirstRow($sql);
+		
+		if ($result['count'] > 0) return false;
+		
+		return true;
+	}
 }
 ?>
