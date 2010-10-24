@@ -80,7 +80,7 @@ class DynamicPageAddForm extends ACPForm {
 	 * Contains the sortOrder for the new menu item
 	 * @var	integer
 	 */
-	public $menuItemPosition = 0;
+	public $menuItemSortOrder = 0;
 	
 	/**
 	 * Contains the small icon for the new menu item
