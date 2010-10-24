@@ -7,11 +7,6 @@
 	</div>
 </div>
 
-{if $success|isset}
-	<p class="success">{lang}wcf.cms.host.{$action}.success{/lang}</p>
-{/if}
-
-
 <div class="contentHeader">
 	<div class="largeButtons">
 		<ul>
@@ -24,25 +19,44 @@
 	</div>
 </div>
 
+{if $errorField}
+	<p class="error">{lang}wcf.global.form.error{/lang}</p>
+{/if}
+
+{if $success|isset}
+	<p class="success">{lang}wcf.cms.host.{$action}.success{/lang}</p>
+{/if}
+
 <form action="index.php?form=DynamicHostAdd" method="post">
 	<fieldset>
 		<legend>{lang}wcf.cms.host.add.general{/lang}</legend>
 		
-		<div class="formElement">
+		<div class="formElement"{if $errorField == 'title'} class="formError"{/if}>
 			<div class="formFieldLabel">
 				<label for="title">{lang}wcf.cms.host.add.general.title{/lang}</label>
 			</div>
 			<div class="formField">
 				<input type="text" class="inputText" value="{$title}" name="title" />
+				{if $errorField == 'title'}
+					<p class="innerError">
+						{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+					</p>
+				{/if}
 			</div>
 		</div>
 		
-		<div class="formElement">
+		<div class="formElement"{if $errorField == 'hostname'} class="formError"{/if}>
 			<div class="formFieldLabel">
 				<label for="hostname">{lang}wcf.cms.host.add.general.hostname{/lang}</label>
 			</div>
 			<div class="formField">
 				<input type="text" class="inputText" value="{$hostname}" name="hostname" />
+				{if $errorField == 'hostname'}
+					<p class="innerError">
+						{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
+						{if $errorType == 'invalid'}{lang}wcf.cms.host.add.general.hostname.invalid{/lang}{/if}
+					</p>
+				{/if}
 			</div>
 		</div>
 	</fieldset>
