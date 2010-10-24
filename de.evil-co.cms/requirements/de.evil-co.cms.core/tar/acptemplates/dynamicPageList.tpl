@@ -25,7 +25,7 @@
 			
 			{if $this->user->getPermission('admin.content.cms.canAddPages')}
 				<li>
-					<a href="index.php?form=DynamicPageAdd&amp;hostID={$hostID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/pageAddM.png" alt="" /> <span>{lang}wcf.cms.page.add.title{/lang}</span></a>
+					<a href="index.php?form=DynamicPageAdd&amp;hostID={$host->hostID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.add.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/pageAddM.png" alt="" /> <span>{lang}wcf.cms.page.add.title{/lang}</span></a>
 				</li>
 			{/if}
 			
