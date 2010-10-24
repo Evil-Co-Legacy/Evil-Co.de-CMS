@@ -176,34 +176,38 @@ class DynamicPageAddForm extends ACPForm {
 		
 		$menuItemID = 0;
 		
+		// create dynamic page
+		$item = DynamicPageEditor::create($this->title, $this->allowSpidersToIndexThisPage, $this->additionalHeadContent, $menuItemID, $this->isPublic, $this->isDefaultPage);
+		
 		// create menu item
 		if ($this->createMenuItem) {
 			require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
 			
-			$menuItem = PageMenuItemEditor::create((empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle), '', $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
+			// build language var
+			$lang = 'wcf.cms.header.menu.host'.$this->hostID.'.page'.$item->pageID;
+			$title = (empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle);
+			
+			// create menu item
+			$menuItem = PageMenuItemEditor::create($lang, '', $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
 			$menuItemID = $menuItem->menuItemID;
+			
+			// create language var
+			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
+			
+			// save language variable
+			$language = new LanguageEditor(WCF::getUser()->getLanguage()->languageID);
+			$language->updateItems(array($lang => $title));
 		}
 		
-		// create dynamic page
-		$item = DynamicPageEditor::create($this->title, $this->allowSpidersToIndexThisPage, $this->additionalHeadContent, $menuItemID, $this->isPublic, $this->isDefaultPage);
-		
-		// call placeholder
-		$this->updateMenuEntry($menuItem, $item);
+		// update menu item id
+		$item->menuItemID = $menuItemID;
+		$item->update();
 		
 		// send redirect headers
 		HeaderUtil::redirect('index.php?form=DynamicPageEdit&pageID='.$item->pageID.'&packageID='.PACKAGE_ID.'&created=1'.SID_ARG_2ND_NOT_ENCODED);
 		
 		// call event
 		$this->saved();
-	}
-	
-	/**
-	 * This function is a placeholder for applications wich uses this package
-	 * @param	PageMenuItemEditor	$menuItem
-	 * @param	DynamicPageEditor	$item
-	 */
-	public function updateMenuEntry($menuItem, $item) {
-		// nothing to do here
 	}
 	
 	/**
