@@ -53,7 +53,7 @@ class DynamicPage extends DatabaseObject {
 		if (!$this->pageID)
 			$this->data['pageID'] = 0;
 		else
-			$this->moduleManager = new ModuleManager($this->pageID);
+			$this->data['moduleManager'] = new ModuleManager($this->pageID);
 	}
 	
 	/**
