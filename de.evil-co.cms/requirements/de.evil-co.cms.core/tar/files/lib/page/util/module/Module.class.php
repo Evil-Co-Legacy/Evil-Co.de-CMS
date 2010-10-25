@@ -10,25 +10,25 @@ interface Module {
 	 * Defines the template that should displayed
 	 * @var string
 	 */
-	public $templateName;
+	// public $templateName;
 	
 	/**
 	 * Defines needed permission(s)
 	 * @var mixed (string/array)
 	 */
-	public $neededPermissions;
+	// public $neededPermissions;
 	
 	/**
 	 * Defines custom stylesheet files that should included
 	 * @var string
 	 */
-	public $stylesheet;
+	// public $stylesheet;
 	
 	/**
 	 * Defines custom head contents that should show up in html code
 	 * @var string
 	 */
-	public $additionalHeadContents;
+	// public $additionalHeadContents;
 	
 	/**
 	 * Creates a new Module object
