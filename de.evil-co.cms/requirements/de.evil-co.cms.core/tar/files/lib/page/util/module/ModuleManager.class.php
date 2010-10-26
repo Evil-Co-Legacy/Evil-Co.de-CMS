@@ -97,5 +97,13 @@ class ModuleManager {
 		// remove cache
 		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$this->pageID.'-'.PACKAGE_ID.'.php');
 	}
+	
+	/**
+	 * Returnes all available modules
+	 */
+	public static function getAvailableModules() {
+		WCF::getCache()->addResource('pageModules-'.PACKAGE_ID, WCF_DIR.'cache/cache.pageModules-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAvailablePageModules.class.php');
+		$modules = WCF::getCache()->get('pageModules-'.PACKAGE_ID);
+	}
 }
 ?>
