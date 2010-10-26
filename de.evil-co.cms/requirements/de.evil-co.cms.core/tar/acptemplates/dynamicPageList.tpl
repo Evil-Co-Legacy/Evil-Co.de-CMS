@@ -62,6 +62,8 @@
 					<li id="item_{@$pageID}" class="deletable">
 						<div class="buttons">
 							{if $this->user->getPermission('admin.content.cms.canEditPages')}
+								<a href="index.php?form=DynamicPageModuleAdd&amp;pageID={$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/dynamicPageModuleAddS.png" alt="" title="{lang}wcf.cms.page.moduleAdd{/lang}" /></a>
+							
 								<a href="index.php?form=DynamicPageEdit&amp;pageID={@$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" title="{lang}wcf.cms.page.edit{/lang}" /></a>
 
 								<a href="index.php?action=DynamicPageDelete&amp;pageID={@$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" class="deleteButton"><img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" title="{lang}wcf.cms.page.delete{/lang}" longdesc="{lang}wcf.cms.page.delete.sure{/lang}" /></a>
