@@ -264,6 +264,8 @@
 						</div>
 					</div>
 				{/foreach}
+			{else}
+				<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 			{/if}
 		</div>
 	{/if}
