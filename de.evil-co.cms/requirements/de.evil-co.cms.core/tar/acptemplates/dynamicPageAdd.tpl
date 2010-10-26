@@ -231,6 +231,30 @@
 		</div>
 	</fieldset>
 	
+	{if $action == 'edit'}
+		{assign var='moduleList' value=$page->moduleManager->getModuleInstances()}
+		
+		{if $moduleList|count}
+			{foreach from=$moduleList item=$module}
+				<div id="module{$module|get_class|ucfirst}" class="border titleBarPanel">
+					<div class="containerHead">
+						<div class="containerIcon">
+							<a onclick="openList('module{$module|get_class|ucfirst}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+								<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList('module{$module|get_class|ucfirst}ContentImage" alt="" />
+							</a>
+						</div>
+						<div class="containerContent">
+							<p>{lang}wcf.cms.module.{$module|get_class}.title{/lang}</p>
+						</div>
+					</div>
+					<div id="module{$module|get_class|ucfirst}Content" class="container-1">
+						
+					</div>
+				</div>
+			{/foreach}
+		{/if}
+	{/if}
+	
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
 		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
