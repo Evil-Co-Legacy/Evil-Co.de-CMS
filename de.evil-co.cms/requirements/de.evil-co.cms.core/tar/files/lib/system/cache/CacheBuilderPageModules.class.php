@@ -6,6 +6,7 @@ require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
  * Caches all page modules for a page
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
  */
 class CacheBuilderPageModules implements CacheBuilder {
 	
