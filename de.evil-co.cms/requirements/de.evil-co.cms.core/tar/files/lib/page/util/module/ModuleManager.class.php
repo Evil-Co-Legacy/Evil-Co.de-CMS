@@ -84,6 +84,32 @@ class ModuleManager {
 	}
 	
 	/**
+	 * Assignes a module to a page
+	 * @param	integer	$moduleID
+	 * @param	boolean	$isVisible
+	 * @param	integer	$sortOrder
+	 */
+	public function assign($moduleID, $isVisible = false, $sortOrder = 0) {
+		$sql = "INSERT INTO
+					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder)
+				VALUES
+					(".$moduleID.", ".$this->pageID.", ".($this->isVisible ? 1 : 0).", ".$sortOrder.")";
+		WCF::getDB()->sendQuery($sql);
+		
+		if ($sortOrder == 0) {
+			$sql = "UPDATE
+						wcf".WCF_N."_page_module_to_page
+					SET
+						sortOrder = (MAX(sortOrder) + 1)
+					WHERE
+						moduleID = ".$moduleID."
+					AND
+						pageID = ".$this->pageID;
+			WCF::getDB()->sendQuery($sql);
+		}
+	}
+	
+	/**
 	 * Removes all entries for the parent page
 	 */
 	public function remove() {
