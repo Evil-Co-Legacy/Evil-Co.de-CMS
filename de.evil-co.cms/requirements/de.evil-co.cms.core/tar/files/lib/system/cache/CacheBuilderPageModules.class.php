@@ -31,6 +31,8 @@ class CacheBuilderPageModules implements CacheBuilder {
 					page_module.pageID = ".$pageID."
 				AND
 					page_module.isVisible = 1
+				AND
+					page_module.packageID = ".$packageID."
 				ORDER BY
 					page_module.sortOrder ASC";
 		$result = WCF::getDB()->sendQuery($sql);
