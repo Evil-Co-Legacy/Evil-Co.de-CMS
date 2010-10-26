@@ -16,29 +16,23 @@ class CacheBuilderPageModules implements CacheBuilder {
 		list($cache, $pageID, $packageID) = explode('-', $cacheResource['cache']);
 		
 		$sql = "SELECT
-					module.*
+					modules.*
 				FROM
-					wcf".WCF_N."_page_module AS module
+					wcf".WCF_N."_page_module modules
 				LEFT JOIN
-					wcf".WCF_N."_package_dependency AS package_dependency
+					wcf".WCF_N."_package_dependency dependency
 				ON
-					module.packageID = package_dependency.dependency
+					dependency.dependency = modules.packageID
 				LEFT JOIN
-					wcf".WCF_N."_page_module_custom AS module_custom
+					wcf".WCF_N."_page_module_to_page page_module
 				ON
-					module.moduleID = module_custom.moduleTemplateID
-				LEFT JOIN
-					wcf".WCF_N."_page_module_to_page AS module_page
-				ON
-					module_custom.moduleID = module_page.moduleID
+					page_module.moduleID = modules.moduleID
 				WHERE
-					module_page.pageID = ".$pageID."
+					page_module.pageID = ".$pageID."
 				AND
-					module_page.isVisible = 1
-				AND
-					package_dependency.packageID = ".$packageID."
+					page_module.isVisible = 1
 				ORDER BY
-					module_page.sortOrder ASC";
+					page_module.sortOrder ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$data = array();
