@@ -232,27 +232,29 @@
 	</fieldset>
 	
 	{if $action == 'edit'}
-		{assign var='moduleList' value=$page->moduleManager->getModuleInstances()}
-		
-		{if $moduleList|count}
-			{foreach from=$moduleList item=$module}
-				<div id="module{$module|get_class|ucfirst}" class="border titleBarPanel">
-					<div class="containerHead">
-						<div class="containerIcon">
-							<a onclick="openList('module{$module|get_class|ucfirst}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
-								<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList('module{$module|get_class|ucfirst}ContentImage" alt="" />
-							</a>
+		<div id="moduleList">
+			{assign var='moduleList' value=$page->moduleManager->getModuleInstances()}
+			
+			{if $moduleList|count}
+				{foreach from=$moduleList item=$module}
+					<div id="module{$module|get_class|ucfirst}" class="border titleBarPanel">
+						<div class="containerHead">
+							<div class="containerIcon">
+								<a onclick="openList('module{$module|get_class|ucfirst}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+									<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList('module{$module|get_class|ucfirst}ContentImage" alt="" />
+								</a>
+							</div>
+							<div class="containerContent">
+								<p>{lang}wcf.cms.module.{$module|get_class}.title{/lang}</p>
+							</div>
 						</div>
-						<div class="containerContent">
-							<p>{lang}wcf.cms.module.{$module|get_class}.title{/lang}</p>
+						<div id="module{$module|get_class|ucfirst}Content" class="container-1">
+							
 						</div>
 					</div>
-					<div id="module{$module|get_class|ucfirst}Content" class="container-1">
-						
-					</div>
-				</div>
-			{/foreach}
-		{/if}
+				{/foreach}
+			{/if}
+		</div>
 	{/if}
 	
 	<div class="formSubmit">
