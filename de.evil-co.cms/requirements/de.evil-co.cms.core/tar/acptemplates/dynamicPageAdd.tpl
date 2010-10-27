@@ -248,7 +248,7 @@
 			
 			{if $moduleList|count}
 				{foreach from=$moduleList item=$module}
-					<div id="module{$module|get_class|ucfirst}" class="border titleBarPanel">
+					<div id="module{$module->getName()|ucfirst}" class="border titleBarPanel">
 						<div class="containerHead">
 							<div class="containerIcon">
 								<a onclick="openList('module{$module|get_class|ucfirst}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
@@ -256,11 +256,19 @@
 								</a>
 							</div>
 							<div class="containerContent">
-								<p>{lang}wcf.cms.module.{$module|get_class}.title{/lang}</p>
+								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
 							</div>
 						</div>
 						<div id="module{$module|get_class|ucfirst}Content" class="container-1">
-							
+							{if $module->getACPTemplateName() != ''}
+								{assign var='moduleOptions' value=$module->options->getOptions()}
+								{include file=$module->getACPTemplateName() moduleOptions=$module->options->getOptions()}
+							{else}
+								<div class="formElement">
+									<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+									<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+								</div>
+							{/if}
 						</div>
 					</div>
 				{/foreach}
