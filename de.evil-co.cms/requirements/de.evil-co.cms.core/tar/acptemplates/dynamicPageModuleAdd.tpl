@@ -47,35 +47,35 @@
 {if $action == 'edit'}
 	{foreach from=$module->getOptionGroups() item='group'}
 		<fieldset>
-			<legend>{lang}wcf.cms.module.option.category.{$group->name}.title{/lang}</legend>
+			<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
 			
 			{foreach from=$group->getOptions() item='option'}
 				<div class="formField">
-					{if $option->type != 'boolean'}
+					{if $option->getType() != 'boolean'}
 						<div class="formFieldLabel">
-							<label for="{$group->name}[{$option->name}]">{lang}wcf.cms.module.option.{$option->name}.title</label>
+							<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title</label>
 						</div>
 					{/if}
 					<div class="formField">
-						{if $option->type != 'boolean'}
-							{if $option->type != 'textarea'}
-								<input type="{$option->type}" name="{$group->name}[[$option->name}]" value="{$option->value}" class="{$option->cssClass}" />
+						{if $option->getType() != 'boolean'}
+							{if $option->getType() != 'textarea'}
+								<input type="{$option->getType()}" name="{$group->getName()}[[$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
 							{else}
-								<textarea rows="10" columns="40" name="{$group->name}[[$option->name}]">{$option->value}</textarea>
+								<textarea rows="10" columns="40" name="{$group->getName()}[[$option->getName()}]">{$option->getValue()}</textarea>
 							{/if}
 						{else}
-							<label for="{$group->name}[{$option->name}]"><input type="checkbox" name="{$group->name}[{$option->name}]" {if $option->value}checked="checked" {/if} /> {lang}wcf.cms.module.option.{$option->name}.title{/lang}</label>
+							<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
 						{/if}
 					</div>
-					{if $option->displayDescription}
-						<div class="formFieldDesc" id="{$group->name|concat:$option->name|sha1}HelpMessage">
-							{lang}wcf.cms.module.option.{$option->name}.description{/lang}
+					{if $option->getDisplayDescription()}
+						<div class="formFieldDesc" id="{$group->getName()|concat:$option->getName()|sha1}HelpMessage">
+							{lang}wcf.cms.module.option.{$option->getName()}.description{/lang}
 						</div>
 					{/if}
 				</div>
 				{if $option->displayDescription}
 					<script type="text/javascript">
-						inlineHelp.register('{$group->name|concat:$option->name|sha1|encodejs}');
+						inlineHelp.register('{$group->getName()|concat:$option->getName()|sha1|encodejs}');
 					</script>
 				{/if}
 			{/foreach}
