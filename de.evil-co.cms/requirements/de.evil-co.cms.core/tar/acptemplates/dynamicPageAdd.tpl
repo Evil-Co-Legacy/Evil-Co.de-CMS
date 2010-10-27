@@ -255,6 +255,9 @@
 								<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
 									<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
 								</a>
+								<a href="index.php?form=DynamicPageModuleEdit&amp;pageID={$pageID}&amp;moduleID={$module->moduleID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+									<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+								</a>
 							</div>
 							<div class="containerContent">
 								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
