@@ -17,81 +17,83 @@
 	</div>
 </div>
 
-{* Module add form *}
-{if $action == 'add'}
-	<fieldset>
-		<legend>{lang}wcf.cms.page.edit.module.add.general{/lang}</legend>
-		
-		<div class="formElement">
-			<div class="formFieldLabel">
-				<label for="moduleID">{lang}wcf.cms.page.edit.module.add.general.moduleID{/lang}</label>
-			</div>
-			<div class="formField">
-				<select name="moduleID">
-					{foreach from=$moduleList item=$module}
-						<option value="{$module.moduleID}">{lang}wcf.cms.module.{$module.name}.title{/lang}</option>
-					{/foreach}
-				</select>
-			</div>
-			<div class="formFieldDesc" id="moduleIDHelpMessage">
-				{lang}wcf.cms.page.edit.module.add.general.moduleID.description{/lang}
-			</div>
-		</div>
-		<script type="text/javascript">
-			inlineHelp.register('moduleID');
-		</script>
-	</fieldset>
-{/if}
-
-{* Module edit form *}
-{if $action == 'edit'}
-	{foreach from=$module->options->getOptions() item='group'}
+<form action="index.php?form=DynamicPageModuleAdd" method="post">
+	{* Module add form *}
+	{if $action == 'add'}
 		<fieldset>
-			<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
+			<legend>{lang}wcf.cms.page.edit.module.add.general{/lang}</legend>
 			
-			{foreach from=$group->getOptions() item='option'}
+			<div class="formElement">
+				<div class="formFieldLabel">
+					<label for="moduleID">{lang}wcf.cms.page.edit.module.add.general.moduleID{/lang}</label>
+				</div>
 				<div class="formField">
-					{if $option->getType() != 'boolean'}
-						<div class="formFieldLabel">
-							<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
-						</div>
-					{/if}
+					<select name="moduleID">
+						{foreach from=$moduleList item=$module}
+							<option value="{$module.moduleID}">{lang}wcf.cms.module.{$module.name}.title{/lang}</option>
+						{/foreach}
+					</select>
+				</div>
+				<div class="formFieldDesc" id="moduleIDHelpMessage">
+					{lang}wcf.cms.page.edit.module.add.general.moduleID.description{/lang}
+				</div>
+			</div>
+			<script type="text/javascript">
+				inlineHelp.register('moduleID');
+			</script>
+		</fieldset>
+	{/if}
+	
+	{* Module edit form *}
+	{if $action == 'edit'}
+		{foreach from=$module->options->getOptions() item='group'}
+			<fieldset>
+				<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
+				
+				{foreach from=$group->getOptions() item='option'}
 					<div class="formField">
 						{if $option->getType() != 'boolean'}
-							{if $option->getType() != 'textarea'}
-								<input type="{$option->getType()}" name="{$group->getName()}[[$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
+							<div class="formFieldLabel">
+								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
+							</div>
+						{/if}
+						<div class="formField">
+							{if $option->getType() != 'boolean'}
+								{if $option->getType() != 'textarea'}
+									<input type="{$option->getType()}" name="{$group->getName()}[[$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
+								{else}
+									<textarea rows="10" columns="40" name="{$group->getName()}[[$option->getName()}]">{$option->getValue()}</textarea>
+								{/if}
 							{else}
-								<textarea rows="10" columns="40" name="{$group->getName()}[[$option->getName()}]">{$option->getValue()}</textarea>
+								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
 							{/if}
-						{else}
-							<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
+						</div>
+						{if $option->getDisplayDescription()}
+							<div class="formFieldDesc" id="{$group->getName()|concat:$option->getName()|sha1}HelpMessage">
+								{lang}wcf.cms.module.option.{$option->getName()}.description{/lang}
+							</div>
 						{/if}
 					</div>
-					{if $option->getDisplayDescription()}
-						<div class="formFieldDesc" id="{$group->getName()|concat:$option->getName()|sha1}HelpMessage">
-							{lang}wcf.cms.module.option.{$option->getName()}.description{/lang}
-						</div>
+					{if $option->displayDescription}
+						<script type="text/javascript">
+							inlineHelp.register('{$group->getName()|concat:$option->getName()|sha1|encodejs}');
+						</script>
 					{/if}
-				</div>
-				{if $option->displayDescription}
-					<script type="text/javascript">
-						inlineHelp.register('{$group->getName()|concat:$option->getName()|sha1|encodejs}');
-					</script>
-				{/if}
-			{/foreach}
-		</fieldset>
-	{/foreach}
-{/if}
-
-<div class="formSubmit">
-	<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
-	<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
-	<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
-	{if $action == 'edit'}
-		<input type="hidden" name="pageID" value="{@$pageID}" />
-		<input type="hidden" name="moduleID" value="{@$moduleID}" />
+				{/foreach}
+			</fieldset>
+		{/foreach}
 	{/if}
- 	{@SID_INPUT_TAG}
- </div>
+	
+	<div class="formSubmit">
+		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
+		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
+		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+		{if $action == 'edit'}
+			<input type="hidden" name="pageID" value="{@$pageID}" />
+			<input type="hidden" name="moduleID" value="{@$moduleID}" />
+		{/if}
+	 	{@SID_INPUT_TAG}
+	 </div>
+ </form>
 
 {include file='footer'}
