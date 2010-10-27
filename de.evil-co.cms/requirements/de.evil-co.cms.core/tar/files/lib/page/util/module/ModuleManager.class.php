@@ -97,10 +97,16 @@ class ModuleManager {
 		WCF::getDB()->sendQuery($sql);
 		
 		if ($sortOrder == 0) {
+			$sql = "SELECT
+						MAX(sortOrder) AS sortOrder
+					FROM
+						wcf".WCF_N."_page_module_to_page";
+			$order = WCF::getDB()->getFirstRow($sql);
+			
 			$sql = "UPDATE
 						wcf".WCF_N."_page_module_to_page
 					SET
-						sortOrder = (MAX(sortOrder) + 1)
+						sortOrder = ".($order['sortOrder'] + 1)."
 					WHERE
 						moduleID = ".$moduleID."
 					AND
