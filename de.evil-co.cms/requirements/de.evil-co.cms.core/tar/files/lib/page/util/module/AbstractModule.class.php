@@ -130,9 +130,9 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	}
 	
 	/**
-	 * @see Module::display()
+	 * @see Module::getTemplateName()
 	 */
-	public function display() {
+	public function getTemplateName() {
 		return $this->templateName;
 	}
 }
