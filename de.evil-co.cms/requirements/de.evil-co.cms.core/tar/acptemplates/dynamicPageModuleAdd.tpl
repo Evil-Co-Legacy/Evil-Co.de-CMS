@@ -11,7 +11,7 @@
 	<div class="largeButtons">
 		<ul>
 			<li>
-				<a href="index.php?form=DynamicPageEdit&amp;pageID={$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.edit.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostListM.png" alt="" /> <span>{lang}wcf.cms.page.edit.title{/lang}</span></a>
+				<a href="index.php?form=DynamicPageEdit&amp;pageID={$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.edit.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/pageEditL.png" alt="" /> <span>{lang}wcf.cms.page.edit.title{/lang}</span></a>
 			</li>
 		</ul>
 	</div>
