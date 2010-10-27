@@ -53,7 +53,7 @@
 				<div class="formField">
 					{if $option->getType() != 'boolean'}
 						<div class="formFieldLabel">
-							<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title</label>
+							<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
 						</div>
 					{/if}
 					<div class="formField">
