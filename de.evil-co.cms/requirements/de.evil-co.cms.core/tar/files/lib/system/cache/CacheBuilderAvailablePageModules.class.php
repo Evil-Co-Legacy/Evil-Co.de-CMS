@@ -24,12 +24,10 @@ class CacheBuilderAvailablePageModules implements CacheBuilder {
 					wcf".WCF_N."_package_dependency dependency
 				ON
 					dependency.dependency = modules.packageID
-				AND
-					page_module.isVisible = 1
-				AND
+				WHERE
 					dependency.packageID = ".$packageID."
 				ORDER BY
-					page_module.sortOrder ASC";
+					modules.name ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$data = array();
