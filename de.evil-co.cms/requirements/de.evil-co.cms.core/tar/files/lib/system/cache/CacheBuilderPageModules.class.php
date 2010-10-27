@@ -31,8 +31,6 @@ class CacheBuilderPageModules implements CacheBuilder {
 				WHERE
 					page_module.pageID = ".$pageID."
 				AND
-					page_module.isVisible = 1
-				AND
 					dependency.packageID = ".$packageID."
 				ORDER BY
 					page_module.sortOrder ASC";
