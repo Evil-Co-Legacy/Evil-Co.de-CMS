@@ -132,7 +132,7 @@ class ModuleManager {
 	 */
 	public static function getAvailableModules() {
 		WCF::getCache()->addResource('availablePageModules-'.PACKAGE_ID, WCF_DIR.'cache/cache.availablePageModules-'.PACKAGE_ID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderAvailablePageModules.class.php');
-		$modules = WCF::getCache()->get('availablePageModules-'.PACKAGE_ID);
+		return WCF::getCache()->get('availablePageModules-'.PACKAGE_ID);
 	}
 }
 ?>
