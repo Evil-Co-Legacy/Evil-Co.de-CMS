@@ -43,5 +43,6 @@ CREATE TABLE `wcf1_page_module_to_page` (
 	`moduleID` INT NOT NULL,
 	`pageID` INT NOT NULL,
 	`isVisible` TINYINT (1) NOT NULL DEFAULT '1',
-	`sortOrder` INT NOT NULL
+	`sortOrder` INT NOT NULL,
+	`options` TEXT NOT NULL
 );
