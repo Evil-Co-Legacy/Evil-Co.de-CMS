@@ -23,9 +23,9 @@ class CacheBuilderAvailablePageModules implements CacheBuilder {
 				LEFT JOIN
 					wcf".WCF_N."_package_dependency dependency
 				ON
-					dependency.dependency = modules.packageID
+					dependency.packageID = modules.packageID
 				WHERE
-					dependency.packageID = ".$packageID."
+					dependency.dependency = ".$packageID."
 				ORDER BY
 					modules.name ASC";
 		$result = WCF::getDB()->sendQuery($sql);
