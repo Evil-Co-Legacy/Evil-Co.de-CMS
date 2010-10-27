@@ -20,7 +20,7 @@ class DynamicPageAddForm extends ACPForm {
 	/**
 	 * @see Page::$neededPermissions
 	 */
-	public $neededpermissions = 'admin.content.cms.canAddPages';
+	public $neededPermissions = 'admin.content.cms.canAddPages';
 	
 	/**
 	 * Contains the title for the new row
