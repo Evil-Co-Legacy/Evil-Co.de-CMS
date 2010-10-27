@@ -59,7 +59,7 @@ interface Module {
 	/**
 	 * Returnes the template name
 	 */
-	public function display();
+	public function getTemplateName();
 	
 	/**
 	 * Returnes the content of $variable
