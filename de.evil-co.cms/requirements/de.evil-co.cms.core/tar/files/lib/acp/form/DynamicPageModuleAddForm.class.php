@@ -85,7 +85,7 @@ class DynamicPageModuleAddForm extends ACPForm {
 		if (empty($this->moduleID)) throw new UserInputException('moduleID', 'empty');
 		
 		// create module object
-		$this->module = new Module($this->moduleID);
+		$this->module = new InstanceableModule($this->moduleID);
 		
 		// get dependencies
 		$sql = "SELECT
