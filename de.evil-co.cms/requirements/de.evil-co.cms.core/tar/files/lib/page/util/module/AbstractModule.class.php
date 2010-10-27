@@ -15,6 +15,11 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	public $templateName = '';
 	
 	/**
+	 * Contains the name of the template that should displayed in page edit form
+	 */
+	public $acpTemplateName = '';
+	
+	/**
 	 * @see Module::$neededPermissions
 	 */
 	public $neededPermissions = '';
@@ -134,6 +139,13 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	 */
 	public function getTemplateName() {
 		return $this->templateName;
+	}
+	
+	/**
+	 * @see	Module::getACPTemplateName()
+	 */
+	public function getACPTemplateName() {
+		return $this->acpTemplateName;
 	}
 }
 ?>
