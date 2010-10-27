@@ -8,7 +8,7 @@ require_once(WCF_DIR.'lib/system/event/EventHandler.class.php');
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  */
-abstract class AbstractModule implements Module {
+abstract class AbstractModule extends DatabaseObject implements Module {
 	/**
 	 * @see Module::$templateName
 	 */
@@ -36,10 +36,62 @@ abstract class AbstractModule implements Module {
 	protected $pageID = 0;
 	
 	/**
+	 * Contains all sql joins
+	 * @var	string
+	 */
+	protected $sqlJoins = '';
+	
+	/**
+	 * Contains all sql selects
+	 * @var	string
+	 */
+	protected $sqlSelects = '';
+	
+	/**
+	 * Contains the group by clouse
+	 * @var	string
+	 */
+	protected $sqlGroupBy = '';
+	
+	/**
 	 * @see Module::__construct()
 	 */
-	public function __construct($pageID) {
-		$this->pageID = $pageID;
+	public function __construct($pageID, $moduleID, $row = null) {
+		$this->sqlSelects .= 'module.*'; 
+		
+		// create sql conditions
+		$sqlCondition = '';
+		
+		if ($pageID !== null and $moduleID !== null) {
+			$sqlCondition .=  "module.pageID = ".$pageID." AND module.moduleID = ".$moduleID;
+		}
+		
+		// execute sql statement
+		if (!empty($sqlCondition)) {
+			$sql = "SELECT 	".$this->sqlSelects."
+				FROM 	wcf".WCF_N."_page_module_to_page module
+					".$this->sqlJoins."
+				WHERE 	".$sqlCondition.
+					$this->sqlGroupBy;
+			$row = WCF::getDB()->getFirstRow($sql);
+		}
+		
+		// handle result set
+		parent::__construct($row);
+	}
+	
+	/**
+	 * @see DatabaseObject::handleData()
+	 */
+	protected function handleData($data) {
+		parent::handleData($data);
+		
+		if (!$this->pageID or !$this->moduleID) {
+			$this->data['pageID'] = 0;
+			$this->data['moduleID'] = 0;
+		} else {
+			$this->data['options'] = unserialize($this->data['options']);
+		}
 	}
 	
 	/**
@@ -82,14 +134,6 @@ abstract class AbstractModule implements Module {
 	 */
 	public function display() {
 		return $this->templateName;
-	}
-	
-	/**
-	 * @see Module::__get()
-	 */
-	public function __get($variable) {
-		if (isset($this->data[$variable])) return $this->data[$variable];
-		return null;
 	}
 }
 ?>
