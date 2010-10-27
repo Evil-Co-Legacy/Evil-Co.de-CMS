@@ -7,6 +7,7 @@ require_once(WCF_DIR.'lib/system/event/EventHandler.class.php');
  * This class implements the default functions and variables for modules
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
  */
 abstract class AbstractModule extends DatabaseObject implements Module {
 	/**
