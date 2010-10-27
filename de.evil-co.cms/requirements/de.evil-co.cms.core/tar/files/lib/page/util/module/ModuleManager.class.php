@@ -93,7 +93,7 @@ class ModuleManager {
 		$sql = "INSERT INTO
 					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder)
 				VALUES
-					(".$moduleID.", ".$this->pageID.", ".($this->isVisible ? 1 : 0).", ".$sortOrder.")";
+					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.")";
 		WCF::getDB()->sendQuery($sql);
 		
 		if ($sortOrder == 0) {
