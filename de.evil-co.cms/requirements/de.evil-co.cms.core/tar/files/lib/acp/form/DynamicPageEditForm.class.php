@@ -94,8 +94,11 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		
 		WCF::getTPL()->assign(array(
 			'pageID'			=>		$this->pageID,
-			'page'				=>		$this->page
+			'page'				=>		$this->page,
 		));
+		
+		// modify style for additional button in containerIcon div
+		WCF::getTPL()->append('specialStyles', '<style type="text/css">#moduleList .containerHead .containerIcon { width: 60px !important; }</style>');
 	}
 }
 ?>
