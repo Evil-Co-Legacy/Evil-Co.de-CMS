@@ -122,6 +122,16 @@ class DynamicPageModuleAddForm extends ACPForm {
 	}
 	
 	/**
+	 * @see Page::show()
+	 */
+	public function show() {
+		// enable acpmenu entry
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.host');
+		
+		parent::show();
+	}
+	
+	/**
 	 * @see	Page::assignVariables()
 	 */
 	public function assignVariables() {
