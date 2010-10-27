@@ -131,7 +131,8 @@ class DynamicPageModuleAddForm extends ACPForm {
 			'page'				=>		$this->page,
 			'pageID'			=>		$this->pageID,
 			'moduleID'			=>		$this->moduleID,
-			'module'			=>		$this->module
+			'module'			=>		$this->module,
+			'moduleList'		=>		ModuleManager::getAvailableModules()
 		));
 	}
 }
