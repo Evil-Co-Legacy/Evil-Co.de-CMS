@@ -46,6 +46,11 @@ class DynamicPageModuleAddForm extends ACPForm {
 	public $module = null;
 	
 	/**
+	 * @see	Page::$action
+	 */
+	public $action = 'add';
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
