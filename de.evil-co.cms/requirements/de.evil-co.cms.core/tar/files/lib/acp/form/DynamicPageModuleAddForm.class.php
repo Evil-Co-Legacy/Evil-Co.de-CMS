@@ -2,6 +2,7 @@
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
 
 /**
  * Implements a form that attaches a new module to the given page
