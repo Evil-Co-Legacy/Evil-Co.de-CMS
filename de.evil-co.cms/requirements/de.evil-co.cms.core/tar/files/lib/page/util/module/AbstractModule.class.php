@@ -63,7 +63,12 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	 * @see Module::__construct()
 	 */
 	public function __construct($pageID, $moduleID, $row = null) {
-		$this->sqlSelects .= 'module.*'; 
+		$this->sqlSelects .= 'module.*,
+							  page_module.name AS name';
+		$this->sqlJoins .= "LEFT JOIN
+								wcf".WCF_N."_page_module page_module
+							ON
+								page_module.moduleID = module.moduleID";
 		
 		// create sql conditions
 		$sqlCondition = '';
