@@ -13,8 +13,6 @@ class DynamicPage extends DatabaseObject {
 	protected $sqlSelects = '';
 	protected $sqlGroupBy = '';
 	
-	protected $moduleManager = null;
-	
 	/**
 	 * Reads a page row from database
 	 * @param	integer	$pageID
