@@ -62,6 +62,11 @@ interface Module {
 	public function getTemplateName();
 	
 	/**
+	 * Returnes the name of the template that should used in ACP
+	 */
+	public function getACPTemplateName();
+	
+	/**
 	 * Returnes the content of $variable
 	 * @param	string	$variable
 	 */
