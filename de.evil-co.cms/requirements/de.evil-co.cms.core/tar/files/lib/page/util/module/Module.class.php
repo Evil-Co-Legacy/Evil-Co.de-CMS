@@ -34,7 +34,7 @@ interface Module {
 	 * Creates a new Module object
 	 * @param	integer	$pageID
 	 */
-	public function __construct($pageID);
+	public function __construct($pageID, $moduleID, $row = null);
 	
 	/**
 	 * Reads parameters from url (or other sources)
