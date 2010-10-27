@@ -1,6 +1,6 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/page/util/AbstractModule.class.php');
+require_once(WCF_DIR.'lib/page/util/module/AbstractModule.class.php');
 
 /**
  * @see			AbstractModule
