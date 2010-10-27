@@ -68,12 +68,5 @@ class DynamicPage extends DatabaseObject {
 		
 		throw new SystemException("method '".$name."' does not exist in class Page");
 	}
-	
-	/**
-	 * Returnes the module manager for this page
-	 */
-	public function getModuleManager() {
-		return $this->moduleManager;
-	}
 }
 ?>
