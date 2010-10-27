@@ -2,7 +2,7 @@
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
-require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplate.class.php');
 
 /**
  * Implements a form that attaches a new module to the given page
@@ -85,7 +85,7 @@ class DynamicPageModuleAddForm extends ACPForm {
 		if (empty($this->moduleID)) throw new UserInputException('moduleID', 'empty');
 		
 		// create module object
-		$this->module = new InstanceableModule($this->moduleID);
+		$this->module = new DynamicPageModuleTemplate($this->moduleID);
 		
 		// get dependencies
 		$sql = "SELECT
