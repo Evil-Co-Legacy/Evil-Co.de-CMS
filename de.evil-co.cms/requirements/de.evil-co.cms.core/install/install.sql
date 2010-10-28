@@ -40,6 +40,7 @@ CREATE TABLE `wcf1_page_module` (
 
 DROP TABLE IF EXISTS `wcf1_page_module_to_page`;
 CREATE TABLE `wcf1_page_module_to_page` (
+	`instanceID` INT UNSIGNED AUTO_INCREMENT NOT NULL,
 	`moduleID` INT NOT NULL,
 	`pageID` INT NOT NULL,
 	`isVisible` TINYINT (1) NOT NULL DEFAULT '1',
