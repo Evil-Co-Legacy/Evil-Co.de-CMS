@@ -87,6 +87,9 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 			$row = WCF::getDB()->getFirstRow($sql);
 		}
 		
+		// just for debugging
+		// print_r($row);
+		
 		// handle result set
 		parent::__construct($row);
 	}
