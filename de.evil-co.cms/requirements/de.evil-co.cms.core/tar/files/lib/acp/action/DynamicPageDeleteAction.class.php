@@ -29,6 +29,9 @@ class DynamicPageDeleteAction extends AbstractAction {
 	public function readParameters() {
 		parent::readParameters();
 		
+		// check permissions
+		WCF::getUser()->checkPermission('admin.content.cms.canEditPages');
+		
 		if (isset($_REQUEST['pageID'])) $this->pageID = intval($_REQUEST['pageID']);
 		
 		// create page object
