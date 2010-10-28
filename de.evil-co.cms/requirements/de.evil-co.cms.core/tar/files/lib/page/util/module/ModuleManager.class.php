@@ -1,4 +1,8 @@
 <?php
+// wcf imports
+require_once(WCF_DIR.'lib/page/util/module/option/ModuleOption.class.php');
+require_once(WCF_DIR.'lib/page/util/module/option/group/ModuleOptionGroup.class.php');
+require_once(WCF_DIR.'lib/page/util/module/option/group/list/ModuleOptionGroupList.class.php');
 
 /**
  * Manages all modules for the specified pageID
