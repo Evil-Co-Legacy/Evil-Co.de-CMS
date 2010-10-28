@@ -43,6 +43,7 @@ CREATE TABLE `wcf1_page_module_option` (
 	`name` VARCHAR (255) NOT NULL,
 	`optionType` ENUM ('boolean', 'text', 'textarea'),
 	`defaultValue` TEXT NOT NULL DEFAULT '',
+	`cssClass` VARCHAR(255) NOT NULL DEFAULT '',
 	`groupID` INT NOT NULL
 );
 
