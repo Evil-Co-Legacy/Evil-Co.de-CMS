@@ -74,6 +74,7 @@ class DynamicPageModuleSortAction extends AbstractAction {
 		// remove cache
 		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$this->pageID.'-'.PACKAGE_ID.'.php');
 		
+		// fire executed event
 		$this->executed();
 	}
 }
