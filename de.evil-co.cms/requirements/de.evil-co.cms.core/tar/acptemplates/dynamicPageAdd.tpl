@@ -292,6 +292,7 @@
 			{/if}
 		</div>
 		{if $moduleList|count}
+			{* TODO: Find a scriptless move function *}
 			<script type="text/javascript">
 			{* TODO: Implement a drag and drop scroll here ... There is currently a bug in protoaculous ... *}
 			Sortable.create('moduleList', { tag: 'div', 
