@@ -32,6 +32,8 @@
 	<p class="success">{lang}wcf.cms.page.{$action}.success{/lang}</p>
 {/if}
 
+<p id="sortSuccess" class="success" style="display: none;">{lang}wcf.cms.page.edit.sortSuccess{/lang}</p>
+
 <form action="index.php?form=DynamicPage{$action|ucfirst}{if $action == 'add'}&amp;hostID={$hostID}{else}&amp;pageID={$pageID}{/if}" method="post">
 	<fieldset>
 		<legend><a href="javascript:void(openList('detailsContent',{ openTitle: '{lang}wcf.cms.page.add.details.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.details.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="detailsContentImage" alt="" title="{lang}wcf.cms.page.add.details.hide{/lang}" /> <span>{lang}wcf.cms.page.add.details{/lang}</span></a></legend>
@@ -300,7 +302,8 @@
 											onUpdate: function() { 
 												new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
 													method: "post",
-													parameters: { data: Sortable.serialize('moduleList', { tag: 'div' } ) }
+													parameters: { data: Sortable.serialize('moduleList', { tag: 'div' } ) },
+													onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
 												});
 											}
 			});
