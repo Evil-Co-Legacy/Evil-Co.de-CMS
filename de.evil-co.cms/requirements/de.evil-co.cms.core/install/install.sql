@@ -29,6 +29,13 @@ CREATE TABLE `wcf1_page_module` (
 --	`customModule` INT NULL DEFAULT NULL
 );
 
+DROP TABLE IF EXISTS `wcf1_page_module_option_group`;
+CREATE TABLE `wcf1_page_module_option_group` (
+	`groupID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY
+	`moduleID` INT NOT NULL
+	`name` VARCHAR (255) NOT NULL
+);
+	
 DROP TABLE IF EXISTS `wcf1_page_module_option`;
 CREATE TABLE `wcf1_page_module_option` (
 	`optionID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
