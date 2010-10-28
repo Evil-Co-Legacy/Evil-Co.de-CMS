@@ -249,7 +249,7 @@
 			
 			{if $moduleList|count}
 				{foreach from=$moduleList item=$module}
-					<div id="module{$module->getName()|ucfirst}" class="border titleBarPanel">
+					<div id="item_{$module->getModuleID()}" class="border titleBarPanel">
 						<div class="containerHead">
 							<div class="containerIcon">
 								<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
@@ -280,6 +280,20 @@
 				<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 			{/if}
 		</div>
+		{if $moduleList|count}
+			<script type="text/javascript">
+			{* TODO: Implement a drag and drop scroll here ... There is currently a bug in protoaculous ... *}
+			Sortable.create('moduleList', { tag: 'div', 
+											handle: $$('#moduleList .containerHead'), 
+											onUpdate: function() { 
+												new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+													method: "post",
+													parameters: { data: Sortable.serialize('moduleList', { tag: 'div' } ) }
+												});
+											}
+			});
+			</script>
+		{/if}
 	{/if}
 	
 	<div class="formSubmit">
