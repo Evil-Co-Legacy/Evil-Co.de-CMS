@@ -34,6 +34,9 @@ class DynamicPageModuleSortAction extends AbstractAction {
 	public function readParameters() {
 		parent::readParameters();
 		
+		// check permissions
+		WCF::getUser()->checkPermission('admin.content.cms.canEditPages');
+		
 		// validate moduleList parameter
 		if (!isset($_REQUEST['data'])) throw new IllegalLinkException;
 		
