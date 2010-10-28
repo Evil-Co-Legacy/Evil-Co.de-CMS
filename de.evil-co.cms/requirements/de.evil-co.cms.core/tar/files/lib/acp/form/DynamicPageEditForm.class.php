@@ -98,7 +98,7 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		));
 		
 		// modify style for additional button in containerIcon div
-		WCF::getTPL()->append('specialStyles', '<style type="text/css">#moduleList .containerHead .containerIcon { width: 90px !important; }</style>');
+		WCF::getTPL()->append('specialStyles', '<style type="text/css">#moduleList .containerHead .containerIcon { width: 90px !important; } #moduleList .containerHead { cursor: move; }</style>');
 	}
 }
 ?>
