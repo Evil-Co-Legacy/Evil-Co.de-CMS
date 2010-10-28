@@ -96,10 +96,44 @@ class ModuleManager {
 	 * @param	integer	$sortOrder
 	 */
 	public function assign($moduleID, $isVisible = false, $sortOrder = 0) {
+		// read options
+		$sql = "SELECT
+					*
+				FROM
+					wcf".WCF_N."_page_module_option
+				WHERE
+					moduleID = ".$moduleID;
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		$options = array();
+		$optionGroups = array();
+		$optionGroupList = null;
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			if (!isset($options[$row['groupID']])) $options[$row['groupID']] = array();
+			$options[$row['groupID']][] = new ModuleOption($row['name'], $row['optionType'], $row['defaultValue'], $row['cssClass']);
+		}
+		
+		// read option groups
+		$sql = "SELECT
+					*
+				FROM
+					wcf".WCF_N."_page_module_option
+				WHERE
+					moduleID = ".$moduleID;
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			$optionGroups[] = new ModuleOptionGroup($row['name'], (isset($options[$row['groupID']]) ? $options[$row['groupID']] : array()));
+		}
+		
+		$optionGroupList = new ModuleOptionGroupList($optionGroups);
+		
+		// create new instance
 		$sql = "INSERT INTO
-					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder)
+					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder, options)
 				VALUES
-					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.")";
+					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.", '".escapeString(serialize($optionGroupList))."')";
 		WCF::getDB()->sendQuery($sql);
 		
 		if ($sortOrder == 0) {
