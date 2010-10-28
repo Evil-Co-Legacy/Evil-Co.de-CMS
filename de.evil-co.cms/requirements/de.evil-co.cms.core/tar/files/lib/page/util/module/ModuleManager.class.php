@@ -36,11 +36,11 @@ class ModuleManager {
 			if (file_exists(WCF_DIR.$module['file']) and $module['file'] != '') {
 				require_once(WCF_DIR.$module['file']);
 				$className = basename($module['file'], '.class.php');
-				$this->modules[] = new $className($pageID, $module['moduleID']);
+				$this->modules[] = new $className(null, null, $module);
 			} else {
 				// we'll load a default class if the specified file doesn't exist
 				require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
-				$this->modules[] = new InstanceableModule($pageID, $module['moduleID']);
+				$this->modules[] = new InstanceableModule(null, null, $module);
 			}
 		}
 	}
