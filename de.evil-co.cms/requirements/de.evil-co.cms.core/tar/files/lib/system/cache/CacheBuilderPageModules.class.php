@@ -17,7 +17,8 @@ class CacheBuilderPageModules implements CacheBuilder {
 		list($cache, $pageID, $packageID) = explode('-', $cacheResource['cache']);
 		
 		$sql = "SELECT
-					modules.*
+					modules.*,
+					page_module.instanceID AS instanceID
 				FROM
 					wcf".WCF_N."_page_module modules
 				LEFT JOIN
