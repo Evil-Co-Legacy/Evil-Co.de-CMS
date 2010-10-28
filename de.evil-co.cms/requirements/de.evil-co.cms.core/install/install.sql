@@ -29,6 +29,15 @@ CREATE TABLE `wcf1_page_module` (
 --	`customModule` INT NULL DEFAULT NULL
 );
 
+DROP TABLE IF EXISTS `wcf1_page_module_option`;
+CREATE TABLE `wcf1_page_module_option` (
+	`optionID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`moduleID` INT NOT NULL,
+	`name` VARCHAR (255) NOT NULL,
+	`optionType` ENUM ('boolean', 'text', 'textarea'),
+	`defaultValue` TEXT NOT NULL DEFAULT ''
+);
+
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
 --CREATE TABLE `wcf1_page_module_custom` (
 --	`moduleID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
