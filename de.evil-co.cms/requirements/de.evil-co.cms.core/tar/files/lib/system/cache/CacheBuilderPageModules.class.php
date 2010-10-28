@@ -43,6 +43,17 @@ class CacheBuilderPageModules implements CacheBuilder {
 			$data[] = $row;
 		}
 		
+		foreach($data as $key => $element) {
+			$data[$key]['instanceNumber'] = $data[$key]['instanceCount'] = 1;
+			foreach($data as $key2 => $element2) {
+				if ($element2['moduleID'] == $element['moduleID']) {
+					$data[$key]['instanceCount']++;
+					if ($element2['instanceID'] < $element['instanceID']) $data[$key]['instanceNumber']++;
+				}
+				
+			}
+		}
+		
 		return $data;
 	}
 }

@@ -260,7 +260,7 @@
 								</a>
 							</div>
 							<div class="containerContent">
-								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
 							</div>
 						</div>
 						<div id="module{$moduleCount}Content" class="container-1">
