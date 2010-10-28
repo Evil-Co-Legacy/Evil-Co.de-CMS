@@ -42,7 +42,8 @@ CREATE TABLE `wcf1_page_module_option` (
 	`moduleID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL,
 	`optionType` ENUM ('boolean', 'text', 'textarea'),
-	`defaultValue` TEXT NOT NULL DEFAULT ''
+	`defaultValue` TEXT NOT NULL DEFAULT '',
+	`groupID` INT NOT NULL
 );
 
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
