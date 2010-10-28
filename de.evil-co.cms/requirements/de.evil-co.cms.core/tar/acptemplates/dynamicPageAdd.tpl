@@ -258,6 +258,9 @@
 								<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
 									<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
 								</a>
+								<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+									<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+								</a>
 							</div>
 							<div class="containerContent">
 								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
