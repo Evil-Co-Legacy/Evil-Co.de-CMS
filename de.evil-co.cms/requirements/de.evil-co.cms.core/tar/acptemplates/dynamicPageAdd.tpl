@@ -231,6 +231,14 @@
 		</div>
 	</fieldset>
 	
+	<div class="formSubmit">
+		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
+		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
+		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
+		{if $action == 'edit'}<input type="hidden" name="pageID" value="{@$pageID}" />{/if}
+	 	{@SID_INPUT_TAG}
+	 </div>
+	
 	{if $action == 'edit'}
 		<div class="contentHeader">
 			<div class="largeButtons">
@@ -298,14 +306,6 @@
 			</script>
 		{/if}
 	{/if}
-	
-	<div class="formSubmit">
-		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" name="submit" />
-		<input type="reset" accesskey="r" id="reset" value="{lang}wcf.global.button.reset{/lang}" />
-		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
-		{if $action == 'edit'}<input type="hidden" name="pageID" value="{@$pageID}" />{/if}
-	 	{@SID_INPUT_TAG}
-	 </div>
 </form>
 
 {include file='footer'}
