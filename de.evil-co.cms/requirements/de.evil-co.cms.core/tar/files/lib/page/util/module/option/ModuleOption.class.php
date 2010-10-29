@@ -73,5 +73,13 @@ class ModuleOption {
 	public function getCssClass() {
 		return $this->cssClass;
 	}
+	
+	/**
+	 * Sets the value of this option
+	 * @param	mixed	$value
+	 */
+	public function setValue($value) {
+		$this->value = $value;
+	}
 }
 ?>
