@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/page/AbstractPage.class.php');
-require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
 /**
  * Provides an abstract class that contains modules
