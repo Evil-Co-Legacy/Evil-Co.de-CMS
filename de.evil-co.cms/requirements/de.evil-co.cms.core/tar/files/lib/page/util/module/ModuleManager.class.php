@@ -140,6 +140,8 @@ class ModuleManager {
 					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.", '".escapeString(serialize($optionGroupList))."')";
 		WCF::getDB()->sendQuery($sql);
 		
+		$instanceID = WCF::getDB()->getInsertID();
+		
 		if ($sortOrder == 0) {
 			$sql = "SELECT
 						MAX(sortOrder) AS sortOrder
@@ -160,6 +162,8 @@ class ModuleManager {
 		
 		// remove cache
 		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$this->pageID.'-'.PACKAGE_ID.'.php');
+		
+		return $instanceID;
 	}
 	
 	/**
