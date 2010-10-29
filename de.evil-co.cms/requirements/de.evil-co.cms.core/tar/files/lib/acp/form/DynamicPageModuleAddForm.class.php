@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
-require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplate.class.php');
 
 /**
@@ -60,7 +60,7 @@ class DynamicPageModuleAddForm extends ACPForm {
 		if (isset($_REQUEST['pageID'])) $this->pageID = intval($_REQUEST['pageID']);
 		
 		// create a new instance of DynamicPage
-		$this->page = new DynamicPage($this->pageID);
+		$this->page = new DynamicPageEditor($this->pageID);
 		
 		// validate
 		if (!$this->page->pageID) throw new IllegalLinkException;
