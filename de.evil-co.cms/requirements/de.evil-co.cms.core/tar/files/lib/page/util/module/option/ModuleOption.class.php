@@ -33,13 +33,19 @@ class ModuleOption {
 	protected $cssClass = null;
 	
 	/**
+	 * If this is set to false option's description will not appear
+	 * @var	boolean
+	 */
+	protected $displayDescription = true;
+	
+	/**
 	 * Creates a new instance of ModuleOptions
 	 * @param	string	$name
 	 * @param	string	$type
 	 * @param	string	$value
 	 * @param	string	$cssClass
 	 */
-	public function __construct($name, $type, $value = null, $cssClass = null) {
+	public function __construct($name, $type, $value = null, $cssClass = null, $displayDescription = true) {
 		$this->name = $name;
 		$this->type = $type;
 		$this->value = $value;
@@ -72,6 +78,13 @@ class ModuleOption {
 	 */
 	public function getCssClass() {
 		return $this->cssClass;
+	}
+	
+	/**
+	 * Returnes the value of display description
+	 */
+	public function getDisplayDescription() {
+		return $this->displayDescription;
 	}
 	
 	/**
