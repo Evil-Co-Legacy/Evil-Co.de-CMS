@@ -51,7 +51,7 @@
 				<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
 				
 				{foreach from=$group->getOptions() item='option'}
-					<div class="formField">
+					<div class="formElement">
 						{if $option->getType() != 'boolean'}
 							<div class="formFieldLabel">
 								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
