@@ -16,7 +16,7 @@
 		{include file='header' sandbox=false}
 		
 		{foreach from=$modules item='module'}
-			{include file=$module->display()}
+			{include file=$module->getTemplateName()}
 		{/foreach}
 		
 		{include file='footer' sandbox=false}
