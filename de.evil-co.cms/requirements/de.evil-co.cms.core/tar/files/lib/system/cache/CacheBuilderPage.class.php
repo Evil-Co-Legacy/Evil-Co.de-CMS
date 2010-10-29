@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
-require_once(WCF_DIR.'lib/data/dynamicPage/DynamicPage.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
 /**
  * Caches a page
