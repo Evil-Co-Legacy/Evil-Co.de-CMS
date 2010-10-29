@@ -96,5 +96,20 @@ class Host extends DatabaseObject {
 	public function getLanguageCode() {
 		return $this->languageCode;
 	}
+	
+	/**
+	 * Wrapper for get class (Such as getPageID())
+	 * @param	string	$name
+	 * @param	array	$args
+	 */
+	public function __call($name, $args) {
+		if (substr($name, 0, 3) == 'get') {
+			$variable = substr($name, 3);
+			$variable = strtolower($variable{0}).substr($variable, 1);
+			return $this->{$variable};
+		}
+		
+		throw new SystemException("method '".$name."' does not exist in class Page");
+	}
 }
 ?>
