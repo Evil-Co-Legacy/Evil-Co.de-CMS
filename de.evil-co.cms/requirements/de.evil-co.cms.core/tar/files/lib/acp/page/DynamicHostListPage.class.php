@@ -60,8 +60,7 @@ class DynamicHostListPage extends AbstractPage {
 	 */
 	protected function readHosts() {
 		$sql = "SELECT
-					hostID,
-					IFNULL(title,hostname) AS title
+					*
 				FROM
 					wcf".WCF_N."_host
 				ORDER BY
