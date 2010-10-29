@@ -11,7 +11,7 @@
 	<div class="largeButtons">
 		<ul>
 			<li>
-				<a href="index.php?page=Dynamic{if $action == 'add'}HostList{else}PageList&amp;hostID={$hostID}{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.list.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostListM.png" alt="" /> <span>{lang}wcf.cms.{if $action == 'add'}host{else}page{/if}.list.title{/lang}</span></a>
+				<a href="index.php?page=DynamicHostList&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.host.list.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/hostListM.png" alt="" /> <span>{lang}wcf.cms.host.list.title{/lang}</span></a>
 			</li>
 			
 			{if $additionalLargeButtons|isset}{@$additionalLargeButtons}{/if}
