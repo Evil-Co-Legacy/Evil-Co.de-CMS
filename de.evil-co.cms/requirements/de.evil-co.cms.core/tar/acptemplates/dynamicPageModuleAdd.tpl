@@ -17,7 +17,7 @@
 	</div>
 </div>
 
-<form action="index.php?form=DynamicPageModuleAdd" method="post">
+<form action="index.php?form=DynamicPageModule{$action|ucfirst}" method="post">
 	{* Module add form *}
 	{if $action == 'add'}
 		<fieldset>
