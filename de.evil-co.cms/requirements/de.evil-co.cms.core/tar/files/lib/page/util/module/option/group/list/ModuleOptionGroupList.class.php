@@ -28,5 +28,16 @@ class ModuleOptionGroupList {
 	public function getOptionGroups() {
 		return $this->optionGroups;
 	}
+	
+	/**
+	 * Returnes the group with name $name
+	 * @param	string	$name
+	 */
+	public function getGroup($name) {
+		foreach($this->optionGroups as $key => $group) {
+			if ($this->optionGroups[$key]->getName() == $name) return $this->optionGroups[$key];
+		}
+		return false;
+	}
 }
 ?>
