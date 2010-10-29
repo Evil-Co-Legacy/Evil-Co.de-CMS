@@ -90,7 +90,7 @@
 		<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 		<input type="hidden" name="pageID" value="{@$pageID}" />
 		{if $action == 'edit'}
-			<input type="hidden" name="moduleID" value="{@$moduleID}" />
+			<input type="hidden" name="instanceID" value="{@$instanceID}" />
 		{/if}
 	 	{@SID_INPUT_TAG}
 	 </div>
