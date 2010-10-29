@@ -60,12 +60,12 @@
 						<div class="formField">
 							{if $option->getType() != 'boolean'}
 								{if $option->getType() != 'textarea'}
-									<input type="{$option->getType()}" name="{$group->getName()}[[$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
+									<input type="{$option->getType()}" name="{$group->getName()}[{$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
 								{else}
 									<textarea rows="10" columns="40" name="{$group->getName()}[[$option->getName()}]">{$option->getValue()}</textarea>
 								{/if}
 							{else}
-								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
+								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} value="1" /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
 							{/if}
 						</div>
 						{if $option->getDisplayDescription()}
