@@ -74,7 +74,7 @@
 							</div>
 						{/if}
 					</div>
-					{if $option->displayDescription}
+					{if $option->getDisplayDescription()}
 						<script type="text/javascript">
 							inlineHelp.register('{$group->getName()|concat:$option->getName()|sha1|encodejs}');
 						</script>
