@@ -12,7 +12,7 @@
 			{if $module->additionalHeadContents != ''}{@$module->additionalHeadContents}{/if}
 		{/foreach}
 	</head>
-	<body{if $templateName|isset} id="tpl{$templateName|ucfirst}">
+	<body{if $templateName|isset} id="tpl{$templateName|ucfirst}"{/if}>
 		{include file='header' sandbox=false}
 		
 		{foreach from=$modules item='module'}
