@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/page/AbstractModulePage.class.php');
-require_once(WCF_DIR.'lib/data/page/Page.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
 /**
  * Implements a page for custom pages
