@@ -46,7 +46,7 @@
 	
 	{* Module edit form *}
 	{if $action == 'edit'}
-		{foreach from=$options->getOptions() item='group'}
+		{foreach from=$options->getOptionGroups() item='group'}
 			<fieldset>
 				<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
 				
