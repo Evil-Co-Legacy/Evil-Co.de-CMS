@@ -122,7 +122,7 @@ class ModuleManager {
 		$sql = "SELECT
 					*
 				FROM
-					wcf".WCF_N."_page_module_option
+					wcf".WCF_N."_page_module_option_group
 				WHERE
 					moduleID = ".$moduleID;
 		$result = WCF::getDB()->sendQuery($sql);
