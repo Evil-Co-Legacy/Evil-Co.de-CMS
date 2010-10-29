@@ -113,10 +113,10 @@ class DynamicPageModuleAddForm extends ACPForm {
 		parent::save();
 		
 		// assign module
-		$this->page->moduleManager->assign($this->moduleID);
+		$instanceID = $this->page->moduleManager->assign($this->moduleID);
 		
 		// send redirect headers
-		HeaderUtil::redirect('index.php?form=DynamicPageModuleEdit&pageID='.$this->pageID.'&moduleID='.$this->moduleID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
+		HeaderUtil::redirect('index.php?form=DynamicPageModuleEdit&instanceID='.$instanceID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
 		
 		// call event
 		$this->executed();
