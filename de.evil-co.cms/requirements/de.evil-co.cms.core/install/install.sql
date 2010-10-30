@@ -32,7 +32,8 @@ CREATE TABLE `wcf1_page_module` (
 
 INSERT INTO `wcf1_page_module` (`moduleID`, `packageID`, `name`, `file`) VALUES
 (1, 1, 'html', 'lib/page/util/module/HTMLModule.class.php'),
-(2, 1, 'article', 'lib/page/util/module/ArticleModule.class.php');
+(2, 1, 'article', 'lib/page/util/module/ArticleModule.class.php'),
+(3, 1, 'headline', 'lib/util/page/module/HeadlineModule.class.php');
 
 DROP TABLE IF EXISTS `wcf1_page_module_option_group`;
 CREATE TABLE `wcf1_page_module_option_group` (
