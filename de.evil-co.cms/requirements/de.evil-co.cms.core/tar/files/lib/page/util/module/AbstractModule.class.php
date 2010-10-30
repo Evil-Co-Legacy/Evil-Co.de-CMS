@@ -130,6 +130,9 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	public function assignVariables() {
 		// call assignVariables event
 		EventHandler::fireAction($this, 'assignVariables');
+		
+		// assign options
+		WCF::getTPL()->assign('optionList', $this->options);
 	}
 	
 	/**
