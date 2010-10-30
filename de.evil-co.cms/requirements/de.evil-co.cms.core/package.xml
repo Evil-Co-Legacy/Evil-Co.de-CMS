@@ -34,6 +34,7 @@
 
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
+		<script>acp/install_de.evil-co.cms.core.php</script>
 
 		<!-- Languages
 		<languages languagecode="de">install/language/de.xml</languages>
