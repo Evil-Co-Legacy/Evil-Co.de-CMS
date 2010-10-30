@@ -33,7 +33,8 @@ CREATE TABLE `wcf1_page_module` (
 INSERT INTO `wcf1_page_module` (`moduleID`, `packageID`, `name`, `file`) VALUES
 (1, 1, 'html', 'lib/page/util/module/HTMLModule.class.php'),
 (2, 1, 'article', 'lib/page/util/module/ArticleModule.class.php'),
-(3, 1, 'headline', 'lib/util/page/module/HeadlineModule.class.php');
+(3, 1, 'headline', 'lib/page/util/module/HeadlineModule.class.php'),
+(4, 1, 'messagebox', 'lib/page/util/module/MessageboxModule.class.php');
 
 DROP TABLE IF EXISTS `wcf1_page_module_option_group`;
 CREATE TABLE `wcf1_page_module_option_group` (
@@ -45,7 +46,8 @@ CREATE TABLE `wcf1_page_module_option_group` (
 INSERT INTO `wcf1_page_module_option_group` (`groupID`, `moduleID`, `name`) VALUES
 (1, 1, 'general'),
 (2, 2, 'general'),
-(3, 3, 'general');
+(3, 3, 'general'),
+(4, 4, 'general');
 	
 DROP TABLE IF EXISTS `wcf1_page_module_option`;
 CREATE TABLE `wcf1_page_module_option` (
@@ -66,7 +68,9 @@ INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionTy
 (3, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2;cf.cms.module.headline.option.size.h3:3;cf.cms.module.headline.option.size.h4:4;cf.cms.module.headline.option.size.h5:5;cf.cms.module.headline.option.size.h6:6'),
 (4, 3, 'content', 'text', '', 'inputText', '3', '1', ''),
 (5, 3, 'headlineIcon', 'text', '', 'inputText', '3', '1', ''),
-(6, 3, 'subHeadline', 'text', '', 'inputText', '3', '1', '');
+(6, 3, 'subHeadline', 'text', '', 'inputText', '3', '1', ''),
+(7, 4, 'type', 'select', '', 'inputText', '4', '1', 'wcf.cms.module.messagebox.option.info:info;wcf.cms.module.messagebox.option.success:success;wcf.cms.module.messagebox.option.warning:warning;wcf.cms.module.messagebox.option.error:error'),
+(8, 4, 'text', 'text', '', 'inputText', '4', '1', '');
 
 -- Planned for next release
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
