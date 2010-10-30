@@ -188,7 +188,7 @@ class DynamicPageAddForm extends ACPForm {
 			$title = (empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle);
 			
 			// create menu item
-			$menuItem = PageMenuItemEditor::create($lang, '', $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
+			$menuItem = PageMenuItemEditor::create($lang, 'index.php?page=CMS&pageID='.$item->pageID, $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
 			$menuItemID = $menuItem->menuItemID;
 			
 			// clear cache
