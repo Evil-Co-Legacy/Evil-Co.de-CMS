@@ -58,7 +58,9 @@ class CMSPage extends AbstractModulePage {
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		WCF::getTPL()->assign(array('page' => $this->page));
+		WCF::getTPL()->assign(array(
+			'page' => $this->page
+		));
 	}
 }
 ?>
