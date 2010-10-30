@@ -49,7 +49,7 @@ class ModuleOptionGroupList {
 	 */
 	public function setOption($groupName, $optionName, &$value) {
 		foreach($this->optionGroups as $key => $group) {
-			if ($grpup->getName() == $groupName) {
+			if ($this->optionGroups[$key]->getName() == $groupName) {
 				return $this->optionGroups[$key]->setOption($optionName, $value);
 			}
 		}
