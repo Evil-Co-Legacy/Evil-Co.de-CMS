@@ -24,8 +24,9 @@ CREATE TABLE `wcf1_page` (
 DROP TABLE IF EXISTS `wcf1_page_module`;
 CREATE TABLE `wcf1_page_module` (
 	`moduleID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`packageID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL,
-	`file` TEXT NOT NULL,
+	`file` TEXT NOT NULL --,
 --	`customModule` INT NULL DEFAULT NULL
 );
 
@@ -39,10 +40,11 @@ CREATE TABLE `wcf1_page_module_option_group` (
 	`moduleID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL
 );
+
 INSERT INTO `wcf1_page_module_option_group` (`groupID`, `moduleID`, `name`) VALUES
 (1, 1, 'general'),
-(2, 2, 'general');
-(3, 3, 'general')
+(2, 2, 'general'),
+(3, 3, 'general');
 	
 DROP TABLE IF EXISTS `wcf1_page_module_option`;
 CREATE TABLE `wcf1_page_module_option` (
@@ -61,6 +63,7 @@ INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionTy
 (1, 1, 'htmlCode', 'textarea', '', '', 1),
 (2, 2, 'content', 'textarea', '', '', '2');
 
+-- Planned for next release
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
 --CREATE TABLE `wcf1_page_module_custom` (
 --	`moduleID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
