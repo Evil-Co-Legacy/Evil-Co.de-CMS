@@ -43,6 +43,9 @@
 					</p>
 				{/if}
 			</div>
+			<div class="formFieldDesc">
+				{lang}wcf.cms.host.add.general.title.description{/lang}
+			</div>
 		</div>
 		
 		<div class="formElement"{if $errorField == 'hostname'} class="formError"{/if}>
@@ -58,6 +61,9 @@
 					</p>
 				{/if}
 			</div>
+			<div class="formFieldDesc">
+				{lang}wcf.cms.host.add.general.hostname.description{/lang}
+			</div>
 		</div>
 	</fieldset>
 	<fieldset>
@@ -68,6 +74,9 @@
 				<div class="formField">
 					<label for="isFallback"><input type="checkbox" {if $isFallback}checked="checked" {/if}value="1" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
 				</div>
+				<div class="formFieldDesc">
+					{lang}wcf.cms.host.add.expertSettings.isFallback.description{/lang}
+				</div>
 			</div>
 			
 			<div class="formElement">
@@ -76,6 +85,9 @@
 				</div>
 				<div class="formField">
 					<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
+				</div>
+				<div class="formFieldDesc">
+					{lang}wcf.cms.host.add.expertSettings.languageCode.description{/lang}
 				</div>
 			</div>
 		</div>
