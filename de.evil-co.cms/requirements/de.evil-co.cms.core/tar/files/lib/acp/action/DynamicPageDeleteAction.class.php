@@ -54,6 +54,20 @@ class DynamicPageDeleteAction extends AbstractAction {
 		// clear cache
 		DynamicPageEditor::clearCache($this->pageID, $this->page->hostID);
 		
+		// page menu entry
+		if ($this->page->menuItemID) {
+			require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
+			
+			// create editor object
+			$menuItem = new PageMenuItemEditor($this->page->menuItemID);
+			
+			// remove item
+			$menuItem->remove();
+			
+			// clear cache
+			PageMenuItemEditor::clearCache();
+		}
+		
 		// send redirect headers
 		if (!isset($_REQUEST['ajax'])) HeaderUtil::redirect('index.php?page=DynamicPageList&hostID='.$this->page->hostID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
 		
