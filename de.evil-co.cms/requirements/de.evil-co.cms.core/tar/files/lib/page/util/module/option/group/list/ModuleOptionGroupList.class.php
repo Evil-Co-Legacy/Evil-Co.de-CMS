@@ -35,8 +35,9 @@ class ModuleOptionGroupList {
 	 */
 	public function getGroup($name) {
 		foreach($this->optionGroups as $key => $group) {
-			if ($this->optionGroups[$key]->getName() == $name) return $this->optionGroups[$key];
+			if ($this->optionGroups[$key]->getName() == $name) $group = &$this->optionGroups[$key];
 		}
+		if (isset($group)) return $group;
 		return false;
 	}
 }

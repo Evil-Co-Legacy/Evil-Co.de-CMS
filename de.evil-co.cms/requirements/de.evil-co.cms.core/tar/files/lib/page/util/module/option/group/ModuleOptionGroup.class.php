@@ -50,8 +50,9 @@ class ModuleOptionGroup {
 	 */
 	public function getOption($name) {
 		foreach($this->options as $key => $option) {
-			if ($this->options[$key]->getName() == $name) $this->options[$key];
+			if ($this->options[$key]->getName() == $name) $option = &$this->options[$key];
 		}
+		if (isset($option)) return $option;
 		return false;
 	}
 }
