@@ -61,6 +61,12 @@
 							{if $option->getType() != 'boolean'}
 								{if $option->getType() != 'textarea'}
 									<input type="{$option->getType()}" name="{$group->getName()}[{$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
+								{elseif $option->getType() == 'select'}
+									<select name="{$group->getName()}[{$option->getName()}]">
+										{foreach from=$option->getFields() item='field'}
+											<option value="{$field.value}" {if $option->getValue() == $field.value}selected="selected" {/if}>{lang}{$field.name}{/lang}</option>
+										{/foreach}
+									</select>
 								{else}
 									<textarea rows="10" columns="40" name="{$group->getName()}[{$option->getName()}]">{$option->getValue()}</textarea>
 								{/if}
