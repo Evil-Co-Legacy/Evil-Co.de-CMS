@@ -65,6 +65,16 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		foreach($_POST as $name => $value) {
 			if (is_array($value)) {
 				foreach($value as $optionName => $optionValue) {
+					// validate 
+					if ($this->optionGroupList->getGroup($name)->getOption($optionName)->getType() == 'select') {
+						$validValues = array();
+						foreach($this->optionGroupList->getGroup($name)->getOption($optionName)->getFields() as $field) {
+							$validValues[] = $field['value'];
+						}
+						
+						if (!in_array($optionValue, $validValues)) continue;
+					}
+					
 					$this->optionGroupList->setOption($name, $optionName, $optionValue);
 				}
 			}
