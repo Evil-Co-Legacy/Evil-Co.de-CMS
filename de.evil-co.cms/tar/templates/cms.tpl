@@ -20,7 +20,7 @@
 				{assign var='optionList' value=$module->getOptions()}
 				{include file=$module->getTemplateName()}
 			{else}
-				<!-- Module class {$module|get_class} does not define a template name -->
+				<!-- Module class {$module|get_class} ({$module->getName()}) does not define a template name -->
 			{/if}
 		{/foreach}
 		
