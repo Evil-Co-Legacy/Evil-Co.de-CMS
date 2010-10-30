@@ -48,13 +48,13 @@
 	{if $action == 'edit'}
 		{foreach from=$options->getOptionGroups() item='group'}
 			<fieldset>
-				<legend>{lang}wcf.cms.module.option.category.{$group->getName()}.title{/lang}</legend>
+				<legend>{lang}wcf.cms.module.{$instance->getName()}.option.category.{$group->getName()}.title{/lang}</legend>
 				
 				{foreach from=$group->getOptions() item='option'}
 					<div class="formElement">
 						{if $option->getType() != 'boolean'}
 							<div class="formFieldLabel">
-								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
+								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.{$instance->getName()}.option.{$option->getName()}.title{/lang}</label>
 							</div>
 						{/if}
 						<div class="formField">
@@ -76,7 +76,7 @@
 						</div>
 						{if $option->getDisplayDescription()}
 							<div class="formFieldDesc" id="{$group->getName()|concat:$option->getName()|sha1}HelpMessage">
-								{lang}wcf.cms.module.option.{$option->getName()}.description{/lang}
+								{lang}wcf.cms.module.{$instance->getName()}.option.{$option->getName()}.description{/lang}
 							</div>
 						{/if}
 					</div>
