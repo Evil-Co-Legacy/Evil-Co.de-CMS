@@ -30,7 +30,8 @@ CREATE TABLE `wcf1_page_module` (
 );
 
 INSERT INTO `wcf1_page_module` (`moduleID`, `packageID`, `name`, `file`) VALUES
-(1, 1, 'html', 'lib/page/util/module/HTMLModule.class.php');
+(1, 1, 'html', 'lib/page/util/module/HTMLModule.class.php'),
+(2, 1, 'article', 'lib/page/util/module/ArticleModule.class.php');
 
 DROP TABLE IF EXISTS `wcf1_page_module_option_group`;
 CREATE TABLE `wcf1_page_module_option_group` (
@@ -39,7 +40,8 @@ CREATE TABLE `wcf1_page_module_option_group` (
 	`name` VARCHAR (255) NOT NULL
 );
 INSERT INTO `wcf1_page_module_option_group` (`groupID`, `moduleID`, `name`) VALUES
-(1, 1, 'general');
+(1, 1, 'general'),
+(2, 2, 'general');
 	
 DROP TABLE IF EXISTS `wcf1_page_module_option`;
 CREATE TABLE `wcf1_page_module_option` (
@@ -53,7 +55,8 @@ CREATE TABLE `wcf1_page_module_option` (
 );
 
 INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`) VALUES
-(1, 1, 'htmlCode', 'textarea', '', '', 1);
+(1, 1, 'htmlCode', 'textarea', '', '', 1),
+(2, 2, 'content', 'textarea', '', '', '2');
 
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
 --CREATE TABLE `wcf1_page_module_custom` (
