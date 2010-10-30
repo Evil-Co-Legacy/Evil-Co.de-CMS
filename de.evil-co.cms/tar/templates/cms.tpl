@@ -17,7 +17,11 @@
 		
 		{foreach from=$modules item='module'}
 			{assign var='optionList' value=$module->getOptions()}
-			{include file=$module->getTemplateName()}
+			{if $module->getTemplateName() != ''}
+				{include file=$module->getTemplateName()}
+			{else}
+				<!-- Module class {$module|get_class} does not define a template name -->
+			{/if}
 		{/foreach}
 		
 		{include file='footer' sandbox=false}
