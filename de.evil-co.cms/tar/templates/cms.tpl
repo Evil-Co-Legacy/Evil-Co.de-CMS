@@ -15,14 +15,16 @@
 	<body{if $templateName|isset} id="tpl{$templateName|ucfirst}"{/if}>
 		{include file='header' sandbox=false}
 		
-		{foreach from=$modules item='module'}
-			{if $module->getTemplateName() != ''}
-				{assign var='optionList' value=$module->getOptions()}
-				{include file=$module->getTemplateName()}
-			{else}
-				<!-- Module class {$module|get_class} ({$module->getName()}) does not define a template name -->
-			{/if}
-		{/foreach}
+		<div id="main">
+			{foreach from=$modules item='module'}
+				{if $module->getTemplateName() != ''}
+					{assign var='optionList' value=$module->getOptions()}
+					{include file=$module->getTemplateName()}
+				{else}
+					<!-- Module class {$module|get_class} ({$module->getName()}) does not define a template name -->
+				{/if}
+			{/foreach}
+		</div>
 		
 		{include file='footer' sandbox=false}
 	</body>
