@@ -125,7 +125,8 @@ class DynamicPageEditor extends DynamicPage {
 	 * Removes the cache for the given page
 	 */
 	public static function clearCache($pageID, $hostID) {
-		WCF::getCache()->clear(WCF_DIR.'cache/', 'dynamicPages-'.$hostID.'.php');
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.dynamicPages-'.$hostID.'.php');
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.page-'.$pageID.'.php');
 		// TODO: Check for other cache files
 	}
 }
