@@ -16,6 +16,7 @@
 		{include file='header' sandbox=false}
 		
 		{foreach from=$modules item='module'}
+			{assign var='optionList' value=$module->getOptions()}
 			{include file=$module->getTemplateName()}
 		{/foreach}
 		
