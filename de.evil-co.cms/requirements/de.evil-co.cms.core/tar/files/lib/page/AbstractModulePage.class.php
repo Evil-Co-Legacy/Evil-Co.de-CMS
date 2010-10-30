@@ -28,7 +28,7 @@ abstract class AbstractModulePage extends AbstractPage {
 	public function readParameters() {
 		$this->page = new DynamicPage($this->pageID);
 		if (!$this->page->pageID) throw new IllegalLinkException;
-		$this->modules = $this->page->getModuleManager();
+		$this->modules = $this->page->getModuleManager()->getModuleInstances();
 		
 		parent::readParameters();
 		
