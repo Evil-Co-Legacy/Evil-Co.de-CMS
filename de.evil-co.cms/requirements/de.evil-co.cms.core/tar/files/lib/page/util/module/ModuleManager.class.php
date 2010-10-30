@@ -44,7 +44,7 @@ class ModuleManager {
 			} else {
 				// we'll load a default class if the specified file doesn't exist
 				require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
-				$this->modules[] = new InstanceableModule(null, null, $module);
+				$this->modules[] = new InstanceableModule(null, $module);
 			}
 		}
 	}
