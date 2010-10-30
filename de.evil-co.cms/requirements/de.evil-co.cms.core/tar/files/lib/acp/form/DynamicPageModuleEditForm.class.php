@@ -67,9 +67,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 				foreach($value as $optionName => $optionValue) {
 					if ($this->optionGroupList->getGroup($name) !== false) {
 						if ($this->optionGroupList->getGroup($name)->getOption($optionName) !== false) {
-							$group = &$this->optionGroupList->getGroup($name);
-							$option = &$group->getOption($optionName);
-							$option->setValue($optionValue);
+							$this->optionGroupList->getGroup($name)->getOption($optionName)->setValue($optionValue);
 						}
 					}
 				}
