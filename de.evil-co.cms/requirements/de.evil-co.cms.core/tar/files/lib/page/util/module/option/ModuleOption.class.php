@@ -58,9 +58,11 @@ class ModuleOption {
 		$this->cssClass = $cssClass;
 		
 		// get fields
-		foreach(explode(';', $fields) as $field) {
-			list($fieldName, $fieldValue) = explode(':', $field);
-			$this->fields[] = array('name' => $fieldName, 'value' => $fieldValue);
+		if (!empty($fields)) {
+			foreach(explode(';', $fields) as $field) {
+				list($fieldName, $fieldValue) = explode(':', $field);
+				$this->fields[] = array('name' => $fieldName, 'value' => $fieldValue);
+			}
 		}
 	}
 	
