@@ -8,6 +8,7 @@ require_once(WCF_DIR.'lib/page/util/module/option/group/list/ModuleOptionGroupLi
  * Manages all modules for the specified pageID
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
  */
 class ModuleManager {
 	
