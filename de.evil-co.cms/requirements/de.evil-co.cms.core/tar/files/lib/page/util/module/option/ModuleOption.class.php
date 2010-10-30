@@ -39,17 +39,29 @@ class ModuleOption {
 	protected $displayDescription = true;
 	
 	/**
+	 * Contains all fields of this option (This is only used for selects)
+	 * @var	array
+	 */
+	protected $fields = array();
+	
+	/**
 	 * Creates a new instance of ModuleOptions
 	 * @param	string	$name
 	 * @param	string	$type
 	 * @param	string	$value
 	 * @param	string	$cssClass
 	 */
-	public function __construct($name, $type, $value = null, $cssClass = null, $displayDescription = true) {
+	public function __construct($name, $type, $value = null, $cssClass = null, $displayDescription = true, $fields = '') {
 		$this->name = $name;
 		$this->type = $type;
 		$this->value = $value;
 		$this->cssClass = $cssClass;
+		
+		// get fields
+		foreach(explode(';', $fields) as $field) {
+			list($fieldName, $fieldValue) = explode(':', $field);
+			$this->fields[] = array('name' => $fieldName, 'value' => $fieldValue);
+		}
 	}
 	
 	/**
@@ -85,6 +97,13 @@ class ModuleOption {
 	 */
 	public function getDisplayDescription() {
 		return $this->displayDescription;
+	}
+	
+	/**
+	 * Returnes all fields of this option (This field is only used for select fields)
+	 */
+	public function getFields() {
+		return $this->fields;
 	}
 	
 	/**
