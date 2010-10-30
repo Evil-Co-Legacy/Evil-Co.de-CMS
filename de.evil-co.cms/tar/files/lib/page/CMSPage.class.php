@@ -25,7 +25,7 @@ class CMSPage extends AbstractModulePage {
 		if (isset($_REQUEST['pageID'])) $this->pageID = intval($_REQUEST['pageID']);
 		
 		// read page cache
-		WCF::getCache()->addResource('page-'.$this->pageID, WCF_DIR.'cache/page-'.$this->pageID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderPage.class.php');
+		WCF::getCache()->addResource('page-'.$this->pageID, WCF_DIR.'cache/cache.page-'.$this->pageID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderPage.class.php');
 		$this->page = WCF::getCache()->get('page-'.$this->pageID);
 		
 		// validate
