@@ -59,9 +59,9 @@ CREATE TABLE `wcf1_page_module_option` (
 	`fields` TEXT NOT NULL
 );
 
-INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`) VALUES
-(1, 1, 'htmlCode', 'textarea', '', '', 1),
-(2, 2, 'content', 'textarea', '', '', '2');
+INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`, `displayDescription`, `fields`) VALUES
+(1, 1, 'htmlCode', 'textarea', '', '', 1, 1, ''),
+(2, 2, 'content', 'textarea', '', '', 2, 1, '');
 
 -- Planned for next release
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
