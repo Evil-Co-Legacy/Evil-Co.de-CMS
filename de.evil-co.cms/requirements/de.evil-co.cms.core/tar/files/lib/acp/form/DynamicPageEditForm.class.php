@@ -83,6 +83,8 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 			WCF::getDB()->sendQuery($sql);
 		}
 		
+		DynamicPageEditor::clearCache($this->page->pageID, $this->page->hostID);
+		
 		// show success message
 		WCF::getTPL()->assign('success', true);
 	}
