@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/DynamicPageModuleAddForm.class.php');
+require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
 
 /**
  * Implements a form that edits settings of a module
@@ -22,6 +23,12 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	public $instanceID = 0;
 	
 	/**
+	 * Contains the object that represents this instance
+	 * @var	InstanceableModule
+	 */
+	public $instance = null;
+	
+	/**
 	 * Contains the ModuleOptionGroupList for this module
 	 * @var	ModuleOptionGroupList
 	 */
@@ -35,30 +42,17 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		
 		if (isset($_REQUEST['instanceID'])) $this->instanceID = intval($_REQUEST['instanceID']);
 		
-		if (!isset($_REQUEST['instanceID'])) throw new IllegalLinkException;
-	}
-	
-	/**
-	 * @see Page::readData()
-	 */
-	public function readData() {
-		$sql = "SELECT
-					*
-				FROM
-					wcf".WCF_N."_page_module_to_page
-				WHERE
-					instanceID = ".$this->instanceID;
-		$instance = WCF::getDB()->getFirstRow($sql);
+		// create instance 
+		$this->instance = new InstanceableModule($this->instanceID);
 		
-		$this->pageID = $instance['pageID'];
+		// validate instance
+		if (!$this->instance->instanceID) throw new IllegalLinkException;
 		
-		// validate row
-		if ($instance['instanceID'] != $this->instanceID) throw new IllegalLinkException;
+		// write group option list
+		$this->optionGroupList = $this->instance->options;
 		
-		// write options
-		$this->optionGroupList = unserialize($instance['options']);
-		
-		ACPForm::readData();
+		// write pageID
+		$this->pageID = $this->instance->pageID;
 	}
 	
 	/**
