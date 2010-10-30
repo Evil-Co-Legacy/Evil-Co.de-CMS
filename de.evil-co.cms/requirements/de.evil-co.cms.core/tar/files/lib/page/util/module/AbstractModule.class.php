@@ -62,7 +62,7 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	/**
 	 * @see Module::__construct()
 	 */
-	public function __construct($pageID, $moduleID, $row = null) {
+	public function __construct($instanceID, $row = null) {
 		$this->sqlSelects .= 'module.*,
 							  page_module.name AS name';
 		$this->sqlJoins .= "LEFT JOIN
@@ -73,8 +73,8 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 		// create sql conditions
 		$sqlCondition = '';
 		
-		if ($pageID !== null and $moduleID !== null) {
-			$sqlCondition .=  "module.pageID = ".$pageID." AND module.moduleID = ".$moduleID;
+		if ($instanceID !== null) {
+			$sqlCondition .=  "module.instanceID = ".$instanceID;
 		}
 		
 		// execute sql statement
