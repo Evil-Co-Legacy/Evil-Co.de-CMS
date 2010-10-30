@@ -191,6 +191,9 @@ class DynamicPageAddForm extends ACPForm {
 			$menuItem = PageMenuItemEditor::create($lang, '', $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
 			$menuItemID = $menuItem->menuItemID;
 			
+			// clear cache
+			PageMenuItemEditor::clearCache();
+			
 			// create language var
 			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 			
