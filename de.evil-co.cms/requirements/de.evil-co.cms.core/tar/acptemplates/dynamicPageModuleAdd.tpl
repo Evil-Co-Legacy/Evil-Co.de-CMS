@@ -59,8 +59,8 @@
 						{/if}
 						<div class="formField">
 							{if $option->getType() != 'boolean'}
-								{if $option->getType() != 'textarea'}
-									<input type="{$option->getType()}" name="{$group->getName()}[{$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
+								{if $option->getType() == 'textarea'}
+									<textarea rows="10" columns="40" name="{$group->getName()}[{$option->getName()}]">{$option->getValue()}</textarea>
 								{elseif $option->getType() == 'select'}
 									<select name="{$group->getName()}[{$option->getName()}]">
 										{foreach from=$option->getFields() item='field'}
@@ -68,7 +68,7 @@
 										{/foreach}
 									</select>
 								{else}
-									<textarea rows="10" columns="40" name="{$group->getName()}[{$option->getName()}]">{$option->getValue()}</textarea>
+									<input type="{$option->getType()}" name="{$group->getName()}[{$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
 								{/if}
 							{else}
 								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} value="1" /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
