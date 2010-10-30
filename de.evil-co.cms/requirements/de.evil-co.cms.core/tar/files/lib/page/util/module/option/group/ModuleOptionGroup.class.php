@@ -71,5 +71,16 @@ class ModuleOptionGroup {
 		
 		return false;
 	}
+	
+	/**
+	 * Returnes the value of the given option
+	 * @param	string	$optionName
+	 */
+	public function getOptionValue($optionName) {
+		foreach($this->options as $key => $option) {
+			if ($this->options[$key]->getName() == $optionName) return $this->options[$key]->getValue();
+		}
+		return null;
+	}
 }
 ?>
