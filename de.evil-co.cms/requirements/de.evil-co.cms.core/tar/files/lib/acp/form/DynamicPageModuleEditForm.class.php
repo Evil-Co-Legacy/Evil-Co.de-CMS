@@ -119,7 +119,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$this->pageID.'-'.PACKAGE_ID.'.php');
 		
 		// display success message
-		WCF::getTPL()->assign('success');
+		WCF::getTPL()->assign('success', true);
 		
 		// call event
 		$this->saved();
