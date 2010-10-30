@@ -184,7 +184,7 @@ class DynamicPageAddForm extends ACPForm {
 			require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
 			
 			// build language var
-			$lang = 'wcf.cms.header.menu.host'.$this->hostID.'.page'.$item->pageID;
+			$lang = 'wcf.header.menu.host'.$this->hostID.'.page'.$item->pageID;
 			$title = (empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle);
 			
 			// create menu item
