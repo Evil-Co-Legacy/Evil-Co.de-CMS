@@ -72,6 +72,17 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		// update
 		$this->page->update();
 		
+		// handle isDefaultPage checkbox
+		if ($this->isDefaultPage) {
+			$sql = "UPDATE
+						wcf".WCF_N."_page
+					SET
+						isDefaultPage = 0
+					WHERE
+						pageID NOT IN (".$this->page->pageID.")";
+			WCF::getDB()->sendQuery($sql);
+		}
+		
 		// show success message
 		WCF::getTPL()->assign('success', true);
 	}
