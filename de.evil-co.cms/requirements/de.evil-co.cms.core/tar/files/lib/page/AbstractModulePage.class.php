@@ -19,7 +19,7 @@ abstract class AbstractModulePage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 		
-		$this->modules->readData();
+		$this->page->getModuleManager()->readData();
 	}
 	
 	/**
@@ -32,7 +32,7 @@ abstract class AbstractModulePage extends AbstractPage {
 		
 		parent::readParameters();
 		
-		$this->modules->readParameters();
+		$this->page->getModuleManager()->readParameters();
 	}
 	
 	/**
@@ -41,9 +41,9 @@ abstract class AbstractModulePage extends AbstractPage {
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		$this->modules->assignVariables();
+		$this->page->getModuleManager()->assignVariables();
 		
-		WCF::getTPL()->assign(array('modules' => $this->modules->getModuleInstances()));
+		WCF::getTPL()->assign(array('modules' => $this->modules));
 	}
 }
 ?>
