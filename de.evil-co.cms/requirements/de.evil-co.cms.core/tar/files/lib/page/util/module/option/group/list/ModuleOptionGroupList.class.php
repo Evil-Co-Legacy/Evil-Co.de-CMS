@@ -40,5 +40,20 @@ class ModuleOptionGroupList {
 		if (isset($group)) return $group;
 		return false;
 	}
+	
+	/**
+	 * Sets an option
+	 * @param	string	$groupName
+	 * @param	string	$optionName
+	 * @param	mixed	$value
+	 */
+	public function setOption($groupName, $optionName, &$value) {
+		foreach($this->optionGroups as $key => $group) {
+			if ($grpup->getName() == $groupName) {
+				return $this->optionGroups[$key]->setOption($optionName, $value);
+			}
+		}
+		return false;
+	}
 }
 ?>
