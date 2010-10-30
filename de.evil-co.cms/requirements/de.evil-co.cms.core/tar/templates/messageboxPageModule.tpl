@@ -1,0 +1,1 @@
+<p class="{@$optionList->getOptionValue('general', 'type')}">{@$optionList->getOptionValue('general', 'text')}</p>
