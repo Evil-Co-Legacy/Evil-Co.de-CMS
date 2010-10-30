@@ -1,1 +1,1 @@
-{@$optionList->getGroup('general')->getOption('htmlCode')->getValue()}
+{@$optionList->getOptionValue('general', 'htmlCode')}
