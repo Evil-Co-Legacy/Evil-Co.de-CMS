@@ -16,8 +16,8 @@
 		{include file='header' sandbox=false}
 		
 		{foreach from=$modules item='module'}
-			{assign var='optionList' value=$module->getOptions()}
 			{if $module->getTemplateName() != ''}
+				{assign var='optionList' value=$module->getOptions()}
 				{include file=$module->getTemplateName()}
 			{else}
 				<!-- Module class {$module|get_class} does not define a template name -->
