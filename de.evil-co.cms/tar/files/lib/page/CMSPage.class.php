@@ -38,6 +38,17 @@ class CMSPage extends AbstractModulePage {
 		parent::readParameters();
 	}
 	
+	public function show() {
+		if ($this->page->menuItemID) {
+			// page menu
+			require_once(WCF_DIR.'lib/page/util/menu/PageMenu.class.php');
+			PageMenu::setActiveMenuItem('wcf.cms.header.menu.host'.$this->page->hostID.'.page'.$this->page->pageID);
+		}
+		
+		
+		parent::show();
+	}
+	
 	/**
 	 * @see Page::assignVariables()
 	 */
