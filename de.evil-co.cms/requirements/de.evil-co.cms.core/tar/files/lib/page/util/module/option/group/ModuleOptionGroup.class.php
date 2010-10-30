@@ -55,5 +55,21 @@ class ModuleOptionGroup {
 		if (isset($option)) return $option;
 		return false;
 	}
+	
+	/**
+	 * Sets the value of the given option
+	 * @param	string	$optionName
+	 * @param	mixed	$value
+	 */
+	public function setOption($optionName, $value) {
+		foreach($this->options as $key => $option) {
+			if ($this->options[$key]->getName() == $optionName) {
+				$this->options[$key]->setValue($value);
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
 ?>
