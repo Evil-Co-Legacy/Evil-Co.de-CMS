@@ -38,6 +38,9 @@ class CMSPage extends AbstractModulePage {
 		parent::readParameters();
 	}
 	
+	/**
+	 * @see	Page::show()
+	 */
 	public function show() {
 		if ($this->page->menuItemID) {
 			// page menu
