@@ -124,7 +124,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		WCF::getTPL()->assign('success');
 		
 		// call event
-		$this->executed();
+		$this->saved();
 	}
 	
 	/**
