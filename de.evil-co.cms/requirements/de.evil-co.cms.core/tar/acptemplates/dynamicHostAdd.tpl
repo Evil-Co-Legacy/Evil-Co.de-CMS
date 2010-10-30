@@ -43,10 +43,13 @@
 					</p>
 				{/if}
 			</div>
-			<div class="formFieldDesc">
+			<div class="formFieldDesc" id="titleHelpMessage">
 				{lang}wcf.cms.host.add.general.title.description{/lang}
 			</div>
 		</div>
+		<script type="text/javascript">
+			inlineHelp.register('title');
+		</script>
 		
 		<div class="formElement"{if $errorField == 'hostname'} class="formError"{/if}>
 			<div class="formFieldLabel">
@@ -61,10 +64,13 @@
 					</p>
 				{/if}
 			</div>
-			<div class="formFieldDesc">
+			<div class="formFieldDesc" id="hostnameHelpMessage">
 				{lang}wcf.cms.host.add.general.hostname.description{/lang}
 			</div>
 		</div>
+		<script type="text/javascript">
+			inlineHelp.register('hostname');
+		</script>
 	</fieldset>
 	<fieldset>
 		<legend><a href="javascript:void(openList('expertSettingsContent',{ openTitle: '{lang}wcf.cms.host.add.expertSettings.show{/lang}', closeTitle: '{lang}wcf.cms.host.add.expertSettings.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="expertSettingsContentImage" alt="" title="{lang}wcf.cms.host.add.expertSettings.show{/lang}" /> <span>{lang}wcf.cms.host.add.expertSettings{/lang}</span></a></legend>
@@ -74,10 +80,13 @@
 				<div class="formField">
 					<label for="isFallback"><input type="checkbox" {if $isFallback}checked="checked" {/if}value="1" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
 				</div>
-				<div class="formFieldDesc">
+				<div class="formFieldDesc" id="isFallbackHelpMessage">
 					{lang}wcf.cms.host.add.expertSettings.isFallback.description{/lang}
 				</div>
 			</div>
+			<script type="text/javascript">
+				inlineHelp.register('isFallback');
+			</script>
 			
 			<div class="formElement">
 				<div class="formFieldLabel">
@@ -86,10 +95,13 @@
 				<div class="formField">
 					<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
 				</div>
-				<div class="formFieldDesc">
+				<div class="formFieldDesc" id="languageCodeHelpMessage">
 					{lang}wcf.cms.host.add.expertSettings.languageCode.description{/lang}
 				</div>
 			</div>
+			<script type="text/javascript">
+				inlineHelp.register('languageCode');
+			</script>
 		</div>
 	</fieldset>
 	
