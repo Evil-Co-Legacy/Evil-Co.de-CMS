@@ -42,13 +42,14 @@ CREATE TABLE `wcf1_page_module_option_group` (
 INSERT INTO `wcf1_page_module_option_group` (`groupID`, `moduleID`, `name`) VALUES
 (1, 1, 'general'),
 (2, 2, 'general');
+(3, 3, 'general')
 	
 DROP TABLE IF EXISTS `wcf1_page_module_option`;
 CREATE TABLE `wcf1_page_module_option` (
 	`optionID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	`moduleID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL,
-	`optionType` ENUM ('boolean', 'text', 'textarea'),
+	`optionType` ENUM ('boolean', 'text', 'textarea', 'select'),
 	`defaultValue` TEXT NOT NULL DEFAULT '',
 	`cssClass` VARCHAR(255) NOT NULL DEFAULT '',
 	`groupID` INT NOT NULL
