@@ -1,5 +1,5 @@
 <?php
-// define module IDs that should updated (This is totaly senseless!)
+// define module IDs that should updated (This is totaly senseless! And the last commit for this comment was shit ...)
 $moduleIDs = array(1, 2, 3, 4);
 
 // get packageID
