@@ -1,6 +1,6 @@
 <?php
 // define module IDs that should updated
-$moduleIDs = array(1, 2, 3);
+$moduleIDs = array(1, 2, 3, 4);
 
 // get packageID
 $sql = "SELECT
