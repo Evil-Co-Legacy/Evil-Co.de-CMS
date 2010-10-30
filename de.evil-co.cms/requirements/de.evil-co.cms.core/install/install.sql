@@ -52,7 +52,9 @@ CREATE TABLE `wcf1_page_module_option` (
 	`optionType` ENUM ('boolean', 'text', 'textarea', 'select'),
 	`defaultValue` TEXT NOT NULL DEFAULT '',
 	`cssClass` VARCHAR(255) NOT NULL DEFAULT '',
-	`groupID` INT NOT NULL
+	`groupID` INT NOT NULL,
+	`displayDescription` TINYINT (1) NOT NULL DEFAULT '1',
+	`fields` TEXT NOT NULL
 );
 
 INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`) VALUES
@@ -75,7 +77,5 @@ CREATE TABLE `wcf1_page_module_to_page` (
 	`pageID` INT NOT NULL,
 	`isVisible` TINYINT (1) NOT NULL DEFAULT '1',
 	`sortOrder` INT NOT NULL,
-	`options` TEXT NOT NULL,
-	`displayDescription` TINYINT (1) NOT NULL DEFAULT '1',
-	`fields` TEXT NOT NULL
+	`options` TEXT NOT NULL
 );
