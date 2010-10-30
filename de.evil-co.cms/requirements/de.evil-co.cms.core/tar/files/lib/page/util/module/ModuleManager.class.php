@@ -115,7 +115,7 @@ class ModuleManager {
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
 			if (!isset($options[$row['groupID']])) $options[$row['groupID']] = array();
-			$options[$row['groupID']][] = new ModuleOption($row['name'], $row['optionType'], $row['defaultValue'], $row['cssClass']);
+			$options[$row['groupID']][] = new ModuleOption($row['name'], $row['optionType'], $row['defaultValue'], $row['cssClass'], ($row['displayDescription'] == 1 ? true : false), $row['fields']);
 		}
 		
 		// read option groups
