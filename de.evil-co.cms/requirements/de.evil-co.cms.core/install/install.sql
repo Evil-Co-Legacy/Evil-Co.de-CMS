@@ -61,7 +61,8 @@ CREATE TABLE `wcf1_page_module_option` (
 
 INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`, `displayDescription`, `fields`) VALUES
 (1, 1, 'htmlCode', 'textarea', '', '', 1, 1, ''),
-(2, 2, 'content', 'textarea', '', '', 2, 1, '');
+(2, 2, 'content', 'textarea', '', '', 2, 1, ''),
+(3, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2;cf.cms.module.headline.option.size.h3:3;cf.cms.module.headline.option.size.h4:4;cf.cms.module.headline.option.size.h5:5;cf.cms.module.headline.option.size.h6:6');
 
 -- Planned for next release
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
