@@ -100,9 +100,8 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	protected function handleData($data) {
 		parent::handleData($data);
 		
-		if (!$this->pageID or !$this->moduleID) {
-			$this->data['pageID'] = 0;
-			$this->data['moduleID'] = 0;
+		if (!$this->instanceID) {
+			$this->data['instanceID'] = 0;
 		} else {
 			$this->data['options'] = unserialize($this->data['options']);
 		}
