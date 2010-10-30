@@ -112,7 +112,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		$sql = "UPDATE
 					wcf".WCF_N."_page_module_to_page
 				SET
-					options = ".serialize($this->optionGroupList)."
+					options = '".escapeString(serialize($this->optionGroupList))."'
 				WHERE
 					instanceID = ".$this->instanceID;
 		WCF::getDB()->sendQuery($sql);
