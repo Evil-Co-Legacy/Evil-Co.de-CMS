@@ -132,10 +132,6 @@
 				<p class="formField">{PACKAGE_VERSION}</p>
 			</div>
 			<div class="formElement">
-				<p class="formFieldLabel">{lang}cms.acp.index.system.installationDate{/lang}</p>
-				<p class="formField">{@INSTALL_DATE|time}</p>
-			</div>
-			<div class="formElement">
 				<p class="formFieldLabel">{lang}cms.acp.index.system.wcf.version{/lang}</p>
 				<p class="formField">{WCF_VERSION}</p>
 			</div>
