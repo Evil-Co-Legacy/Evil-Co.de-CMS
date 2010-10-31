@@ -7,6 +7,7 @@
 		<item name="cms.global.noDefaultPage"><![CDATA[Es existiert keine Startseite.]]></item>
 		<item name="cms.global.copyright"><![CDATA[<a href="http://www.evil-co.de/">CMS Software: <strong>Evil-Co.de CMS</strong> entwickelt von Evil-Co.de</a>]]></item>
 		<item name="cms.global.changeStyle"><![CDATA[Stil wechseln]]></item>
+		<item name="cms.header.userMenu.changeLanguage"><![CDATA[Sprache ändern]]></item>
 	</category>
 
 	<!-- backend -->
