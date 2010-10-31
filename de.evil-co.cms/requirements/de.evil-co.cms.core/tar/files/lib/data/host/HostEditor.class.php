@@ -81,5 +81,12 @@ class HostEditor extends Host {
 					hostID ".(is_array($hostID) ? "IN (".implode(',', $hostID).")" : "= ".$hostID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Removes the cache for this application
+	 */
+	public static function clearCache() {
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.hosts-'.PACKAGE_ID.'.php');
+	}
 }
 ?>
