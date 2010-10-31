@@ -21,6 +21,7 @@
 		<item name="wcf.cms.host.add.general.title.description"><![CDATA[Der Titel eines Hosts kann genutzt werden um mehrere Hosts voneinander zu unterscheiden. Dieses Feld ist optional.]]></item>
 		<item name="wcf.cms.host.add.general.hostname"><![CDATA[Hostname]]></item>
 		<item name="wcf.cms.host.add.general.hostname.description"><![CDATA[Ein Hostname wird verwendet um mehrere Seiten voneinander zu unterscheiden (Zumindest in diesem System). Der Hostname der Website http://www.evil-co.de/ wäre z.B. 'evil-co.de'.]]></item>
+		<item name="wcf.cms.host.add.general.hostname.invalid"><![CDATA[Bitte geben Sie einen validen Hostnamen an ('localhost' gilt als Ausnahme und funktioniert genauso wie jeder andere Hostname).]]></item>
 		<item name="wcf.cms.host.add.expertSettings"><![CDATA[Experteneinstellungen]]></item>
 		<item name="wcf.cms.host.add.expertSettings.isFallback"><![CDATA[Als Fallback verwenden]]></item>
 		<item name="wcf.cms.host.add.expertSettings.isFallback.description"><![CDATA[Wenn dieses Feld aktiviert ist, wird dieser Host verwendet wenn kein anderer Host gefunden wird. (<strong>Achtung:</strong> Dies hat zur Folge das alle nicht bekannten Hosts die auf diese Seite verweisen automatisch die Seite enthalten die unter diesem Host gespeichert ist.]]></item>
