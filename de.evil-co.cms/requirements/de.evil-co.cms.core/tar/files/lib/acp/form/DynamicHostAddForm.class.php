@@ -92,6 +92,9 @@ class DynamicHostAddForm extends ACPForm {
 		// display success field
 		WCF::getTPL()->assign('success', true);
 		
+		// remove cache
+		HostEditor::clearCache();
+		
 		// call event
 		$this->saved();
 	}

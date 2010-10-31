@@ -72,6 +72,9 @@ class DynamicHostEditForm extends DynamicHostAddForm {
 		// show success message
 		WCF::getTPL()->assign('success', true);
 		
+		// remove cache
+		HostEditor::clearCache();
+		
 		// call event
 		$this->saved();
 	}
