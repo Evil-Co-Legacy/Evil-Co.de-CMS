@@ -54,7 +54,7 @@
 					<div class="formElement">
 						{if $option->getType() != 'boolean'}
 							<div class="formFieldLabel">
-								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.{$instance->getName()}.option.{$option->getName()}.title{/lang}</label>
+								<label for="{$group->getName()}[{$option->getName()}]">{lang}wcf.cms.module.{$instance->getName()}.option.{$option->getName()}{/lang}</label>
 							</div>
 						{/if}
 						<div class="formField">
@@ -71,7 +71,7 @@
 									<input type="{$option->getType()}" name="{$group->getName()}[{$option->getName()}]" value="{$option->getValue()}" class="{$option->getCssClass()}" />
 								{/if}
 							{else}
-								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} value="1" /> {lang}wcf.cms.module.option.{$option->getName()}.title{/lang}</label>
+								<label for="{$group->getName()}[{$option->getName()}]"><input type="checkbox" name="{$group->getName()}[{$option->getName()}]" {if $option->getValue()}checked="checked" {/if} value="1" /> {lang}wcf.cms.module.{$instance->getName()}.option.{$option->getName()}{/lang}</label>
 							{/if}
 						</div>
 						{if $option->getDisplayDescription()}
