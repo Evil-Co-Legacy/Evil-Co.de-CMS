@@ -42,9 +42,6 @@
 		<!-- <acpmenu>install/xml/acpmenu.xml</acpmenu> -->
 		<!-- <groupoptions>xml/groupoptions.xml</groupoptions> -->
 
-		<!-- Other PiPs -->
-		<sql>install/install.sql</sql>
-
 		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
 		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
