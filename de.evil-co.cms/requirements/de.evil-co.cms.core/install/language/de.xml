@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
-	<category name="wcf.menu">
-		<item name="wcf.menu.link.content.host"><![CDATA[Seitenverwaltung]]></item>
-		<item name="wcf.menu.link.content.host.list"><![CDATA[Hosts auflisten]]></item>
-		<item name="wcf.menu.link.content.host.add"><![CDATA[Host hinzufügen]]></item>
+	<!-- acp menu -->
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.content.host"><![CDATA[Seitenverwaltung]]></item>
+		<item name="wcf.acp.menu.link.content.host.list"><![CDATA[Hosts auflisten]]></item>
+		<item name="wcf.acp.menu.link.content.host.add"><![CDATA[Host hinzufügen]]></item>
 	</category>
 	
 	<!-- host system -->
@@ -14,6 +15,7 @@
 		
 		<!-- host add -->
 		<item name="wcf.cms.host.add.title"><![CDATA[Host hinzufügen]]></item>
+		<item name="wcf.cms.host.add.success"><![CDATA[Der Host wurde erfolgreich hinzugefügt.]]></item>
 		<item name="wcf.cms.host.add.general"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.host.add.general.title"><![CDATA[Titel]]></item>
 		<item name="wcf.cms.host.add.general.title.description"><![CDATA[Der Titel eines Hosts kann genutzt werden um mehrere Hosts voneinander zu unterscheiden. Dieses Feld ist optional.]]></item>
@@ -27,9 +29,11 @@
 		
 		<!-- host edit -->
 		<item name="wcf.cms.host.edit.title"><![CDATA[Host bearbeiten]]></item>
+		<item name="wcf.cms.host.edit.success"><![CDATA[Der Host wurde erfolgreich bearbeitet.]]></item>
 		
 		<!-- other -->
 		<item name="wcf.cms.host.delete"><![CDATA[Host löschen]]></item>
+		<item name="wcf.cms.host.delete.sure"><![CDATA[Wollen Sie diesen Host wirklich löschen?]]></item>
 	</category>
 	
 	<!-- page system -->
@@ -56,8 +60,8 @@
 		<item name="wcf.cms.page.add.menu.menuItemSortOrder.description"><![CDATA[Dies definiert die Reihenfolge (Position) des Menüeintrags (Falls dieses Feld 0 enthält wird der Eintrag am Ende eingefügt).]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemIconS"><![CDATA[Icon (Klein)]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemIconS.description"><![CDATA[Geben Sie hier ein kleines Icon an (Dieses Feld ist optional sofern die Position auf 'header' gesetzt ist).]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconS"><![CDATA[Icon (Groß)]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconS.description"><![CDATA[Geben Sie hier ein großes Icon an (Dieses Feld ist optional sofern die Position auf 'footer' gesetzt ist).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM"><![CDATA[Icon (Groß)]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM.description"><![CDATA[Geben Sie hier ein großes Icon an (Dieses Feld ist optional sofern die Position auf 'footer' gesetzt ist).]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemTitle"><![CDATA[Eintragstitel]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemTitle.description"><![CDATA[Geben Sie hier einen Titel für den Menüeintrag ein (Dieses Feld ist optional. Wird kein Inhalt eingegeben wird der Titel der Seite verwendet.).]]></item>
 		<item name="wcf.cms.page.add.publish"><![CDATA[Veröffentlichung]]></item>
@@ -75,6 +79,7 @@
 		<item name="wcf.cms.page.edit.title"><![CDATA[Seite bearbeiten]]></item>
 		<item name="wcf.cms.page.edit.success"><![CDATA[Die Seite wurde erfolgreich bearbeitet.]]></item>
 		<item name="wcf.cms.page.edit.sortSuccess"><![CDATA[Die Module wurden erfolgreich neu angeordnet.]]></item>
+		<item name="wcf.cms.page.edit.noModules"><![CDATA[Dieser Seite wurden noch keine Module hinzugefügt.]]></item>
 		<item name="wcf.cms.page.edit.moduleList.moduleName"><![CDATA[Modulname]]></item>
 		
 		<!-- page module add -->
@@ -87,6 +92,7 @@
 		<item name="wcf.cms.page.edit.module.edit.title"><![CDATA[Modul bearbeiten]]></item>
 		
 		<!-- other -->
+		<item name="wcf.cms.page.edit"><![CDATA[Seite bearbeiten]]></item>
 		<item name="wcf.cms.page.delete"><![CDATA[Seite löschen]]></item>
 		<item name="wcf.cms.page.moduleAdd"><![CDATA[Modul hinzufügen]]></item>
 	</category>
@@ -112,20 +118,42 @@
 		<item name="wcf.cms.module.headline.option.subHeadline.description"><![CDATA[Geben Sie hier einen Untertitel an (<strong>Achtung:</strong> Dieses Feld wird nur verwendet falls Sie eine Seitenüberschrift erstellen.]]></item>
 		
 		<!-- article module -->
+		<item name="wcf.cms.module.article.title"><![CDATA[Artikel]]></item>
 		<item name="wcf.cms.module.article.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.article.option.content"><![CDATA[Inhalt]]></item>
 		<item name="wcf.cms.module.article.option.content.description"><![CDATA[Geben Sie hier den Inhalt des Artikels an.]]></item>
 		
 		<!-- html module -->
+		<item name="wcf.cms.module.html.title"><![CDATA[HTML]]></item>
 		<item name="wcf.cms.module.html.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.html.option.content"><![CDATA[Inhalt]]></item>
 		<item name="wcf.cms.module.html.option.content.description"><![CDATA[Geben Sie hier den Inhalt des Artikels an.]]></item>
 		
 		<!-- messagebox module -->
+		<item name="wcf.cms.module.messagebox.title"><![CDATA[Nachrichtenbox]]></item>
 		<item name="wcf.cms.module.messagebox.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.messagebox.option.type"><![CDATA[Typ]]></item>
 		<item name="wcf.cms.module.messagebox.option.type.description"><![CDATA[Geben Sie hier den Typ der Nachrichtenbox an.]]></item>
 		<item name="wcf.cms.module.messagebox.option.text"><![CDATA[Inhalt]]></item>
 		<item name="wcf.cms.module.messagebox.option.text.description"><![CDATA[Geben Sie hier den Inhalt der Nachrichtenbox an.]]></item>
+	</category>
+	
+	<!-- group options -->
+	<category name="wcf.acp.group.option">
+		<!-- administration -->
+		<item name="wcf.acp.group.option.category.admin.content.cms"><![CDATA[Content Management System]]></item>
+		<item name="wcf.acp.group.option.category.admin.content.cms.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts"><![CDATA[Kann Hosts auflisten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können sämtliche Hosts auflisten.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts"><![CDATA[Kann Hosts hinzufügen]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können neue Hosts anlegen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts"><![CDATA[Kann Hosts bearbeiten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können Hosts bearbeiten und löschen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListPages"><![CDATA[Kann sämtliche Seiten auflisten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListPages.description"><![CDATA[Mitglieder dieser Benutzergruppe können sämtliche Seiten in einem Host auflisten.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddPages"><![CDATA[Kann Seiten hinzufügen]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddPages.description"><![CDATA[Benutzer dieser Benutzergruppe können Seiten hinzufügen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditPages"><![CDATA[Kann Seiten bearbeiten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditPages.description"><![CDATA[Benutzer dieser Benutzergruppe können Seiten bearbeiten und löschen.]]></item>
 	</category>
 </language>
