@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
+	<!-- global -->
+	<category name="cms.global">
+		<item name="cms.global.unknownPage"><![CDATA[Für die angegebene Adresse existiert kein passender Eintrag in der Datenbank.]]></item>
+		<item name="cms.global.noDefaultPage"><![CDATA[Es existiert keine Startseite.]]></item>
+	</category>
+
 	<!-- backend -->
 	<category name="cms.acp">
 		<item name="cms.acp.jumpToCMS"><![CDATA[CMS]]></item>
