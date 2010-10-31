@@ -65,7 +65,7 @@ CREATE TABLE `wcf1_page_module_option` (
 INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`, `displayDescription`, `fields`) VALUES
 (1, 1, 'htmlCode', 'textarea', '', '', 1, 1, ''),
 (2, 2, 'content', 'textarea', '', '', 2, 1, ''),
-(3, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2;cf.cms.module.headline.option.size.h3:3;cf.cms.module.headline.option.size.h4:4;cf.cms.module.headline.option.size.h5:5;cf.cms.module.headline.option.size.h6:6'),
+(3, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2:2;wcf.cms.module.headline.option.size.h3:3;wcf.cms.module.headline.option.size.h4:4;wcf.cms.module.headline.option.size.h5:5;wcf.cms.module.headline.option.size.h6:6'),
 (4, 3, 'content', 'text', '', 'inputText', '3', '1', ''),
 (5, 3, 'headlineIcon', 'text', '', 'inputText', '3', '1', ''),
 (6, 3, 'subHeadline', 'text', '', 'inputText', '3', '1', ''),
