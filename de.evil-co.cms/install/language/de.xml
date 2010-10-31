@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
+	<!-- backend -->
+	<category name="cms.acp">
+		<item name="cms.acp.jumpToCMS"><![CDATA[CMS]]></item>
+	</category>
+
 	<!-- index page -->
 	<category name="cms.acp.index">
 		<item name="cms.acp.index"><![CDATA[Evil-Co.de CMS Administrationsoberfläche]]></item>
@@ -31,5 +36,23 @@
 		<item name="cms.acp.index.updates.description"><![CDATA[Es stehen derzeit folgende Updates zur Verfügung:]]></item>
 		<item name="cms.acp.index.updates.startUpdate"><![CDATA[Update jetzt durchführen]]></item>
 		<item name="cms.acp.index.updates.update"><![CDATA[{$update.packageName}{if $update.instanceNo > 1} (#{$update.instanceNo}){/if} Version {$update.version.packageVersion}]]></item>
+	</category>
+	
+	<!-- frontend -->
+	<category name="cms.header.userNote">
+		<item name="cms.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet.]]></item>
+		<item name="cms.header.userNote.user"><![CDATA[Sie sind als <a href="index.php?page=User&userID={$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a> angemeldet.]]></item>
+	</category>
+	
+	<category name="cms.header.userMenu">
+		<item name="cms.header.userMenu.login"><![CDATA[Anmelden]]></item>
+		<item name="cms.header.userMenu.register"><![CDATA[Registrieren]]></item>
+		<item name="cms.header.userMenu.logout"><![CDATA[Abmelden]]></item>
+		<item name="cms.header.userMenu.profile"><![CDATA[Profil bearbeiten]]></item>
+		<item name="cms.header.userMenu.acp"><![CDATA[Administration]]></item>
+	</category>
+	
+	<category name="cms.header.login">
+		<item name="cms.header.login.useCookies"><![CDATA[Angemeldet bleiben]]></item>
 	</category>
 </language>
