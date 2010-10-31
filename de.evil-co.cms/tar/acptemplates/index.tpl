@@ -180,7 +180,7 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.developedBy{/lang}</p>
-			<p class="formField"><a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.evil-co.de"|rawurlencode}" class="externalURL">Evil-Co.de</a>, <a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.develfusion.com/"|rawurlencode}">DEVel Fusion</a></p>
+			<p class="formField"><a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.evil-co.de"|rawurlencode}" class="externalURL">Evil-Co.de</a>, <a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.develfusion.com/"|rawurlencode}" class="externalURL">DEVel Fusion</a></p>
 		</div>
 		
 		<div class="formElement">
