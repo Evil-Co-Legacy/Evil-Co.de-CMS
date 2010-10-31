@@ -242,7 +242,7 @@
 			<div class="largeButtons">
 				<ul>
 					<li>
-						<a href="index.php?form=DynamicPageModuleAdd&amp;pageID={$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.edit.moduleAdd.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/dynamicPageModuleAddM.png" alt="" /> <span>{lang}wcf.cms.page.edit.moduleAdd.title{/lang}</span></a>
+						<a href="index.php?form=DynamicPageModuleAdd&amp;pageID={$pageID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}" title="{lang}wcf.cms.page.edit.moduleAdd.title{/lang}"><img src="{@RELATIVE_WCF_DIR}icon/dynamicPageModuleAddM.png" alt="" /> <span>{lang}wcf.cms.page.edit.module.add.title{/lang}</span></a>
 					</li>
 					
 					{if $additionalLargeButtons|isset}{@$additionalLargeButtons}{/if}
