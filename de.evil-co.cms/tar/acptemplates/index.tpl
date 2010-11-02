@@ -195,7 +195,7 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.designer{/lang}</p>
-			<p class="formField">Johannes Donath, Alexander Pankow</p>
+			<p class="formField">Johannes Donath, Alexander Pankow<span class="hidden">Der hat eigentlich nix gemacht :-P</span></p>
 		</div>
 		
 		<div class="formElement">
