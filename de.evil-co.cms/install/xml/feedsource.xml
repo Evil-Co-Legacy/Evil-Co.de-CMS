@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/feedsource.dtd">
+<data>
+	<import>
+		<feedsource name="evilcode-cms-news">
+			<url><![CDATA[http://www.evil-co.de/board/index.php?page=ThreadsFeed&format=rss2&boardID=79]]></url>
+			<cycle>86400</cycle>
+		</feedsource>
+	</import>
+</data>

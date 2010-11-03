@@ -41,6 +41,7 @@
 		<!-- XML PiPs -->
 		<!-- <acpmenu>install/xml/acpmenu.xml</acpmenu> -->
 		<!-- <groupoptions>xml/groupoptions.xml</groupoptions> -->
+		<feedsource>install/xml/feedsource.xml</feedsource>
 
 		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
