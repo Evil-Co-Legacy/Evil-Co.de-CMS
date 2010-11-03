@@ -18,6 +18,7 @@
 	<!-- index page -->
 	<category name="cms.acp.index">
 		<item name="cms.acp.index"><![CDATA[Evil-Co.de CMS Administrationsoberfläche]]></item>
+		<item name="cms.acp.index.noPermissionsWarning"><![CDATA[<strong>Warning</strong><br />Sie haben nicht genügend Rechte um das CMS zu verwenden! Bitte vergessen Sie nicht die Gruppenrechte für die Gruppe Administratoren zu setzen.]]></item>
 		<item name="cms.acp.index.credits"><![CDATA[Über Evil-Co.de CMS]]></item>
 		<item name="cms.acp.index.credits.contributor"><![CDATA[Mitwirkende]]></item>
 		<item name="cms.acp.index.credits.designer"><![CDATA[Design]]></item>
