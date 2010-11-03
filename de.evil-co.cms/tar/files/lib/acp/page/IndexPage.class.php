@@ -85,6 +85,9 @@ class IndexPage extends AbstractPage {
 		
 		// get load
 		$this->readLoad();
+		
+		// show warning box if the user hadn't set permissions
+		if (in_array(4, WCF::getUser()->getGroupIDs()) and (!WCF::getUser()->getPermission('admin.content.cms.canListHosts'))) WCF::getTPL()->assign('noPermissions', true);
 	}
 	
 	/**
