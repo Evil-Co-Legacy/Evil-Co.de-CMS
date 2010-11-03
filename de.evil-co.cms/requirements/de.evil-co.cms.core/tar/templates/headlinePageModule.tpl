@@ -1,6 +1,6 @@
 {if $optionList->getOptionValue('general', 'size') == 2}
 	<div class="mainHeadline">
-		<img src="{$optionList->getOptionValue('general', 'headlineIcon')}" alt="" />
+		<img src="{icon}{$optionList->getOptionValue('general', 'headlineIcon')}{/icon}" alt="" />
 		<div class="headlineContainer">
 			<h2>{$optionList->getOptionValue('general', 'content')}</h2>
 			{if $optionList->getOptionValue('general', 'subHeadline') != ''}<p>{$optionList->getOptionValue('general', 'subHeadline')}</p>{/if}
