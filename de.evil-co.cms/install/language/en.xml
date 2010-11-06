@@ -1,4 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="en">
+	<!-- global -->
+	<category name="cms.global">
+		<item name="cms.global.unknownPage"><![CDATA[The given address was not found in database.]]></item>
+		<item name="cms.global.noDefaultPage"><![CDATA[No startpage was set.]]></item>
+		<item name="cms.global.copyright"><![CDATA[<a href="http://www.evil-co.de/">CMS Software: <strong>Evil-Co.de CMS</strong> developed by Evil-Co.de</a>]]></item>
+		<item name="cms.global.changeStyle"><![CDATA[Change Style]]></item>
+	</category>
+
+	<!-- backend -->
+	<category name="cms.acp">
+		<item name="cms.acp.jumpToCMS"><![CDATA[CMS]]></item>
+		<item name="cms.acp.pagePreview"><![CDATA[Pagepreview]]></item>
+	</category>
+
+	<!-- index page -->
+	<category name="cms.acp.index">
+		<item name="cms.acp.index"><![CDATA[Evil-Co.de CMS Administration]]></item>
+		<item name="cms.acp.index.noPermissionsWarning"><![CDATA[<strong>Warnuig</strong><br />You haven't set the CMS-Permissions for group 'Administrators'.]]></item>
+		<item name="cms.acp.index.credits"><![CDATA[About Evil-Co.de CMS]]></item>
+		<item name="cms.acp.index.credits.contributor"><![CDATA[Contributor]]></item>
+		<item name="cms.acp.index.credits.designer"><![CDATA[Design]]></item>
+		<item name="cms.acp.index.credits.developedBy"><![CDATA[Software developed by]]></item>
+		<item name="cms.acp.index.credits.developer"><![CDATA[Developer]]></item>
+		<item name="cms.acp.index.credits.productManager"><![CDATA[Projectmanager]]></item>
+		<item name="cms.acp.index.credits.translators"><![CDATA[Translation]]></item>
+		<item name="cms.acp.index.news"><![CDATA[News]]></item>
+		<item name="cms.acp.index.searchUsers"><![CDATA[Search Users]]></item>
+		<item name="cms.acp.index.system"><![CDATA[System]]></item>
+		<item name="cms.acp.index.system.cache"><![CDATA[Cache]]></item>
+		<item name="cms.acp.index.system.exportInformation"><![CDATA[Download System-Information]]></item>
+		<item name="cms.acp.index.system.load"><![CDATA[Current UNIX Load]]></item>
+		<item name="cms.acp.index.system.os"><![CDATA[Operating System (OS)]]></item>
+		<item name="cms.acp.index.system.php"><![CDATA[PHP Version]]></item>
+		<item name="cms.acp.index.system.server"><![CDATA[Server]]></item>
+		<item name="cms.acp.index.system.software"><![CDATA[Software]]></item>
+		<item name="cms.acp.index.system.sql.type"><![CDATA[Database]]></item>
+		<item name="cms.acp.index.system.sql.version"><![CDATA[MySQL Version]]></item>
+		<item name="cms.acp.index.system.wcf.version"><![CDATA[Community Framework&trade; Version]]></item>
+		<item name="cms.acp.index.system.webserver"><![CDATA[Webserver]]></item>
+		<item name="cms.acp.index.system.cms.version"><![CDATA[CMS Version]]></item>
+		<item name="cms.acp.index.updates"><![CDATA[Updates]]></item>
+		<item name="cms.acp.index.updates.description"><![CDATA[The following updates are available:]]></item>
+		<item name="cms.acp.index.updates.startUpdate"><![CDATA[Start Update]]></item>
+		<item name="cms.acp.index.updates.update"><![CDATA[{$update.packageName}{if $update.instanceNo > 1} (#{$update.instanceNo}){/if} Version {$update.version.packageVersion}]]></item>
+	</category>
+	
+	<!-- frontend -->
+	<category name="cms.header.userNote">
+		<item name="cms.header.userNote.guest"><![CDATA[You aren't logged in.]]></item>
+		<item name="cms.header.userNote.user"><![CDATA[You are logged in as <a href="index.php?page=User&userID={$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
+	</category>
+	
+	<category name="cms.header.userMenu">
+		<item name="cms.header.userMenu.login"><![CDATA[Login]]></item>
+		<item name="cms.header.userMenu.register"><![CDATA[Register]]></item>
+		<item name="cms.header.userMenu.logout"><![CDATA[Logout]]></item>
+		<item name="cms.header.userMenu.profile"><![CDATA[Edit Profile]]></item>
+		<item name="cms.header.userMenu.acp"><![CDATA[Administration]]></item>
+		<item name="cms.header.userMenu.changeLanguage"><![CDATA[Change Language]]></item>
+	</category>
+	
+	<category name="cms.header.login">
+		<item name="cms.header.login.useCookies"><![CDATA[Keep logged in]]></item>
+	</category>
 </language>
