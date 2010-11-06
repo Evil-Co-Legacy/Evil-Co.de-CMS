@@ -1,4 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de-informal">
+	<!-- acp menu -->
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.content.host"><![CDATA[Seitenverwaltung]]></item>
+		<item name="wcf.acp.menu.link.content.host.list"><![CDATA[Hosts auflisten]]></item>
+		<item name="wcf.acp.menu.link.content.host.add"><![CDATA[Host hinzufügen]]></item>
+	</category>
+	
+	<!-- host system -->
+	<category name="wcf.cms.host">
+		<!-- host list -->
+		<item name="wcf.cms.host.list.title"><![CDATA[Hosts auflisten]]></item>
+		
+		<!-- host add -->
+		<item name="wcf.cms.host.add.title"><![CDATA[Host hinzufügen]]></item>
+		<item name="wcf.cms.host.add.success"><![CDATA[Der Host wurde erfolgreich hinzugefügt.]]></item>
+		<item name="wcf.cms.host.add.general"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.host.add.general.title"><![CDATA[Titel]]></item>
+		<item name="wcf.cms.host.add.general.title.description"><![CDATA[Der Titel des Hosts wird global als Titel aller untergeordneten Seiten angezeigt (Neben dem Titel der eigentlichen Seite).]]></item>
+		<item name="wcf.cms.host.add.general.hostname"><![CDATA[Hostname]]></item>
+		<item name="wcf.cms.host.add.general.hostname.description"><![CDATA[Ein Hostname wird verwendet um mehrere Seiten voneinander zu unterscheiden (Zumindest in diesem System). Der Hostname der Website http://www.evil-co.de/ wäre z.B. 'evil-co.de'.]]></item>
+		<item name="wcf.cms.host.add.general.hostname.invalid"><![CDATA[Bitte gieb einen validen Hostnamen an ('localhost' gilt als Ausnahme und funktioniert genauso wie jeder andere Hostname).]]></item>
+		<item name="wcf.cms.host.add.expertSettings"><![CDATA[Experteneinstellungen]]></item>
+		<item name="wcf.cms.host.add.expertSettings.isFallback"><![CDATA[Als Fallback verwenden]]></item>
+		<item name="wcf.cms.host.add.expertSettings.isFallback.description"><![CDATA[Wenn dieses Feld aktiviert ist, wird dieser Host verwendet wenn kein anderer Host gefunden wird. (<strong>Achtung:</strong> Dies hat zur Folge das alle nicht bekannten Hosts die auf diese Seite verweisen automatisch die Seite enthalten die unter diesem Host gespeichert ist.]]></item>
+		<item name="wcf.cms.host.add.expertSettings.languageCode"><![CDATA[Sprachcode]]></item>
+		<item name="wcf.cms.host.add.expertSettings.languageCode.description"><![CDATA[Dieser Code kann verwendet werden um Seiten in mehreren Sprachen zu definieren. Die Sprachcodes werden durch das Framework definiert. (<strong>Achtung:</strong> Der Inhalt dieses Hosts wird nur angezeigt wenn die korrekte Sprache gewählt wird.)]]></item>
+		
+		<!-- host edit -->
+		<item name="wcf.cms.host.edit.title"><![CDATA[Host bearbeiten]]></item>
+		<item name="wcf.cms.host.edit.success"><![CDATA[Der Host wurde erfolgreich bearbeitet.]]></item>
+		
+		<!-- other -->
+		<item name="wcf.cms.host.delete"><![CDATA[Host löschen]]></item>
+		<item name="wcf.cms.host.delete.sure"><![CDATA[Willst du diesen Host wirklich löschen?]]></item>
+	</category>
+	
+	<!-- page system -->
+	<category name="wcf.cms.page">
+		<!-- page list -->
+		<item name="wcf.cms.page.list.title"><![CDATA[Seiten auflisten]]></item>
+		<item name="wcf.cms.page.list.details"><![CDATA[Hostdetails]]></item>
+		<item name="wcf.cms.page.list.details.title"><![CDATA[Titel]]></item>
+		<item name="wcf.cms.page.list.details.hostname"><![CDATA[Hostname]]></item>
+		
+		<!-- page add -->
+		<item name="wcf.cms.page.add.title"><![CDATA[Seite hinzufügen]]></item>
+		<item name="wcf.cms.page.add.details"><![CDATA[Seiteninformationen]]></item>
+		<item name="wcf.cms.page.add.details.title"><![CDATA[Titel]]></item>
+		<item name="wcf.cms.page.add.details.title.description"><![CDATA[Der Titel der Seite wird im &lt;title&gt;-Tag der Seite ausgegeben.]]></item>
+		<item name="wcf.cms.page.add.menu"><![CDATA[Menüoptionen]]></item>
+		<item name="wcf.cms.page.add.menu.createMenuItem"><![CDATA[Menüeintrag erstellen]]></item>
+		<item name="wcf.cms.page.add.menu.createMenuItem.description"><![CDATA[Wenn diese Option aktiviert ist wird ein Menüeintrag erstellt.]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemPosition"><![CDATA[Position]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemPosition.header"><![CDATA[Header]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemPosition.footer"><![CDATA[Footer]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemPosition.description"><![CDATA[Definiert die Position an der der Eintrag angezeigt werden soll.]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemSortOrder"><![CDATA[Reihenfolge]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemSortOrder.description"><![CDATA[Dies definiert die Reihenfolge (Position) des Menüeintrags (Falls dieses Feld 0 enthält wird der Eintrag am Ende eingefügt).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconS"><![CDATA[Icon (S)]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconS.description"><![CDATA[Gieb hier ein kleines Icon an (Dieses Feld ist optional sofern die Position auf 'footer' gesetzt ist).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM"><![CDATA[Icon (M)]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM.description"><![CDATA[Gieb hier ein großes Icon an (Dieses Feld ist optional sofern die Position auf 'header' gesetzt ist).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemTitle"><![CDATA[Eintragstitel]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemTitle.description"><![CDATA[Gieb hier einen Titel für den Menüeintrag ein (Dieses Feld ist optional. Wird kein Inhalt eingegeben wird der Titel der Seite verwendet.).]]></item>
+		<item name="wcf.cms.page.add.publish"><![CDATA[Veröffentlichung]]></item>
+		<item name="wcf.cms.page.add.publish.isPublic"><![CDATA[Öffentlich]]></item>
+		<item name="wcf.cms.page.add.publish.isPublic.description"><![CDATA[Wenn dieses Feld aktiv ist wird die Seite im Frontend angezeigt.]]></item>
+		<item name="wcf.cms.page.add.publish.isDefaultPage"><![CDATA[Startseite]]></item>
+		<item name="wcf.cms.page.add.publish.isDefaultPage.description"><![CDATA[Wenn dieses Feld aktiv ist wird diese Seite automatisch aufgerufen wenn keine spezielle Seite angegeben wird.]]></item>
+		<item name="wcf.cms.page.add.expert"><![CDATA[Experteneinstellungen]]></item>
+		<item name="wcf.cms.page.add.expert.allowSpidersToIndexThisPage"><![CDATA[Crawlern erlauben diese Seite zu indezieren]]></item>
+		<item name="wcf.cms.page.add.expert.allowSpidersToIndexThisPage.description"><![CDATA[Wenn diese Option nicht aktiviert ist werden die meisten Crawler (Suchmaschinen wie Google) diese Seite ignorieren.]]></item>
+		<item name="wcf.cms.page.add.expert.additionalHeadContent"><![CDATA[Erweiterte &lt;head&gt;-Inhalte]]></item>
+		<item name="wcf.cms.page.add.expert.additionalHeadContent.description"><![CDATA[In dieses Feld können HTML-Tags eingetragen werden die im &lt;head&gt;-Tag eingefügt werden sollen.]]></item>
+		
+		<!-- page edit -->
+		<item name="wcf.cms.page.edit.title"><![CDATA[Seite bearbeiten]]></item>
+		<item name="wcf.cms.page.edit.success"><![CDATA[Die Seite wurde erfolgreich bearbeitet.]]></item>
+		<item name="wcf.cms.page.edit.sortSuccess"><![CDATA[Die Module wurden erfolgreich neu angeordnet.]]></item>
+		<item name="wcf.cms.page.edit.noModules"><![CDATA[Dieser Seite wurden noch keine Module hinzugefügt.]]></item>
+		<item name="wcf.cms.page.edit.moduleList.moduleName"><![CDATA[Modulname]]></item>
+		
+		<!-- page module add -->
+		<item name="wcf.cms.page.edit.module.add.title"><![CDATA[Modul hinzufügen]]></item>
+		<item name="wcf.cms.page.edit.module.add.general"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.page.edit.module.add.general.moduleID"><![CDATA[Modul]]></item>
+		<item name="wcf.cms.page.edit.module.add.general.moduleID.description"><![CDATA[Wähle ein Modul welches hinzugefügt werden soll. Alle weiteren Einstellungen werden Ihnen nach dem Absenden angezeigt.]]></item>
+		<item name="wcf.cms.page.edit.module.edit.success"><![CDATA[Die Einstellungen für dieses Modul wurden erfolgreich übernommen.]]></item>
+		
+		<!-- page module edit -->
+		<item name="wcf.cms.page.edit.module.edit.title"><![CDATA[Modul bearbeiten]]></item>
+		
+		<!-- other -->
+		<item name="wcf.cms.page.edit"><![CDATA[Seite bearbeiten]]></item>
+		<item name="wcf.cms.page.delete"><![CDATA[Seite löschen]]></item>
+		<item name="wcf.cms.page.moduleAdd"><![CDATA[Modul hinzufügen]]></item>
+	</category>
+	
+	<!-- modules -->
+	<category name="wcf.cms.module">
+		<!-- headline module -->
+		<item name="wcf.cms.module.headline.title"><![CDATA[Überschrift]]></item>
+		<item name="wcf.cms.module.headline.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.headline.option.size"><![CDATA[Größe]]></item>
+		<item name="wcf.cms.module.headline.option.size.h1"><![CDATA[H1]]></item>
+		<item name="wcf.cms.module.headline.option.size.h2"><![CDATA[H2 (Seitenüberschrift)]]></item>
+		<item name="wcf.cms.module.headline.option.size.h3"><![CDATA[H3]]></item>
+		<item name="wcf.cms.module.headline.option.size.h4"><![CDATA[H4]]></item>
+		<item name="wcf.cms.module.headline.option.size.h5"><![CDATA[H5]]></item>
+		<item name="wcf.cms.module.headline.option.size.h6"><![CDATA[H6]]></item>
+		<item name="wcf.cms.module.headline.option.size.description"><![CDATA[Wähle eine Größe für die Überschrift.]]></item>
+		<item name="wcf.cms.module.headline.option.content"><![CDATA[Inhalt]]></item>
+		<item name="wcf.cms.module.headline.option.content.description"><![CDATA[Geben Sie hier den Inhalt der Überschrift an.]]></item>
+		<item name="wcf.cms.module.headline.option.headlineIcon"><![CDATA[Icon]]></item>
+		<item name="wcf.cms.module.headline.option.headlineIcon.description"><![CDATA[Gebe hier den Pfad zu einem Icon an (<strong>Achtung:</strong> Dieses Feld wird nur verwendet falls Du eine Seitenüberschrift erstellst.]]></item>
+		<item name="wcf.cms.module.headline.option.subHeadline"><![CDATA[Untertitel]]></item>
+		<item name="wcf.cms.module.headline.option.subHeadline.description"><![CDATA[Gebe hier einen Untertitel an (<strong>Achtung:</strong> Dieses Feld wird nur verwendet falls Du eine Seitenüberschrift erstellst.]]></item>
+		
+		<!-- article module -->
+		<item name="wcf.cms.module.article.title"><![CDATA[Artikel]]></item>
+		<item name="wcf.cms.module.article.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.article.option.content"><![CDATA[Inhalt]]></item>
+		<item name="wcf.cms.module.article.option.content.description"><![CDATA[Gebe hier den Inhalt des Artikels an.]]></item>
+		
+		<!-- html module -->
+		<item name="wcf.cms.module.html.title"><![CDATA[HTML]]></item>
+		<item name="wcf.cms.module.html.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.html.option.htmlCode"><![CDATA[Inhalt]]></item>
+		<item name="wcf.cms.module.html.option.htmlCode.description"><![CDATA[Gebe hier den Inhalt des HTML-Moduls an.]]></item>
+		
+		<!-- messagebox module -->
+		<item name="wcf.cms.module.messagebox.title"><![CDATA[Nachrichtenbox]]></item>
+		<item name="wcf.cms.module.messagebox.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.messagebox.option.type"><![CDATA[Typ]]></item>
+		<item name="wcf.cms.module.messagebox.option.type.description"><![CDATA[Gebe hier den Typ der Nachrichtenbox an.]]></item>
+		<item name="wcf.cms.module.messagebox.option.text"><![CDATA[Inhalt]]></item>
+		<item name="wcf.cms.module.messagebox.option.text.description"><![CDATA[Gebe hier den Inhalt der Nachrichtenbox an.]]></item>
+		<item name="wcf.cms.module.messagebox.option.info"><![CDATA[Information]]></item>
+		<item name="wcf.cms.module.messagebox.option.success"><![CDATA[Erfolgreich]]></item>
+		<item name="wcf.cms.module.messagebox.option.warning"><![CDATA[Warnung]]></item>
+		<item name="wcf.cms.module.messagebox.option.error"><![CDATA[Fehler]]></item>
+	</category>
+	
+	<!-- group options -->
+	<category name="wcf.acp.group.option">
+		<!-- administration -->
+		<item name="wcf.acp.group.option.category.admin.content.cms"><![CDATA[Content Management System]]></item>
+		<item name="wcf.acp.group.option.category.admin.content.cms.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts"><![CDATA[Kann Hosts auflisten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können sämtliche Hosts auflisten.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts"><![CDATA[Kann Hosts hinzufügen]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können neue Hosts anlegen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts"><![CDATA[Kann Hosts bearbeiten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts.description"><![CDATA[Mitglieder dieser Benutzergruppe können Hosts bearbeiten und löschen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListPages"><![CDATA[Kann sämtliche Seiten auflisten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListPages.description"><![CDATA[Mitglieder dieser Benutzergruppe können sämtliche Seiten in einem Host auflisten.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddPages"><![CDATA[Kann Seiten hinzufügen]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddPages.description"><![CDATA[Benutzer dieser Benutzergruppe können Seiten hinzufügen.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditPages"><![CDATA[Kann Seiten bearbeiten]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditPages.description"><![CDATA[Benutzer dieser Benutzergruppe können Seiten bearbeiten und löschen.]]></item>
+	</category>
 </language>
