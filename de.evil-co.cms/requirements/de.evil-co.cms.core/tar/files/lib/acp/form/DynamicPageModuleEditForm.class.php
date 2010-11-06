@@ -40,6 +40,11 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	public function readParameters() {
 		ACPForm::readParameters();
 		
+		// load cache for WYSIWYG-Editor
+		WCF::getCache()->addResource('smileys', WCF_DIR.'cache/cache.smileys.php', WCF_DIR.'lib/system/cache/CacheBuilderSmileys.class.php');
+		WCF::getCache()->addResource('bbcodes', WCF_DIR.'cache/cache.bbcodes.php', WCF_DIR.'lib/system/cache/CacheBuilderBBCodes.class.php');
+		
+		// read parameters
 		if (isset($_REQUEST['instanceID'])) $this->instanceID = intval($_REQUEST['instanceID']);
 		
 		// create instance 
