@@ -202,15 +202,6 @@ class DynamicPageAddForm extends ACPForm {
 			$language = new LanguageEditor(WCF::getLanguage()->getLanguageID());
 			$language->updateItems(array($lang => $title));
 			
-			// save hostID
-			$sql = "UPDATE
-						wcf".WCF_N."_page_menu_item
-					SET
-						hostID = ".$this->hostID."
-					WHERE
-						menuItemID = ".$menuItemID;
-			WCF::getDB()->sendQuery($sql);
-			
 			// include host
 			require_once(WCF_DIR.'lib/data/host/Host.class.php');
 			
