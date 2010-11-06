@@ -128,6 +128,9 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 			// update menu entry
 			$this->menuEntry->update($lang, $this->menuEntry->menuItemLink, $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
 			
+			// enable or disable entry
+			$this->menuEntry->enable($this->isPublic);
+			
 			// update language
 			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 			$language = new LanguageEditor(WCF::getLanguage()->getLanguageID());
