@@ -195,6 +195,9 @@ class DynamicPageAddForm extends ACPForm {
 			// clear cache
 			PageMenuItemEditor::clearCache();
 			
+			// enable or disable entry
+			$menuItem->enable($this->isPublic);
+			
 			// create language var
 			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 			
