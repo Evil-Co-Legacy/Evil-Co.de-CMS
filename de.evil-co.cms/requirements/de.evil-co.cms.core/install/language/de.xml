@@ -129,7 +129,7 @@
 		<item name="wcf.cms.module.html.title"><![CDATA[HTML]]></item>
 		<item name="wcf.cms.module.html.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.html.option.htmlCode"><![CDATA[Inhalt]]></item>
-		<item name="wcf.cms.module.html.option.htmlCode.description"><![CDATA[Geben Sie hier den Inhalt des Artikels an.]]></item>
+		<item name="wcf.cms.module.html.option.htmlCode.description"><![CDATA[Geben Sie hier den Inhalt des HTML-Modules an.]]></item>
 		
 		<!-- messagebox module -->
 		<item name="wcf.cms.module.messagebox.title"><![CDATA[Nachrichtenbox]]></item>
