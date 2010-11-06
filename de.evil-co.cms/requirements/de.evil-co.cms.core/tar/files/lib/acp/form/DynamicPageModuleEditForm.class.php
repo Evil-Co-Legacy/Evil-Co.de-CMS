@@ -95,6 +95,12 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 				if ($option->getType() == 'boolean') {
 					if (!isset($_POST[$groupName][$optionName])) $this->optionGroupList->getGroup($groupName)->getOption($optionName)->setValue(0);
 				} elseif ($option->getType() == 'editor') {
+					// parse text
+					require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
+					$parser = MessageParser::getInstance();
+					
+					$this->text = $parser->parse($this->text, true, false, true);
+					
 					$this->optionGroupList->getGroup($groupName)->getOption($optionName)->setValue($this->text);
 				}
 			}
