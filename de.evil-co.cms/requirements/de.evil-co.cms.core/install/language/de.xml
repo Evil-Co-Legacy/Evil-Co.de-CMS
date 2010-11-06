@@ -59,10 +59,10 @@
 		<item name="wcf.cms.page.add.menu.menuItemPosition.description"><![CDATA[Definiert die Position an der der Eintrag angezeigt werden soll.]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemSortOrder"><![CDATA[Reihenfolge]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemSortOrder.description"><![CDATA[Dies definiert die Reihenfolge (Position) des Menüeintrags (Falls dieses Feld 0 enthält wird der Eintrag am Ende eingefügt).]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconS"><![CDATA[Icon (Klein)]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconS.description"><![CDATA[Geben Sie hier ein kleines Icon an (Dieses Feld ist optional sofern die Position auf 'header' gesetzt ist).]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconM"><![CDATA[Icon (Groß)]]></item>
-		<item name="wcf.cms.page.add.menu.menuItemIconM.description"><![CDATA[Geben Sie hier ein großes Icon an (Dieses Feld ist optional sofern die Position auf 'footer' gesetzt ist).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconS"><![CDATA[Icon (S)]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconS.description"><![CDATA[Geben Sie hier ein kleines Icon an (Dieses Feld ist optional sofern die Position auf 'footer' gesetzt ist).]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM"><![CDATA[Icon (M)]]></item>
+		<item name="wcf.cms.page.add.menu.menuItemIconM.description"><![CDATA[Geben Sie hier ein großes Icon an (Dieses Feld ist optional sofern die Position auf 'header' gesetzt ist).]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemTitle"><![CDATA[Eintragstitel]]></item>
 		<item name="wcf.cms.page.add.menu.menuItemTitle.description"><![CDATA[Geben Sie hier einen Titel für den Menüeintrag ein (Dieses Feld ist optional. Wird kein Inhalt eingegeben wird der Titel der Seite verwendet.).]]></item>
 		<item name="wcf.cms.page.add.publish"><![CDATA[Veröffentlichung]]></item>
