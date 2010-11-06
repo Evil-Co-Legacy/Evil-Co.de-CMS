@@ -7,7 +7,7 @@
 		<packagedescription languagecode="de"><![CDATA[Fügt die komerziellen WCF Pakete (Die nur mit dem WBB erhältlich sind) zum CMS hinzu.]]></packagedescription>
 		<packagedescription languagecode="de-informal"><![CDATA[Fügt die komerziellen WCF Pakete (Die nur mit dem WBB erhältlich sind) zum CMS hinzu.]]></packagedescription>
 		<version>1.1.0</version>
-		<plugin>de.evil-co.cms</plugin>
+		<plugin>com.woltlab.wcf</plugin>
 		<date>2010-11-06</date>
 	</packageinformation>
 
@@ -18,7 +18,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms</requiredpackage>
+		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms.core</requiredpackage>
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf.page.user.usersOnline</requiredpackage>
 	</requiredpackages>
 
