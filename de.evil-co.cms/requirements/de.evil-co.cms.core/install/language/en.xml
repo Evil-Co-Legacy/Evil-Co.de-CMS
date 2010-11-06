@@ -96,6 +96,7 @@
 		<!-- other -->
 		<item name="wcf.cms.page.edit"><![CDATA[Edit Page]]></item>
 		<item name="wcf.cms.page.delete"><![CDATA[Delete Page]]></item>
+		<item name="wcf.cms.page.delete.sure"><![CDATA[Are you shure?]]></item>
 		<item name="wcf.cms.page.moduleAdd"><![CDATA[Add Module]]></item>
 	</category>
 	
