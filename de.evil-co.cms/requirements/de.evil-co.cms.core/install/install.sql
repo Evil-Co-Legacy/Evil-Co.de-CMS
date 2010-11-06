@@ -54,7 +54,7 @@ CREATE TABLE `wcf1_page_module_option` (
 	`optionID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	`moduleID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL,
-	`optionType` ENUM ('boolean', 'text', 'textarea', 'select'),
+	`optionType` ENUM ('boolean', 'text', 'textarea', 'select', 'editor'),
 	`defaultValue` TEXT NOT NULL DEFAULT '',
 	`cssClass` VARCHAR(255) NOT NULL DEFAULT '',
 	`groupID` INT NOT NULL,
