@@ -233,8 +233,7 @@
 			{/if}
 	
 		{elseif !$this->session->spiderID}
-			{if $this->session->isNew}<p class="info">{lang}cms.user.register.welcome{/lang}</p>{/if}
-	
+			{* {if $this->session->isNew}<p class="info">{lang}cms.user.register.welcome{/lang}</p>{/if} *}
 		{/if}
 		{if OFFLINE == 1 && $this->user->getPermission('user.cms.canViewCMSOffline')}
 			<div class="warning">
