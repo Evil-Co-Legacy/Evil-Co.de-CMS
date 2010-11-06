@@ -210,6 +210,12 @@ class DynamicPageAddForm extends ACPForm {
 					WHERE
 						menuItemID = ".$menuItemID;
 			WCF::getDB()->sendQuery($sql);
+			
+			// include host
+			require_once(WCF_DIR.'lib/data/host/Host.class.php');
+			
+			// remove menu item ID cache
+			Host::removeMenuItemIDCache();
 		}
 		
 		// update menu item id
