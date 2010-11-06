@@ -25,36 +25,114 @@ class PageModulePackageInstallationPlugin extends AbstractXMLPackageInstallation
 		}
 	
 		// Create an array with the data blocks (import or delete) from the xml file.
-		$validateServerXML = $xml->getElementTree('data');
+		$XML = $xml->getElementTree('data');
 	
 		// Loop through the array and install or uninstall items.
-		foreach ($validateServerXML['children'] as $key => $block) {
+		foreach ($XML['children'] as $key => $block) {
 		    if (count($block['children'])) {
 				// Handle the import instructions
 				if ($block['name'] == 'import') {
 				    // Loop through items and create or update them.
 				    foreach ($block['children'] as $module) {
+				    	$moduleInformation = $moduleOptions = $moduleOptionGroups = array();
+				    	
 						// Extract item properties.
 						foreach ($module['children'] as $child) {
+							if ($child['name'] == 'options') {
+								$newOption = array('name' => '', 'optiontype' => '', 'defaultvalue' => '', 'cssclass' => '', 'group' => '', 'displaydescription' => true, 'fields' => '');
+								
+								// Extract option properties.
+								foreach($child['children'] as $option) {
+									if (!isset($option['cdata'])) continue;
+									
+									$newOption[$option['name']] = $option['cdata'];
+								}
+								
+								// write option to options array
+								$moduleOptions[] = $newOption;
+								
+								// remove temp array
+								unset($newOption);
+								
+								// exit loop
+								continue;
+							}
+							
+							if ($child['name'] == 'optiongroups') {
+								$newOptionGroup = array('name' => '');
+								
+								// Extract option group properties.
+								foreach($child['children'] as $option) {
+									if (!isset($option['cdata'])) continue;
+									
+									$newOptionGroup[$option['name']] = $option['cdata'];
+								}
+								
+								// write option group to option group array
+								$moduleOptionGroups[] = $newOptionGroup;
+								
+								// remove temp array
+								unset($newOptionGroup);
+								
+								// exit loop
+								continue;
+							}
+							
 						    if (!isset($child['cdata'])) continue;
-						    $module[$child['name']] = $child['cdata'];
+						    $moduleInformation[$child['name']] = $child['cdata'];
 						}
 			
 						// default values
-						$fileName = '';
+						$name = $file = '';
 			
 						// get values
-						if (isset($module['filename'])) $fileName = $module['filename'];
+						if (isset($moduleInformation['name'])) $name = $moduleInformation['name'];
+						if (isset($moduleInformation['file'])) $file = $moduleInformation['file'];
 			
-						if (empty($fileName)) {
-						    throw new SystemException("Required 'filename' attribute is missing", 13023);
+						// validate xml input
+						if (empty($name)) throw new SystemException("Required 'name' tag is missing", 13023);
+						if (empty($file)) throw new SystemException("Required 'file' tag is missing", 13023);
+			
+						// include template editor
+						require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplateEditor.class.php');
+						
+						// create module template
+						$template = DynamicPageModuleTemplateEditor::create($name, $file, $this->installation->getPackageID());
+						
+						// clear cache
+						DynamicPageModuleTemplateEditor::clearCache();
+						
+						// include group editor
+						require_once(WCF_DIR.'lib/data/dynamic/page/module/option/group/DynamicPageModuleOptionGroupEditor.class.php');
+						
+						// create module option groups
+						foreach($moduleOptionGroups as $group) {
+							// validate group xml
+							if (empty($group['name'])) throw new SystemException("Required 'name' tag is missing", 13023);
+							
+							// create group
+							DynamicPageModuleOptionGroupEditor::create($group['name'], $template->moduleID);
 						}
-			
-						$sql = "INSERT INTO
-									wcf".WCF_N."_page_module(packageID, fileName)
-								VALUES (".$this->installation->getPackageID().",
-										'".escapeString($fileName)."')";
-						WCF::getDB()->sendQuery($sql);
+						
+						// include option editor
+						require_once(WCF_DIR.'lib/data/dynamic/page/module/option/DynamicPageModuleOptionEditor.class.php');
+						
+						// create module options
+						foreach($moduleOptions as $option) {
+							// validate option xml
+							if (empty($option['name'])) throw new SystemException("Required 'name' tag is missing", 13023);
+							if (empty($option['optiontype'])) throw new SystemException("Required 'optiontype' tag is missing", 13023);
+							if (empty($option['group'])) throw new SystemException("Required 'group' tag is missing", 13023);
+							
+							// convert fields
+							$option['displaydescription'] = (bool) intval($option['displaydescription']);
+							
+							// validate group
+							if (($groupID = DynamicPageModuleOptionGroup::isValidGroup($option['group'], $template->moduleID)) === false) throw new SystemException("Unknown module option group '".$option['group']."'");
+							
+							// create option
+							DynamicPageModuleOptionEditor::create($option['name'], $option['optiontype'], $option['defaultvalue'], $option['cssclass'], $option['displaydescription'], $option['fields'], $groupID, $template->moduleID);
+						}
 					}
 				}
 		
@@ -69,21 +147,63 @@ class PageModulePackageInstallationPlugin extends AbstractXMLPackageInstallation
 						    $module[$child['name']] = $child['cdata'];
 						}
 				
-						if (empty($module['filename'])) {
-						    throw new SystemException("Required 'filename' attribute is missing", 13023);
-						}
+						// validate input
+						if (empty($module['name'])) throw new SystemException("Required 'name' attribute is missing", 13023);
 						
-						$nameArray[] = $module['typename'];
+						$nameArray[] = $module['name'];
 				    }
 				    
 				    if (count($nameArray)) {
+				    	$sql = "SELECT
+				    				moduleID
+				    			FROM
+				    				wcf".WCF_N."_page_module
+				    			WHERE
+				    				packageID = ".$this->installation->getPackageID()."
+				    			AND
+				    				name IN ('".implode("','", array_map('escapeString', $nameArray))."')";
+				    	$result = WCF::getDB()->sendQuery($sql);
+				    	
+				    	// create needed variables
+				    	$moduleIDs = array();
+				    	
+				    	// loop through modules
+				    	while($row = WCF::getDB()->fetchArray($result)) {
+				    		$moduleIDs[] = $row['moduleID'];
+				    	}
+				    	
+				    	// remove options
+				    	$sql = "DELETE FROM
+				    				wcf".WCF_N."_page_module_option
+				    			WHERE
+				    				moduleID IN (".implode(',', $moduleIDs).")";
+				    	WCF::getDB()->sendQuery($sql);
+				    	
+				    	// remove option groups
+				    	$sql = "DELETE FROM
+				    				wcf".WCF_N."_gpage_module_option_group
+				    			WHERE
+				    				moduleID IN (".implode(',', $moduleIDs).")";
+				    	WCF::getDB()->sendQuery($sql); 
+				    	
+				    	// remove modules
 						$sql = "DELETE FROM
 							    	wcf".WCF_N."_page_module
 								WHERE
-							    	packageID = ".$this->installation->getPackageID()."
-								AND
-							    	fileName IN ('".implode("','", array_map('escapeString', $nameArray))."')";
+				    				moduleID IN (".implode(',', $moduleIDs).")";
 						WCF::getDB()->sendQuery($sql);
+						
+						// include template editor
+						require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplateEditor.class.php');
+						
+						// clear cache
+						DynamicPageModuleTemplateEditor::clearCache();
+						
+						// include dynamic page editor
+						require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
+						
+						// clear cache
+						DynamicPageEditor::clearCache('*', '*');
 				    }
 				}
 			}
