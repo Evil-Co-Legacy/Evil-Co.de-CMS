@@ -14,5 +14,10 @@ class HTMLModule extends AbstractModule {
 	 * @see AbstractModule::$templateName
 	 */
 	public $templateName = 'htmlPageModule';
+	
+	/**
+	 * @see	AbstractModule::$acpTemplateName
+	 */
+	public $acpTemplateName = 'htmlPageModule';
 }
 ?>
