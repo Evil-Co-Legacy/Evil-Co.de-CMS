@@ -1,6 +1,6 @@
 {include file='documentHeader'}
 	<head>
-		<title>{lang}{$page->title}{/lang} - {lang}{PAGE_TITLE}{/lang}</title>
+		<title>{lang}{$page->title}{/lang} - {lang}{$this->activeHost->title}{/lang}</title>
 		{assign var='allowSpidersToIndexThisPage' value=$page->getAllowSpidersToIndexThisPage()}
 		{include file='headInclude' sandbox=false}
 		
