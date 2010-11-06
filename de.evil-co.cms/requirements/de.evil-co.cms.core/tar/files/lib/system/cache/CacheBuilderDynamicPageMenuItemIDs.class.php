@@ -22,7 +22,21 @@ class CacheBuilderDynamicPageMenuItemIDs implements CacheBuilder {
 				FROM
 					wcf".WCF_N."_page
 				WHERE
-					hostID = ".$hostID;
+					hostID NOT IN (".$hostID.")";
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		$menuItemIDs = array();
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			$menuItemIDs[] = $row['menuItemID'];
+		}
+		
+		$sql = "SELECT
+					menuItemID
+				FROM
+					wcf".WCF_N."_page_menu_item
+				WHERE
+					menuItemID NOT IN (".implode(',', $menuItemIDs).")";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$menuItemIDs = array();
