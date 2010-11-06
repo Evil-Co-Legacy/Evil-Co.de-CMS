@@ -32,7 +32,7 @@
 		<fieldset>
 			<legend>{lang}wcf.cms.page.edit.module.add.general{/lang}</legend>
 			
-			<div class="formElement">
+			<div class="formElement{if $errorField == 'moduleID'} formError{/if}">
 				<div class="formFieldLabel">
 					<label for="moduleID">{lang}wcf.cms.page.edit.module.add.general.moduleID{/lang}</label>
 				</div>
@@ -42,6 +42,11 @@
 							<option value="{$module.moduleID}">{lang}wcf.cms.module.{$module.name}.title{/lang}</option>
 						{/foreach}
 					</select>
+					{if $errorField == 'moduleID'}
+						<p class="innerError">
+							{lang}wcf.cms.page.edit.module.add.general.moduleID.{$errorType}{/lang}
+						</p>
+					{/if}
 				</div>
 				<div class="formFieldDesc" id="moduleIDHelpMessage">
 					{lang}wcf.cms.page.edit.module.add.general.moduleID.description{/lang}
