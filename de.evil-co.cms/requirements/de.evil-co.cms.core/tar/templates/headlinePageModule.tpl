@@ -7,5 +7,5 @@
 		</div>
 	</div>
 {else}
-	<h{$optionList->getOptionValue('general', 'size')}>{$optionList->getOptionValue('general', 'content')}</h{$optionList->getOptionValue('general', 'size')}>
+	<h{$optionList->getOptionValue('general', 'size')} class="subHeadline">{$optionList->getOptionValue('general', 'content')}</h{$optionList->getOptionValue('general', 'size')}>
 {/if}
