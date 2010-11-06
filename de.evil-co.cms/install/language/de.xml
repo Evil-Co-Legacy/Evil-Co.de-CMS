@@ -12,6 +12,7 @@
 	<!-- backend -->
 	<category name="cms.acp">
 		<item name="cms.acp.jumpToCMS"><![CDATA[CMS]]></item>
+		<item name="cms.acp.pagePreview"><![CDATA[Seitenvorschau]]></item>
 	</category>
 
 	<!-- index page -->
