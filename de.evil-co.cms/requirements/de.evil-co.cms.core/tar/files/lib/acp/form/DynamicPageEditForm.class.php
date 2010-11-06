@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/acp/form/DynamicPageAddForm.class.php');
+require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
 
 /**
  * Implements a form that provides a edit form to update pages
@@ -28,6 +29,17 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	public $page = null;
 	
 	/**
+	 * Contains the object that represents the menu entry row for this page
+	 * @var	PageMenuItem
+	 */
+	public $menuEntry = null;
+	
+	/**
+	 * @see DynamicPageAddForm::$createMenuItem
+	 */
+	public $createMenuItem = false;
+	
+	/**
 	 * @see Page::readParameters()
 	 */
 	public function readParameters() {
@@ -40,6 +52,18 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		
 		// validate
 		if (!$this->page->pageID) throw new IllegalLinkException;
+		
+		// menu entry
+		if ($this->page->menuItemID) {
+			$this->menuEntry = new PageMenuItemEditor($this->page->menuItemID);
+			
+			// read variables
+			$this->menuItemSortOrder = $this->menuEntry->showOrder;
+			$this->menuItemIconS = $this->menuEntry->menuItemIconS;
+			$this->menuItemIconM = $this->menuEntry->menuItemIconM;
+			$this->menuItemTitle = WCF::getLanguage()->get($this->menuEntry->menuItem);
+			$this->menuItemPosition = $this->menuEntry->menuPosition;
+		}
 	}
 	
 	/**
@@ -54,6 +78,15 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		$this->additionalHeadContent = $this->page->additionalHeadContent;
 		$this->isPublic = $this->page->isPublic;
 		$this->isDefaultPage = $this->page->isDefaultPage;
+	}
+	
+	/**
+	 * @see Form::validate()
+	 */
+	public function validate() {
+		parent::validate();
+		
+		if ($this->createMenuItem and $this->menuEntry !== null) $this->createMenuItem = false;
 	}
 	
 	/**
@@ -84,6 +117,48 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		}
 		
 		DynamicPageEditor::clearCache($this->page->pageID, $this->page->hostID);
+		
+		if ($this->menuEntry !== null) {
+			// create language variable name
+			$lang = 'wcf.header.menu.host'.$this->page->hostID.'.page'.$this->pageID;
+			
+			// get menu entry title
+			$title = (empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle);
+			
+			// update menu entry
+			$this->menuEntry->update($lang, $this->menuEntry->link, $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
+			
+			// update language
+			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
+			$language = new LanguageEditor(WCF::getLanguage()->getLanguageID());
+			$language->updateItems(array($lang => $title));
+		}
+		
+		if ($this->createMenuItem) {
+			// build language var
+			$lang = 'wcf.header.menu.host'.$this->page->hostID.'.page'.$item->pageID;
+			$title = (empty($this->menuItemTitle) ? $this->title : $this->menuItemTitle);
+			
+			// create menu item
+			$menuItem = PageMenuItemEditor::create($lang, 'index.php?page=CMS&pageID='.$this->pageID, $this->menuItemIconS, $this->menuItemIconM, $this->menuItemSortOrder, $this->menuItemPosition);
+			$menuItemID = $menuItem->menuItemID;
+			
+			// clear cache
+			PageMenuItemEditor::clearCache();
+			
+			// create language var
+			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
+			
+			// save language variable
+			$language = new LanguageEditor(WCF::getLanguage()->getLanguageID());
+			$language->updateItems(array($lang => $title));
+			
+			// include host
+			require_once(WCF_DIR.'lib/data/host/Host.class.php');
+			
+			// remove menu item ID cache
+			Host::removeMenuItemIDCache();
+		}
 		
 		// show success message
 		WCF::getTPL()->assign('success', true);
