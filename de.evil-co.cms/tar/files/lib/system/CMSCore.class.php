@@ -18,6 +18,18 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 		'form' => array('UserLogin'),
 		'action' => array('UserLogout'));
 	protected static $activeHostID = 0;
+	protected static $hostManagerObj = null;
+	protected static $activeHost = null;
+	
+	/**
+	 * @see WCF::__construct()
+	 */
+	public function __construct() {
+		parent::__construct();
+		
+		// call custom construct methods
+		$this->initHostManager();
+	}
 
 	/**
 	 * @see WCF::initTPL()
@@ -208,18 +220,34 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 	}
 	
 	/**
-	 * Sets the hostID
-	 * @param	integer	$hostID
-	 */
-	public static function setHostID($hostID) {
-		self::$hostID = $hostID;
-	}
-	
-	/**
 	 * Returnes the hostID
 	 */
 	public static function getHostID() {
-		return self::$hostID;
+		return self::$activeHostID;
+	}
+	
+	/**
+	 * Creates a new instance of DynamicHostManager
+	 */
+	protected function initHostManager() {
+		require_once(WCF_DIR.'lib/page/util/DynamicHostManager.class.php');
+		self::$hostManagerObj = new DynamicHostManager();
+		self::$activeHost = self::$hostManagerObj->getHost();
+		self::$activeHostID = self::$activeHost->hostID;
+	}
+	
+	/**
+	 * Returnes the DynamicHostManager instance
+	 */
+	public static function getHostManager() {
+		return self::$hostManagerObj;
+	}
+	
+	/**
+	 * Returnes the active host
+	 */
+	public static function getActiveHost() {
+		return self::$activeHost;
 	}
 }
 ?>
