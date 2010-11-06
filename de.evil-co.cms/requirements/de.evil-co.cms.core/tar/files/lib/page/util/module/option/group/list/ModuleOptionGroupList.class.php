@@ -68,5 +68,13 @@ class ModuleOptionGroupList {
 		}
 		return null;
 	}
+	
+	/**
+	 * Returnes the count of all option groups
+	 * @return number
+	 */
+	public function getCount() {
+		return count($this->optionGroups);
+	}
 }
 ?>
