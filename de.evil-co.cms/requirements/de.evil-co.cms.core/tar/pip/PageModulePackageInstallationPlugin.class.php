@@ -39,40 +39,44 @@ class PageModulePackageInstallationPlugin extends AbstractXMLPackageInstallation
 						// Extract item properties.
 						foreach ($module['children'] as $child) {
 							if ($child['name'] == 'options') {
-								$newOption = array('name' => '', 'optiontype' => '', 'defaultvalue' => '', 'cssclass' => '', 'group' => '', 'displaydescription' => true, 'fields' => '');
-								
-								// Extract option properties.
 								foreach($child['children'] as $option) {
-									if (!isset($option['cdata'])) continue;
+									$newOption = array('name' => '', 'optiontype' => '', 'defaultvalue' => '', 'cssclass' => '', 'group' => '', 'displaydescription' => true, 'fields' => '');
 									
-									$newOption[$option['name']] = $option['cdata'];
+									// Extract option properties.
+									foreach($option['children'] as $optionVar) {
+										if (!isset($optionVar['cdata'])) continue;
+										
+										$newOption[$optionVar['name']] = $optionVar['cdata'];
+									}
+									
+									// write option to options array
+									$moduleOptions[] = $newOption;
+									
+									// remove temp array
+									unset($newOption);
 								}
-								
-								// write option to options array
-								$moduleOptions[] = $newOption;
-								
-								// remove temp array
-								unset($newOption);
 								
 								// exit loop
 								continue;
 							}
 							
 							if ($child['name'] == 'optiongroups') {
-								$newOptionGroup = array('name' => '');
-								
-								// Extract option group properties.
 								foreach($child['children'] as $option) {
-									if (!isset($option['cdata'])) continue;
+									$newOptionGroup = array('name' => '');
 									
-									$newOptionGroup[$option['name']] = $option['cdata'];
+									// Extract option group properties.
+									foreach($option['children'] as $optionVar) {
+										if (!isset($optionVar['cdata'])) continue;
+										
+										$newOptionGroup[$optionVar['name']] = $optionVar['cdata'];
+									}
+									
+									// write option group to option group array
+									$moduleOptionGroups[] = $newOptionGroup;
+									
+									// remove temp array
+									unset($newOptionGroup);
 								}
-								
-								// write option group to option group array
-								$moduleOptionGroups[] = $newOptionGroup;
-								
-								// remove temp array
-								unset($newOptionGroup);
 								
 								// exit loop
 								continue;
