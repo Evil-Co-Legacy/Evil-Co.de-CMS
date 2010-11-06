@@ -80,9 +80,9 @@ class DynamicPageModuleOptionGroup extends DatabaseObject {
 					name = '".escapeString($groupName)."'
 				AND
 					moduleID = ".$moduleID;
-		WCF::getDB()->sendQuery($sql);
+		$row = WCF::getDB()->getFirstRow($sql);
 		
-		if (WCF::getDB()->getNumRows()) return true;
+		if (WCF::getDB()->getNumRows()) return $row['groupID'];
 		
 		return false;
 	}
