@@ -49,4 +49,8 @@
 		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
 		<languages languagecode="en">install/language/en.xml</languages>
 	</instructions>
+	
+	<instructions type="update" fromversion="1.1.0 RC 1">
+		<packageinstallationplugins>tar/pip.tar</packageinstallationplugins>
+	</instructions>
 </package>
