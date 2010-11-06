@@ -1,0 +1,1 @@
+<pre>{$optionList->getOptionValue('general', 'htmlCode')}</pre>
