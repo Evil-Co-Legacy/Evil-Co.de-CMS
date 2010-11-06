@@ -57,6 +57,9 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		// write group option list
 		$this->optionGroupList = $this->instance->options;
 		
+		// validate
+		if (!$this->optionGroupList->getCount()) HeaderUtil::redirect('index.php?form=DynamicPageEdit&pageID='.$this->instance->pageID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
+		
 		// write pageID
 		$this->pageID = $this->instance->pageID;
 	}
