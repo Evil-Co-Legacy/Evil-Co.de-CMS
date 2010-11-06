@@ -137,9 +137,10 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'options'		=>		$this->optionGroupList,
-			'instanceID'	=>		$this->instanceID,
-			'instance'		=>		$this->instance
+			'options'				=>		$this->optionGroupList,
+			'instanceID'			=>		$this->instanceID,
+			'instance'				=>		$this->instance,
+			'useACPAttachments'		=>		false
 		));
 	}
 }
