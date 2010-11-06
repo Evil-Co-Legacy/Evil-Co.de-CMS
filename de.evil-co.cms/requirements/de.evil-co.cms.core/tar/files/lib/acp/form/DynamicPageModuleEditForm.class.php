@@ -89,6 +89,8 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 				$optionName = $option->getName();
 				if ($option->getType() == 'boolean') {
 					if (!isset($_POST[$groupName][$optionName])) $this->optionGroupList->getGroup($groupName)->getOption($optionName)->setValue(0);
+				} elseif ($option->getType() == 'editor') {
+					$this->optionGroupList->getGroup($groupName)->getOption($optionName)->setValue($this->text);
 				}
 			}
 		}
