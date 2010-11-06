@@ -12,9 +12,11 @@ class DynamicPageMenuListener implements EventListener {
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		foreach($eventObj->menuItems as $key => $item) {
-			// remove menu items from other hosts
-			if (!in_array($item['menuItemID'], CMSCore::getActiveHost()->getMenuItemIDs())) unset($eventObj->menuItems[$key]);
+		if (CMSCore::getActiveHost() !== null) {
+			foreach($eventObj->menuItems as $key => $item) {
+				// remove menu items from other hosts
+				if (!in_array($item['menuItemID'], CMSCore::getActiveHost()->getMenuItemIDs())) unset($eventObj->menuItems[$key]);
+			}
 		}
 	}
 }
