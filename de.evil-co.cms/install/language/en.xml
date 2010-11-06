@@ -27,6 +27,7 @@
 		<item name="cms.acp.index.credits.developer"><![CDATA[Developer]]></item>
 		<item name="cms.acp.index.credits.productManager"><![CDATA[Projectmanager]]></item>
 		<item name="cms.acp.index.credits.translators"><![CDATA[Translation]]></item>
+		<item name="cms.acp.index.credits.icons"><![CDATA[Iconset]]></item>
 		<item name="cms.acp.index.news"><![CDATA[News]]></item>
 		<item name="cms.acp.index.searchUsers"><![CDATA[Search Users]]></item>
 		<item name="cms.acp.index.system"><![CDATA[System]]></item>
