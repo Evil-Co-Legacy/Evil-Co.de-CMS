@@ -14,7 +14,7 @@ class DynamicPageMenuListener implements EventListener {
 	public function execute($eventObj, $className, $eventName) {
 		foreach($eventObj->menuItems as $key => $item) {
 			// remove menu items from other hosts
-			if (in_array($item['menuItemID'], CMSCore::getActiveHost()->getMenuItemIDs())) unset($eventObj->menuItems[$key]);
+			if (!in_array($item['menuItemID'], CMSCore::getActiveHost()->getMenuItemIDs())) unset($eventObj->menuItems[$key]);
 		}
 	}
 }
