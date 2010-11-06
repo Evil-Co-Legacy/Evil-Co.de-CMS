@@ -132,6 +132,9 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 			require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 			$language = new LanguageEditor(WCF::getLanguage()->getLanguageID());
 			$language->updateItems(array($lang => $title));
+			
+			// clear cache
+			PageMenuItemEditor::clearCache();
 		}
 		
 		if ($this->createMenuItem) {
