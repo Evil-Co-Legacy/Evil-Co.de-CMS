@@ -1,1 +1,1 @@
-<p>{@$optionList->getGroup('general')->getOption('content')->getValue()|htmlspecialchars|nl2br}</p>
+<p>{@$optionList->getGroup('general')->getOption('content')->getValue()}</p>
