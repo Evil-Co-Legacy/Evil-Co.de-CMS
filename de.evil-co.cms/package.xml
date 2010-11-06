@@ -31,6 +31,10 @@
 		<requiredpackage minversion="1.1.2">com.woltlab.wcf.form.user</requiredpackage>
 		<requiredpackage minversion="1.1.2">com.woltlab.wcf.page.user.profile</requiredpackage>
 	</requiredpackages>
+	
+	<optionalpackages>
+		<optionalpackage file="optionals/de.evil-co.cms.commercial.wcf.tar">de.evil-co.cms.commercial.wcf</optionalpackage>
+	</optionalpackages>
 
 	<instructions type="install">
 		<!-- File-PiPs -->
