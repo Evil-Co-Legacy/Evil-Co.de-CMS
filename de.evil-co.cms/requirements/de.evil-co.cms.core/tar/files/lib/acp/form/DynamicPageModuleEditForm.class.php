@@ -98,7 +98,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	 * @see	Form::validate()
 	 */
 	public function validate() {
-		WysiwygCacheloaderForm::validate();
+		CaptchaForm::validate();
 	}
 	
 	/**
