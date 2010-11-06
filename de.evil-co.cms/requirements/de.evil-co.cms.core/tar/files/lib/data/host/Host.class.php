@@ -98,6 +98,21 @@ class Host extends DatabaseObject {
 	}
 	
 	/**
+	 * Returnes all menu item IDs of this host
+	 */
+	public function getMenuItemIDs() {
+		WCF::getCache()->addResource('hostMenuItemIDs-'.$this->hostID, WCF_DIR.'cache/cache.hostMenuItemIDs-'.$this->hostID.'.php', WCF_DIR.'lib/system/cache/CacheBuilderDynamicPageMenuItemIDs.class.php');
+		return WCF::getCache()->get('hostMenuItemIDs-'.$this->hostID);
+	}
+	
+	/**
+	 * Removes the menu item ID cache for this host
+	 */
+	public function removeMenuItemIDCache() {
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.hostmenuItemIDs-'.$this->hostID.'.php');
+	}
+	
+	/**
 	 * Wrapper for get class (Such as getPageID())
 	 * @param	string	$name
 	 * @param	array	$args
