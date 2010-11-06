@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de-informal">
+	<category name="cms.header.userMenu">
+		<item name="cms.header.userMenu.pm"><![CDATA[Private Nachrichten]]></item>
+	</category>
+</language>
