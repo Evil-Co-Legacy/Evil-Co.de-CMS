@@ -278,8 +278,7 @@
 						</div>
 						<div id="module{$moduleCount}Content" class="container-1">
 							{if $module->getACPTemplateName() != ''}
-								{assign var='optionList' value=$module->getOptions()}
-								{include file=$module->getACPTemplateName() moduleOptions=$module->options->getOptions()}
+								{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
 							{else}
 								<div class="formElement">
 									<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
