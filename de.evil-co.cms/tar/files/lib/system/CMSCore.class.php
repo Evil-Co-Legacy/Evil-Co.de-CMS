@@ -17,7 +17,7 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 		'page' => array('Captcha', 'LegalNotice'),
 		'form' => array('UserLogin'),
 		'action' => array('UserLogout'));
-	protected static $serverList = array();
+	protected static $activeHostID = 0;
 
 	/**
 	 * @see WCF::initTPL()
@@ -205,6 +205,21 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 			'timezone' => DateUtil::getTimezone(),
 			'stylePickerOptions' => (SHOW_STYLE_CHOOSER ? StyleManager::getAvailableStyles() : array())
 		));
+	}
+	
+	/**
+	 * Sets the hostID
+	 * @param	integer	$hostID
+	 */
+	public static function setHostID($hostID) {
+		self::$hostID = $hostID;
+	}
+	
+	/**
+	 * Returnes the hostID
+	 */
+	public static function getHostID() {
+		return self::$hostID;
 	}
 }
 ?>
