@@ -8,7 +8,7 @@
 		{@$page->additionalHeadContent}
 		
 		{foreach from=$modules item='module'}
-			{if $module->stylesheet != ''}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_CMS_DIR}style/{@$module->stylesheet}" />{/if}
+			{if $module->stylesheet != ''}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/{@$module->stylesheet}" />{/if}
 			{if $module->additionalHeadContents != ''}{@$module->additionalHeadContents}{/if}
 		{/foreach}
 	</head>
