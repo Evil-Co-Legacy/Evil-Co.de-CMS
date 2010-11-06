@@ -274,7 +274,7 @@
 						</div>
 						<div id="module{$moduleCount}Content" class="container-1">
 							{if $module->getACPTemplateName() != ''}
-								{assign var='moduleOptions' value=$module->options->getOptions()}
+								{assign var='optionList' value=$module->getOptions()}
 								{include file=$module->getACPTemplateName() moduleOptions=$module->options->getOptions()}
 							{else}
 								<div class="formElement">
