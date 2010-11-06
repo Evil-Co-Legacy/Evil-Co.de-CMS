@@ -19,6 +19,7 @@
 	<category name="cms.acp.index">
 		<item name="cms.acp.index"><![CDATA[Evil-Co.de CMS Administrationsoberfläche]]></item>
 		<item name="cms.acp.index.noPermissionsWarning"><![CDATA[<strong>Warnung</strong><br />Du hast nicht genügend Rechte um das CMS zu verwenden! Bitte vergiss nicht die Gruppenrechte für die Gruppe Administratoren zu setzen.]]></item>
+		<item name="cms.acp.index.unstableWarning"><![CDATA[<strong>Unstabile Version</strong><br />In dieser Version des CMS können noch Fehler auftreten! Bitte melden Sie sämtliche Fehler in unserem <a href="http://www.evil-co.de/index.php?page=Bugtracker">Bugtracker</a>.]]></item>
 		<item name="cms.acp.index.credits"><![CDATA[Über Evil-Co.de CMS]]></item>
 		<item name="cms.acp.index.credits.contributor"><![CDATA[Mitwirkende]]></item>
 		<item name="cms.acp.index.credits.designer"><![CDATA[Design]]></item>

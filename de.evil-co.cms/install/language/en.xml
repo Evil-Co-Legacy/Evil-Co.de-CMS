@@ -18,7 +18,8 @@
 	<!-- index page -->
 	<category name="cms.acp.index">
 		<item name="cms.acp.index"><![CDATA[Evil-Co.de CMS Administration]]></item>
-		<item name="cms.acp.index.noPermissionsWarning"><![CDATA[<strong>Warnuig</strong><br />You haven't set the CMS-Permissions for group 'Administrators'.]]></item>
+		<item name="cms.acp.index.noPermissionsWarning"><![CDATA[<strong>Warnig</strong><br />You haven't set the CMS-Permissions for group 'Administrators'.]]></item>
+		<item name="cms.acp.index.unstableWarning"><![CDATA[<strong>Unstable Version</strong><br />This version of CMS is an unstable version! Please report all problems in our <a href="http://www.evil-co.de/index.php?page=Bugtracker">Bugtracker</a>.]]></item>
 		<item name="cms.acp.index.credits"><![CDATA[About Evil-Co.de CMS]]></item>
 		<item name="cms.acp.index.credits.contributor"><![CDATA[Contributor]]></item>
 		<item name="cms.acp.index.credits.designer"><![CDATA[Design]]></item>
