@@ -79,7 +79,7 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	 * @see	Form::validate()
 	 */
 	public function validate() {
-		parent::validate();
+		CaptchaForm::validate();
 		
 		// validate moduleID
 		if (empty($this->moduleID)) throw new UserInputException('moduleID', 'empty');
