@@ -91,3 +91,6 @@ CREATE TABLE `wcf1_page_module_to_page` (
 	`sortOrder` INT NOT NULL,
 	`options` TEXT NOT NULL
 );
+
+-- Add hostID field to page_menu_item
+ALTER TABLE `wcf1_page_menu_item` ADD `hostID` INT NOT NULL DEFAULT '0';
