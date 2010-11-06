@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
-<package name="de.evil-co.cms.commercial.wbb">
+<package name="de.evil-co.cms.usersOnlineList">
 	<packageinformation>
-		<packagename><![CDATA[Evil-Co.de CMS Commercial Package (WBB)]]></packagename>
-		<packagedescription><![CDATA[Adds all commercial wcf plugins (that are only available with WBB) to cms]]></packagedescription>
-		<packagedescription languagecode="de"><![CDATA[Fügt die komerziellen WCF Pakete (Die nur mit dem WBB erhältlich sind) zum CMS hinzu.]]></packagedescription>
-		<packagedescription languagecode="de-informal"><![CDATA[Fügt die komerziellen WCF Pakete (Die nur mit dem WBB erhältlich sind) zum CMS hinzu.]]></packagedescription>
+		<packagename><![CDATA[Evil-Co.de CMS Users Online List Module]]></packagename>
+		<packagedescription><![CDATA[Adds a module that shows the users online list]]></packagedescription>
+		<packagedescription languagecode="de"><![CDATA[Fügt ein Modul hinzu das eine auflistung aller Online-Nutzer anzeigt.]]></packagedescription>
+		<packagedescription languagecode="de-informal"><![CDATA[Fügt ein Modul hinzu das eine auflistung aller Online-Nutzer anzeigt.]]></packagedescription>
 		<version>1.1.0</version>
 		<plugin>com.woltlab.wcf</plugin>
 		<date>2010-11-06</date>
