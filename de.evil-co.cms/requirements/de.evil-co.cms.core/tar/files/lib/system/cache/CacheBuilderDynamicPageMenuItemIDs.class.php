@@ -9,7 +9,7 @@ require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
  */
-class CacheBuilderDynamicPagemenuItemIDs implements CacheBuilder {
+class CacheBuilderDynamicPageMenuItemIDs implements CacheBuilder {
 	
 	/**
 	 * @see CacheBuilder::getData()
