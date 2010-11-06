@@ -2,6 +2,12 @@
 // wcf imports
 require_once(WCF_DIR.'lib/data/DatabaseObject.class.php');
 
+/**
+ * This class represents a option group row
+ * @author		Johannes Donath
+ * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
+ */
 class DynamicPageModuleOptionGroup extends DatabaseObject {
 	protected $sqlJoins = '';
 	protected $sqlSelects = '';
