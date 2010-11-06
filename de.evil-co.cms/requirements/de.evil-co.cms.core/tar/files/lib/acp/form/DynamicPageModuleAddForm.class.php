@@ -1,6 +1,6 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/acp/form/ACPForm.class.php');
+require_once(WCF_DIR.'lib/acp/form/WysiwygCacheloaderForm.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplate.class.php');
 
@@ -10,7 +10,7 @@ require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTem
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
  */
-class DynamicPageModuleAddForm extends ACPForm {
+class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	
 	/**
 	 * @see	Page::$templateName
