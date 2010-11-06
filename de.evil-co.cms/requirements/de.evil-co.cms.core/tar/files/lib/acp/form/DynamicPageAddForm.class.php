@@ -147,7 +147,7 @@ class DynamicPageAddForm extends ACPForm {
 		
 		// validate title
 		if (empty($this->title)) throw new UserInputException('title', 'empty');
-		if (!DynamicPageEditor::isAvailable($this->title, $this->hostID)) throw new UserInputException('title', 'notAvailable');
+		if (!DynamicPageEditor::isAvailable($this->title, $this->hostID) and $this->action == 'add') throw new UserInputException('title', 'notAvailable');
 		
 		// validate menu entry position
 		switch($this->menuItemPosition) {
@@ -159,7 +159,7 @@ class DynamicPageAddForm extends ACPForm {
 		}
 		
 		// validate menu item options
-		if ($this->createMenuItem and $this->action == 'add') {
+		if ($this->createMenuItem) {
 			// validate menu item icon s
 			if (empty($this->menuItemIconS) and $this->menuItemPosition == 'footer') throw new UserInputException('menuItemIconS');
 			
