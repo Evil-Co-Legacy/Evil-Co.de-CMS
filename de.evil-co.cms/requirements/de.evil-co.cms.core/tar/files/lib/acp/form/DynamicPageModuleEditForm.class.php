@@ -35,6 +35,11 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	public $optionGroupList = null;
 	
 	/**
+	 * @see MessageForm::$showSettings
+	 */
+	public $showSettings = false;
+	
+	/**
 	 * @see	Form::readParameters()
 	 */
 	public function readParameters() {
