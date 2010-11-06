@@ -62,7 +62,7 @@
 		<legend><a href="javascript:void(openList('menuContent',{ openTitle: '{lang}wcf.cms.page.add.menu.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.menu.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="menuContentImage" alt="" title="{lang}wcf.cms.page.add.menu.show{/lang}" /> <span>{lang}wcf.cms.page.add.menu{/lang}</span></a></legend>
 		
 		<div id="menuContent" style="display: none;">
-			{if !$page->menuItemID}
+			{if !$page|isset || !$page->menuItemID}
 				<div class="formElement">
 					<div class="formField">
 						<label for="createMenuItem"><input type="checkbox" value="1" name="createMenuItem" {if $createMenuItem}checked="checked" {/if}/> {lang}wcf.cms.page.add.menu.createMenuItem{/lang}</label>
