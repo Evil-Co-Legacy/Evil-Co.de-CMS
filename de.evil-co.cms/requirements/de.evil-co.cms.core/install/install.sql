@@ -24,9 +24,9 @@ CREATE TABLE `wcf1_page` (
 DROP TABLE IF EXISTS `wcf1_page_module`;
 CREATE TABLE `wcf1_page_module` (
 	`moduleID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	`packageID` INT NOT NULL,
 	`name` VARCHAR (255) NOT NULL,
-	`file` TEXT NOT NULL --,
+	`file` TEXT NOT NULL,
+	`packageID` INT NOT NULL -- ,
 --	`customModule` INT NULL DEFAULT NULL
 );
 
