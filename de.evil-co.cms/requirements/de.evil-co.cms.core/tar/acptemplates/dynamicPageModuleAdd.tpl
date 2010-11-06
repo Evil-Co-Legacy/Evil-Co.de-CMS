@@ -18,6 +18,14 @@
 	</div>
 </div>
 
+{if $errorField}
+	<p class="error">{lang}wcf.global.form.error{/lang}</p>
+{/if}
+
+{if $success|isset}
+	<p class="success">{lang}wcf.cms.page.edit.module.{$action}.success{/lang}</p>
+{/if}
+
 <form action="index.php?form=DynamicPageModule{$action|ucfirst}" method="post">
 	{* Module add form *}
 	{if $action == 'add'}
