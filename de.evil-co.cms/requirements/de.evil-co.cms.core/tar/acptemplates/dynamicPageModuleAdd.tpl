@@ -88,6 +88,7 @@
 							</script>
 						{/if}
 					{else}
+						{* NOTE: Every module can only have one editor option *}
 						<div class="formElement" id="{$group->getName()|concat:$option->getName()|sha1}Div">		
 							<textarea name="{$group->getName()}[{$option->getName()}]" id="text" rows="15" cols="40" tabindex="{counter name='tabindex'}">{$option->getValue()}</textarea>
 							
