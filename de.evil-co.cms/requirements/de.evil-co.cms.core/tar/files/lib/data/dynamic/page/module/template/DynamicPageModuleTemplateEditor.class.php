@@ -55,5 +55,12 @@ class DynamicPageModuleTemplateEditor extends DynamicPageModuleTemplate {
 					moduleID ".(is_array($moduleID) ? "IN (".implode(',', $moduleID).")" : "= ".$moduleID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Removes the available page modules cache
+	 */
+	public static function clearCache() {
+		WCF::getCache()->clear(WCF_DIR.'cache/availablePageModules-*');
+	}
 }
 ?>
