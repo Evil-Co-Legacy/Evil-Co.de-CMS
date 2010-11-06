@@ -20,6 +20,13 @@
 	
 		<!-- page system -->
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf.data.page</requiredpackage>
+		
+		<!-- message system -->
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf.data.message</requiredpackage>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf.data.message.bbcode</requiredpackage>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf.data.message.attachment</requiredpackage>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf.form.message</requiredpackage>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf.data.message.censorship</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
