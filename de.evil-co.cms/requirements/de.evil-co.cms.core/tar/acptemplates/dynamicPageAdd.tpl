@@ -62,17 +62,19 @@
 		<legend><a href="javascript:void(openList('menuContent',{ openTitle: '{lang}wcf.cms.page.add.menu.show{/lang}', closeTitle: '{lang}wcf.cms.page.add.menu.hide{/lang}' }));"><img src="{@RELATIVE_WCF_DIR}icon/plusS.png" id="menuContentImage" alt="" title="{lang}wcf.cms.page.add.menu.show{/lang}" /> <span>{lang}wcf.cms.page.add.menu{/lang}</span></a></legend>
 		
 		<div id="menuContent" style="display: none;">
-			<div class="formElement">
-				<div class="formField">
-					<label for="createMenuItem"><input type="checkbox" value="1" name="createMenuItem" {if $createMenuItem}checked="checked" {/if}/> {lang}wcf.cms.page.add.menu.createMenuItem{/lang}</label>
+			{if !$page->menuItemID}
+				<div class="formElement">
+					<div class="formField">
+						<label for="createMenuItem"><input type="checkbox" value="1" name="createMenuItem" {if $createMenuItem}checked="checked" {/if}/> {lang}wcf.cms.page.add.menu.createMenuItem{/lang}</label>
+					</div>
+					<div class="formFieldDesc" id="createMenuItemHelpMessage">
+						{lang}wcf.cms.page.add.menu.createMenuItem.description{/lang}
+					</div>
 				</div>
-				<div class="formFieldDesc" id="createMenuItemHelpMessage">
-					{lang}wcf.cms.page.add.menu.createMenuItem.description{/lang}
-				</div>
-			</div>
-			<script type="text/javascript">
-				inlineHelp.register('createMenuItem');
-			</script>
+				<script type="text/javascript">
+					inlineHelp.register('createMenuItem');
+				</script>
+			{/if}
 			
 			<div class="formElement">
 				<div class="formFieldLabel">
