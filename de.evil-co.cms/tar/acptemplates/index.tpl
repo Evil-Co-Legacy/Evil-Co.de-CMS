@@ -15,12 +15,12 @@
 	</div>
 </div>
 
-{if $noPermissions|isset}
-	<p class="warning">{lang}cms.acp.index.noPermissionsWarning{/lang}</p>
-{/if}
-
 {if CMS_VERSION_UNSTABLE}
 	<p class="warning">{lang}cms.acp.index.unstableWarning{/lang}</p>
+{/if}
+
+{if $noPermissions|isset}
+	<p class="warning">{lang}cms.acp.index.noPermissionsWarning{/lang}</p>
 {/if}
 
 {if $this->user->getPermission('admin.user.canEditUser')}
