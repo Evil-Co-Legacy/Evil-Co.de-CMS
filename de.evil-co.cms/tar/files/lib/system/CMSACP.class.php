@@ -9,6 +9,7 @@ define('CMS_VERSION_UNSTABLE', true);
  * @author Akkarin
  */
 class CMSACP extends WCFACP {
+	
 	/**
 	 * @see WCF::getOptionsFilename()
 	 */
