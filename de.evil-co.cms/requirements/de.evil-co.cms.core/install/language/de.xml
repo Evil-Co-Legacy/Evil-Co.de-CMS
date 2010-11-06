@@ -88,6 +88,7 @@
 		<item name="wcf.cms.page.edit.module.add.general"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.page.edit.module.add.general.moduleID"><![CDATA[Modul]]></item>
 		<item name="wcf.cms.page.edit.module.add.general.moduleID.description"><![CDATA[Wählen Sie ein Modul welches hinzugefügt werden soll. Alle weiteren Einstellungen werden Ihnen nach dem Absenden angezeigt.]]></item>
+		<item name="wcf.cms.page.edit.module.edit.success"><![CDATA[Die Einstellungen für dieses Modul wurden erfolgreich übernommen.]]></item>
 		
 		<!-- page module edit -->
 		<item name="wcf.cms.page.edit.module.edit.title"><![CDATA[Modul bearbeiten]]></item>
