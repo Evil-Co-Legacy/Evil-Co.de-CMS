@@ -38,7 +38,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	 * @see	Form::readParameters()
 	 */
 	public function readParameters() {
-		ACPForm::readParameters();
+		WysiwygCacheloaderForm::readParameters();
 		
 		// read parameters
 		if (isset($_REQUEST['instanceID'])) $this->instanceID = intval($_REQUEST['instanceID']);
@@ -60,7 +60,7 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	 * @see	Form::readFormParameters()
 	 */
 	public function readFormParameters() {
-		ACPForm::readFormParameters();
+		WysiwygCacheloaderForm::readFormParameters();
 		
 		// loop through array
 		foreach($_POST as $name => $value) {
@@ -98,14 +98,14 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	 * @see	Form::validate()
 	 */
 	public function validate() {
-		ACPForm::validate();
+		WysiwygCacheloaderForm::validate();
 	}
 	
 	/**
 	 * @see	Form::save()
 	 */
 	public function save() {
-		ACPForm::save();
+		WysiwygCacheloaderForm::save();
 		
 		// save options
 		$sql = "UPDATE
