@@ -16,6 +16,7 @@
 		<item name="wcf.cms.module.github.option.branch.description"><![CDATA[Defines the branch of all commits that should listed.]]></item>
 
 		<item name="wcf.cms.module.github.page.apiError"><![CDATA[An error occoured while loading commit information.]]></item>
+		<item name="wcf.cms.module.github.page.noJS"><![CDATA[You must enable javascript to see commit-information.]]></item>
 		<item name="wcf.cms.module.github.page.commitID"><![CDATA[Commit ID]]></item>
 		<item name="wcf.cms.module.github.page.message"><![CDATA[Message]]></item>
 		<item name="wcf.cms.module.github.page.author"><![CDATA[Author]]></item>
