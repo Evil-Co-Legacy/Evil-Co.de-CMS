@@ -1,5 +1,5 @@
 {if $usersOnlineTotal|isset}
-	<div class="border infoBox">
+	<div class="border infoBox usersOnlineListPageModule">
 		<div class="container-1">
 			<div class="containerIcon"> <img src="{icon}membersM.png{/icon}" alt="" /></div>
 			<div class="containerContent">
