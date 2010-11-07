@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de-informal">
+	<category name="wcf.cms.module">
+		<item name="wcf.cms.module.github.title"><![CDATA[Github (Commit-Liste)]]></item>
+		<item name="wcf.cms.module.github.username"><![CDATA[Nutzername]]></item>
+		<item name="wcf.cms.module.github.repository"><![CDATA[Repository]]></item>
+		<item name="wcf.cms.module.github.branch"><![CDATA[Branch]]></item>
+		
+		<item name="wcf.cms.module.github.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.github.option.username"><![CDATA[Nutzername]]></item>
+		<item name="wcf.cms.module.github.option.username.description"><![CDATA[Definiert den Nutzernamen oder den Namen der Organisation der das Projekt gehört.]]></item>
+		<item name="wcf.cms.module.github.option.repository"><![CDATA[Repository]]></item>
+		<item name="wcf.cms.module.github.option.repository.description"><![CDATA[Definiert den Namen der Repository.]]></item>
+		<item name="wcf.cms.module.github.option.branch"><![CDATA[Branch]]></item>
+		<item name="wcf.cms.module.github.option.branch.description"><![CDATA[Definiert das Branch dessen Commits gelistet werden sollen. Dies ist in den meisten Fällen 'master'.]]></item>
+
+		<item name="wcf.cms.module.github.page.apiError"><![CDATA[Ein Fehler ist beim Abrufen der Commit-Informationen von Github aufgetreten.]]></item>
+		<item name="wcf.cms.module.github.page.commitID"><![CDATA[Commit ID]]></item>
+		<item name="wcf.cms.module.github.page.message"><![CDATA[Nachricht]]></item>
+		<item name="wcf.cms.module.github.page.author"><![CDATA[Autor]]></item>
+		<item name="wcf.cms.module.github.page.date"><![CDATA[Datum]]></item>
+	</category>
 </language>
