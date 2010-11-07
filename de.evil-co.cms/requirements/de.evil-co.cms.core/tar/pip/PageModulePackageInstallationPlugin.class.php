@@ -213,5 +213,16 @@ class PageModulePackageInstallationPlugin extends AbstractXMLPackageInstallation
 			}
     	}
     }
+    
+	/**
+	 * @see	 PackageInstallationPlugin::uninstall()
+	 */
+	public function uninstall() {
+		parent::uninstall();
+		
+		// clear cache immediately
+		require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplateEditor.class.php');
+		DynamicPageModuleTemplateEditor::clearCache();
+	}
 }
 ?>

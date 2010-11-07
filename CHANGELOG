@@ -1,0 +1,2 @@
+de.evil-co.cms.core 1.1.0 RC 3
+	- Now removing cache at uninstall
