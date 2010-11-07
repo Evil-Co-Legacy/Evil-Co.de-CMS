@@ -26,9 +26,6 @@
 
 		<!-- XML PiPs -->
 		<pagemodule>install/xml/pagemodule.xml</pagemodule>
-		
-		<!-- Other PiPs -->
-		<sql>install/install.sql</sql>
 
 		<!-- Languages
 		<languages languagecode="de">install/language/de.xml</languages>
