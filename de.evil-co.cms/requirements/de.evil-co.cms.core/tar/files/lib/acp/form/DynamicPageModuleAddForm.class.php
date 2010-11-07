@@ -123,6 +123,13 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	}
 	
 	/**
+	 * @see	MessageForm::saveOptions()
+	 */
+	protected function saveOptions() {
+		// overwritten saveOptions method to prevent system saving default values ...
+	}
+	
+	/**
 	 * @see Page::show()
 	 */
 	public function show() {
