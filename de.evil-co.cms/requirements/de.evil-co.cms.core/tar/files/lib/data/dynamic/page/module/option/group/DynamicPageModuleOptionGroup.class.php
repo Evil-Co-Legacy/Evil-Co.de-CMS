@@ -80,7 +80,7 @@ class DynamicPageModuleOptionGroup extends DatabaseObject {
 					moduleID = ".$moduleID;
 		$row = WCF::getDB()->getFirstRow($sql);
 		
-		if (WCF::getDB()->getNumRows()) return $row['groupID'];
+		if (WCF::getDB()->countRows()) return $row['groupID'];
 		
 		return false;
 	}
