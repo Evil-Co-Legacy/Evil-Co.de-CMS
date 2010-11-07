@@ -14,6 +14,11 @@ class GithubModule extends AbstractModule {
 	 * @see	AbstractModule::$templateName
 	 */
 	public $templateName = 'githubPageModule';
+	
+	/**
+	 * @see AbstractModule::$acpTemplateName
+	 */
+	public $acpTemplateName = 'githubPageModule';
 
 	/**
 	 * Contains commits
