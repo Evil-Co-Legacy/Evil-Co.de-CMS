@@ -3,6 +3,10 @@
 <language languagecode="de">
 	<category name="wcf.cms.module">
 		<item name="wcf.cms.module.github.title"><![CDATA[Github (Commit-Liste)]]></item>
+		<item name="wcf.cms.module.github.username"><![CDATA[Nutzername]]></item>
+		<item name="wcf.cms.module.github.repository"><![CDATA[Repository]]></item>
+		<item name="wcf.cms.module.github.branch"><![CDATA[Branch]]></item>
+		
 		<item name="wcf.cms.module.github.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.github.option.username"><![CDATA[Nutzername]]></item>
 		<item name="wcf.cms.module.github.option.username.description"><![CDATA[Definiert den Nutzernamen oder den Namen der Organisation der das Projekt gehört.]]></item>
