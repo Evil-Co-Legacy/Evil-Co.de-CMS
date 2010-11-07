@@ -1,7 +1,7 @@
 <?php 
 // wcf imports
 require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
-require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTemplate.class.php');
+require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
 
 /**
  * Caches all commits for a github page module
@@ -21,7 +21,7 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 		$data = array(0 => array(), 1 => '');
 		
 		// create instance
-		$instance = new DynamicPageModuleTemplate($instanceID);
+		$instance = new InstanceableModule($instanceID);
 		
 		// create api url
 		$apiUrl = 'http://github.com/api/v2/xml/commits/list/'.$instance->getOptions()->getGroup('general')->getOption('username')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('repository')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('branch')->getValue();
