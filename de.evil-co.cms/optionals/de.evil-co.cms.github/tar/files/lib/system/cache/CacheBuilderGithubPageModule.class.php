@@ -20,74 +20,78 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 		// create array (0 => commits, 1 => api errors)
 		$data = array(0 => array(), 1 => '');
 		
-		// create instance
-		$instance = new InstanceableModule($instanceID);
-		
-		// create api url
-		$apiUrl = 'http://github.com/api/v2/xml/commits/list/'.$instance->getOptions()->getGroup('general')->getOption('username')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('repository')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('branch')->getValue();
-
-		// download xml
-		$filename = FileUtil::downloadFileFromHttp($apiUrl);
-		
-		// create new xml instance
-		$xml = new XML($filename);
-		
-		// load tree
-		$commitXML = $xml->getElementTree('commits');
-		
-		// check for errors
-		if (isset($commitXML['children'][0]) and $commitXML['children'][0]['name'] == 'error') {
-			$data[1] = $commitXML['children'][0]['cdata'];
-			return $data;
-		}
-		
-		// all ok .. loop througt array
-		foreach($commitXML['children'] as $commit) {
-			// create commit array
-			$tmp = array('url' => 'https://github.com', 'id' => '', 'message' => '', 'author' => '', 'authorEmail' => '', 'date' => 0);
+		try {
+			// create instance
+			$instance = new InstanceableModule($instanceID);
 			
-			// create information array
-			$tmpInfo = array();
+			// create api url
+			$apiUrl = 'http://github.com/api/v2/xml/commits/list/'.$instance->getOptions()->getGroup('general')->getOption('username')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('repository')->getValue().'/'.$instance->getOptions()->getGroup('general')->getOption('branch')->getValue();
+	
+			// download xml
+			$filename = FileUtil::downloadFileFromHttp($apiUrl);
 			
-			// loop througt children
-			foreach($commit['children'] as $child) {
-				if ($child['name'] == 'committer') {
-					// create array for information
-					$tmpInfo['committer'] = array();
-					
-					// loop througt children
-					foreach($child['children'] as $cChild) {
-						// no cdata field found ... exit
-						if (!isset($cChild['cdata'])) continue;
-						
-						// write value
-						$tmpInfo['committer'][$cChild['name']] = $cChild['cdata'];
-					}
-					
-					// end loop
-					continue;
-				}
-				
-				// no cdata field found ... exit
-				if (!isset($child['cdata'])) continue;
-				
-				// write value
-				$tmpInfo[$child['name']] = $child['cdata'];
+			// create new xml instance
+			$xml = new XML($filename);
+			
+			// load tree
+			$commitXML = $xml->getElementTree('commits');
+			
+			// check for errors
+			if (isset($commitXML['children'][0]) and $commitXML['children'][0]['name'] == 'error') {
+				$data[1] = $commitXML['children'][0]['cdata'];
+				return $data;
 			}
 			
-			// write values
-			$tmp['url'] .= $tmpInfo['url'];
-			$tmp['id'] = $tmpInfo['id'];
-			$tmp['message'] = $tmpInfo['message'];
-			$tmp['author'] = $tmpInfo['committer']['name'];
-			$tmp['authorEmail'] = $tmpInfo['committer']['email'];
-			$tmp['date'] = strtotime($tmpInfo['committed-date']);
-			
-			// write tmp array
-			$data[0][] = $tmp;
-			
-			// remove old tmp array
-			unset($tmp);
+			// all ok .. loop througt array
+			foreach($commitXML['children'] as $commit) {
+				// create commit array
+				$tmp = array('url' => 'https://github.com', 'id' => '', 'message' => '', 'author' => '', 'authorEmail' => '', 'date' => 0);
+				
+				// create information array
+				$tmpInfo = array();
+				
+				// loop througt children
+				foreach($commit['children'] as $child) {
+					if ($child['name'] == 'committer') {
+						// create array for information
+						$tmpInfo['committer'] = array();
+						
+						// loop througt children
+						foreach($child['children'] as $cChild) {
+							// no cdata field found ... exit
+							if (!isset($cChild['cdata'])) continue;
+							
+							// write value
+							$tmpInfo['committer'][$cChild['name']] = $cChild['cdata'];
+						}
+						
+						// end loop
+						continue;
+					}
+					
+					// no cdata field found ... exit
+					if (!isset($child['cdata'])) continue;
+					
+					// write value
+					$tmpInfo[$child['name']] = $child['cdata'];
+				}
+				
+				// write values
+				$tmp['url'] .= $tmpInfo['url'];
+				$tmp['id'] = $tmpInfo['id'];
+				$tmp['message'] = $tmpInfo['message'];
+				$tmp['author'] = $tmpInfo['committer']['name'];
+				$tmp['authorEmail'] = $tmpInfo['committer']['email'];
+				$tmp['date'] = strtotime($tmpInfo['committed-date']);
+				
+				// write tmp array
+				$data[0][] = $tmp;
+				
+				// remove old tmp array
+				unset($tmp);
+			}
+		} catch (SystemException $ex) {
+			$data[1] = $ex->getMessage();
 		}
 		
 		// return parsed commits
