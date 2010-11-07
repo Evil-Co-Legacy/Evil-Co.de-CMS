@@ -58,6 +58,7 @@
 	
 	<instructions type="update" fromversion="1.1.0 RC 2">
 		<!-- File-PiPs -->
+		<files>tar/files.tar</files>
 		<packageinstallationplugins>tar/pip.tar</packageinstallationplugins>
 	</instructions>
 </package>
