@@ -1,6 +1,6 @@
-de.evil-co.cms 1.1.0 RC 3
+de.evil-co.cms 1.1.0
 	- Added a little easteregg
 
-de.evil-co.cms.core 1.1.0 RC 3
+de.evil-co.cms.core 1.1.0
 	- Now removing cache at uninstall
 	- Added field 'cssClass' to article module
