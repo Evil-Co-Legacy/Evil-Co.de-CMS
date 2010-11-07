@@ -65,12 +65,13 @@ CREATE TABLE `wcf1_page_module_option` (
 INSERT INTO `wcf1_page_module_option` (`optionID`, `moduleID`, `name`, `optionType`, `defaultValue`, `cssClass`, `groupID`, `displayDescription`, `fields`) VALUES
 (1, 1, 'htmlCode', 'textarea', '', '', 1, 1, ''),
 (2, 2, 'content', 'editor', '', '', 2, 0, ''),
-(3, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2:2;wcf.cms.module.headline.option.size.h3:3;wcf.cms.module.headline.option.size.h4:4;wcf.cms.module.headline.option.size.h5:5;wcf.cms.module.headline.option.size.h6:6'),
-(4, 3, 'content', 'text', '', 'inputText', '3', '1', ''),
-(5, 3, 'headlineIcon', 'text', '', 'inputText', '3', '1', ''),
-(6, 3, 'subHeadline', 'text', '', 'inputText', '3', '1', ''),
-(7, 4, 'type', 'select', '', 'inputText', '4', '1', 'wcf.cms.module.messagebox.option.info:info;wcf.cms.module.messagebox.option.success:success;wcf.cms.module.messagebox.option.warning:warning;wcf.cms.module.messagebox.option.error:error'),
-(8, 4, 'text', 'text', '', 'inputText', '4', '1', '');
+/3, 2, 'cssClass', 'text', 'content', 'inputText', 2, 1, ''),
+(4, 3, 'size', 'select', '1', 'inputText', '3', '1', 'wcf.cms.module.headline.option.size.h1:1;wcf.cms.module.headline.option.size.h2:2;wcf.cms.module.headline.option.size.h3:3;wcf.cms.module.headline.option.size.h4:4;wcf.cms.module.headline.option.size.h5:5;wcf.cms.module.headline.option.size.h6:6'),
+(5, 3, 'content', 'text', '', 'inputText', '3', '1', ''),
+(6, 3, 'headlineIcon', 'text', '', 'inputText', '3', '1', ''),
+(7, 3, 'subHeadline', 'text', '', 'inputText', '3', '1', ''),
+(8, 4, 'type', 'select', '', 'inputText', '4', '1', 'wcf.cms.module.messagebox.option.info:info;wcf.cms.module.messagebox.option.success:success;wcf.cms.module.messagebox.option.warning:warning;wcf.cms.module.messagebox.option.error:error'),
+(9, 4, 'text', 'text', '', 'inputText', '4', '1', '');
 
 -- Planned for next release
 --DROP TABLE IF EXISTS `wcf1_page_module_custom`;
