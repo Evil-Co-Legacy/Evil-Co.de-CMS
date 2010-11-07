@@ -16,6 +16,11 @@ class UsersOnlineListModule extends AbstractModule {
 	public $templateName = 'usersOnlineListPageModule';
 	
 	/**
+	 * @see Module::$stylesheet
+	 */
+	public $stylesheet = 'usersOnlineListPageModule.css';
+	
+	/**
 	 * @see	Module::assignVariables()
 	 */
 	public function assignVariables() {
