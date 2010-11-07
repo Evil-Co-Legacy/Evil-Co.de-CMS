@@ -38,20 +38,30 @@ class GithubModule extends AbstractModule {
 	 */
 	public $apiError = '';
 	
+	public $noJS = false;
+	
+	public function readParameters() {
+		parent::readParameters();
+		
+		if (isset($_REQUEST['noJS'])) $this->noJS = true;
+	}
+	
 	/**
 	 * @see	AbstractModule::readData()
 	 */
 	public function readData() {
 		parent::readData();
 		
-		// add additional head contents
-		$this->additionalHeadContents = '<script type="text/javascript" src="'.RELATIVE_WCF_DIR.'js/githubPageModule.js"></script>';
-		
-		// generate api url
-		$this->generateAPIUrl($this->getOptions()->getGroup('general')->getOption('username')->getValue(), $this->getOptions()->getGroup('general')->getOption('repository')->getValue(), $this->getOptions()->getGroup('general')->getOption('branch')->getValue());
-		
-		// read commits from api
-		$this->readCommits();
+		if (!$this->noJS) {
+			// add additional head contents
+			$this->additionalHeadContents = '<script type="text/javascript" src="'.RELATIVE_WCF_DIR.'js/githubPageModule.js"></script>';
+		} else {
+			// generate api url
+			$this->generateAPIUrl($this->getOptions()->getGroup('general')->getOption('username')->getValue(), $this->getOptions()->getGroup('general')->getOption('repository')->getValue(), $this->getOptions()->getGroup('general')->getOption('branch')->getValue());
+			
+			// read commits from api
+			$this->readCommits();
+		}
 	}
 	
 	/**
