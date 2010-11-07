@@ -1,6 +1,6 @@
 <?php
 // wcf imports
-require_once(WCF_DIR.'lib/data/DatabaseOBject.class.php');
+require_once(WCF_DIR.'lib/data/DatabaseObject.class.php');
 
 /**
  * This class represents a option row
