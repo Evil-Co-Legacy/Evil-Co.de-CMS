@@ -15,7 +15,7 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 	 * @see CacheBuilder::getData()
 	 */
 	public function getData($cacheResource) {
-		list($cache, $intstanceID) = explode('-', $cacheResource['cache']);
+		list($cache, $instanceID) = explode('-', $cacheResource['cache']);
 		
 		// create array (0 => commits, 1 => api errors)
 		$data = array(0 => array(), 1 => '');
