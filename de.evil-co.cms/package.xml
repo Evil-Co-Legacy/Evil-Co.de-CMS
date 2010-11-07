@@ -63,6 +63,9 @@
 		<templates>tar/templates.tar</templates>
 		<acptemplates>tar/acptemplates.tar</acptemplates>
 		
+		<!-- XML PiPs -->
+		<eventlistener>install/xml/eventlistener.xml</eventlistener>
+		
 		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
 		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
