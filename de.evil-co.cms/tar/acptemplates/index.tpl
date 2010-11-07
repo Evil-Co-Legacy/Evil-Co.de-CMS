@@ -193,7 +193,7 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.productManager{/lang}</p>
-			<p class="formField">Johannes Donath <img src="{@RELATIVE_CMS_DIR}icon/nuclearM.png" alt="" title="{lang}cms.acp.index.credits.noNuclearPower{/lang}" /></p>
+			<p class="formField">Johannes Donath</p>
 		</div>
 		
 		<div class="formElement">
@@ -213,7 +213,7 @@
 		
 		<div class="formElement" style="margin-top: 10px">
 			<p class="formFieldLabel"></p>
-			<p class="formField">Copyright &copy; 2010 Evil-Co.de.</p>
+			<p class="formField">Copyright &copy; 2010 Evil-Co.de. <img src="{@RELATIVE_CMS_DIR}icon/nuclearM.png" alt="" title="{lang}cms.acp.index.credits.noNuclearPower{/lang}" /></p>
 		</div>
 	</div>
 </div>
