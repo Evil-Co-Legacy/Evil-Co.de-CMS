@@ -27,9 +27,9 @@
 		<!-- XML PiPs -->
 		<pagemodule>install/xml/pagemodule.xml</pagemodule>
 
-		<!-- Languages
+		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
 		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
-		<languages languagecode="en">install/language/en.xml</languages> -->
+		<languages languagecode="en">install/language/en.xml</languages>
 	</instructions>
 </package>
