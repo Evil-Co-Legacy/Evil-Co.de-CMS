@@ -9,7 +9,6 @@ require_once(WCF_DIR.'lib/data/DatabaseObject.class.php');
  * @package		de.evil-co.cms.core
  */
 class DynamicPageModuleOptionGroup extends DatabaseObject {
-	protected $sqlJoins = '';
 	protected $sqlSelects = '';
 	protected $sqlGroupBy = '';
 	
@@ -19,20 +18,19 @@ class DynamicPageModuleOptionGroup extends DatabaseObject {
 	 * @param	array	$row
 	 */
 	public function __construct($groupID, $row = null) {
-		$this->sqlSelects .= 'group.*'; 
+		$this->sqlSelects .= '*'; 
 		
 		// create sql conditions
 		$sqlCondition = '';
 		
 		if ($groupID !== null) {
-			$sqlCondition .=  "group.groupID = ".$groupID;
+			$sqlCondition .=  "groupID = ".$groupID;
 		}
 		
 		// execute sql statement
 		if (!empty($sqlCondition)) {
 			$sql = "SELECT 	".$this->sqlSelects."
-				FROM 	wcf".WCF_N."_page_module_option_group group
-					".$this->sqlJoins."
+				FROM 	wcf".WCF_N."_page_module_option_group
 				WHERE 	".$sqlCondition.
 					$this->sqlGroupBy;
 			$row = WCF::getDB()->getFirstRow($sql);
