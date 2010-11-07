@@ -4,3 +4,4 @@ de.evil-co.cms 1.1.0
 de.evil-co.cms.core 1.1.0
 	- Now removing cache at uninstall
 	- Added field 'cssClass' to article module
+	- Fixed fatal error with module options (Invalid SQL-Select)
