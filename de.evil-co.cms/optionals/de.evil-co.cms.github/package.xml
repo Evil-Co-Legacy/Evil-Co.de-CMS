@@ -21,6 +21,7 @@
 
 	<instructions type="install">
 		<!-- File-PiPs -->
+		<acptemplates>tar/acptemplates.tar</acptemplates>
 		<files>tar/files.tar</files>
 		<templates>tar/templates.tar</templates>
 
