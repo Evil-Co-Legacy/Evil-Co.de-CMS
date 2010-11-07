@@ -11,6 +11,7 @@
 			<eventClassName>DynamicPageEditForm</eventClassName>
 			<eventName>assignVariables</eventName>
 			<listenerClassFile>lib/system/event/listener/DynamicPageEditFormUserMenuLinkListener.class.php</listenerClassFile>
+			<environment>admin</environment>
 		</eventlistener>
 	</import>
 </data>
