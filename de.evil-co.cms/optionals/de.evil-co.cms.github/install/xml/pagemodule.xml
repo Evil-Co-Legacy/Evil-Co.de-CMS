@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.evil-co.de/DTDs/pagemodule.dtd">
+<data>	
+	<import>
+		<pagemodule>
+			<name>github</name>
+			<file>lib/page/util/module/GithubModule.class.php</file>
+			<optiongroups>
+				<optiongroup>
+					<name>general</name>
+				</optiongroup>
+				<options>
+					<option>
+						<name>username</name>
+						<optiontype>text</optiontype>
+						<cssclass>inputText</cssclass>
+						<group>general</group>
+					</option>
+					<option>
+						<name>repository</name>
+						<optiontype>text</optiontype>
+						<cssclass>inputText</cssclass>
+						<group>general</group>
+					</option>
+					<option>
+						<name>limit</name>
+						<optiontype>text</optiontype>
+						<cssclass>inputText</cssclass>
+						<group>general</group>
+					</option>
+				</options>
+			</optiongroups>
+		</pagemodule>
+	</import>
+</data>
