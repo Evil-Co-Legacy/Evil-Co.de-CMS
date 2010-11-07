@@ -2,6 +2,7 @@
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de-informal">
 	<category name="wcf.cms.module">
+		<item name="wcf.cms.module.usersOnlineList.title"><![CDATA[Wer ist Online-Liste]]></item>
 		<item name="wcf.cms.module.usersOnlineList.page.title"><![CDATA[Zur Zeit {if $usersOnlineTotal == 1}ist{else}sind{/if} {#$usersOnlineTotal} Benutzer online:]]></item>
 		<item name="wcf.cms.module.usersOnlineList.page.detail"><![CDATA[{if $usersOnlineMembers > 0}{#$usersOnlineMembers} Mitglied{if $usersOnlineMembers != 1}er{/if}{/if} {if $usersOnlineInvisible > 0}(davon {#$usersOnlineInvisible} unsichtbar){/if}{if $usersOnlineGuests > 0 && $usersOnlineMembers > 0}und{/if}{if $usersOnlineGuests > 0}{#$usersOnlineGuests} Besucher{/if}]]></item>
 	</category>
