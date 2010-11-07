@@ -2,7 +2,7 @@
 require_once(WCF_DIR.'lib/system/WCFACP.class.php');
 
 // Is this version an unstable version?
-define('CMS_VERSION_UNSTABLE', true);
+define('CMS_VERSION_UNSTABLE', false);
 
 /**
  * This class implements our backend
