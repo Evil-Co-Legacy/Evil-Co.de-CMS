@@ -193,7 +193,7 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.productManager{/lang}</p>
-			<p class="formField">Johannes Donath</p>
+			<p class="formField">Johannes Donath <img src="{@RELATIVE_CMS_DIR}icon/nuclearM.png" alt="" title="{lang}cms.acp.index.credits.noNuclearPower{/lang}" /></p>
 		</div>
 		
 		<div class="formElement">
