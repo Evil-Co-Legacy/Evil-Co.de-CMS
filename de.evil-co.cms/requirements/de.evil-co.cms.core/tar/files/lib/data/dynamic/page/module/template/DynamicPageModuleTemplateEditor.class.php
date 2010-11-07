@@ -60,7 +60,7 @@ class DynamicPageModuleTemplateEditor extends DynamicPageModuleTemplate {
 	 * Removes the available page modules cache
 	 */
 	public static function clearCache() {
-		WCF::getCache()->clear(WCF_DIR.'cache/availablePageModules-*');
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.availablePageModules-*');
 	}
 }
 ?>
