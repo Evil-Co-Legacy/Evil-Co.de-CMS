@@ -44,6 +44,9 @@ class GithubModule extends AbstractModule {
 	public function readData() {
 		parent::readData();
 		
+		// add additional head contents
+		$this->additionalHeadContents = '<script type="text/javascript" src="'.RELATIVE_WCF_DIR.'js/githubPageModule.js"></script>';
+		
 		// generate api url
 		$this->generateAPIUrl($this->getOptions()->getGroup('general')->getOption('username')->getValue(), $this->getOptions()->getGroup('general')->getOption('repository')->getValue(), $this->getOptions()->getGroup('general')->getOption('branch')->getValue());
 		
