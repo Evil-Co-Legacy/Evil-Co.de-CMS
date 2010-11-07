@@ -47,18 +47,6 @@ class GithubModule extends AbstractModule {
 	}
 	
 	/**
-	 * @see	AbstractModule::readData()
-	 */
-	public function assignVariables() {
-		parent::assignVariables();
-		
-		WCF::getTPL()->assign(array(
-			'githubPageModule'.$this->instanceID.'Commits'		=>	$this->commits,
-			'githubPageModule'.$this->instanceID.'ApiError'		=>	$this->apiError
-		));
-	}
-	
-	/**
 	 * Generates the api url
 	 * @param	string	$username
 	 * @param	string	$repository
