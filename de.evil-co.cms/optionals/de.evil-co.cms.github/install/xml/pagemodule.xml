@@ -9,34 +9,34 @@
 				<optiongroup>
 					<name>general</name>
 				</optiongroup>
-				<options>
-					<option>
-						<name>username</name>
-						<optiontype>text</optiontype>
-						<cssclass>inputText</cssclass>
-						<group>general</group>
-					</option>
-					<option>
-						<name>repository</name>
-						<optiontype>text</optiontype>
-						<cssclass>inputText</cssclass>
-						<group>general</group>
-					</option>
-					<option>
-						<name>branch</name>
-						<optiontype>text</optiontype>
-						<cssclass>inputText</cssclass>
-						<group>general</group>
-						<defaultvalue>master</defaultvalue>
-					</option>
-					<!-- <option>
-						<name>limit</name>
-						<optiontype>text</optiontype>
-						<cssclass>inputText</cssclass>
-						<group>general</group>
-					</option> -->
-				</options>
 			</optiongroups>
+			<options>
+				<option>
+					<name>username</name>
+					<optiontype>text</optiontype>
+					<cssclass>inputText</cssclass>
+					<group>general</group>
+				</option>
+				<option>
+					<name>repository</name>
+					<optiontype>text</optiontype>
+					<cssclass>inputText</cssclass>
+					<group>general</group>
+				</option>
+				<option>
+					<name>branch</name>
+					<optiontype>text</optiontype>
+					<cssclass>inputText</cssclass>
+					<group>general</group>
+					<defaultvalue>master</defaultvalue>
+				</option>
+				<!-- <option>
+					<name>limit</name>
+					<optiontype>text</optiontype>
+					<cssclass>inputText</cssclass>
+					<group>general</group>
+				</option> -->
+			</options>
 		</pagemodule>
 	</import>
 </data>
