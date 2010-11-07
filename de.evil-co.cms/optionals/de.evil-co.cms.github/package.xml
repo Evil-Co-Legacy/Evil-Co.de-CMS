@@ -4,7 +4,7 @@
 	<packageinformation>
 		<packagename><![CDATA[Evil-Co.de CMS Github Module]]></packagename>
 		<packagedescription><![CDATA[Adds a module to CMS that lists the lastest X commits]]></packagedescription>
-		<version>1.1.0 RC 1</version>
+		<version>1.1.0</version>
 		<plugin>com.woltlab.wcf</plugin>
 		<date>2010-11-07</date>
 	</packageinformation>
@@ -16,7 +16,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.1.0 RC 2">de.evil-co.cms.core</requiredpackage> 
+		<requiredpackage minversion="1.1.0">de.evil-co.cms.core</requiredpackage> 
 	</requiredpackages>
 
 	<instructions type="install">
