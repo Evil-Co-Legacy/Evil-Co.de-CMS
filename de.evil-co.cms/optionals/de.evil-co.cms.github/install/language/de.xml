@@ -16,7 +16,7 @@
 		<item name="wcf.cms.module.github.option.branch.description"><![CDATA[Definiert das Branch dessen Commits gelistet werden sollen. Dies ist in den meisten Fällen 'master'.]]></item>
 
 		<item name="wcf.cms.module.github.page.apiError"><![CDATA[Ein Fehler ist beim Abrufen der Commit-Informationen von Github aufgetreten.]]></item>
-		<item name="wcf.cms.module.github.page.noJS"><![CDATA[Sie müssen Javascript aktivieren um die Commit-Informationen anzeigen zu können.]]></item>
+		<item name="wcf.cms.module.github.page.noJS"><![CDATA[Sie müssen Javascript aktivieren um die Commit-Informationen anzeigen zu können.<br /><a href="{$this->session->requestURI}&amp;noJS=1">Diese Seite ohne Javascript anzeigen.</a>]]></item>
 		<item name="wcf.cms.module.github.page.commitID"><![CDATA[Commit ID]]></item>
 		<item name="wcf.cms.module.github.page.message"><![CDATA[Nachricht]]></item>
 		<item name="wcf.cms.module.github.page.author"><![CDATA[Autor]]></item>
