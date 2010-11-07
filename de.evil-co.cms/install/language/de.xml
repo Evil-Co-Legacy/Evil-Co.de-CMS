@@ -28,6 +28,7 @@
 		<item name="cms.acp.index.credits.productManager"><![CDATA[Projektleitung]]></item>
 		<item name="cms.acp.index.credits.translators"><![CDATA[Übersetzung]]></item>
 		<item name="cms.acp.index.credits.icons"><![CDATA[Iconset]]></item>
+		<item name="cms.acp.index.credits.noNuclearPower"><![CDATA[Nieder mit der Atomenergie!]]></item>
 		<item name="cms.acp.index.news"><![CDATA[Nachrichten]]></item>
 		<item name="cms.acp.index.searchUsers"><![CDATA[Schnellsuche nach Benutzern]]></item>
 		<item name="cms.acp.index.system"><![CDATA[System]]></item>
