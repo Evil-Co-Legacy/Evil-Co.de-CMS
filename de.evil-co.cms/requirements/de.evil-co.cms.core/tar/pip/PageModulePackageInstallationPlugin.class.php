@@ -111,6 +111,9 @@ class PageModulePackageInstallationPlugin extends AbstractXMLPackageInstallation
 						
 						// create module option groups
 						foreach($moduleOptionGroups as $group) {
+							// just for debugging
+							print_r($group);
+							
 							// validate group xml
 							if (empty($group['name'])) throw new SystemException("Required 'name' tag is missing", 13023);
 							
