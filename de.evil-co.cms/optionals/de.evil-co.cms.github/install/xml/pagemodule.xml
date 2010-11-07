@@ -23,6 +23,12 @@
 						<group>general</group>
 					</option>
 					<option>
+						<name>branch</name>
+						<optiontype>text</optiontype>
+						<cssclass>inputText</cssclass>
+						<group>general</group>
+					</option>
+					<option>
 						<name>limit</name>
 						<optiontype>text</optiontype>
 						<cssclass>inputText</cssclass>
