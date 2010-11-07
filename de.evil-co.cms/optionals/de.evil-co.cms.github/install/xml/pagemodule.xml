@@ -27,6 +27,7 @@
 						<optiontype>text</optiontype>
 						<cssclass>inputText</cssclass>
 						<group>general</group>
+						<defaultvalue>master</defaultvalue>
 					</option>
 					<option>
 						<name>limit</name>
