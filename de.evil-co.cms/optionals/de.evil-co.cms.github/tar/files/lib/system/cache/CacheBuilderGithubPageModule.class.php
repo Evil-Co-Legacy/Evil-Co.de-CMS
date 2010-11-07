@@ -51,9 +51,9 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 			
 			// loop througt children
 			foreach($commit['children'] as $child) {
-				if ($child['name'] == 'commiter') {
+				if ($child['name'] == 'committer') {
 					// create array for information
-					$tmpInfo['commiter'] = array();
+					$tmpInfo['committer'] = array();
 					
 					// loop througt children
 					foreach($child['children'] as $cChild) {
@@ -61,8 +61,11 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 						if (!isset($cChild['cdata'])) continue;
 						
 						// write value
-						$tmpInfo['commiter'][$cChild['name']] = $cChild['cdata'];
+						$tmpInfo['committer'][$cChild['name']] = $cChild['cdata'];
 					}
+					
+					// end loop
+					continue;
 				}
 				
 				// no cdata field found ... exit
@@ -76,8 +79,8 @@ class CacheBuilderGithubPageModule implements CacheBuilder {
 			$tmp['url'] .= $tmpInfo['url'];
 			$tmp['id'] = $tmpInfo['id'];
 			$tmp['message'] = $tmpInfo['message'];
-			$tmp['author'] = $tmpInfo['commiter']['name'];
-			$tmp['authorEmail'] = $tmpInfo['commiter']['email'];
+			$tmp['author'] = $tmpInfo['committer']['name'];
+			$tmp['authorEmail'] = $tmpInfo['committer']['email'];
 			$tmp['date'] = strtotime($tmpInfo['committed-date']);
 			
 			// write tmp array
