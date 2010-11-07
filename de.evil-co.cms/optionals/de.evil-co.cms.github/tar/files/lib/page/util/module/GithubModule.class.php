@@ -3,7 +3,7 @@
 require_once(WCF_DIR.'lib/page/util/module/AbstractModule.class.php');
 
 /**
- * Implements a module class that provides a news interface
+ * Implements a module class that lists github commits
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.github
