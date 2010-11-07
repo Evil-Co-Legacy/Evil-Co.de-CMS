@@ -37,6 +37,7 @@
 		<optionalpackage file="optionals/de.evil-co.cms.commercial.pm.tar">de.evil-co.cms.commercial.pm</optionalpackage>
 		<optionalpackage file="optionals/de.evil-co.cms.commercial.wbb.tar">de.evil-co.cms.commercial.wbb</optionalpackage>
 		<optionalpackage file="optionals/de.evil-co.cms.usersOnlineList.tar">de.evil-co.cms.usersOnlineList</optionalpackage>
+		<optionalpackage file="optionals/de.evil-co.cms.github.tar">de.evil-co.cms.github</optionalpackage>
 	</optionalpackages>
 
 	<instructions type="install">
