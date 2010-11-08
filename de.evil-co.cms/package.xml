@@ -5,7 +5,7 @@
 		<packagename><![CDATA[Evil-Co.de CMS]]></packagename>
 		<packagedescription><![CDATA[]]></packagedescription>
 		<standalone>1</standalone>
-		<version>1.1.0</version>
+		<version>1.2.0</version>
 		<date>2010-09-09</date>
 	</packageinformation>
 
@@ -56,25 +56,5 @@
 		<languages languagecode="de">install/language/de.xml</languages>
 		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
 		<languages languagecode="en">install/language/en.xml</languages>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.1.0 RC 1">
-		<!-- File-PiPs -->
-		<files>tar/files.tar</files>
-		<templates>tar/templates.tar</templates>
-		<acptemplates>tar/acptemplates.tar</acptemplates>
-		
-		<!-- XML PiPs -->
-		<eventlistener>install/xml/eventlistener.xml</eventlistener>
-		
-		<!-- Languages -->
-		<languages languagecode="de">install/language/de.xml</languages>
-		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
-		<languages languagecode="en">install/language/en.xml</languages>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.1.0 RC 2">
-		<!-- File-PiPs -->
-		<acptemplates>tar/acptemplates.tar</acptemplates>
 	</instructions>
 </package>
