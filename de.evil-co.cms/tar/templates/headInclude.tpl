@@ -7,7 +7,7 @@
 {if !$allowSpidersToIndexThisPage|isset}<meta name="robots" content="noindex,nofollow" />{/if}
 
 <script type="text/javascript" src="{@RELATIVE_CMS_DIR}js/jquery-1.4.3.js"></script>
-<script type="text/javascript" src="{@RELATIVE_CMS_DIR}js/jquery-ui-1.8.4.custom.min.js"></script>
+<script type="text/javascript" src="{@RELATIVE_CMS_DIR}js/jquery-ui-1.8.6.custom.min.js"></script>
 <!-- Thanck you Woltlab for this workaround -.- (Woltlab uses protoaculous but we use jquery ...) -->
 <script type="text/javascript">
 window.$j = jQuery.noConflict();
