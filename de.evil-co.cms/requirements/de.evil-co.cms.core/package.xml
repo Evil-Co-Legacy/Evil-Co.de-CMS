@@ -53,5 +53,10 @@
 	<instructions type="update" fromversion="1.1.0">
 		<!-- Other PiPs -->
 		<sql>install/update_1.1.0.sql</sql>
+		
+		<!-- Languages -->
+		<languages languagecode="de">install/language/de.xml</languages>
+		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
+		<languages languagecode="en">install/language/en.xml</languages>
 	</instructions>
 </package>
