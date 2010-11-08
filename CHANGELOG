@@ -1,5 +1,6 @@
 de.evil-co.cms 1.1.0
 	- Added a little easteregg
+	- Added jQuery
 
 de.evil-co.cms.core 1.1.0
 	- Now removing cache at uninstall
