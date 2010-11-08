@@ -51,7 +51,7 @@ class GithubModulePage extends AbstractPage {
 		parent::readData();
 		
 		// call module functions
-		$this->readCommits();
+		$this->moduleInstance->readCommits();
 	}
 	
 	/**
