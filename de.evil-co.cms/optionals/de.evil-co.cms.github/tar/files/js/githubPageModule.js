@@ -13,8 +13,11 @@ var githubPageModule = {
 	 * @param	integer	instanceID
 	 */
 	init			:		function(containerID, instanceID) {
-		new Ajax.Request('index.php?page=GithubModule&instanceID=' + instanceID + SID_ARG_2ND, { onSuccess: function(data) {
-			$(containerID).innerHTML = data;
-		}});
+		new $j.ajax({
+			url: 'index.php?page=GithubModule&instanceID=' + instanceID + SID_ARG_2ND, 
+			success: function(data) {
+				$(containerID).innerHTML = data;
+			}
+		});
 	}
 };
