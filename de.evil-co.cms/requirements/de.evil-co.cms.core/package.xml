@@ -52,6 +52,6 @@
 	
 	<instructions type="update" fromversion="1.1.0">
 		<!-- Other PiPs -->
-		<sql>update_1.1.0.sql</sql>
+		<sql>install/update_1.1.0.sql</sql>
 	</instructions>
 </package>
