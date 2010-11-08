@@ -7,3 +7,6 @@ de.evil-co.cms.core 1.1.0
 	- Fixed fatal error with module option groups (Invalid SQL-Select)
 	- Fixed fatal error with getNumRows() method call
 	- Fixed fatal error with module options (Invalid SQL-Select)
+	
+de.evil-co.cms.github 1.2.0
+	- Added javascript load
