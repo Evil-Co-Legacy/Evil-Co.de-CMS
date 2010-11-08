@@ -6,7 +6,7 @@
 	</div>
 	<script type="text/javascript">
 		onloadEvents.push(function() {
-			githubPageModule.init('githubPageModule{$module->instanceID}', {$module->instanceID});
+			githubPageModule.init('githubPageModule{$module->instanceID}', {$module->instanceID}, '{lang}wcf.cms.module.github.page.loading{/lang}');
 		});
 	</script>
 {else}
