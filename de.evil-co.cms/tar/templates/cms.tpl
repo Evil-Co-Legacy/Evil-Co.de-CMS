@@ -7,10 +7,14 @@
 		{* Insert user defined tags *}
 		{@$page->additionalHeadContent}
 		
+		{* Insert module defined tags *}
 		{foreach from=$modules item='module'}
-			{if $module->stylesheet != ''}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/{@$module->stylesheet}" />{/if}
-			{if $module->additionalHeadContents != ''}{@$module->additionalHeadContents}{/if}
+			{if $module->stylesheet != '' and $module->instanceNumber == 1}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/{@$module->stylesheet}" />{/if}
+			{if $module->additionalHeadContents != '' and $module->instanceNumber == 1}{@$module->additionalHeadContents}{/if}
 		{/foreach}
+		
+		{* Placeholder for additional contents *}
+		{if $additionalHeadContents|isset}{@$additionalHeadContents}{/if}
 	</head>
 	<body{if $templateName|isset} id="tpl{$templateName|ucfirst}"{/if}>
 		{include file='header' sandbox=false}
