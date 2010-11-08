@@ -17,6 +17,7 @@
 
 		<item name="wcf.cms.module.github.page.apiError"><![CDATA[An error occoured while loading commit information.]]></item>
 		<item name="wcf.cms.module.github.page.noJS"><![CDATA[You must enable javascript to see commit-information.<br /><a href="{$this->session->requestURI}&amp;noJS=1">Show me this page without javascript.</a>]]></item>
+		<item name="wcf.cms.module.github.page.loading"><![CDATA[Loading commit information ...]]></item>
 		<item name="wcf.cms.module.github.page.commitID"><![CDATA[Commit ID]]></item>
 		<item name="wcf.cms.module.github.page.message"><![CDATA[Message]]></item>
 		<item name="wcf.cms.module.github.page.author"><![CDATA[Author]]></item>
