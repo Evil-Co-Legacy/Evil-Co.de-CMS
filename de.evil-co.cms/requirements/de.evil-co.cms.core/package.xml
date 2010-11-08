@@ -50,15 +50,8 @@
 		<languages languagecode="en">install/language/en.xml</languages>
 	</instructions>
 	
-	<instructions type="update" fromversion="1.1.0 RC 1">
-		<!-- File-PiPs -->
-		<files>tar/files.tar</files>
-		<packageinstallationplugins>tar/pip.tar</packageinstallationplugins>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.1.0 RC 2">
-		<!-- File-PiPs -->
-		<files>tar/files.tar</files>
-		<packageinstallationplugins>tar/pip.tar</packageinstallationplugins>
+	<instructions type="update" fromversion="1.1.0">
+		<!-- Other PiPs -->
+		<sql>update_1.1.0.sql</sql>
 	</instructions>
 </package>
