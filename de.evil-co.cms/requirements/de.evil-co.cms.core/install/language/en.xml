@@ -119,6 +119,8 @@
 		<item name="wcf.cms.module.headline.option.headlineIcon.description"><![CDATA[Define an icon here (This will only used if the headline size is set to 'H2').]]></item>
 		<item name="wcf.cms.module.headline.option.subHeadline"><![CDATA[Subtitle]]></item>
 		<item name="wcf.cms.module.headline.option.subHeadline.description"><![CDATA[Define a subtitle (This will only used if the headline size is set to 'H2').]]></item>
+		<item name="wcf.cms.module.article.option.cssClass"><![CDATA[CSS Class]]]></item>
+		<item name="wcf.cms.module.article.option.cssClass.description"><![CDATA[Define a css class for the p-Element of this article here.]]></item>
 		
 		<!-- article module -->
 		<item name="wcf.cms.module.article.title"><![CDATA[Article]]></item>

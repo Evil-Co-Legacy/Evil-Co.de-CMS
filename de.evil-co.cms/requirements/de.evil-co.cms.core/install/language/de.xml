@@ -125,6 +125,8 @@
 		<item name="wcf.cms.module.article.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
 		<item name="wcf.cms.module.article.option.content"><![CDATA[Inhalt]]></item>
 		<item name="wcf.cms.module.article.option.content.description"><![CDATA[Geben Sie hier den Inhalt des Artikels an.]]></item>
+		<item name="wcf.cms.module.article.option.cssClass"><![CDATA[CSS Klasse]]]></item>
+		<item name="wcf.cms.module.article.option.cssClass.description"><![CDATA[Geben Sie hier eine CSS-Klasse an die für das Artikel-&lt;p&gt;-Element verwendet werden soll.]]></item>
 		
 		<!-- html module -->
 		<item name="wcf.cms.module.html.title"><![CDATA[HTML]]></item>
