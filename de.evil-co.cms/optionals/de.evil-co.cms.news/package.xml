@@ -16,7 +16,9 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.1.0 RC 2">de.evil-co.cms.core</requiredpackage> 
+		<requiredpackage minversion="1.1.0 RC 2">de.evil-co.cms.core</requiredpackage>
+		
+		<requiredpackage>com.woltlab.wcf.form.message</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
