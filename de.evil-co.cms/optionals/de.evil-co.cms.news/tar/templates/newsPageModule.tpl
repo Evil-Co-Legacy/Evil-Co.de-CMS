@@ -1,5 +1,6 @@
 <div id="newsPageModule{$module->instanceID}" class="newsPageModule">
 	{if $module->newsItems|count}
+		{counter name='newsCount' start=1 assign='newsCount' print=false}
 		{foreach from=$module->newsItems item='newsItem'}
 			{include file='newsPageModuleItem' item=$newsItem}
 		{/foreach}
