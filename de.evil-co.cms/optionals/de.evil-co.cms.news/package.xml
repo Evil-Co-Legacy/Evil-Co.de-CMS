@@ -26,6 +26,7 @@
 
 		<!-- XML PiPs -->
 		<pagemodule>install/xml/pagemodule.xml</pagemodule>
+		<groupoptions>install/xml/groupoptions.xml</groupoptions>
 		
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
