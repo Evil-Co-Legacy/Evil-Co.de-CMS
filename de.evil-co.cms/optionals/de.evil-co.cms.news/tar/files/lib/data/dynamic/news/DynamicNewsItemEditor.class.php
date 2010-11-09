@@ -112,5 +112,13 @@ class DynamicNewsItemEditor extends DynamicNewsItem {
 					itemID ".(is_array($itemID) ? "IN (".implode(',', $itemID).")" : "= ".$itemID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Removes the cache for the given instanceID
+	 * @param	mixed	$instanceID
+	 */
+	public static function clearCache($instanceID = '*') {
+		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.newsItemsPageModule-'.$instanceID.'.php');
+	}
 }
 ?>
