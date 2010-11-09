@@ -4,36 +4,36 @@
 	<!-- acp menu -->
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.content.host"><![CDATA[Pagemanagement]]></item>
-		<item name="wcf.acp.menu.link.content.host.list"><![CDATA[List Hosts]]></item>
-		<item name="wcf.acp.menu.link.content.host.add"><![CDATA[Add Host]]></item>
+		<item name="wcf.acp.menu.link.content.host.list"><![CDATA[List vHosts]]></item>
+		<item name="wcf.acp.menu.link.content.host.add"><![CDATA[Add vHost]]></item>
 	</category>
 	
 	<!-- host system -->
 	<category name="wcf.cms.host">
 		<!-- host list -->
-		<item name="wcf.cms.host.list.title"><![CDATA[List Hosts]]></item>
+		<item name="wcf.cms.host.list.title"><![CDATA[List vHosts]]></item>
 		
 		<!-- host add -->
-		<item name="wcf.cms.host.add.title"><![CDATA[Add Host]]></item>
-		<item name="wcf.cms.host.add.success"><![CDATA[The Host was added successfully.]]></item>
+		<item name="wcf.cms.host.add.title"><![CDATA[Add vHost]]></item>
+		<item name="wcf.cms.host.add.success"><![CDATA[The vHost was added successfully.]]></item>
 		<item name="wcf.cms.host.add.general"><![CDATA[General Information]]></item>
 		<item name="wcf.cms.host.add.general.title"><![CDATA[Title]]></item>
-		<item name="wcf.cms.host.add.general.title.description"><![CDATA[The title of a host will appear in every page title (&lt;title&gt;-Tag).]]></item>
+		<item name="wcf.cms.host.add.general.title.description"><![CDATA[The title of a vHost will appear in every page title (&lt;title&gt;-Tag).]]></item>
 		<item name="wcf.cms.host.add.general.hostname"><![CDATA[Hostname]]></item>
 		<item name="wcf.cms.host.add.general.hostname.description"><![CDATA[The hostname is used to identify a page.]]></item>
 		<item name="wcf.cms.host.add.general.hostname.invalid"><![CDATA[Please put in a valid hostname! (Note that 'localhost' is also valid.)]]></item>
 		<item name="wcf.cms.host.add.expertSettings"><![CDATA[Expertsettings]]></item>
 		<item name="wcf.cms.host.add.expertSettings.isFallback"><![CDATA[Use as Fallback]]></item>
-		<item name="wcf.cms.host.add.expertSettings.isFallback.description"><![CDATA[If this field is active this host will used if no other host matches.]]></item>
+		<item name="wcf.cms.host.add.expertSettings.isFallback.description"><![CDATA[If this field is active this vHost will used if no other vHost matches.]]></item>
 		<item name="wcf.cms.host.add.expertSettings.languageCode"><![CDATA[Languagecode]]></item>
 		<item name="wcf.cms.host.add.expertSettings.languageCode.description"><![CDATA[This code can be used to make pages in more languages than one (<strong>Warning:</strong> This page will only appear if the language code matches!).]]></item>
 		
 		<!-- host edit -->
-		<item name="wcf.cms.host.edit.title"><![CDATA[Edit Host]]></item>
-		<item name="wcf.cms.host.edit.success"><![CDATA[The host was successfully edited.]]></item>
+		<item name="wcf.cms.host.edit.title"><![CDATA[Edit vHost]]></item>
+		<item name="wcf.cms.host.edit.success"><![CDATA[The vHost was successfully edited.]]></item>
 		
 		<!-- other -->
-		<item name="wcf.cms.host.delete"><![CDATA[Delete Host]]></item>
+		<item name="wcf.cms.host.delete"><![CDATA[Delete vHost]]></item>
 		<item name="wcf.cms.host.delete.sure"><![CDATA[Are you sure?]]></item>
 	</category>
 	
@@ -41,7 +41,7 @@
 	<category name="wcf.cms.page">
 		<!-- page list -->
 		<item name="wcf.cms.page.list.title"><![CDATA[List Pages]]></item>
-		<item name="wcf.cms.page.list.details"><![CDATA[Hostdetails]]></item>
+		<item name="wcf.cms.page.list.details"><![CDATA[vHostdetails]]></item>
 		<item name="wcf.cms.page.list.details.title"><![CDATA[Title]]></item>
 		<item name="wcf.cms.page.list.details.hostname"><![CDATA[Hostname]]></item>
 		
@@ -150,16 +150,16 @@
 		<!-- administration -->
 		<item name="wcf.acp.group.option.category.admin.content.cms"><![CDATA[Content Management System]]></item>
 		<item name="wcf.acp.group.option.category.admin.content.cms.description"><![CDATA[]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canListHosts"><![CDATA[Can list hosts]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canListHosts.description"><![CDATA[Members of this group can list all hosts.]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts"><![CDATA[Can add hosts]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts.description"><![CDATA[Members of this group can add new hosts.]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts"><![CDATA[Can edit hosts]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts.description"><![CDATA[Members of this group can edit or delete hosts.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts"><![CDATA[Can list vHosts]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListHosts.description"><![CDATA[Members of this group can list all vHosts.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts"><![CDATA[Can add vHosts]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddHosts.description"><![CDATA[Members of this group can add new vHosts.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts"><![CDATA[Can edit vHosts]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canEditHosts.description"><![CDATA[Members of this group can edit or delete vHosts.]]></item>
 		<item name="wcf.acp.group.option.admin.content.cms.canListPages"><![CDATA[Can list pages]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canListPages.description"><![CDATA[Members of this group can list all pages in a host.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canListPages.description"><![CDATA[Members of this group can list all pages in a vHost.]]></item>
 		<item name="wcf.acp.group.option.admin.content.cms.canAddPages"><![CDATA[Can add pages]]></item>
-		<item name="wcf.acp.group.option.admin.content.cms.canAddPages.description"><![CDATA[Members of this group can add new pages to hosts.]]></item>
+		<item name="wcf.acp.group.option.admin.content.cms.canAddPages.description"><![CDATA[Members of this group can add new pages to vHosts.]]></item>
 		<item name="wcf.acp.group.option.admin.content.cms.canEditPages"><![CDATA[Can edit pages]]></item>
 		<item name="wcf.acp.group.option.admin.content.cms.canEditPages.description"><![CDATA[Members of this group can edit or delete pages.]]></item>
 	</category>
