@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.evil-co.cms.assistant">
+	<packageinformation>
+		<packagename><![CDATA[Evil-Co.de Assistant]]></packagename>
+		<packagename languagecode="de"><![CDATA[Evil-Co.de Assistent]]></packagename>
+		<packagename languagecode="de-informal"><![CDATA[Evil-Co.de Assistent]]></packagename>
+		<packagedescription><![CDATA[Adds a assistant to CMS that helps you to create new hosts]]></packagedescription>
+		<packagedescription languagecode="de"><![CDATA[Fügt einen Assistenten (Wizard) zum CMS hinzu der Ihnen beim erstellen von Seiten hilft.]]></packagedescription>
+		<packagedescription languagecode="de"><![CDATA[Fügt einen Assistenten (Wizard) zum CMS hinzu der Dir beim erstellen von Seiten hilft.]]></packagedescription>
+		<version>1.1.0 Beta 1</version>
+		<plugin>de.evil-co.cms</plugin>
+		<date>2010-11-09</date>
+	</packageinformation>
+
+	<authorinformation>
+		<author><![CDATA[Evil-Co.de]]></author>
+		<authorurl><![CDATA[http://www.Evil-Co.de/]]></authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms</requiredpackage>
+		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms.core</requiredpackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<!-- File-PiPs -->
+		<files>tar/files.tar</files>
+		<acptemplates>tar/acptemplates.tar</acptemplates>
+		
+		<!-- XML-PiPs -->
+		<acpmenu>install/xml/acpmenu.xml</acpmenu>
+		<groupoptions>install/xml/groupoptions.xml</groupoptions>
+		<eventlistener>install/xml/eventlistener.xml</eventlistener>
+		
+		<!-- Languages -->
+		<!-- <languages languagecode="de">install/language/de.xml</languages>
+		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
+		<languages languagecode="en">install/language/en.xml</languages> -->
+	</instructions>
+</package>
