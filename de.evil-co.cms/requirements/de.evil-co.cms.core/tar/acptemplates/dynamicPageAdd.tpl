@@ -253,58 +253,305 @@
 			{assign var='moduleList' value=$page->moduleManager->getModuleInstances()}
 			{counter name='moduleCounter' print=false}
 			
-			{if $moduleList|count}
-				{foreach from=$moduleList item=$module}
-					<div id="item_{$module->instanceID}" class="border titleBarPanel">
-						<div class="containerHead">
-							<div class="containerIcon">
-								<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
-									<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
-								</a>
-								{if $module->getOptions()->getCount()}
-									<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-										<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
-									</a>
-								{else}
-									<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
-								{/if}
-								<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-									<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
-								</a>
-							</div>
-							<div class="containerContent">
-								<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
-							</div>
-						</div>
-						<div id="module{$moduleCount}Content" class="container-1">
-							{if $module->getACPTemplateName() != ''}
-								{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
-							{else}
-								<div class="formElement">
-									<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
-									<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+			<div id="moduleListTop" class="container-2">
+				{if $moduleList|count}
+					{foreach from=$moduleList.top item=$module}
+						{if $module->position == 'top'}
+							<div id="item_{$module->instanceID}" class="border titleBarPanel">
+								<div class="containerHead">
+									<div class="containerIcon">
+										<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+											<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
+										</a>
+										{if $module->getOptions()->getCount()}
+											<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+												<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+											</a>
+										{else}
+											<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+										{/if}
+										<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+											<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+										</a>
+									</div>
+									<div class="containerContent">
+										<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+									</div>
 								</div>
-							{/if}
-						</div>
+								<div id="module{$moduleCount}Content" class="container-1">
+									{if $module->getACPTemplateName() != ''}
+										{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+									{else}
+										<div class="formElement">
+											<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+											<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+										</div>
+									{/if}
+								</div>
+							</div>
+						{/if}
+					{/foreach}
+				{else}
+					<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
+				{/if}
+			</div>
+			
+			<div class="layout-4">
+				<div class="columnContainer">
+					<div id="moduleListLeft" class="first column container-2">
+						{if $moduleList|count}
+							{foreach from=$moduleList.left item=$module}
+								{if $module->position == 'left'}
+									<div id="item_{$module->instanceID}" class="border titleBarPanel">
+										<div class="containerHead">
+											<div class="containerIcon">
+												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
+												</a>
+												{if $module->getOptions()->getCount()}
+													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+													</a>
+												{else}
+													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+												{/if}
+												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+												</a>
+											</div>
+											<div class="containerContent">
+												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+											</div>
+										</div>
+										<div id="module{$moduleCount}Content" class="container-1">
+											{if $module->getACPTemplateName() != ''}
+												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+											{else}
+												<div class="formElement">
+													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+												</div>
+											{/if}
+										</div>
+									</div>
+								{/if}
+							{/foreach}
+						{else}
+							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
+						{/if}
 					</div>
-				{/foreach}
-			{else}
-				<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
-			{/if}
+					<div id="moduleListCenter" class="second column container-2">
+						{if $moduleList|count}
+							{foreach from=$moduleList.center item=$module}
+								{if $module->position == 'center'}
+									<div id="item_{$module->instanceID}" class="border titleBarPanel">
+										<div class="containerHead">
+											<div class="containerIcon">
+												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
+												</a>
+												{if $module->getOptions()->getCount()}
+													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+													</a>
+												{else}
+													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+												{/if}
+												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+												</a>
+											</div>
+											<div class="containerContent">
+												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+											</div>
+										</div>
+										<div id="module{$moduleCount}Content" class="container-1">
+											{if $module->getACPTemplateName() != ''}
+												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+											{else}
+												<div class="formElement">
+													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+												</div>
+											{/if}
+										</div>
+									</div>
+								{/if}
+							{/foreach}
+						{else}
+							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
+						{/if}
+					</div>
+					<div id="moduleListRight" class="third column container-2">
+						{if $moduleList|count}
+							{foreach from=$moduleList.right item=$module}
+								{if $module->position == 'right'}
+									<div id="item_{$module->instanceID}" class="border titleBarPanel">
+										<div class="containerHead">
+											<div class="containerIcon">
+												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
+												</a>
+												{if $module->getOptions()->getCount()}
+													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+													</a>
+												{else}
+													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+												{/if}
+												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+												</a>
+											</div>
+											<div class="containerContent">
+												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+											</div>
+										</div>
+										<div id="module{$moduleCount}Content" class="container-1">
+											{if $module->getACPTemplateName() != ''}
+												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+											{else}
+												<div class="formElement">
+													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+												</div>
+											{/if}
+										</div>
+									</div>
+								{/if}
+							{/foreach}
+						{else}
+							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
+						{/if}
+					</div>
+				</div>
+			</div>
+			
+			<div id="moduleListBottom" class="container-2">
+				{if $moduleList|count}
+					{foreach from=$moduleList.bottom item=$module}
+						{if $module->position == 'bottom'}
+							<div id="item_{$module->instanceID}" class="border titleBarPanel">
+								<div class="containerHead">
+									<div class="containerIcon">
+										<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+											<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
+										</a>
+										{if $module->getOptions()->getCount()}
+											<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+												<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+											</a>
+										{else}
+											<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+										{/if}
+										<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+											<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+										</a>
+									</div>
+									<div class="containerContent">
+										<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+									</div>
+								</div>
+								<div id="module{$moduleCount}Content" class="container-1">
+									{if $module->getACPTemplateName() != ''}
+										{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+									{else}
+										<div class="formElement">
+											<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+											<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+										</div>
+									{/if}
+								</div>
+							</div>
+						{/if}
+					{/foreach}
+				{else}
+					<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
+				{/if}
+			</div>
 		</div>
 		{if $moduleList|count}
 			{* TODO: Find a scriptless move function *}
 			<script type="text/javascript">
 			{* TODO: Implement a drag and drop scroll here ... There is currently a bug in protoaculous ... *}
-			Sortable.create('moduleList', { tag: 'div', 
-											handle: $$('#moduleList .containerHead'), 
-											onUpdate: function() { 
-												new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
-													method: "post",
-													parameters: { data: Sortable.serialize('moduleList', { tag: 'div' } ) },
-													onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
-												});
-											}
+			Sortable.create("moduleListTop", {							
+				tag: 'div',
+				treeTag: 'div',
+				dropOnEmpty: true,
+				scroll: window,
+				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				constraint: null,
+				onUpdate: function() {
+					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=top&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+							method: "post",
+							parameters: { data: Sortable.serialize('moduleListTop', { tag: 'div' } ) },
+							onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
+					});
+				}
+			});
+
+			Sortable.create("moduleListLeft", {							
+				tag: 'div',
+				treeTag: 'div',
+				dropOnEmpty: true,
+				scroll: window,
+				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				constraint: null,
+				onUpdate: function() {
+					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=left&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+							method: "post",
+							parameters: { data: Sortable.serialize('moduleListLeft', { tag: 'div' } ) },
+							onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
+					});
+				}
+			});
+
+			Sortable.create("moduleListCenter", {							
+				tag: 'div',
+				treeTag: 'div',
+				dropOnEmpty: true,
+				scroll: window,
+				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				constraint: null,
+				onUpdate: function() {
+					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=center&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+							method: "post",
+							parameters: { data: Sortable.serialize('moduleListCenter', { tag: 'div' } ) },
+							onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
+					});
+				}
+			});
+
+			Sortable.create("moduleListRight", {							
+				tag: 'div',
+				treeTag: 'div',
+				dropOnEmpty: true,
+				scroll: window,
+				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				constraint: null,
+				onUpdate: function() {
+					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=right&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+							method: "post",
+							parameters: { data: Sortable.serialize('moduleListRight', { tag: 'div' } ) },
+							onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
+					});
+				}
+			});
+
+			Sortable.create("moduleListBottom", {							
+				tag: 'div',
+				treeTag: 'div',
+				dropOnEmpty: true,
+				scroll: window,
+				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				constraint: null,
+				onUpdate: function() {
+					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=bottom&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
+							method: "post",
+							parameters: { data: Sortable.serialize('moduleListBottom', { tag: 'div' } ) },
+							onComplete: function() { $('sortSuccess').appear(); setTimeout("$('sortSuccess').fade()", 10000); }
+					});
+				}
 			});
 			</script>
 		{/if}
