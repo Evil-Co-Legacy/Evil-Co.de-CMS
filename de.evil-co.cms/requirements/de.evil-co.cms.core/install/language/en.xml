@@ -41,7 +41,7 @@
 	<category name="wcf.cms.page">
 		<!-- page list -->
 		<item name="wcf.cms.page.list.title"><![CDATA[List Pages]]></item>
-		<item name="wcf.cms.page.list.details"><![CDATA[vHostdetails]]></item>
+		<item name="wcf.cms.page.list.details"><![CDATA[vHost Details]]></item>
 		<item name="wcf.cms.page.list.details.title"><![CDATA[Title]]></item>
 		<item name="wcf.cms.page.list.details.hostname"><![CDATA[Hostname]]></item>
 		
