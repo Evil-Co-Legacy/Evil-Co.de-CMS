@@ -23,6 +23,12 @@ class DynamicPageModuleSortAction extends AbstractAction {
 	public $page = null;
 	
 	/**
+	 * Contans the position of modules
+	 * @var	string
+	 */
+	public $position = 'center';
+	
+	/**
 	 * Contains the module list
 	 * @var	array
 	 */
@@ -42,6 +48,21 @@ class DynamicPageModuleSortAction extends AbstractAction {
 		
 		// read pageID parameter
 		if (isset($_REQUEST['pageID'])) $this->pageID = intval($_REQUEST['pageID']);
+		
+		// read module position
+		if (isset($_REQUEST['position'])) $this->position = StringUtil::trim($_REQUEST['position']);
+		
+		// validate position
+		switch($this->position) {
+			case 'top':
+			case 'right':
+			case 'center':
+			case 'left':
+			case 'bottom': break;
+			default:
+				$this->position = 'center';
+				break;
+		}
 		
 		// create page object
 		$this->page = new DynamicPage($this->pageID);
@@ -68,7 +89,8 @@ class DynamicPageModuleSortAction extends AbstractAction {
 			$sql = "UPDATE
 						wcf".WCF_N."_page_module_to_page
 					SET
-						sortOrder = ".intval($key)."
+						sortOrder = ".intval($key).",
+						position = '".escapeString($this->position)."'
 					WHERE
 						instanceID = ".intval($instanceID);
 			WCF::getDB()->sendQuery($sql);
