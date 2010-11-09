@@ -16,7 +16,7 @@ class ModuleManager {
 	 * Contains all modules
 	 * @var array
 	 */
-	protected $modules = array();
+	protected $modules = array('top' => array(), 'left' => array(), 'center' => array(), 'right' => array(), 'bottom' => array());
 	
 	/**
 	 * Contains the ID of the page
@@ -37,15 +37,17 @@ class ModuleManager {
 		$modules = WCF::getCache()->get('pageModules-'.$pageID.'-'.PACKAGE_ID);
 		
 		// init modules
-		foreach($modules as $module) {
-			if (file_exists(WCF_DIR.$module['file']) and $module['file'] != '') {
-				require_once(WCF_DIR.$module['file']);
-				$className = basename($module['file'], '.class.php');
-				$this->modules[] = new $className(null, $module);
-			} else {
-				// we'll load a default class if the specified file doesn't exist
-				require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
-				$this->modules[] = new InstanceableModule(null, $module);
+		foreach($modules as $position => $moduleList) {
+			foreach($moduleList as $module) {
+				if (file_exists(WCF_DIR.$module['file']) and $module['file'] != '') {
+					require_once(WCF_DIR.$module['file']);
+					$className = basename($module['file'], '.class.php');
+					$this->modules[$position][] = new $className(null, $module);
+				} else {
+					// we'll load a default class if the specified file doesn't exist
+					require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
+					$this->modules[$position][] = new InstanceableModule(null, $module);
+				}
 			}
 		}
 	}
