@@ -38,7 +38,7 @@
 				</div>
 				<div class="formField">
 					<select name="moduleID">
-						{foreach from=$moduleList item=$module}
+						{foreach from=$moduleList item='module'}
 							<option value="{$module.moduleID}">{lang}wcf.cms.module.{$module.name}.title{/lang}</option>
 						{/foreach}
 					</select>
@@ -54,6 +54,25 @@
 			</div>
 			<script type="text/javascript">
 				inlineHelp.register('moduleID');
+			</script>
+			
+			<div class="formElement{if $errorField == 'position'} formError{/if}">
+				<div class="formFieldLabel">
+					<label for="position">{lang}wcf.cms.page.edit.module.add.general.position{/lang}</label>
+				</div>
+				<div class="formField">
+					<select name="position">
+						{foreach from=$availablePositions item='position'}
+							<option value="{$position}">{lang}wcf.cms.module.position.{$position}{/lang}</option>
+						{/foreach}
+					</select>
+				</div>
+				<div class="formFieldDesc" id="positionHelpmessage">
+					{lang}wcf.cms.page.edit.module.add.general.position.description{/lang}
+				</div>
+			</div>
+			<script type="text/javascript">
+				inlineHelp.register('position');
 			</script>
 		</fieldset>
 	{/if}
