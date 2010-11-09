@@ -254,7 +254,7 @@
 			{counter name='moduleCounter' print=false}
 			
 			<div id="moduleListTop" class="container-2">
-				{if $moduleList|count}
+				{if $moduleList.top|count}
 					{foreach from=$moduleList.top item=$module}
 						{if $module->position == 'top'}
 							<div id="item_{$module->instanceID}" class="border titleBarPanel">
@@ -299,7 +299,7 @@
 			<div class="layout-4">
 				<div class="columnContainer">
 					<div id="moduleListLeft" class="first column container-2">
-						{if $moduleList|count}
+						{if $moduleList.left|count}
 							{foreach from=$moduleList.left item=$module}
 								{if $module->position == 'left'}
 									<div id="item_{$module->instanceID}" class="border titleBarPanel">
@@ -341,7 +341,7 @@
 						{/if}
 					</div>
 					<div id="moduleListCenter" class="second column container-2">
-						{if $moduleList|count}
+						{if $moduleList.center|count}
 							{foreach from=$moduleList.center item=$module}
 								{if $module->position == 'center'}
 									<div id="item_{$module->instanceID}" class="border titleBarPanel">
@@ -383,7 +383,7 @@
 						{/if}
 					</div>
 					<div id="moduleListRight" class="third column container-2">
-						{if $moduleList|count}
+						{if $moduleList.right|count}
 							{foreach from=$moduleList.right item=$module}
 								{if $module->position == 'right'}
 									<div id="item_{$module->instanceID}" class="border titleBarPanel">
@@ -428,7 +428,7 @@
 			</div>
 			
 			<div id="moduleListBottom" class="container-2">
-				{if $moduleList|count}
+				{if $moduleList.bottom|count}
 					{foreach from=$moduleList.bottom item=$module}
 						{if $module->position == 'bottom'}
 							<div id="item_{$module->instanceID}" class="border titleBarPanel">
