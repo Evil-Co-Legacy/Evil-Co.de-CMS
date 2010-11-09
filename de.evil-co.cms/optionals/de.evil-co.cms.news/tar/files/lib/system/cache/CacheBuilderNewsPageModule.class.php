@@ -1,7 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/system/cache/CacheBuilder.class.php');
-require_once(WCF_DIR.'lib/data/dynamic/news/DynamicNewsItem.class.php');
+require_once(WCF_DIR.'lib/data/dynamic/news/ViewableDynamicNewsItem.class.php');
 
 /**
  * Caches all news items for a instance
@@ -30,7 +30,7 @@ class CacheBuilderNewsPageModule implements CacheBuilder {
 		$data = array();
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
-			$data[] = new DynamicNewsItem(null, $row);
+			$data[] = new ViewableDynamicNewsItem(null, $row);
 		}
 		
 		return $data;
