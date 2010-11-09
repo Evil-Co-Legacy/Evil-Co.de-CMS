@@ -91,5 +91,5 @@ CREATE TABLE `wcf1_page_module_to_page` (
 	`isVisible` TINYINT (1) NOT NULL DEFAULT '1',
 	`sortOrder` INT NOT NULL,
 	`options` TEXT NOT NULL,
-	`position` ENUM ('left', 'center', 'right')
+	`position` ENUM ('top', 'left', 'center', 'right', 'bottom')
 );
