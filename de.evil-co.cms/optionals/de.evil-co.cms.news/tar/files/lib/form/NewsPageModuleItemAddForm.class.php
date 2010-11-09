@@ -59,7 +59,7 @@ class NewsPageModuleItemAddForm extends MessageForm {
 		
 		// redirect
 		if (!empty(WCF::getSession()->lastRequestURI))
-			HeaderUtil::redirect(WCF::getSession()->lastRequestURI);
+			HeaderUtil::redirect(WCF::getSession()->lastRequestURI.'#newsPageModule'.$this->instanceID.'Item'.$item->itemID);
 		else
 			HeaderUtil::redirect('index.php?page=Index');
 	}
