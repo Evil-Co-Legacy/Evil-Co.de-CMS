@@ -55,7 +55,14 @@ class CacheBuilderPageModules implements CacheBuilder {
 			}
 		}
 		
-		return $data;
+		// sort modules
+		$map = array('left' => array(), 'center' => array(), 'right' => array());
+		
+		foreach($data as $element) {
+			$map[$data['position']][] = $element;
+		}
+		
+		return $map;
 	}
 }
 ?>
