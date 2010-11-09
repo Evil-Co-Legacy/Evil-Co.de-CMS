@@ -21,6 +21,16 @@ class ViewableDynamicNewsItem extends DynamicNewsItem implements MessageSidebarO
 		if ($this->user->userID == 0) $this->user->username = $this->username;
 	}
 	
+	/**
+	 * Returnes the parsed message
+	 */
+	public function getFormatedMessage() {
+		require_once(WCF_DIR.'lib/data/message/bbcode/MessageParser.class.php');
+		$parser = MessageParser::getInstance();
+		
+		return $parser->parse($this->text, $this->enableSmileys, $this->enableHtml, $this->enableBBCodes);
+	}
+	
 	// MessageSidebarObject implementation
 	/**
 	 * @see MessageSidebarObject::getUser()
