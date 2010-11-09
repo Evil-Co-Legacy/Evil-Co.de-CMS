@@ -1,7 +1,4 @@
 <?php
-// define module IDs that should updated (This is totaly senseless! And the last commit for this comment was shit ...)
-$moduleIDs = array(1, 2, 3, 4);
-
 // get packageID
 $sql = "SELECT
 			packageID
@@ -18,7 +15,7 @@ $sql = "UPDATE
 		SET
 			packageID = ".$packageID."
 		WHERE
-			moduleID IN (".implode(',', $moduleIDs).")";
+			1";
 WCF::getDB()->sendQuery($sql);
 
 // remove this file
