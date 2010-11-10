@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `wcf1_page_module_news_item`;
 CREATE TABLE `wcf1_page_module_news_item` (
-	`itemID` INT UNSIGNED AUTO_INCREMENT NOT NULL,
+	`itemID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	`instanceID` INT NOT NULL,
 	`subject`  VARCHAR (255) NOT NULL,
 	`text` VARCHAR (255) NOT NULL,
