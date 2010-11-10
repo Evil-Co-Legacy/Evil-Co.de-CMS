@@ -19,7 +19,7 @@
 			<option name="user.cms.news.maxAttachmentSize">
 				<categoryname>user.cms.news</categoryname>
 				<optiontype>integer</optiontype>
-				<defaultvalue>150</defaultvalue>
+				<defaultvalue>150000</defaultvalue>
 			</option>
 			
 			<option name="user.cms.news.allowedAttachmentExtensions">
