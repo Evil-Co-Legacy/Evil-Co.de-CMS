@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.evil-co.cms.php">
+	<packageinformation>
+		<packagename><![CDATA[Evil-Co.de CMS PHP Module]]></packagename>
+		<packagedescription><![CDATA[Allows to add PHP-Code to a page]]></packagedescription>
+		<packagedescription languagecode="de"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite.]]></packagedescription>
+		<packagedescription languagecode="de-informal"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite.]]></packagedescription>
+		<version>1.1.0</version>
+		<plugin>com.woltlab.wcf</plugin>
+		<date>2010-11-10</date>
+	</packageinformation>
+
+	<authorinformation>
+		<author><![CDATA[Evil-Co.de]]></author>
+		<authorurl><![CDATA[http://www.Evil-Co.de/]]></authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.1.0 RC 2">de.evil-co.cms.core</requiredpackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<!-- File-PiPs -->
+		<files>tar/files.tar</files>
+		<templates>tar/templates.tar</templates>
+
+		<!-- XML PiPs -->
+		<pagemodule>install/xml/pagemodule.xml</pagemodule>
+
+		<!-- Languages
+		<languages languagecode="de">install/language/de.xml</languages>
+		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
+		<languages languagecode="en">install/language/en.xml</languages> -->
+	</instructions>
+</package>
