@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.evil-co.de/DTDs/pagemodule.dtd">
+<data>	
+	<import>
+		<pagemodule>
+			<name>php</name>
+			<file>lib/page/util/module/PHPModule.class.php</file>
+		</pagemodule>
+	</import>
+</data>
