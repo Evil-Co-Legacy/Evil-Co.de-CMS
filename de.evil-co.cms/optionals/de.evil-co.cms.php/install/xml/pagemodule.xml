@@ -5,6 +5,18 @@
 		<pagemodule>
 			<name>php</name>
 			<file>lib/page/util/module/PHPModule.class.php</file>
+			<optiongroups>
+				<optiongroup>
+					<name>general</name>
+				</optiongroup>
+			</optiongroups>
+			<options>
+				<option>
+					<name>code</name>
+					<optiontype>textarea</optiontype>
+					<group>general</group>
+				</option>
+			</options>
 		</pagemodule>
 	</import>
 </data>
