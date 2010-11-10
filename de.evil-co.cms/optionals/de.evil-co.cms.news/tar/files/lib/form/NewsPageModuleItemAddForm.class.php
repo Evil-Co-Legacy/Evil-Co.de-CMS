@@ -42,6 +42,12 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	public $useCaptcha = true;
 	
 	/**
+	 * @see	MessageForm:$showPoll;
+	 * @var unknown_type
+	 */
+	public $showPoll = false;
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
