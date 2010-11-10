@@ -1,6 +1,7 @@
 <?php
 // wcf imports
 require_once(WCF_DIR.'lib/form/MessageForm.class.php');
+require_once(WCF_DIR.'lib/data/attachment/MessageAttachmentListEditor.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/news/DynamicNewsItemEditor.class.php');
 require_once(WCF_DIR.'lib/page/util/module/NewsModule.class.php');
 
@@ -30,6 +31,17 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	public $instance = null;
 	
 	/**
+	 * Contains the attachment list editor
+	 * @var	MessageAttachmentListEditor
+	 */
+	public $attachmentListEditor = null;
+	
+	/**
+	 * @see	MessageForm::$useCaptcha
+	 */
+	public $useCaptcha = true;
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
@@ -52,6 +64,30 @@ class NewsPageModuleItemAddForm extends MessageForm {
 		parent::readFormParameters();
 		
 		if (isset($_POST['username'])) $this->username = StringUtil::trim($_POST['username']);
+	}
+	
+	/**
+	 * @see	Form::submit()
+	 */
+	public function submit() {
+		// call submit event
+		EventHandler::fireAction($this, 'submit');
+		
+		try {
+			// attachment handling
+			if ($this->showAttachments) $this->attachmentListEditor->handleRequest();
+			
+			// send message or save as draft
+			if ($this->send) {
+				$this->validate();
+				
+				// no errors
+				$this->save();
+			}
+		} catch (UserInputException $e) {
+			$this->errorField = $e->getField();
+			$this->errorType = $e->getType();
+		}
 	}
 	
 	/**
@@ -86,7 +122,7 @@ class NewsPageModuleItemAddForm extends MessageForm {
 		parent::save();
 		
 		// create entry
-		$item = DynamicNewsItemEditor::create($this->instanceID, $this->subject, $this->text, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes, 0, '', 0, TIME_NOW, $this->user->userID, $this->user->username, false, true);
+		$item = DynamicNewsItemEditor::create($this->instanceID, $this->subject, $this->text, $this->enableSmilies, $this->enableHtml, $this->enableBBCodes, 0, '', 0, TIME_NOW, $this->user->userID, $this->user->username, false, true, $this->attachmentListEditor);
 		
 		// clear cache
 		DynamicNewsItemEditor::clearCache($this->instanceID);
@@ -96,6 +132,18 @@ class NewsPageModuleItemAddForm extends MessageForm {
 			HeaderUtil::redirect(WCF::getSession()->lastRequestURI.'#newsPageModule'.$this->instanceID.'Item'.$item->itemID);
 		else
 			HeaderUtil::redirect('index.php?page=Index');
+	}
+	
+	/**
+	 * @see	Page::show()
+	 */
+	public function show() {
+		if (MODULE_ATTACHMENT != 1) $this->showAttachments = false;
+		
+		// get attachments editor
+		if ($this->attachmentListEditor == null) $this->attachmentListEditor = new MessageAttachmentListEditor(array(), 'newsItem', PACKAGE_ID, WCF::getUser()->getPermission('user.cms.news.maxAttachmentSize'), WCF::getUser()->getPermission('user.cms.news.allowedAttachmentExtensions'), WCF::getUser()->getPermission('user.cms.news.maxAttachmentCount'));
+		
+		parent::show();
 	}
 	
 	/**
