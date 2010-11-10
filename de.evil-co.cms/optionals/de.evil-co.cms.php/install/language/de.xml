@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="de">
+	<category name="wcf.cms.module">
+		<item name="wcf.cms.module.php.title"><![CDATA[PHP]]></item>
+		
+		<item name="wcf.cms.module.php.option.category.general.title"><![CDATA[Allgemeine Informationen]]></item>
+		<item name="wcf.cms.module.php.option.code"><![CDATA[Code]]></item>
+		<item name="wcf.cms.module.php.option.code.description"><![CDATA[Hier kann der PHP-Code definiert werden. Sämtliche WCF-Funktionen sind verfügbar. $this->content kann verwendet werden um eine HTML-Ausgabe zu erzeugen.]]></item>
+	</category>
+</language>
