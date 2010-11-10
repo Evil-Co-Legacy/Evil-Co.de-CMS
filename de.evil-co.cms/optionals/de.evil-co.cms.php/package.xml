@@ -3,9 +3,9 @@
 <package name="de.evil-co.cms.php">
 	<packageinformation>
 		<packagename><![CDATA[Evil-Co.de CMS PHP Module]]></packagename>
-		<packagedescription><![CDATA[Allows to add PHP-Code to a page]]></packagedescription>
-		<packagedescription languagecode="de"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite.]]></packagedescription>
-		<packagedescription languagecode="de-informal"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite.]]></packagedescription>
+		<packagedescription><![CDATA[Allows to add PHP-Code to a page (Please note that this module allows to execute PHP-Code! This is a security risk!).]]></packagedescription>
+		<packagedescription languagecode="de"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite (Bitte beachten Sie das dieses Modul jeden PHP-Code ausführt der eingefügt wird! Dies ist eine potentielle Sicherheitslücke!).]]></packagedescription>
+		<packagedescription languagecode="de-informal"><![CDATA[Erlaubt das einbinden von PHP-Code auf einer Seite (Bitte beachten Sie das dieses Modul jeden PHP-Code ausführt der eingefügt wird! Dies ist eine potentielle Sicherheitslücke!).]]></packagedescription>
 		<version>1.1.0</version>
 		<plugin>com.woltlab.wcf</plugin>
 		<date>2010-11-10</date>
