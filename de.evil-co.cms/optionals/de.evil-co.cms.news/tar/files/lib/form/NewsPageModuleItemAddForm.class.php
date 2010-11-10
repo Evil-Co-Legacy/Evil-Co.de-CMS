@@ -31,6 +31,12 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	public $instance = null;
 	
 	/**
+	 * Contains 'true' if the user used the submit button
+	 * @var	boolean
+	 */
+	public $send = false;
+	
+	/**
 	 * Contains the attachment list editor
 	 * @var	MessageAttachmentListEditor
 	 */
@@ -74,6 +80,7 @@ class NewsPageModuleItemAddForm extends MessageForm {
 		parent::readFormParameters();
 		
 		if (isset($_POST['username'])) $this->username = StringUtil::trim($_POST['username']);
+		if (isset($_POST['send'])) $this->send = (boolean) $_REQUEST['send'];
 	}
 	
 	/**
