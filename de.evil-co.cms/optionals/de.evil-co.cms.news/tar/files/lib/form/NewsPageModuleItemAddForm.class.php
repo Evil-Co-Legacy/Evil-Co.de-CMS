@@ -26,7 +26,7 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	
 	/**
 	 * Contains the instance object of the module for that we should create an item
-	 * @var unknown_type
+	 * @var	DynamicNewsItemEditor
 	 */
 	public $instance = null;
 	
@@ -43,9 +43,13 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	
 	/**
 	 * @see	MessageForm:$showPoll;
-	 * @var unknown_type
 	 */
 	public $showPoll = false;
+	
+	/**
+	 * @see	MessageForm::$showSignatureSetting
+	 */
+	public $showSignatureSetting = false;
 	
 	/**
 	 * @see	Page::readParameters()
