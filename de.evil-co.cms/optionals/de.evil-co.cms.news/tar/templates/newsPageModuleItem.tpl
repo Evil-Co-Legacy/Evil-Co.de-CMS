@@ -4,7 +4,7 @@
 		<div class="messageInner message{if $this->getStyle()->getVariable('messages.framed')}Framed{/if}{@$this->getStyle()->getVariable('messages.sidebar.alignment')|ucfirst} container-3">
 			<a id="newsPageModule{@$module->instanceID}Item{@$item->itemID}"></a>
 	
-			{assign var="sidebar" value=$sidebarFactory->get('newsItem', $item->itemID)}
+			{assign var="sidebar" value=$module->sidebarFactory->get('newsItem', $item->itemID)}
 			{include file='messageSidebar'}
 	
 			<div class="messageContent">
