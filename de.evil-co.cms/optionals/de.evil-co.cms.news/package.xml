@@ -31,6 +31,7 @@
 		<!-- XML PiPs -->
 		<pagemodule>install/xml/pagemodule.xml</pagemodule>
 		<groupoptions>install/xml/groupoptions.xml</groupoptions>
+		<attachmentcontainertype>install/xml/act.xml</attachmentcontainertype>
 		
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
