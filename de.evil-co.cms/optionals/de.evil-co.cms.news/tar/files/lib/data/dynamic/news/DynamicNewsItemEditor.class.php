@@ -27,7 +27,9 @@ class DynamicNewsItemEditor extends DynamicNewsItem {
 	 * @param	boolean	$isPublic
 	 * @param	boolean	$isDeleted
 	 */
-	public static function create($instanceID, $subject, $text, $enableSmileys = true, $enableHtml = false, $enableBBCodes = true, $lastEdit = 0, $lastEditor = '', $editCount = 0, $timestamp = 0, $authorID = 0, $username = '', $isPublic = true, $isDeleted = false) {
+	public static function create($instanceID, $subject, $text, $enableSmileys = true, $enableHtml = false, $enableBBCodes = true, $lastEdit = 0, $lastEditor = '', $editCount = 0, $timestamp = 0, $authorID = 0, $username = '', $isPublic = true, $isDeleted = false, $attachments) {
+		$attachmentsAmount = $attachments != null ? count($attachments->getAttachments()) : 0;
+		
 		$sql = "INSERT INTO
 					wcf".WCF_N."_page_module_news_item (instanceID,
 														subject,
@@ -41,6 +43,7 @@ class DynamicNewsItemEditor extends DynamicNewsItem {
 														timestamp,
 														authorID,
 														username,
+														attachments,
 														isPublic,
 														isDeleted)
 				VALUES
@@ -56,11 +59,26 @@ class DynamicNewsItemEditor extends DynamicNewsItem {
 					 ".$timestamp.",
 					 ".$authorID.",
 					 '".escapeString($username)."',
+					 ".$attachmentsAmount.",
 					 ".($isPublic ? 1 : 0).",
 					 ".($isDeleted ? 1 : 0).")";
 		WCF::getDB()->sendQuery($sql);
 		
-		return new DynamicNewsItemEditor(WCF::getDB()->getInsertID());
+		$item = new DynamicNewsItemEditor(WCF::getDB()->getInsertID());
+		
+		// assign attachments
+		if ($attachments != null) {
+			require_once(WCF_DIR.'lib/data/message/bbcode/AttachmentBBCode.class.php');
+			AttachmentBBCode::setAttachments($attachments->getSortedAttachments());
+		}
+		
+		// update attachments & poll
+		if ($attachments != null) {
+			$attachments->updateContainerID($item->itemID);
+			$attachments->findEmbeddedAttachments($text);
+		}
+		
+		return $item;
 	}
 	
 	/**
