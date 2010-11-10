@@ -90,7 +90,6 @@
 							</div>
 							
 							{include file='messageFormTabs'}
-							
 						</fieldset>
 						
 						{include file='captcha'}
