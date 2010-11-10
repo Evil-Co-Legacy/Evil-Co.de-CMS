@@ -12,7 +12,6 @@
 		<div id="main">
 			<ul class="breadCrumbs">
 				<li><a href="index.php?page=Index{@SID_ARG_2ND}"><img src="{icon}indexS.png{/icon}" alt="" /> <span>{lang}{PAGE_TITLE}{/lang}</span></a> &raquo;</li>
-				{@$category->getBreadCrumbs()}
 			</ul>
 		
 			<div class="mainHeadline">
