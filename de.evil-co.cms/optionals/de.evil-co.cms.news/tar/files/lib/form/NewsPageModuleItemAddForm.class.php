@@ -46,6 +46,40 @@ class NewsPageModuleItemAddForm extends MessageForm {
 	}
 	
 	/**
+	 * @see	Form::readFormParameters()
+	 */
+	public function readFormParameters() {
+		parent::readFormParameters();
+		
+		if (isset($_POST['username'])) $this->username = StringUtil::trim($_POST['username']);
+	}
+	
+	/**
+	 * @see	Form::validate()
+	 */
+	public function validate() {
+		parent::validate();
+		
+		// only for guests
+		if (WCF::getUser()->userID == 0) {
+			// username
+			if (empty($this->username)) {
+				throw new UserInputException('username');
+			}
+			if (!UserUtil::isValidUsername($this->username)) {
+				throw new UserInputException('username', 'notValid');
+			}
+			if (!UserUtil::isAvailableUsername($this->username)) {
+				throw new UserInputException('username', 'notAvailable');
+			}
+			
+			WCF::getSession()->setUsername($this->username);
+		} else {
+			$this->username = WCF::getUser()->username;
+		}
+	}
+	
+	/**
 	 * @see	Form::save()
 	 */
 	public function save() {
