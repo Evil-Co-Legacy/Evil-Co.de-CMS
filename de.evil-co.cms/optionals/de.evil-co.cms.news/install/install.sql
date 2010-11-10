@@ -13,6 +13,7 @@ CREATE TABLE `wcf1_page_module_news_item` (
 	`timestamp` INT NOT NULL,
 	`authorID` INT NOT NULL,
 	`username` VARCHAR (255) NOT NULL,
+	`attachments` SMALLINT (5) NOT NULL DEFAULT '0',
 	`isPublic` TINYINT (1) NOT NULL DEFAULT '1',
 	`isDeleted` TINYINT (1) NOT NULL DEFAULT '0'
 );
