@@ -16,6 +16,12 @@
 				<defaultvalue>0</defaultvalue>
 			</option>
 			
+			<option name="user.cms.news.maxAttachmentSize">
+				<categoryname>user.cms.news</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>150</defaultvalue>
+			</option>
+			
 			<option name="user.cms.news.canEditItems">
 				<categoryname>user.cms.news</categoryname>
 				<optiontype>boolean</optiontype>
