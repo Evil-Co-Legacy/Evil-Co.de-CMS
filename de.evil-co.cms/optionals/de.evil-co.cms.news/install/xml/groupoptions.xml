@@ -35,6 +35,12 @@ zip
 txt]]></defaultvalue>
 			</option>
 			
+			<option name="user.cms.news.maxAttachmentCount">
+				<categoryname>user.cms.news</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue>5</defaultvalue>
+			</option>
+			
 			<option name="user.cms.news.canEditItems">
 				<categoryname>user.cms.news</categoryname>
 				<optiontype>boolean</optiontype>
