@@ -27,7 +27,7 @@
 				<p class="error">{lang}wcf.global.form.error{/lang}</p>
 			{/if}
 			
-			<form method="post" action="index.php?form=NewsPageModuleItem{@$action|ucfirst}">
+			<form enctype="multipart/form-data" method="post" action="index.php?form=NewsPageModuleItem{@$action|ucfirst}">
 				<div class="border content">
 					<div class="container-1">
 						<fieldset>
