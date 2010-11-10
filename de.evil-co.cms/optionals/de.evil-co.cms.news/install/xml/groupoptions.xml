@@ -22,6 +22,19 @@
 				<defaultvalue>150</defaultvalue>
 			</option>
 			
+			<option name="user.cms.news.allowedAttachmentExtensions">
+				<categoryname>user.cms.news</categoryname>
+				<optiontype>textarea</optiontype>
+				<defaultvalue><![CDATA[png
+jpg
+jpeg
+tar
+gz
+tgz
+zip
+txt]]></defaultvalue>
+			</option>
+			
 			<option name="user.cms.news.canEditItems">
 				<categoryname>user.cms.news</categoryname>
 				<optiontype>boolean</optiontype>
