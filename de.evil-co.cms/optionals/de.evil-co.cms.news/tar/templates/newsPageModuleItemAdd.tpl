@@ -15,7 +15,7 @@
 			</ul>
 		
 			<div class="mainHeadline">
-				<img src="{icon}ticket{@$action|ucfirst}L.png{/icon}" alt="" />
+				<img src="{icon}newsItem{@$action|ucfirst}L.png{/icon}" alt="" />
 				<div class="headlineContainer">
 					<h2>{lang}wcf.cms.module.news.{@$action}.title{/lang}</h2>
 				</div>
