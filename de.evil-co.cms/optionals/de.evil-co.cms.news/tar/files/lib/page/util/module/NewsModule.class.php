@@ -8,7 +8,7 @@ require_once(WCF_DIR.'lib/page/util/module/AbstractModule.class.php');
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.news
  */
-class GithubModule extends AbstractModule {
+class NewsModule extends AbstractModule {
 	
 	/**
 	 * @see	AbstractModule::$templateName
