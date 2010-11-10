@@ -1,0 +1,1 @@
+{if $module->content != ''}{@$module->content}{/if}
