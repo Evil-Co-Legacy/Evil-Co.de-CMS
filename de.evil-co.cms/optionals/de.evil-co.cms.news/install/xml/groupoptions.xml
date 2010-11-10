@@ -25,12 +25,11 @@
 			<option name="user.cms.news.allowedAttachmentExtensions">
 				<categoryname>user.cms.news</categoryname>
 				<optiontype>textarea</optiontype>
-				<defaultvalue><![CDATA[png
+				<defaultvalue><![CDATA[gif
 jpg
 jpeg
-tar
-gz
-tgz
+png
+bmp
 zip
 txt]]></defaultvalue>
 			</option>
