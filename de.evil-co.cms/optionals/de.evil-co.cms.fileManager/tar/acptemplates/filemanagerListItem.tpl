@@ -13,7 +13,7 @@
 	</h3>
 	
 	{if $item->hasChildren()}
-		<ol id="parentItem_{{@$item->getPathname()|urlencode}">
+		<ol id="parentItem_{@$item->getPathname()|urlencode}">
 			{foreach from=$item->getChildren() item=$child}
 				{include file='filemanagerListItem' item=$child}
 			{/foreach}
