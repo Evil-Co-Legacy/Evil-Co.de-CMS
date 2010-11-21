@@ -42,7 +42,7 @@
 {if $fileList|count}
 	<div class="border content">
 		<div class="container-1">
-			<ol class="itemList" id="bugtrackerCategoryList">
+			<ol class="itemList" id="fileList">
 				{foreach from=$fileList item='file'}
 					{include file='filemanagerListItem' item=$file}
 				{/foreach}
