@@ -12,7 +12,7 @@
 		{$item->getFilename()} ({lang owner=$item->getOwner() timestamp=$item->getMTime() creationTimestamp=$item->getCTime() size=$item->getSize()}cms.filemanager.list.item.details{/lang})
 	</h3>
 	
-	{if $item->hasChildren()}
+	{if $item->isDir() && $item->hasChildren()}
 		<ol id="parentItem_{@$item->getPathname()|urlencode}">
 			{foreach from=$item->getChildren() item=$child}
 				{include file='filemanagerListItem' item=$child}
