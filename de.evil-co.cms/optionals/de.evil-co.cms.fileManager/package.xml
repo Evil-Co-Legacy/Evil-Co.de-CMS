@@ -27,7 +27,7 @@
 
 		<!-- XML PiPs -->
 		<acpmenu>install/xml/acpmenu.xml</acpmenu>
-		<groupoptions>xml/groupoptions.xml</groupoptions>
+		<groupoptions>install/xml/groupoptions.xml</groupoptions>
 
 		<!-- Languages
 		<languages languagecode="de">install/language/de.xml</languages>
