@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE package SYSTEM "http://www.woltlab.com/DTDs/package.dtd">
+<package name="de.evil-co.cms.fileManager">
+	<packageinformation>
+		<packagename><![CDATA[Evil-Co.de CMS File Manager]]></packagename>
+		<packagedescription><![CDATA[]]></packagedescription>
+		<plugin>de.evil-co.cms</plugin>
+		<version>1.1.0</version>
+		<date>2010-11-21</date>
+	</packageinformation>
+
+	<authorinformation>
+		<author><![CDATA[Evil-Co.de]]></author>
+		<authorurl><![CDATA[http://www.Evil-Co.de/]]></authorurl>
+	</authorinformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.2.0">de.evil-co.cms</requiredpackage>
+		<requiredpackage minversion="1.2.0">de.evil-co.cms.core</requiredpackage>
+	</requiredpackages>
+	
+	<instructions type="install">
+		<!-- File-PiPs -->
+		<files>tar/files.tar</files>
+		<acptemplates>tar/acptemplates.tar</acptemplates>
+
+		<!-- XML PiPs -->
+		<acpmenu>install/xml/acpmenu.xml</acpmenu>
+		<groupoptions>xml/groupoptions.xml</groupoptions>
+
+		<!-- Languages
+		<languages languagecode="de">install/language/de.xml</languages>
+		<languages languagecode="de-informal">install/language/de-informal.xml</languages>
+		<languages languagecode="en">install/language/en.xml</languages> -->
+	</instructions>
+</package>
