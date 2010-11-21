@@ -20,6 +20,10 @@
 	</div>
 </div>
 
+{if $displayNoHtaccessWarning|isset}
+	<p class="warning">{lang}cms.filemanager.list.noHtaccess{/lang}</p>
+{/if}
+
 {if $this->user->getPermission('admin.content.cms.filemanager.canUploadFiles') || $additionalLargeButtons|isset}
 	<div class="contentHeader">
 		<div class="largeButtons">
