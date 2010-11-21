@@ -32,6 +32,9 @@ class FilemanagerListPage extends AbstractPage {
 		
 		$directory = DirectoryUtil::getInstance(CMS_DIR.'cms_files/');
 		$this->fileList = $directory->getFilesObj();
+		
+		// display warning if no htaccess file exists
+		if (!file_exists(CMS_DIR.'cms_files/.htaccess')) WCF::getTPL()->assign('displayNoHtaccessWarning');
 	}
 	
 	/**
