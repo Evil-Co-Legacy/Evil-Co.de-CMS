@@ -32,6 +32,16 @@ class FilemanagerListPage extends AbstractPage {
 	}
 	
 	/**
+	 * @see Page::show()
+	 */
+	public function show() {
+		// activate menu item
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.filemanager.list');
+		
+		parent::show();
+	}
+	
+	/**
 	 * @see	Page::assignVariables()
 	 */
 	public function assignVariables() {
