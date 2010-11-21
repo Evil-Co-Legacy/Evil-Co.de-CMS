@@ -27,6 +27,9 @@ class FilemanagerListPage extends AbstractPage {
 	public function readData() {
 		parent::readData();
 
+		// validate
+		if (!is_dir(CMS_DIR.'cms_files/') or !is_readable(CMS_DIR.'cms_files')) throw new NamedUserException(WCF::getLanguage()->get('cms.filemanager.invalidDir'));
+		
 		$directory = DirectoryUtil::getInstance(CMS_DIR.'cms_files/');
 		$this->fileList = $directory->getFilesObj();
 	}
