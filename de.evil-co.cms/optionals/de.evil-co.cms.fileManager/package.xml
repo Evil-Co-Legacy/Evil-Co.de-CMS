@@ -18,6 +18,8 @@
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="1.2.0">de.evil-co.cms</requiredpackage>
 		<requiredpackage minversion="1.2.0">de.evil-co.cms.core</requiredpackage>
+		
+		<requiredpackage minversion="1.0.0 Alpha 1" file="requirements/com.woltlab.community.util.directory.tar">com.woltlab.community.util.directory</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
