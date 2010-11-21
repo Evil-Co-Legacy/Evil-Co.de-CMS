@@ -8,7 +8,7 @@
 		{/if}
 	</div>
 	
-	<h3 class="itemListTitle">
+	<h3 class="itemListTitle{if $item->isDir()} itemListCategory{/if}">
 		{$item->getFilename()} ({lang owner=$item->getOwner() timestamp=$item->getMTime() creationTimestamp=$item->getCTime() size=$item->getSize()}cms.filemanager.list.item.details{/lang})
 	</h3>
 	
