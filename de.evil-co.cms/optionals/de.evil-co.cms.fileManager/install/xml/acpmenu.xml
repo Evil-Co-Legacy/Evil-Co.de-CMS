@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/acpMenu.dtd">
+<data>	
+	<import>
+		<acpmenuitem name="wcf.acp.menu.link.content.filemanager">
+			<parent>wcf.acp.menu.link.content</parent>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.content.filemanager.list">
+			<link>index.php?page=FilemanagerList</link>
+			<parent>wcf.acp.menu.link.content.filemanager</parent>
+			<permissions>admin.content.cms.filemanager.canListFiles</permissions>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.content.filemanager.upload">
+			<link>index.php?form=FilemanagerUpload</link>
+			<parent>wcf.acp.menu.link.content.filemanager</parent>
+			<permissions>admin.content.cms.filemanager.canUploadFiles</permissions>
+			<showorder>2</showorder>
+		</acpmenuitem>
+	</import>
+</data>
