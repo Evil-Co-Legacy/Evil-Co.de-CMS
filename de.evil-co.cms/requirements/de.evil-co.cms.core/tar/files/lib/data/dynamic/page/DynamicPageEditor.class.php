@@ -39,7 +39,9 @@ class DynamicPageEditor extends DynamicPage {
 					SET
 						isDefaultPage = 0
 					WHERE
-						pageID NOT IN (".$page->pageID.")";
+						pageID NOT IN (".$page->pageID.")
+					AND
+						hostID = ".$hostID;
 			WCF::getDB()->sendQuery($sql);
 		}
 		
