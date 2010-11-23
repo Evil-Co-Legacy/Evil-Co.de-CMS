@@ -1,0 +1,62 @@
+@charset "utf-8";
+.teaserBoxContent {
+	overflow: hidden;
+	width: 100%;
+}
+ul.teaserBoxNavigation li a {
+	height: 25px;
+}
+ul.teaserBoxNavigation {
+	list-style: none;
+	float: right;
+	position: relative;
+	top: 10px;
+	width: 30%;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+ul.teaserBoxTeaser {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	z-index: 0;
+}
+ul.teaserBoxTeaser li {
+	position: absolute;
+	width: 100%;
+}
+ul.teaserBoxNavigation li {
+	padding: 3px 10px 3px 10px;
+	margin: 5px 0 0;
+	opacity: 0.8;
+	float: right;
+	width: 80%;
+	-moz-border-radius-topleft: 10px !important;
+	-webkit-border-top-left-radius: 10px !important;
+	-moz-border-radius-bottomleft: 10px !important;
+	-webkit-border-bottom-left-radius: 10px !important;
+	-moz-border-radius-topright: 0 !important;
+	-webkit-border-top-right-radius: 0 !important;
+	-moz-border-radius-bottomright: 0 !important;
+	-webkit-border-bottom-right-radius: 0 !important;
+}
+ul.teaserBoxNavigation li.activeTeaser {
+	width: 100%;
+}
+ul.teaserBoxNavigation li a {
+	display: block;
+	height: 25px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+ul.teaserBoxNavigation li.activeTeaser a {
+	font-size: 1.4em;
+}
+ul.teaserBoxTeaser li a {
+	display: block;
+	text-decoration: none;
+}
