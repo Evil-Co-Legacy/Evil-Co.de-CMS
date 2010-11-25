@@ -80,6 +80,9 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 		// init style to get template pack id
 		$this->initStyle();
 
+		// little dirty fix for XSLT mode
+		if (defined('XSLT')) ob_start(array('CMSCore', 'editSourceOutput'));
+		
 		global $packageDirs;
 		require_once(WCF_DIR.'lib/system/template/StructuredTemplate.class.php');
 		self::$tplObj = new StructuredTemplate(self::getStyle()->templatePackID, self::getLanguage()->getLanguageID(), ArrayUtil::appendSuffix($packageDirs, 'templates/'));
@@ -290,6 +293,13 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 	 */
 	public static function getActiveHost() {
 		return self::$activeHost;
+	}
+	
+	/**
+	 * Fixes the output in XSLT mode
+	 */
+	public static function editSourceOutput($output, $status) {
+		return str_replace("</html>", "</page>", $output);
 	}
 }
 ?>
