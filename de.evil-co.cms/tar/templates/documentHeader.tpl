@@ -1,5 +1,5 @@
 {if XSLT|defined}
-	<?xml version="1.0" encoding="UTF-8"?>
+	<?xml version="1.0" encoding="{@CHARSET}"?>
 	<?xml-stylesheet href="{@RELATIVE_CMS_DIR}style/xslt/page.xsl" type="text/xsl"?>
 	<!DOCTYPE page SYSTEM "http://www.evil-co.de/page.dtd">
 {else}
