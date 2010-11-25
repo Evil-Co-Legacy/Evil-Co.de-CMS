@@ -208,7 +208,7 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.icons{/lang}</p>
-			<p class="formField"><a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.everaldo.com"|rawurlencode}" class="externalURL">Everaldo Coelho</a></p>
+			<p class="formField"><a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://www.everaldo.com"|rawurlencode}" class="externalURL">Everaldo Coelho</a>, <a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={"http://kde-look.org/usermanager/search.php?username=mentalrey"|rawurlencode}" class="externalURL">Alessandro Rei</a></p>
 		</div>
 		
 		<div class="formElement" style="margin-top: 10px">
