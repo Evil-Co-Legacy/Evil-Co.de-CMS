@@ -5,7 +5,7 @@
 	<category name="cms.global">
 		<item name="cms.global.unknownPage"><![CDATA[The given address was not found in database.]]></item>
 		<item name="cms.global.noDefaultPage"><![CDATA[No startpage was set.]]></item>
-		<item name="cms.global.copyright"><![CDATA[<a href="http://www.evil-co.de/">CMS Software: <strong>Evil-Co.de CMS</strong> developed by Evil-Co.de</a>]]></item>
+		<item name="cms.global.copyright"><![CDATA[<a href="http://www.evil-co.de/">CMS Software: <strong>Evil-Co.de CMS{if SHOW_VERSION_IN_COPYRIGHT} {@PACKAGE_VERSION}{/if}</strong> developed by Evil-Co.de</a>]]></item>
 		<item name="cms.global.changeStyle"><![CDATA[Change Style]]></item>
 	</category>
 
