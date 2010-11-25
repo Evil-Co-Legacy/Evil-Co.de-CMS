@@ -8,17 +8,59 @@ require_once(WCF_DIR.'lib/system/style/StyleManager.class.php');
 if (!defined('SHOW_STYLE_CHOOSER')) define('SHOW_STYLE_CHOOSER', true);
 if (!defined('SHOW_CLOCK')) define('SHOW_CLOCK', true);
 if (!defined('OFFLINE')) define('OFFLINE', false);
+if (!defined('XSLT')) define('XSLT', true);
 
+/**
+ * Core class of CMS
+ * @author		Johannes Donath
+ * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms
+ */
 class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, UserProfileMenuContainer {
+	
+	/**
+	 * Contains the current PageMenu instance
+	 * @var	PageMenu
+	 */
 	protected static $pageMenuObj = null;
+	
+	/**
+	 * Contains the current UserCP
+	 * @var	UserCP
+	 */
 	protected static $userCPMenuObj = null;
+	
+	/**
+	 * Contains the current UserProfileMenu
+	 * @var	UserProfileMenu
+	 */
 	protected static $userProfileMenuObj = null;
+	
+	/**
+	 * Defines all pages that are available during offline mode
+	 * @var unknown_type
+	 */
 	public static $availablePagesDuringOfflineMode = array(
 		'page' => array('Captcha', 'LegalNotice'),
 		'form' => array('UserLogin'),
 		'action' => array('UserLogout'));
+	
+	/**
+	 * Contains the ID of the current active host id
+	 * @var	integer
+	 */
 	protected static $activeHostID = 0;
+	
+	/**
+	 * Contains the current HostManager
+	 * @var	HostManager
+	 */
 	protected static $hostManagerObj = null;
+	
+	/**
+	 * Contains the current active Host
+	 * @var	Host
+	 */
 	protected static $activeHost = null;
 	
 	/**
