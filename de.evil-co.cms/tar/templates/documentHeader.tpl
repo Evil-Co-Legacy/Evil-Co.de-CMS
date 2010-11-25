@@ -1,4 +1,4 @@
-{if XSLT|defined}
+{if XSLT}
 	<?xml version="1.0" encoding="{@CHARSET}"?>
 	<?xml-stylesheet href="{@RELATIVE_CMS_DIR}style/xslt/page.xsl" type="text/xsl"?>
 	{if $additionalXSLTStylesheets|isset}{@$additionalXSLTStylesheets}{/if}
