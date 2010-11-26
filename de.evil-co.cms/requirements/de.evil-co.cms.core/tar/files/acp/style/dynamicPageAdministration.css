@@ -1,0 +1,12 @@
+#moduleListTop, #moduleListLeft, #moduleListCenter, #moduleListRight, #moduleListBottom {
+	margin: 3px;
+	padding: 2px;
+}
+
+#moduleListTop, #moduleListBottom {
+	min-height: 200px;	
+}
+
+#moduleListLeft, #moduleListCenter, #moduleListRight {
+	min-height: 500px;
+}
