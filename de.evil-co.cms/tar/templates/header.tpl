@@ -125,7 +125,7 @@
 			 * $searchExtendedLink=link to extended search form; default=index.php?form=Search{@SID_ARG_2ND}
 			 * $searchHiddenFields=optional hidden fields; default=empty
 			 * $searchShowExtendedLink=set to false to disable extended search link; default=true
-			 *
+			 *}
 	
 			{if !$searchScript|isset}{assign var='searchScript' value='index.php?form=Search'}{/if}
 			{if !$searchFieldName|isset}{assign var='searchFieldName' value='q'}{/if}
@@ -146,7 +146,7 @@
 						<input type="text" tabindex="{counter name='tabindex'}" id="searchInput" class="inputText" name="{@$searchFieldName}" value="{if !$searchFieldValue|empty}{$searchFieldValue}{else}{@$searchFieldTitle}{/if}" />
 						<input type="image" tabindex="{counter name='tabindex'}" id="searchSubmit" class="searchSubmit inputImage" src="{icon}submitS.png{/icon}" alt="{lang}wcf.global.button.submit{/lang}" />
 						{@SID_INPUT_TAG}
-						{if $searchHiddenFields|isset}{@$searchHiddenFields}{else}<input type="hidden" name="types[]" value="cmsEntry" />{/if}
+						{if $searchHiddenFields|isset}{@$searchHiddenFields}{else}<input type="hidden" name="types[]" value="cmsIndex" />{/if}
 	
 						<script type="text/javascript">
 							//<![CDATA[
@@ -180,7 +180,7 @@
 						{/if}
 					</div>
 				</form>
-			</div> *}
+			</div>
 			<div id="logo">
 				<div class="logoInner">
 					<h1 class="pageTitle"><a href="index.php?page=Index{@SID_ARG_2ND}">{lang}{PAGE_TITLE}{/lang}</a></h1>
