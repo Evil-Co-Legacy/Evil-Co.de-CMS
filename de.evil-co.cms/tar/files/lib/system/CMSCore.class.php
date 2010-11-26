@@ -299,9 +299,9 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 	/**
 	 * Fixes the output in XSLT mode
 	 */
-	public static function editSourceOutput($output, $status) {
+	public static function editSourceOutput($output) {
 		// @header('Content-Type: text/xml; charset='.CHARSET); // I hope that this isn't needed
-		return str_replace("</html>", "</page>", $output);
+		return (str_replace("</html>", "</page>", $output));
 	}
 }
 ?>
