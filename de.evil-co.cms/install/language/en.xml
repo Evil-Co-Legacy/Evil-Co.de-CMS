@@ -68,4 +68,8 @@
 	<category name="cms.header.login">
 		<item name="cms.header.login.useCookies"><![CDATA[Keep logged in]]></item>
 	</category>
+	
+	<category name="cms.header.search">
+		<item name="cms.header.search.query"><![CDATA[Seite durchsuchen]]></item>
+	</category>
 </language>
