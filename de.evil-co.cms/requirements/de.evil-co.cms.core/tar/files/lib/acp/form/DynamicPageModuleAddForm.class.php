@@ -58,6 +58,12 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	public $availablePositions = array('top', 'left', 'center', 'right', 'bottom');
 	
 	/**
+	 * Contains the position for the new module
+	 * @var	string
+	 */
+	public $position = '';
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
@@ -79,6 +85,7 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 		parent::readFormParameters();
 		
 		if (isset($_REQUEST['moduleID'])) $this->moduleID = intval($_REQUEST['moduleID']);
+		if (isset($_REQUEST['position'])) $this->position = StringUtil::trim($_REQUEST['position']);
 	}
 	
 	/**
@@ -110,6 +117,9 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 		
 		// validate module row
 		if (!$this->module->moduleID or !in_array($this->module->packageID, $packageIDs)) throw new UserInputException('moduleID', 'invalid');
+		
+		// validate position
+		if (!in_array($this->position, $this->availablePositions)) $this->position = 'top';
 	}
 	
 	/**
@@ -119,7 +129,7 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 		parent::save();
 		
 		// assign module
-		$instanceID = $this->page->moduleManager->assign($this->moduleID);
+		$instanceID = $this->page->moduleManager->assign($this->moduleID, $this->position);
 		
 		// send redirect headers
 		HeaderUtil::redirect('index.php?form=DynamicPageModuleEdit&instanceID='.$instanceID.'&packageID='.PACKAGE_ID.SID_ARG_2ND_NOT_ENCODED);
