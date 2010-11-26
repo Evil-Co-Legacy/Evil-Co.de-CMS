@@ -77,7 +77,7 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 		$this->initStyle();
 
 		// little dirty fix for XSLT mode
-		if (defined('XSLT')) ob_start(array('CMSCore', 'editSourceOutput'));
+		if (XSLT) ob_start(array('CMSCore', 'editSourceOutput'));
 		
 		global $packageDirs;
 		require_once(WCF_DIR.'lib/system/template/StructuredTemplate.class.php');
