@@ -51,6 +51,16 @@
 		<item name="cms.acp.index.updates.update"><![CDATA[{$update.packageName}{if $update.instanceNo > 1} (#{$update.instanceNo}){/if} Version {$update.version.packageVersion}]]></item>
 	</category>
 	
+	<!-- settings -->
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.show_version_in_copyright"><![CDATA[Versionsnummer im Copyright-Hinweis des CMS anzeigen]]></item>
+		<item name="wcf.acp.option.show_version_in_copyright.description"><![CDATA[Durch Aktivierung dieser Option wird die Versionsnummer im Copyright-Hinweis angezeigt.]]></item>
+		<item name="wcf.acp.option.show_style_chooser"><![CDATA[Stil-Auswahl im Fußbereich anzeigen]]></item>
+		<item name="wcf.acp.option.show_style_chooser.description"><![CDATA[Soll im Fußbereich der Seite eine Liste aller Stile zur Auswahl angezeigt werden?]]></item>
+		<item name="wcf.acp.option.show_clock"><![CDATA[Aktuelle Uhrzeit im Fußbereich der Seite anzeigen]]></item>
+		<item name="wcf.acp.option.show_clock.description"><![CDATA[Im Fußbereich wird die aktuelle Uhrzeit angezeigt, wenn diese Options aktiviert ist.]]></item>
+	</category>
+	
 	<!-- frontend -->
 	<category name="cms.header.userNote">
 		<item name="cms.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet.]]></item>

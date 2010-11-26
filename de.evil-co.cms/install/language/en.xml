@@ -50,6 +50,16 @@
 		<item name="cms.acp.index.updates.update"><![CDATA[{$update.packageName}{if $update.instanceNo > 1} (#{$update.instanceNo}){/if} Version {$update.version.packageVersion}]]></item>
 	</category>
 	
+	<!-- settings -->
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.show_version_in_copyright"><![CDATA[Show CMS-Version in Copyright-Notice]]></item>
+		<item name="wcf.acp.option.show_version_in_copyright.description"><![CDATA[If you enable this option the CMS-Version will show up in copyright-notice.]]></item>
+		<item name="wcf.acp.option.show_style_chooser"><![CDATA[Show stylechanger in footer]]></item>
+		<item name="wcf.acp.option.show_style_chooser.description"><![CDATA[If you enable this option a stilchanger will show up in footer?]]></item>
+		<item name="wcf.acp.option.show_clock"><![CDATA[Display current time in footer]]></item>
+		<item name="wcf.acp.option.show_clock.description"><![CDATA[If you enable this option the current time will show up in footer.]]></item>
+	</category>
+	
 	<!-- frontend -->
 	<category name="cms.header.userNote">
 		<item name="cms.header.userNote.guest"><![CDATA[You aren't logged in.]]></item>
