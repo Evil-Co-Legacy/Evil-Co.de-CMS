@@ -61,6 +61,12 @@
 		<item name="wcf.acp.option.show_clock.description"><![CDATA[Im Fußbereich wird die aktuelle Uhrzeit angezeigt, wenn diese Options aktiviert ist.]]></item>
 	</category>
 	
+	<!-- groupoptions -->
+	<category name="wcf.acp.group.option">
+		<item name="wcf.acp.group.option.user.cms.canViewCMSOffline"><![CDATA[Kann das CMS im Wartungsmodus verwenden]]></item>
+		<item name="wcf.acp.group.option.user.cms.canViewCMSOffline.description"><![CDATA[Mitglieder dieser Benutzergruppe können das CMS auch im Wartungsmodus verwenden.]]></item>
+	</category>
+	
 	<!-- frontend -->
 	<category name="cms.header.userNote">
 		<item name="cms.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet.]]></item>
