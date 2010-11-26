@@ -1,12 +1,27 @@
-#moduleListTop, #moduleListLeft, #moduleListCenter, #moduleListRight, #moduleListBottom {
-	margin: 3px;
-	padding: 2px;
+#moduleListTop, 
+#moduleListBottom, 
+#moduleListLeftInner,
+#moduleListCenterInner,
+#moduleListRightInner {
+	padding: 5px;
+	vertical-align: top;	
 }
 
 #moduleListTop, #moduleListBottom {
-	min-height: 200px;	
+	min-height: 100px;
 }
 
-#moduleListLeft, #moduleListCenter, #moduleListRight {
+#moduleListLeftInner,
+#moduleListCenterInner,
+#moduleListRightInner {
+	margin: 5px;
 	min-height: 500px;
+}
+
+#moduleListLeftInner {
+	margin-left: 0px !important;
+}
+
+#moduleListRightInner {
+	margin-right: 0px !important;
 }

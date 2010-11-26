@@ -256,7 +256,7 @@
 			{assign var='moduleList' value=$page->moduleManager->getModuleInstances()}
 			{counter name='moduleCounter' print=false}
 			
-			<div id="moduleListTop" class="container-3">
+			<div id="moduleListTop" class="container-3 border">
 				{if $moduleList.top|count}
 					{foreach from=$moduleList.top item=$module}
 						{if $module->position == 'top'}
@@ -299,130 +299,136 @@
 			
 			<div class="layout-4">
 				<div class="columnContainer">
-					<div id="moduleListLeft" class="first column container-3">
-						{if $moduleList.left|count}
-							{foreach from=$moduleList.left item=$module}
-								{if $module->position == 'left'}
-									<div id="item_{$module->instanceID}" class="border titleBarPanel">
-										<div class="containerHead">
-											<div class="containerIcon">
-												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
-													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
-												</a>
-												{if $module->getOptions()->getCount()}
-													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+					<div id="moduleListLeft" class="first column">
+						<div id="moduleListLeftInner" class="container-3 border">
+							{if $moduleList.left|count}
+								{foreach from=$moduleList.left item=$module}
+									{if $module->position == 'left'}
+										<div id="item_{$module->instanceID}" class="border titleBarPanel">
+											<div class="containerHead">
+												<div class="containerIcon">
+													<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+														<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
 													</a>
-												{else}
-													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
-												{/if}
-												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
-												</a>
-											</div>
-											<div class="containerContent">
-												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
-											</div>
-										</div>
-										<div id="module{$moduleCount}Content" class="container-1">
-											{if $module->getACPTemplateName() != ''}
-												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
-											{else}
-												<div class="formElement">
-													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
-													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													{if $module->getOptions()->getCount()}
+														<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+															<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+														</a>
+													{else}
+														<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+													{/if}
+													<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+													</a>
 												</div>
-											{/if}
+												<div class="containerContent">
+													<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+												</div>
+											</div>
+											<div id="module{$moduleCount}Content" class="container-1">
+												{if $module->getACPTemplateName() != ''}
+													{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+												{else}
+													<div class="formElement">
+														<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+														<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													</div>
+												{/if}
+											</div>
 										</div>
-									</div>
-								{/if}
-							{/foreach}
-						{/if}
+									{/if}
+								{/foreach}
+							{/if}
+						</div>
 					</div>
-					<div id="moduleListCenter" class="second column container-3">
-						{if $moduleList.center|count}
-							{foreach from=$moduleList.center item=$module}
-								{if $module->position == 'center'}
-									<div id="item_{$module->instanceID}" class="border titleBarPanel">
-										<div class="containerHead">
-											<div class="containerIcon">
-												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
-													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
-												</a>
-												{if $module->getOptions()->getCount()}
-													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+					<div id="moduleListCenter" class="second column">
+						<div id="moduleListCenterInner" class="container-3 border">
+							{if $moduleList.center|count}
+								{foreach from=$moduleList.center item=$module}
+									{if $module->position == 'center'}
+										<div id="item_{$module->instanceID}" class="border titleBarPanel">
+											<div class="containerHead">
+												<div class="containerIcon">
+													<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+														<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
 													</a>
-												{else}
-													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
-												{/if}
-												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
-												</a>
-											</div>
-											<div class="containerContent">
-												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
-											</div>
-										</div>
-										<div id="module{$moduleCount}Content" class="container-1">
-											{if $module->getACPTemplateName() != ''}
-												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
-											{else}
-												<div class="formElement">
-													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
-													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													{if $module->getOptions()->getCount()}
+														<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+															<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+														</a>
+													{else}
+														<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+													{/if}
+													<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+													</a>
 												</div>
-											{/if}
+												<div class="containerContent">
+													<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+												</div>
+											</div>
+											<div id="module{$moduleCount}Content" class="container-1">
+												{if $module->getACPTemplateName() != ''}
+													{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+												{else}
+													<div class="formElement">
+														<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+														<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													</div>
+												{/if}
+											</div>
 										</div>
-									</div>
-								{/if}
-							{/foreach}
-						{/if}
+									{/if}
+								{/foreach}
+							{/if}
+						</div>
 					</div>
-					<div id="moduleListRight" class="third column container-3">
-						{if $moduleList.right|count}
-							{foreach from=$moduleList.right item=$module}
-								{if $module->position == 'right'}
-									<div id="item_{$module->instanceID}" class="border titleBarPanel">
-										<div class="containerHead">
-											<div class="containerIcon">
-												<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
-													<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
-												</a>
-												{if $module->getOptions()->getCount()}
-													<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-														<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+					<div id="moduleListRight" class="third column">
+						<div id="moduleListRightInner" class="container-3 border">
+							{if $moduleList.right|count}
+								{foreach from=$moduleList.right item=$module}
+									{if $module->position == 'right'}
+										<div id="item_{$module->instanceID}" class="border titleBarPanel">
+											<div class="containerHead">
+												<div class="containerIcon">
+													<a onclick="openList('module{counter name='moduleCounter' assign='moduleCount'}Content',{ openTitle: '{lang}wcf.cms.page.edit.moduleList.show{/lang}', closeTitle: '{lang}wcf.cms.page.edit.moduleList.hide{/lang}' })">
+														<img src="{@RELATIVE_WCF_DIR}icon/minusS.png" id="openList($moduleCount}ContentImage" alt="" />
 													</a>
-												{else}
-													<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
-												{/if}
-												<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
-													<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
-												</a>
-											</div>
-											<div class="containerContent">
-												<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
-											</div>
-										</div>
-										<div id="module{$moduleCount}Content" class="container-1">
-											{if $module->getACPTemplateName() != ''}
-												{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
-											{else}
-												<div class="formElement">
-													<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
-													<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													{if $module->getOptions()->getCount()}
+														<a href="index.php?form=DynamicPageModuleEdit&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+															<img src="{@RELATIVE_WCF_DIR}icon/editS.png" alt="" />
+														</a>
+													{else}
+														<img src="{@RELATIVE_WCF_DIR}icon/editDisabledS.png" alt="" />
+													{/if}
+													<a href="index.php?action=DynamicPageModuleUnassign&amp;instanceID={$module->instanceID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">
+														<img src="{@RELATIVE_WCF_DIR}icon/deleteS.png" alt="" />
+													</a>
 												</div>
-											{/if}
+												<div class="containerContent">
+													<p>{lang}wcf.cms.module.{$module->getName()}.title{/lang}{if $module->instanceCount > 1} #{#$module->instanceNumber}{/if}</p>
+												</div>
+											</div>
+											<div id="module{$moduleCount}Content" class="container-1">
+												{if $module->getACPTemplateName() != ''}
+													{include file=$module->getACPTemplateName() optionList=$module->getOptions()}
+												{else}
+													<div class="formElement">
+														<p class="formFieldLabel">{lang}wcf.cms.page.edit.moduleList.moduleName{/lang}</p>
+														<p class="formField">{lang}wcf.cms.module.{$module->getName()}.title{/lang}</p>
+													</div>
+												{/if}
+											</div>
 										</div>
-									</div>
-								{/if}
-							{/foreach}
-						{/if}
+									{/if}
+								{/foreach}
+							{/if}
+						</div>
 					</div>
 				</div>
 			</div>
 			
-			<div id="moduleListBottom" class="container-3">
+			<div id="moduleListBottom" class="container-3 border">
 				{if $moduleList.bottom|count}
 					{foreach from=$moduleList.bottom item=$module}
 						{if $module->position == 'bottom'}
@@ -472,7 +478,7 @@
 				treeTag: 'div',
 				dropOnEmpty: true,
 				scroll: window,
-				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				containment: ['moduleListTop', 'moduleListLeftInner', 'moduleListCenterInner', 'moduleListRightInner', 'moduleListBottom'],
 				constraint: null,
 				onUpdate: function() {
 					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=top&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
@@ -483,12 +489,12 @@
 				}
 			});
 
-			Sortable.create("moduleListLeft", {							
+			Sortable.create("moduleListLeftInner", {							
 				tag: 'div',
 				treeTag: 'div',
 				dropOnEmpty: true,
 				scroll: window,
-				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				containment: ['moduleListTop', 'moduleListLeftInner', 'moduleListCenterInner', 'moduleListRightInner', 'moduleListBottom'],
 				constraint: null,
 				onUpdate: function() {
 					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=left&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
@@ -499,12 +505,12 @@
 				}
 			});
 
-			Sortable.create("moduleListCenter", {							
+			Sortable.create("moduleListCenterInner", {							
 				tag: 'div',
 				treeTag: 'div',
 				dropOnEmpty: true,
 				scroll: window,
-				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				containment: ['moduleListTop', 'moduleListLeftInner', 'moduleListCenterInner', 'moduleListRightInner', 'moduleListBottom'],
 				constraint: null,
 				onUpdate: function() {
 					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=center&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
@@ -515,12 +521,12 @@
 				}
 			});
 
-			Sortable.create("moduleListRight", {							
+			Sortable.create("moduleListRightInner", {							
 				tag: 'div',
 				treeTag: 'div',
 				dropOnEmpty: true,
 				scroll: window,
-				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				containment: ['moduleListTop', 'moduleListLeftInner', 'moduleListCenterInner', 'moduleListRightInner', 'moduleListBottom'],
 				constraint: null,
 				onUpdate: function() {
 					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=right&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
@@ -536,7 +542,7 @@
 				treeTag: 'div',
 				dropOnEmpty: true,
 				scroll: window,
-				containment: ['moduleListTop', 'moduleListLeft', 'moduleListCenter', 'moduleListRight', 'moduleListBottom'],
+				containment: ['moduleListTop', 'moduleListLeftInner', 'moduleListCenterInner', 'moduleListRightInner', 'moduleListBottom'],
 				constraint: null,
 				onUpdate: function() {
 					new Ajax.Request('index.php?action=DynamicPageModuleSort&pageID={@$pageID}&position=bottom&packageID={@PACKAGE_ID}{@SID_ARG_2ND_NOT_ENCODED}', {
