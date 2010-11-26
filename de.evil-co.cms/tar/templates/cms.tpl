@@ -8,9 +8,11 @@
 		{@$page->additionalHeadContent}
 		
 		{* Insert module defined tags *}
-		{foreach from=$modules item='module'}
-			{if $module->stylesheet != '' && $module->instanceNumber == 1}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/{@$module->stylesheet}" />{/if}
-			{if $module->additionalHeadContents != '' && $module->instanceNumber == 1}{@$module->additionalHeadContents}{/if}
+		{foreach from=$modules item='position'}
+			{foreach from=$position item='module'}
+				{if $module->stylesheet != '' && $module->instanceNumber == 1}<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/{@$module->stylesheet}" />{/if}
+				{if $module->additionalHeadContents != '' && $module->instanceNumber == 1}{@$module->additionalHeadContents}{/if}
+			{/foreach}
 		{/foreach}
 		
 		{* Placeholder for additional contents *}
