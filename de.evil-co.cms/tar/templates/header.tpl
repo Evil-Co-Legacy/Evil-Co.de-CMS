@@ -133,7 +133,7 @@
 			{if !$searchFieldTitle|isset}{assign var='searchFieldTitle' value='{lang}cms.header.search.query{/lang}'}{/if}
 			{if !$searchFieldOptions|isset}
 				{capture assign=searchFieldOptions}
-					<li><a href="index.php?form=Search&amp;action=24h{@SID_ARG_2ND}">{lang}cms.search.entriesOfTheLast24Hours{/lang}</a></li>
+					{* <li><a href="index.php?form=Search&amp;action=24h{@SID_ARG_2ND}">{lang}cms.search.entriesOfTheLast24Hours{/lang}</a></li> *}
 				{/capture}
 			{/if}
 			{if !$searchExtendedLink|isset}{assign var='searchExtendedLink' value='index.php?form=Search'|concat:SID_ARG_2ND}{/if}
