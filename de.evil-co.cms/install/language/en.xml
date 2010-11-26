@@ -70,6 +70,6 @@
 	</category>
 	
 	<category name="cms.header.search">
-		<item name="cms.header.search.query"><![CDATA[Seite durchsuchen]]></item>
+		<item name="cms.header.search.query"><![CDATA[Search Page]]></item>
 	</category>
 </language>
