@@ -291,8 +291,6 @@
 							</div>
 						{/if}
 					{/foreach}
-				{else}
-					<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 				{/if}
 			</div>
 			
@@ -336,8 +334,6 @@
 									</div>
 								{/if}
 							{/foreach}
-						{else}
-							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 						{/if}
 					</div>
 					<div id="moduleListCenter" class="second column container-2">
@@ -378,8 +374,6 @@
 									</div>
 								{/if}
 							{/foreach}
-						{else}
-							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 						{/if}
 					</div>
 					<div id="moduleListRight" class="third column container-2">
@@ -420,8 +414,6 @@
 									</div>
 								{/if}
 							{/foreach}
-						{else}
-							<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 						{/if}
 					</div>
 				</div>
@@ -465,8 +457,6 @@
 							</div>
 						{/if}
 					{/foreach}
-				{else}
-					<p class="info">{lang}wcf.cms.page.edit.noModules{/lang}</p>
 				{/if}
 			</div>
 		</div>
