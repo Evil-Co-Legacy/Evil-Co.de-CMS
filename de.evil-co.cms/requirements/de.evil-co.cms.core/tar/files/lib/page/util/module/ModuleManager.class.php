@@ -90,7 +90,7 @@ class ModuleManager {
 		$modules = array();
 		
 		for($i = 0; $i < count($this->modules); $i++) {
-			$modules[] = &$this->modules[$i];
+			$modules[] = $this->modules[$i];
 		}
 		
 		return $modules;
