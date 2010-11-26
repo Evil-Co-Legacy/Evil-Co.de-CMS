@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="general.http.xslt">
+				<parent>general.http</parent>
+				<showorder>3</showorder>
+			</category>
+		</categories>
+		<options>
+			<option name="offline">
+				<categoryname>general.offline</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions>offline_message</enableoptions>
+				<showorder>1</showorder>
+			</option>
+			<option name="offline_message">
+				<categoryname>general.offline</categoryname>
+				<optiontype>textarea</optiontype>
+				<showorder>2</showorder>
+			</option>
+			<option name="offline_message_allow_html">
+				<categoryname>general.offline</categoryname>
+				<optiontype>boolean</optiontype>
+				<showorder>3</showorder>
+			</option>
+			
+			<!-- XSLT settings -->
+			<option name="xslt">
+				<categoryname>general.http</categoryname>
+				<optiontype>boolean</optiontype>
+				<showorder>1</showorder>
+			</option>
+		</options>
+	</import>
+</data>
