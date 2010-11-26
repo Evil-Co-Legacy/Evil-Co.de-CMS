@@ -51,6 +51,7 @@
 		<!-- <groupoptions>xml/groupoptions.xml</groupoptions> -->
 		<feedsource>install/xml/feedsource.xml</feedsource>
 		<eventlistener>install/xml/eventlistener.xml</eventlistener>
+		<options>install/xml/options.xml</options>
 
 		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
