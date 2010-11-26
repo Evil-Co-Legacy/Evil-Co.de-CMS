@@ -78,8 +78,10 @@ class ModuleManager {
 	 * @param	string	$functionName
 	 */
 	protected function moduleCall($functionName) {
-		for($i = 0; $i < count($this->modules); $i++) {
-			$this->modules[$i]->{$functionName}();
+		foreach($this->modules as $position => $modules) {
+			foreach($modules as $module) {
+				$module->{$functionName}();
+			}
 		}
 	}
 	
@@ -87,13 +89,7 @@ class ModuleManager {
 	 * Returnes a list of all modules
 	 */
 	public function getModuleInstances() {
-		$modules = array();
-		
-		for($i = 0; $i < count($this->modules); $i++) {
-			$modules[] = $this->modules[$i];
-		}
-		
-		return $modules;
+		return $this->modules;
 	}
 	
 	/**
