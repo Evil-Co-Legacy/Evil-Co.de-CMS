@@ -59,7 +59,7 @@ class CacheBuilderPageModules implements CacheBuilder {
 		$map = array('top' => array(), 'left' => array(), 'center' => array(), 'right' => array(), 'bottom' => array());
 		
 		foreach($data as $element) {
-			$map[$data['position']][] = $element;
+			$map[$element['position']][] = $element;
 		}
 		
 		return $map;
