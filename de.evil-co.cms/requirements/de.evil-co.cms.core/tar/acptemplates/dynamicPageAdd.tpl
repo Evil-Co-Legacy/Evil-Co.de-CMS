@@ -1,3 +1,6 @@
+{capture append='specialStyles'}
+	<link rel="stylesheet" type="text/css" href="{@RELATIVE_WCF_DIR}style/extra/dynamicPageAdministration.css" media="screen" />
+{/capture}
 {include file='header'}
 
 <div class="mainHeadline">
