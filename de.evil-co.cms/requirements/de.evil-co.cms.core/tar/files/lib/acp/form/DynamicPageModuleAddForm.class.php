@@ -52,6 +52,12 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	public $action = 'add';
 	
 	/**
+	 * Contains all available positions
+	 * @var	array<string>
+	 */
+	public $availablePositions = array('top', 'left', 'center', 'right', 'bottom');
+	
+	/**
 	 * @see	Page::readParameters()
 	 */
 	public function readParameters() {
@@ -146,11 +152,12 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'page'				=>		$this->page,
-			'pageID'			=>		$this->pageID,
-			'moduleID'			=>		$this->moduleID,
-			'module'			=>		$this->module,
-			'moduleList'		=>		ModuleManager::getAvailableModules()
+			'page'					=>		$this->page,
+			'pageID'				=>		$this->pageID,
+			'moduleID'				=>		$this->moduleID,
+			'module'				=>		$this->module,
+			'moduleList'			=>		ModuleManager::getAvailableModules(),
+			'availablePositions'	=>		$this->availablePositions
 		));
 	}
 }
