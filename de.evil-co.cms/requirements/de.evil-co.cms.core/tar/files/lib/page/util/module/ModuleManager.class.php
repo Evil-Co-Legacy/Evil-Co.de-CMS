@@ -98,7 +98,7 @@ class ModuleManager {
 	 * @param	boolean	$isVisible
 	 * @param	integer	$sortOrder
 	 */
-	public function assign($moduleID, $isVisible = false, $sortOrder = 0) {
+	public function assign($moduleID, $isVisible = false, $sortOrder = 0, $position) {
 		// read options
 		$sql = "SELECT
 					*
@@ -134,9 +134,9 @@ class ModuleManager {
 		
 		// create new instance
 		$sql = "INSERT INTO
-					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder, options)
+					wcf".WCF_N."_page_module_to_page (moduleID, pageID, isVisible, sortOrder, options, position)
 				VALUES
-					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.", '".escapeString(serialize($optionGroupList))."')";
+					(".$moduleID.", ".$this->pageID.", ".($isVisible ? 1 : 0).", ".$sortOrder.", '".escapeString(serialize($optionGroupList))."', '".escapeString($position)."')";
 		WCF::getDB()->sendQuery($sql);
 		
 		$instanceID = WCF::getDB()->getInsertID();
