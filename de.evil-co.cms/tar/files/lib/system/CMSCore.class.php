@@ -88,7 +88,7 @@ class CMSCore extends WCF implements PageMenuContainer, UserCPMenuContainer, Use
 		$this->initCronjobs();
 
 		// check offline mode
-		if (OFFLINE && !self::getUser()->getPermission('user.www.canViewCMSOffline')) {
+		if (OFFLINE && !self::getUser()->getPermission('user.cms.canViewCMSOffline')) {
 			$showOfflineError = true;
 			foreach (self::$availablePagesDuringOfflineMode as $type => $names) {
 				if (isset($_REQUEST[$type])) {
