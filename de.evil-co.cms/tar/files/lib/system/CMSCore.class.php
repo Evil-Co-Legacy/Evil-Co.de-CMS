@@ -7,9 +7,7 @@ require_once(WCF_DIR.'lib/system/style/StyleManager.class.php');
 // im to lazy to fix this options in my test versions ...
 if (!defined('SHOW_STYLE_CHOOSER')) define('SHOW_STYLE_CHOOSER', true);
 if (!defined('SHOW_CLOCK')) define('SHOW_CLOCK', true);
-if (!defined('OFFLINE')) define('OFFLINE', false);
 if (!defined('SHOW_VERSION_IN_COPYRIGHT')) define('SHOW_VERSION_IN_COPYRIGHT', true);
-if (!defined('XSLT')) define('XSLT', true);
 
 /**
  * Core class of CMS
