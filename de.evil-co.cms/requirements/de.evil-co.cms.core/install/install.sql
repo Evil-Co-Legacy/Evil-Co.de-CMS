@@ -34,8 +34,8 @@ CREATE TABLE `wcf1_page_index` (
 DROP TABLE IF EXISTS `wcf1_page_index_state`;
 CREATE TABLE `wcf1_page_index_state` (
 	`pageID` INT NOT NULL,
-	`lastInstanceID` INT NOT NULL DEFAULT '0',
-	`isComplete` TINYINT (1) NOT NULL DEFAULT '0'
+	`instanceID` INT NOT NULL DEFAULT '0',
+	`moduleID` INT NOT NULL DEFAULT '0'
 );
 
 DROP TABLE IF EXISTS `wcf1_page_module`;
