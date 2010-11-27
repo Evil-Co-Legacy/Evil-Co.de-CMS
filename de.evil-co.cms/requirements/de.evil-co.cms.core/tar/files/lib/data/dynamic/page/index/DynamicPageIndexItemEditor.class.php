@@ -55,5 +55,59 @@ class DynamicPageIndexItemEditor extends DynamicPageIndexItem {
 					itemID ".(is_array($itemID) ? "IN (".implode(',', $itemID).")" : "= ".$itemID);
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Clears the state and index cache for an instance
+	 * @param	integer	$instanceID
+	 */
+	public static function clearInstanceCache($instanceID) {
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index
+				WHERE
+					instanceID = ".$instanceID;
+		WCF::getDB()->sendQuery($sql);
+		
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index_state
+				WHERE
+					instanceID = ".$instanceID;
+		WCF::getDB()->sendQuery($sql);
+	}
+	
+	/**
+	 * Clears the state and index cache for a module
+	 * @param	integer	$moduleID
+	 */
+	public static function clearModuleCache($moduleID) {
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index
+				WHERE
+					moduleID = ".$moduleID;
+		WCF::getDB()->sendQuery($sql);
+		
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index_state
+				WHERE
+					moduleID = ".$moduleID;
+		WCF::getDB()->sendQuery($sql);
+	}
+	
+	/**
+	 * Clears the state and index cache for a page
+	 * @param	integer	$pageID
+	 */
+	public static function clearPageCache($pageID) {
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index
+				WHERE
+					pageID = ".$pageID;
+		WCF::getDB()->sendQuery($sql);
+		
+		$sql = "DELETE FROM
+					wcf".WCF_N."_page_index_state
+				WHERE
+					pageID = ".$pageID;
+		WCF::getDB()->sendQuery($sql);
+	}
 }
 ?>
