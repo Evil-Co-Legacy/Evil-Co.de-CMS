@@ -37,7 +37,8 @@ CREATE TABLE `wcf1_page_index_state` (
 	`instanceID` INT NOT NULL DEFAULT '0',
 	`moduleID` INT NOT NULL DEFAULT '0',
 	`itemID` INT NOT NULL,
-	`timestamp` INT NOT NULL DEFAULT '0'
+	`timestamp` INT NOT NULL DEFAULT '0',
+	`needsRebuild` TINYINT (1) NOT NULL DEFAULT '0'
 );
 
 DROP TABLE IF EXISTS `wcf1_page_module`;
