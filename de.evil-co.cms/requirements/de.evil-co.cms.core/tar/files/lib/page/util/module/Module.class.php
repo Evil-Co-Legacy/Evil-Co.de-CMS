@@ -67,6 +67,11 @@ interface Module {
 	public function getACPTemplateName();
 	
 	/**
+	 * Returnes the content that should saved in index
+	 */
+	public function getIndexContent();
+	
+	/**
 	 * Returnes the content of $variable
 	 * @param	string	$variable
 	 */
