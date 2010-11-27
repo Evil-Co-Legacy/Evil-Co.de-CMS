@@ -27,7 +27,8 @@ CREATE TABLE `wcf1_page_index` (
 	`pageID` INT NOT NULL,
 	`instanceID` INT NOT NULL,
 	`moduleID` INT NOT NULL,
-	`content` TEXT NOT NULL
+	`content` TEXT NOT NULL,
+	FULLTEXT (`content`)
 );
 
 DROP TABLE IF EXISTS `wcf1_page_index_state`;
