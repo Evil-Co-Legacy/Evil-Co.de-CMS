@@ -26,6 +26,12 @@
 				<showorder>2</showorder>
 				<defaultvalue>20</defaultvalue>
 			</option>
+			<option name="cms_index_autoRebuild">
+				<categoryname>general.cms.index</categoryname>
+				<optiontype>integer</optiontype>
+				<showorder>3</showorder>
+				<defaultvalue>0</defaultvalue>
+			</option>
 		</options>
 	</import>
 </data>
