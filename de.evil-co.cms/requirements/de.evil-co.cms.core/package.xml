@@ -40,6 +40,7 @@
 		<acpmenu>install/xml/acpmenu.xml</acpmenu>
 		<groupoptions>install/xml/groupoptions.xml</groupoptions>
 		<options>install/xml/options.xml</options>
+		<cronjobs>install/xml/cronjobs.xml</cronjobs>
 
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
