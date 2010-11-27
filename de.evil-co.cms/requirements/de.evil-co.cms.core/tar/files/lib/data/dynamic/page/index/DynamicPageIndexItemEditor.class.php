@@ -109,5 +109,55 @@ class DynamicPageIndexItemEditor extends DynamicPageIndexItem {
 					pageID = ".$pageID;
 		WCF::getDB()->sendQuery($sql);
 	}
+	
+	/**
+	 * Marks a module instance as indexed
+	 * @param	integer	$pageID
+	 * @param	integer	$instanceID
+	 * @param	integer	$moduleID
+	 * @param	integer	$itemID
+	 * @param	integer	$timestamp
+	 */
+	public static function mark($pageID, $instanceID, $moduleID, $itemID, $timestamp = TIME_NOW) {
+		$sql = "INSERT INTO
+					wcf".WCF_N."_index_state (pageID, instanceID, moduleID, itemID, timestamp)
+				VALUES
+					(".$pageID.",
+					 ".$instanceiD.",
+					 ".$moduleID.",
+					 ".$itemID.",
+					 ".$timestamp.")";
+		WCF::getDB()->sendQuery($sql);
+	}
+	
+	/**
+	 * Returnes true if the index needs a rebuild
+	 * @param	integer	$instanceID
+	 */
+	public static function needsRebuild($instanceID) {
+		$sql = "SELECT
+					timestamp,
+					needsRebuild
+				FROM
+					wcf".WCF_N."_index_state
+				WHERE
+					instanceID = ".$instanceID;
+		$row = WCF::getDB()->getFirstRow($sql);
+		
+		// check needsRebuild field (Can set by modules)
+		if ($row['needsRebuild'] == 1) return true;
+		
+		// check for disabled auto rebuild
+		if (CMS_INDEX_AUTOREBUILD == 0) return false;
+		
+		// get seconds for rebuild
+		$seconds = (CMS_INDEX_AUTOREBUILD * 60);
+		
+		// check for needed auto rebuild
+		if (($row['timestamp'] + $seconds) <= TIME_NOW) return true;
+		
+		// no rebuild needed
+		return false;
+	}
 }
 ?>
