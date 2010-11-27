@@ -36,6 +36,7 @@ CREATE TABLE `wcf1_page_index_state` (
 	`pageID` INT NOT NULL,
 	`instanceID` INT NOT NULL DEFAULT '0',
 	`moduleID` INT NOT NULL DEFAULT '0',
+	`itemID` INT NOT NULL,
 	`timestamp` INT NOT NULL DEFAULT '0'
 );
 
