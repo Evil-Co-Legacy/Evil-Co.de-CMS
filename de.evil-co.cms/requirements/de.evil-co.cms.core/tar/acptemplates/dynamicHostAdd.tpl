@@ -36,7 +36,7 @@
 				<label for="title">{lang}wcf.cms.host.add.general.title{/lang}</label>
 			</div>
 			<div class="formField">
-				<input type="text" class="inputText" value="{$title}" name="title" />
+				<input type="text" class="inputText" value="{$title}" name="title" id="title" />
 				{if $errorField == 'title'}
 					<p class="innerError">
 						{lang}wcf.global.error.empty{/lang}
@@ -56,7 +56,7 @@
 				<label for="hostname">{lang}wcf.cms.host.add.general.hostname{/lang}</label>
 			</div>
 			<div class="formField">
-				<input type="text" class="inputText" value="{$hostname}" name="hostname" />
+				<input type="text" class="inputText" value="{$hostname}" name="hostname" id="hostname" />
 				{if $errorField == 'hostname'}
 					<p class="innerError">
 						{if $errorType == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
@@ -78,7 +78,7 @@
 		<div id="expertSettingsContent" style="display: none;">
 			<div class="formElement">
 				<div class="formField">
-					<label for="isFallback"><input type="checkbox" {if $isFallback}checked="checked" {/if}value="1" name="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
+					<label for="isFallback"><input type="checkbox" {if $isFallback}checked="checked" {/if}value="1" name="isFallback" id="isFallback" /> {lang}wcf.cms.host.add.expertSettings.isFallback{/lang}</label>
 				</div>
 				<div class="formFieldDesc" id="isFallbackHelpMessage">
 					{lang}wcf.cms.host.add.expertSettings.isFallback.description{/lang}
@@ -88,19 +88,28 @@
 				inlineHelp.register('isFallback');
 			</script>
 			
-			<div class="formElement">
+			<div class="formElement{if $errorField == 'languageID'} formError{/if}">
 				<div class="formFieldLabel">
-					<label for="languageCode">{lang}wcf.cms.host.add.expertSettings.languageCode{/lang}</label>
+					<label for="languageID">{lang}wcf.cms.host.add.expertSettings.languageID{/lang}</label>
 				</div>
 				<div class="formField">
-					<input type="text" class="inputText" name="languageCode" value="{$languageCode}" />
+					<ul class="formOptions">
+						{foreach from=$availableLanguages item='languageCode' key='langID'}
+							<li><label><input type="radio" name="languageID" value="{$langID}" {if $languageID == $langID}checked="checked" {/if}/> <img src="{@RELATIVE_WCF_DIR}icon/language{$languageCode|ucfirst}S.png" alt="" /> {lang}wcf.global.language.{$languageCode}{/lang}</label></li>
+						{/foreach}
+					</ul>
+					{if $errorField == 'languageID'}
+						<p class="innerError">
+							{if $errorType == 'invalid'}{lang}wcf.cms.host.add.expertSettings.languageID.invalid{/lang}{/if}
+						</p>
+					{/if}
 				</div>
-				<div class="formFieldDesc" id="languageCodeHelpMessage">
-					{lang}wcf.cms.host.add.expertSettings.languageCode.description{/lang}
+				<div class="formFieldDesc" id="languageIDHelpMessage">
+					{lang}wcf.cms.host.add.expertSettings.languageID.description{/lang}
 				</div>
 			</div>
 			<script type="text/javascript">
-				inlineHelp.register('languageCode');
+				inlineHelp.register('languageID');
 			</script>
 		</div>
 	</fieldset>
