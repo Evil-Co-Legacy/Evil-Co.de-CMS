@@ -21,6 +21,22 @@ CREATE TABLE `wcf1_page` (
 	`hostID` INT NOT NULL
 );
 
+DROP TABLE IF EXISTS `wcf1_page_index`;
+CREATE TABLE `wcf1_page_index` (
+	`itemID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`pageID` INT NOT NULL,
+	`instanceID` INT NOT NULL,
+	`moduleID` INT NOT NULL,
+	`content` TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS `wcf1_page_index_state`;
+CREATE TABLE `wcf1_page_index_state` (
+	`pageID` INT NOT NULL,
+	`lastInstanceID` INT NOT NULL DEFAULT '0',
+	`isComplete` TINYINT (1) NOT NULL DEFAULT '0'
+);
+
 DROP TABLE IF EXISTS `wcf1_page_module`;
 CREATE TABLE `wcf1_page_module` (
 	`moduleID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
