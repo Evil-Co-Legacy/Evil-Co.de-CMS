@@ -157,6 +157,13 @@ abstract class AbstractModule extends DatabaseObject implements Module {
 	}
 	
 	/**
+	 * @see	Module::getIndexContent()
+	 */
+	public function getIndexContent() {
+		return false;
+	}
+	
+	/**
 	 * Wrapper for get class (Such as getPageID())
 	 * @param	string	$name
 	 * @param	array	$args
