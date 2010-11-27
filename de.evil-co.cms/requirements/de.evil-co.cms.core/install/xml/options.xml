@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="general.cms">
+				<parent>general</parent>
+				<showorder>3</showorder>
+			</category>
+			<category name="general.cms.index">
+				<parent>general.cms</parent>
+				<showorder>1</showorder>
+			</category>
+		</categories>
+		<options>
+			<!-- page settings -->
+			<option name="cms_index_pageLimit">
+				<categoryname>general.cms.index</categoryname>
+				<optiontype>integer</optiontype>
+				<showorder>1</showorder>
+				<defaultvalue>10</defaultvalue>
+			</option>
+			<option name="cms_index_moduleLimit">
+				<categoryname>general.cms.index</categoryname>
+				<optiontype>integer</optiontype>
+				<showorder>2</showorder>
+				<defaultvalue>20</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>
