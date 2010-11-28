@@ -104,13 +104,7 @@
 						</p>
 					{/if}
 				</div>
-				<div class="formFieldDesc" id="languageIDHelpMessage">
-					{lang}wcf.cms.host.add.expertSettings.languageID.description{/lang}
-				</div>
 			</div>
-			<script type="text/javascript">
-				inlineHelp.register('languageID');
-			</script>
 		</div>
 	</fieldset>
 	
