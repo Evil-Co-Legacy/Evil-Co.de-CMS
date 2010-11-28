@@ -25,9 +25,7 @@
 		<item name="wcf.cms.host.add.expertSettings"><![CDATA[Expertsettings]]></item>
 		<item name="wcf.cms.host.add.expertSettings.isFallback"><![CDATA[Use as Fallback]]></item>
 		<item name="wcf.cms.host.add.expertSettings.isFallback.description"><![CDATA[If this field is active this vHost will used if no other vHost matches.]]></item>
-		<item name="wcf.cms.host.add.expertSettings.languageCode"><![CDATA[Languagecode]]></item>
-		<item name="wcf.cms.host.add.expertSettings.languageCode.description"><![CDATA[This code can be used to make pages in more languages than one (<strong>Warning:</strong> This page will only appear if the language code matches!).]]></item>
-		
+	
 		<!-- host edit -->
 		<item name="wcf.cms.host.edit.title"><![CDATA[Edit vHost]]></item>
 		<item name="wcf.cms.host.edit.success"><![CDATA[The vHost was successfully edited.]]></item>
