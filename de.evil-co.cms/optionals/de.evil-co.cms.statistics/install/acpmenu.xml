@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/acpMenu.dtd">
+<data>	
+	<import>		
+		<acpmenuitem name="wcf.acp.menu.link.content.host.statistics">
+			<link>index.php?page=CMSStatistics</link>
+			<parent>wcf.acp.menu.link.content.host</parent>
+			<permissions>admin.content.cms.canListHosts</permissions>
+			<showorder>1</showorder>
+			<options>module_cmsStatistics</options>
+		</acpmenuitem>
+	</import>
+</data>
