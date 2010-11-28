@@ -29,6 +29,8 @@
 		
 		<!-- Other PiPs -->
 		<sql>install/install.sql</sql>
+		<acpmenu>install/acpmenu.xml</acpmenu>
+		<options>install/options.xml</options>
 		
 		<!-- Languages 
 		<languages languagecode="de">install/language/de.xml</languages>
