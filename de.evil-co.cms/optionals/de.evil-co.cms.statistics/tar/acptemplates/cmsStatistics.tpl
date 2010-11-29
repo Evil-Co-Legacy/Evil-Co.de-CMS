@@ -10,7 +10,7 @@
 <div id="hostStatistics">
 	<h3 class="subHeadline">{lang}cms.acp.statistics.host.title{/lang}</h3>
 	
-	{include file='openFlashChart'}
+	{include file='openFlashChart' openFlashChartSource="index.php?page=HostStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND_NOT_ENCODED}
 </div>
 
 <div id="pageStatistics">
