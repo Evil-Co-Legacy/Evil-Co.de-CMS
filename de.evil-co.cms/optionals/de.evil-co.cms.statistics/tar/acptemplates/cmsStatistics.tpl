@@ -16,7 +16,7 @@
 <div id="pageStatistics">
 	<h3 class="subHeadline">{lang}cms.acp.statistics.page.title{/lang}</h3>
 	
-	{include file='openFlashChart' openFlashChartSource="index.php?page=PageStatisticsChartSource&packageID"|concat:PACKAGE_ID:SID_ARG_2ND}
+	{include file='openFlashChart' openFlashChartSource="index.php?page=PageStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND}
 </div>
 
 {include file='footer'}
