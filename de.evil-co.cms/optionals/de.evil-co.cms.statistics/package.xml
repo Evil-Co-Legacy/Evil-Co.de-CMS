@@ -19,7 +19,7 @@
 		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms.core</requiredpackage>
 		
 		<!-- Evil-Co.de Tools -->
-		<requiredpackage minversion="2.0.0" file="requirements/de.evil-co.openFlashChart.tar.gz">de.evil-co.openFlashChart</requiredpackage>
+		<requiredpackage minversion="2.0.0" file="requirements/de.evil-co.openFlashChart.tar">de.evil-co.openFlashChart</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
