@@ -5,10 +5,10 @@
 		<item name="cms.acp.statistics.title"><![CDATA[Statistics]]></item>
 		<item name="cms.acp.statistics.host.title"><![CDATA[vHosts]]></item>
 		<item name="cms.acp.statistics.chart.host.title"><![CDATA[Visitor Statistics]]></item>
-		<item name="cms.acp.statistics.chart.host.tip"><![CDATA[#val# of #total# Visits<br />#percent# of 100%]]></item>
+		<item name="cms.acp.statistics.chart.host.tip"><![CDATA[#val# of #total# Visits<br>#percent# of 100%]]></item>
 		<item name="cms.acp.statistics.page.title"><![CDATA[Pages]]></item>
 		<item name="cms.acp.statistics.chart.page.title"><![CDATA[Visitor Statistics]]></item>
-		<item name="cms.acp.statistics.chart.page.tip"><![CDATA[#val# of #total# Visits<br />#percent# of 100%]]></item>
+		<item name="cms.acp.statistics.chart.page.tip"><![CDATA[#val# of #total# Visits<br>#percent# of 100%]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
