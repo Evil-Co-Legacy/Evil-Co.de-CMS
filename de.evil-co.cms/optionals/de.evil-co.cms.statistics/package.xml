@@ -33,6 +33,7 @@
 		<options>install/options.xml</options>
 		<eventlistener>install/eventlistener.xml</eventlistener>
 		<script>acp/install_de.evil-co.cms.statistics.php</script>
+		<cronjobs>install/cronjobs.xml</cronjobs>
 		
 		<!-- Languages -->
 		<languages languagecode="de">install/language/de.xml</languages>
