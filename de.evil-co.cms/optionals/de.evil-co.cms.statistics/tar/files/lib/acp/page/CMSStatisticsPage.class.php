@@ -22,7 +22,7 @@ class CMSStatisticsPage extends AbstractPage {
 		if (!MODULE_CMSSTATISTICS) throw new IllegalLinkException;
 		
 		// enable menu entry
-		WCFACP::getMenu()->setActiveMenuItem('cf.acp.menu.link.content.host.statistics');
+		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.host.statistics');
 		
 		parent::show();
 	}
