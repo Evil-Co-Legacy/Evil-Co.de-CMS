@@ -40,6 +40,13 @@ class CMSStatisticsListener implements EventListener {
 					WHERE
 						hostID = ".CMSCore::getActiveHost()->getHostID();
 			WCF::getDB()->sendQuery($sql);
+			
+			// add to known hosts
+			$sql = "INSERT INTO
+						cms".CMS_N."_statistic_known (sessionID, hostID)
+					VALUES
+						('".escapeString(WCF::getSession()->sessionID)."', ".CMSCore::getActiveHost()->getHostID().")";
+			WCF::getDB()->sendQuery($sql);
 		}
 		
 		// handle pages
@@ -51,6 +58,13 @@ class CMSStatisticsListener implements EventListener {
 						requestCount = requestCount + 1
 					WHERE
 						pageID = ".$eventObj->pageID;
+			WCF::getDB()->sendQuery($sql);
+			
+			// add to known pages
+			$sql = "INSERT INTO
+						cms".CMS_N."_statistic_known (sessionID, pageID)
+					VALUES
+						('".escapeString(WCF::getSession()->sessionID)."', ".$eventObj->pageID.")";
 			WCF::getDB()->sendQuery($sql);
 		}
 	}
