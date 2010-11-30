@@ -34,7 +34,9 @@ class RefererStatisticsChartSourcePage extends AbstractOpenFlashChartSourcePage 
 		$sql = "SELECT
 					*
 				FROM
-					cms".CMS_N."_statistic_referer_host";
+					cms".CMS_N."_statistic_referer_host
+				ORDER BY
+					hostname ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$items = array();

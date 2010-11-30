@@ -29,7 +29,9 @@ class CMSStatisticsPage extends AbstractPage {
 		$sql = "SELECT
 					*
 				FROM
-					cms".CMS_N."_statistic_referer";
+					cms".CMS_N."_statistic_referer
+				ORDER BY
+					url ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		$refererList = array();
@@ -42,7 +44,9 @@ class CMSStatisticsPage extends AbstractPage {
 		$sql = "SELECT
 					*
 				FROM
-					cms".CMS_N."_statistic_referer_host";
+					cms".CMS_N."_statistic_referer_host
+				ORDER BY
+					hostname ASC";
 		$result = WCF::getDB()->sendQuery($sql);
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
