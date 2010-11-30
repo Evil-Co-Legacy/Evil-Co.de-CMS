@@ -7,5 +7,17 @@
 			<eventName>readData</eventName>
 			<listenerClassFile>lib/system/event/listener/CMSStatisticsListener.class.php</listenerClassFile>
 		</eventlistener>
+		<eventlistener>
+			<eventClassName>DynamicHostAddForm</eventClassName>
+			<eventName>saved</eventName>
+			<listenerClassFile>lib/system/event/listener/CMSACPStatisticsListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>DynamicPageAddForm</eventClassName>
+			<eventName>saved</eventName>
+			<listenerClassFile>lib/system/event/listener/CMSACPStatisticsListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+		</eventlistener>
 	</import>
 </data>
