@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language languagecode="en">
+	<category name="cms.acp.statistics">
+		<item name="cms.acp.statistics.title"><![CDATA[Statistics]]></item>
+		<item name="cms.acp.statistics.host.title"><![CDATA[vHosts]]></item>
+		<item name="cms.acp.statistics.chart.host.title"><![CDATA[Visitor Statistics]]></item>
+		<item name="cms.acp.statistics.chart.host.tip"><![CDATA[#val# of #total# Visits<br />#percent# of 100%]]></item>
+		<item name="cms.acp.statistics.page.title"><![CDATA[Pages]]></item>
+		<item name="cms.acp.statistics.chart.page.title"><![CDATA[Visitor Statistics]]></item>
+		<item name="cms.acp.statistics.chart.page.tip"><![CDATA[#val# of #total# Visits<br />#percent# of 100%]]></item>
+	</category>
+	
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.content.host.statistics"><![CDATA[Statistics]]></item>
+	</category>
+</language>
