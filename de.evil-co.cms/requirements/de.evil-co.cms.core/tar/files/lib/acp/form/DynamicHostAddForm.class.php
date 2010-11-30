@@ -58,6 +58,12 @@ class DynamicHostAddForm extends ACPForm {
 	public $availableLanguages = array();
 	
 	/**
+	 * Contains the new host object
+	 * @var	HostEditor
+	 */
+	public $newHost = null;
+	
+	/**
 	 * @see	Page::readData()
 	 */
 	public function readData() {
@@ -103,7 +109,7 @@ class DynamicHostAddForm extends ACPForm {
 		parent::save();
 		
 		// create host
-		HostEditor::create($this->title, $this->hostname, false, $this->isFallback, $this->languageID);
+		$this->newHost = HostEditor::create($this->title, $this->hostname, false, $this->isFallback, $this->languageID);
 		
 		// reset fields
 		$this->title = $this->hostname = '';
