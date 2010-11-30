@@ -44,16 +44,16 @@
 							<td class="columnHostname">
 								{if $host.children|count}
 									<a href="javascript:void(openList('hostUrls{$host.hostID}',{ openTitle: '{lang}cms.acp.statistics.referer.details.moreDetails{/lang}', closeTitle: '{lang}cms.acp.statistics.referer.details.lessDetails{/lang}' }));">
-										<span>{$host.url}</span>
+										<span>{$host.hostname}</span>
 									</a>
 
 									<div id="hostUrls{$host.hostID}" style="display: none;">
 										{foreach from=$host.children item=$url}
-											<a title="{#$url.count}{lang}cms.acp.statistics.referer.details.urlCount{/lang}">{$url.url}</a>
+											<a title="{#$url.count}{lang}cms.acp.statistics.referer.details.urlCount{/lang}" href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={$url.url|rawurlencode}">{$url.url}</a>
 										{/foreach}
 									</div>
 								{else}
-									<span>{$host.url}</span>
+									<span>{$host.hostname}</span>
 								{/if}
 							</td>
 							<td class="columnCount">
