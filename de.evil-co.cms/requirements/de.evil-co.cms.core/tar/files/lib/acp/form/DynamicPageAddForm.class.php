@@ -101,6 +101,12 @@ class DynamicPageAddForm extends ACPForm {
 	public $menuItemTitle = '';
 	
 	/**
+	 * Contains the new Page object
+	 * @var	DynamicPageEditor
+	 */
+	public $newPage = null;
+	
+	/**
 	 * @see	Page::$action
 	 */
 	public $action = 'add';
@@ -215,6 +221,9 @@ class DynamicPageAddForm extends ACPForm {
 		// update menu item id
 		$item->menuItemID = $menuItemID;
 		$item->update();
+		
+		// write to property
+		$this->newPage = $item;
 		
 		// send redirect headers
 		HeaderUtil::redirect('index.php?form=DynamicPageEdit&pageID='.$item->pageID.'&packageID='.PACKAGE_ID.'&created=1'.SID_ARG_2ND_NOT_ENCODED);
