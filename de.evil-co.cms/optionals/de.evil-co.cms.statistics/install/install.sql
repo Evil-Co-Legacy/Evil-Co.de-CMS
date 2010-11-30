@@ -21,8 +21,9 @@ CREATE TABLE `cms1_1_statistic_known` (
 DROP TABLE IF EXISTS `cms1_1_statistic_referer`;
 CREATE TABLE `cms1_1_statistic_referer` (
 	`refererID` INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	`hostID` INT NOT NULL
  	`url` TEXT NOT NULL,
-	`count` INT NOT NULL DEFAULT '0'
+	`count` INT NOT NULL DEFAULT '0',
 );
 
 DROP TABLE IF EXISTS `cms1_1_statistic_referer_host`;
