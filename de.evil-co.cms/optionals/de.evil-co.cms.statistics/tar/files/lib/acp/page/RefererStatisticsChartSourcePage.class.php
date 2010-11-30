@@ -13,7 +13,7 @@ class RefererStatisticsChartSourcePage extends AbstractOpenFlashChartSourcePage 
 	 * Contains the type of chart
 	 * @var	string
 	 */
-	public $type = 'bar';
+	public $type = 'bar_3d';
 	
 	/**
 	 * @see	Page::readData()
@@ -50,14 +50,21 @@ class RefererStatisticsChartSourcePage extends AbstractOpenFlashChartSourcePage 
 		// add colours to element
 		$element->colours = $colours;
 		
+		// create needed arrays
+		$labels = array();
+		
 		// load data
 		foreach($items as $row) {
 			switch($this->type) {
-				case 'bar':
-					$element->addValue(intval($row['count']), $row['hostname']);
+				case 'bar_3d':
+					$element->addValue(intval($row['count']));
+					$lables[] = $row['hostname'];
 					break;
 			}
 		}
+		
+		// set additional options
+		$element->x_axis = array('3d' => 40, 'labels' => $labels);
 		
 		// add element to chart
 		$this->data->addElement($element);
