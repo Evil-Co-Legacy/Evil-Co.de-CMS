@@ -7,7 +7,7 @@
  */
 
 // create needed variables
-$hosts = $pages = array();
+$hosts = $pages = $hostIDs = array();
 $parentPackage = $this->installation->getPackage()->getParentPackageID();
 
 // read existing hosts from database
@@ -21,31 +21,36 @@ $result = WCF::getDB()->sendQuery($sql);
 
 while($row = WCF::getDB()->fetchArray($result)) {
 	$hosts[] = "(".$row['hostID'].", 0)";
+	$hostIDs[] = $row['hostID'];
 }
 
-// create hosts in statistics database
-$sql = "INSERT INTO
-			cms".CMS_N."_statistic_host (hostID, requestCount)
-		VALUES
-			".implode(',', $hosts);
-WCF::getDB()->sendQuery($sql);
-
-// read existing pages from database
-$sql = "SELECT
-			*
-		FROM
-			wcf".WCF_N."_page
-		WHERE
-			packageID = ".$parentPackage;
-
-while($row = WCF::getDB()->fetchArray($result)) {
-	$pages[] = "(".$row['pageID'].", 0)";
+if (count($hosts)) {
+	// create hosts in statistics database
+	$sql = "INSERT INTO
+				cms".CMS_N."_statistic_host (hostID, requestCount)
+			VALUES
+				".implode(',', $hosts);
+	WCF::getDB()->sendQuery($sql);
+	
+	if (count($hostIDs)) {
+		// read existing pages from database
+		$sql = "SELECT
+					*
+				FROM
+					wcf".WCF_N."_page
+				WHERE
+					hostID IN (".implode(',', $hostIDs).")";
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			$pages[] = "(".$row['pageID'].", 0)";
+		}
+		
+		// create pages in statistics database
+		$sql = "INSERT INTO
+					cms".CMS_N."_statistic_page (pageID, requestCount)
+				VALUES
+					".implode(',', $pages);
+		WCF::getDB()->sendQuery($sql);
+	}
 }
-
-// create pages in statistics database
-$sql = "INSERT INTO
-			cms".CMS_N."_statistic_page (pageID, requestCount)
-		VALUES
-			".implode(',', $pages);
-WCF::getDB()->sendQuery($sql);
 ?>
