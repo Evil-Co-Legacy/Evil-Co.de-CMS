@@ -83,7 +83,7 @@ class CMSStatisticsListener implements EventListener {
 				$hostID = $row['hostID'];
 				
 				$sql = "UPDATE
-							cms".CMS_N."_statistic
+							cms".CMS_N."_statistic_referer_host
 						SET
 							count = count + 1
 						WHERE
@@ -117,9 +117,9 @@ class CMSStatisticsListener implements EventListener {
 				WCF::getDB()->sendQuery($sql);
 			} else {	
 				$sql = "INSERT INTO
-							cms".CMS_N."_statistic_referer (url, count)
+							cms".CMS_N."_statistic_referer (url, count, hostID)
 						VALUES
-							('".escapeString($_SERVER['HTTP_REFERER'])."', 1)";
+							('".escapeString($_SERVER['HTTP_REFERER'])."', 1, ".$hostID.")";
 				WCF::getDB()->sendQuery($sql);
 			}
 		}
