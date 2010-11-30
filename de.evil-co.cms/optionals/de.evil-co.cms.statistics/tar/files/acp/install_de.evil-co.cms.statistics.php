@@ -56,4 +56,7 @@ if (count($hosts)) {
 		}
 	}
 }
+
+// delete install file
+@unlink(__FILE__);
 ?>
