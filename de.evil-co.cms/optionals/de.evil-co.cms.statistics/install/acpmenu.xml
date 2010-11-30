@@ -6,7 +6,7 @@
 			<link>index.php?page=CMSStatistics</link>
 			<parent>wcf.acp.menu.link.content.host</parent>
 			<permissions>admin.content.cms.canListHosts</permissions>
-			<showorder>1</showorder>
+			<showorder>3</showorder>
 			<options>module_cmsStatistics</options>
 		</acpmenuitem>
 	</import>
