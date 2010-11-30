@@ -22,7 +22,18 @@
 <div id="refererStatistics">
 	<h3 class="subHeadline">{lang}cms.acp.statistics.referer.title{/lang}</h3>
 	
-	{include file='openFlashChart' openFlashChartSource="index.php?page=RefererStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND_NOT_ENCODED}
+	<div id="refererChart">
+		<div id="refererChartLeft" style="float: left;">
+			{include file='openFlashChart' openFlashChartSource="index.php?page=RefererStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND_NOT_ENCODED}
+		</div>
+		<div id="refererChartRight" style="float: right;">
+			<ul style="list-style-type: decimal;">
+				{foreach from=$hosts item='host'}
+					<li>{$host.hostname}</li>
+				{/foreach}
+			</ul>
+		</div>
+	</div>
 	
 	<div id="refererDetails">
 		<div class="border titleBarPanel">
