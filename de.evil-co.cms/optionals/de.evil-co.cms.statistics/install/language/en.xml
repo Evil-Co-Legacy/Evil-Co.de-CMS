@@ -14,4 +14,9 @@
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.content.host.statistics"><![CDATA[Statistics]]></item>
 	</category>
+	
+	<category name="wcf.acp.option">
+		<item name="wcf.acp.option.module_cmsStatistics"><![CDATA[CMS Statistics]]></item>
+		<item name="wcf.acp.option.module_cmsStatistics.description"><![CDATA[If this option is enabled the CMS will create statistics for all requests in cms.]]></item>
+	</category>
 </language>
