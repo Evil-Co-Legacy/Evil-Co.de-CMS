@@ -15,6 +15,43 @@ class CMSStatisticsPage extends AbstractPage {
 	public $templateName = 'cmsStatistics';
 	
 	/**
+	 * Contains all referer hosts
+	 * @var	array
+	 */
+	public $hosts = array();
+	
+	/**
+	 * @see	Page::readData()
+	 */
+	public function readData() {
+		parent::readData();
+		
+		$sql = "SELECT
+					*
+				FROM
+					cms".CMS_N."_statistic_referer";
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		$refererList = array();
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			if (!isset($refererList[$row['hostID']])) $refererList[$row['hostID']] = array();
+			$refererList[$row['hostID']][] = $row;
+		}
+		
+		$sql = "SELECT
+					*
+				FROM
+					cms".CMS_N."_statistic_referer_host";
+		$result = WCF::getDB()->sendQuery($sql);
+		
+		while($row = WCF::getDB()->fetchArray($result)) {
+			$row['children'] = (isset($refererList[$row['hostID']]) ? $refererList[$row['hostID']] : array());
+			$this->hosts[] = $row; 
+		}
+	}
+	
+	/**
 	 * @see	Page::show()
 	 */
 	public function show() {
@@ -25,6 +62,14 @@ class CMSStatisticsPage extends AbstractPage {
 		WCFACP::getMenu()->setActiveMenuItem('wcf.acp.menu.link.content.host.statistics');
 		
 		parent::show();
+	}
+	
+	public function assignVariables() {
+		parent::assignVariables();
+		
+		WCF::getTPL()->assign(array(
+			'hosts'		=>	$this->hosts
+		));
 	}
 }
 ?>
