@@ -40,17 +40,20 @@ if (count($hosts)) {
 					wcf".WCF_N."_page
 				WHERE
 					hostID IN (".implode(',', $hostIDs).")";
+		$result = WCF::getDB()->sendQuery($sql);
 		
 		while($row = WCF::getDB()->fetchArray($result)) {
 			$pages[] = "(".$row['pageID'].", 0)";
 		}
 		
-		// create pages in statistics database
-		$sql = "INSERT INTO
-					cms".CMS_N."_statistic_page (pageID, requestCount)
-				VALUES
-					".implode(',', $pages);
-		WCF::getDB()->sendQuery($sql);
+		if (count($pages)) {
+			// create pages in statistics database
+			$sql = "INSERT INTO
+						cms".CMS_N."_statistic_page (pageID, requestCount)
+					VALUES
+						".implode(',', $pages);
+			WCF::getDB()->sendQuery($sql);
+		}
 	}
 }
 ?>
