@@ -16,7 +16,7 @@
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0">com.woltlab.wcf</requiredpackage>
 		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms</requiredpackage>
-		<requiredpackage minversion="1.1.0 RC 1">de.evil-co.cms.core</requiredpackage>
+		<requiredpackage minversion="1.2.0 Beta 1">de.evil-co.cms.core</requiredpackage>
 		
 		<!-- Evil-Co.de Tools -->
 		<requiredpackage minversion="2.0.0" file="requirements/de.evil-co.openFlashChart.tar">de.evil-co.openFlashChart</requiredpackage>
