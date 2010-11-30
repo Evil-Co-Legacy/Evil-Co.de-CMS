@@ -67,6 +67,62 @@ class CMSStatisticsListener implements EventListener {
 						('".escapeString(WCF::getSession()->sessionID)."', ".$eventObj->pageID.", ".TIME_NOW.")";
 			WCF::getDB()->sendQuery($sql);
 		}
+		
+		if (isset($_SERVER['HTTP_REFERER']) and !strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME'], 0) and !empty($_SERVER['HTTP_REFERER'])) {
+			$url = parse_url($_SERVER['HTTP_REFERER']);
+			
+			$sql = "SELECT
+						*
+					FROM
+						cms".CMS_N."_statistic_referer_host
+					WHERE
+						hostname = '".escapeString($url['host'])."'";
+			$row = WCF::getDB()->getFirstRow($sql);
+			
+			if (WCF::getDB()->countRows()) {
+				$hostID = $row['hostID'];
+				
+				$sql = "UPDATE
+							cms".CMS_N."_statistic
+						SET
+							count = count + 1
+						WHERE
+							hostname = '".escapeString($url['host'])."'";
+				WCF::getDB()->sendQuery($sql);
+			} else {
+				$sql = "INSERT INTO
+							cms".CMS_N."_statistic_referer_host (hostname, count)
+						VALUES
+							('".escapeString($url['host'])."', 1)";
+				WCF::getDB()->sendQuery($sql);
+				
+				$hostID = WCF::getDB()->getInsertID();
+			}
+			
+			$sql = "SELECT
+						*
+					FROM
+						cms".CMS_N."_statistic_referer
+					WHERE
+						url = '".escapeString($_SERVER['HTTP_REFERER'])."'";
+			$row = WCF::getDB()->getFirstRow($sql);
+			
+			if (WCF::getDB()->countRows()) {
+				$sql = "UPDATE
+							cms".CMS_N."_statistic_referer
+						SET
+							count = count + 1
+						WHERE
+							url = '".escapeString($_SERVER['HTTP_REFERER'])."'";
+				WCF::getDB()->sendQuery($sql);
+			} else {	
+				$sql = "INSERT INTO
+							cms".CMS_N."_statistic_referer (url, count)
+						VALUES
+							('".escapeString($_SERVER['HTTP_REFERER'])."', 1)";
+				WCF::getDB()->sendQuery($sql);
+			}
+		}
 	}
 }
 ?>
