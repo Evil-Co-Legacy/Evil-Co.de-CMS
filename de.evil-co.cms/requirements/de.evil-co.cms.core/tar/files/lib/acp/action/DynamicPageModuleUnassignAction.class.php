@@ -2,10 +2,18 @@
 // wcf imports
 require_once(WCF_DIR.'lib/action/AbstractAction.class.php');
 
+/**
+ * Implements an action that allows to sort modules via javascript
+ *
+ * @author		Johannes Donath
+ * @copyright	2010 DEVel Fusion
+ * @package		de.evil-co.cms.core
+ */
 class DynamicPageModuleUnassignAction extends AbstractAction {
 	
 	/**
 	 * Contains the instance ID that should deleted
+	 *
 	 * @var	integer
 	 */
 	public $instanceID = 0;
@@ -42,7 +50,7 @@ class DynamicPageModuleUnassignAction extends AbstractAction {
 					instanceID = ".$this->instanceID;
 		WCF::getDB()->sendQuery($sql);
 		
-		// remove cache
+		// clear cache
 		WCF::getCache()->clear(WCF_DIR.'cache/', 'cache.pageModules-'.$page['pageID'].'-'.PACKAGE_ID.'.php');
 		
 		// send redirect headers

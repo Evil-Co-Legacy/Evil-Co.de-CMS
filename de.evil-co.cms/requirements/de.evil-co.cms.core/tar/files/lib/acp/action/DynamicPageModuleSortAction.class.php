@@ -5,6 +5,7 @@ require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
 /**
  * Implements an action that allows to sort modules via javascript
+ *
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
@@ -13,23 +14,28 @@ class DynamicPageModuleSortAction extends AbstractAction {
 	
 	/**
 	 * Contains the ID of the page row
+	 *
+	 * @var	integer
 	 */
 	public $pageID = 0;
 	
 	/**
 	 * Contains the object that represents the page row
+	 *
 	 * @var	DynamicPage
 	 */
 	public $page = null;
 	
 	/**
 	 * Contans the position of modules
+	 *
 	 * @var	string
 	 */
 	public $position = 'center';
 	
 	/**
 	 * Contains the module list
+	 *
 	 * @var	array
 	 */
 	public $moduleList = array();
