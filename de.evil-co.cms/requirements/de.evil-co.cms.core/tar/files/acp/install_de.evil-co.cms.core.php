@@ -17,7 +17,4 @@ $sql = "UPDATE
 		WHERE
 			1";
 WCF::getDB()->sendQuery($sql);
-
-// remove this file
-@unlink(__FILE__);
 ?>
