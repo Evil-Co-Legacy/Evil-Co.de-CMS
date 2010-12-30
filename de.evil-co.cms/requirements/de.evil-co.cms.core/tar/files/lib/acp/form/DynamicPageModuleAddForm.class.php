@@ -6,6 +6,7 @@ require_once(WCF_DIR.'lib/data/dynamic/page/module/template/DynamicPageModuleTem
 
 /**
  * Implements a form that attaches a new module to the given page
+ *
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
@@ -24,24 +25,28 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	
 	/**
 	 * Contains the ID of the page row to that a new module should assigned
+	 *
 	 * @var	integer
 	 */
 	public $pageID = 0;
 	
 	/**
 	 * Contains the object that represents the page row to that a new module should assigned
+	 *
 	 * @var	DynamicPage
 	 */
 	public $page = null;
 	
 	/**
 	 * Contains the ID of the module that should assigned
+	 *
 	 * @var	integer
 	 */
 	public $moduleID = 0;
 	
 	/**
 	 * Contains the object that represents the row of the module that should assigned
+	 *
 	 * @var	Module
 	 */
 	public $module = null;
@@ -53,12 +58,14 @@ class DynamicPageModuleAddForm extends WysiwygCacheloaderForm {
 	
 	/**
 	 * Contains all available positions
+	 *
 	 * @var	array<string>
 	 */
 	public $availablePositions = array('top', 'left', 'center', 'right', 'bottom');
 	
 	/**
 	 * Contains the position for the new module
+	 *
 	 * @var	string
 	 */
 	public $position = '';

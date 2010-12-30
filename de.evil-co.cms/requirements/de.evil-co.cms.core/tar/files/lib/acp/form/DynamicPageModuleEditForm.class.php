@@ -5,6 +5,7 @@ require_once(WCF_DIR.'lib/page/util/module/InstanceableModule.class.php');
 
 /**
  * Implements a form that edits settings of a module
+ *
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
@@ -18,18 +19,21 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 	
 	/**
 	 * Contains the instance id that should edited
+	 *
 	 * @var	integer
 	 */
 	public $instanceID = 0;
 	
 	/**
 	 * Contains the object that represents this instance
+	 
 	 * @var	InstanceableModule
 	 */
 	public $instance = null;
 	
 	/**
 	 * Contains the ModuleOptionGroupList for this module
+	 *
 	 * @var	ModuleOptionGroupList
 	 */
 	public $optionGroupList = null;
@@ -143,9 +147,9 @@ class DynamicPageModuleEditForm extends DynamicPageModuleAddForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'options'				=>		$this->optionGroupList,
-			'instanceID'			=>		$this->instanceID,
-			'instance'				=>		$this->instance
+			'options' => $this->optionGroupList,
+			'instanceID' => $this->instanceID,
+			'instance' => $this->instance
 		));
 	}
 }
