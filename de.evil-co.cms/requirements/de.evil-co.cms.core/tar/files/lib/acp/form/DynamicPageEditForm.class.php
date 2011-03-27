@@ -5,6 +5,7 @@ require_once(WCF_DIR.'lib/data/page/menu/PageMenuItemEditor.class.php');
 
 /**
  * Implements a form that provides a edit form to update pages
+ *
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
@@ -18,18 +19,21 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 	
 	/**
 	 * Contains the ID of the page row that should updated
+	 *
 	 * @var	integer
 	 */
 	public $pageID = 0;
 	
 	/**
 	 * Contains the object that represents the page row that should updated
+	 *
 	 * @var	DynamicPageEditor
 	 */
 	public $page = null;
 	
 	/**
 	 * Contains the object that represents the menu entry row for this page
+	 *
 	 * @var	PageMenuItem
 	 */
 	public $menuEntry = null;
@@ -187,8 +191,8 @@ class DynamicPageEditForm extends DynamicPageAddForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'pageID'			=>		$this->pageID,
-			'page'				=>		$this->page,
+			'pageID' => $this->pageID,
+			'page' =>	$this->page,
 		));
 		
 		// modify style for additional button in containerIcon div

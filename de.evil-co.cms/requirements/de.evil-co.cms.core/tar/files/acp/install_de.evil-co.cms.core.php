@@ -13,11 +13,6 @@ $packageID = $package['packageID'];
 $sql = "UPDATE
 			wcf".WCF_N."_page_module
 		SET
-			packageID = ".$packageID."
-		WHERE
-			1";
+			packageID = ".$packageID;
 WCF::getDB()->sendQuery($sql);
-
-// remove this file
-@unlink(__FILE__);
 ?>

@@ -5,6 +5,7 @@ require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPageEditor.class.php');
 
 /**
  * Implements an action that deletes the given dynamic page
+ *
  * @author		Johannes Donath
  * @copyright	2010 DEVel Fusion
  * @package		de.evil-co.cms.core
@@ -13,12 +14,14 @@ class DynamicPageDeleteAction extends AbstractAction {
 	
 	/**
 	 * Contains the id of the page that should removed
+	 *
 	 * @var	integer
 	 */
 	public $pageID = 0;
 	
 	/**
 	 * Contains the object that represents the row that should removed
+	 *
 	 * @var	DynamicPageEditor
 	 */
 	public $page = null;
