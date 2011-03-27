@@ -27,6 +27,9 @@ class HostStatisticsChartSourcePage extends AbstractOpenFlashChartSourcePage {
 		// create element
 		$element = new OpenFlashChartElement($this->type);
 		
+		// set special options
+		$element->tip = WCF::getLanguage()->get('cms.acp.statistics.chart.host.tip');
+		
 		// read data from db
 		$sql = "SELECT
 					stats.requestCount AS requestCount,
@@ -39,8 +42,21 @@ class HostStatisticsChartSourcePage extends AbstractOpenFlashChartSourcePage {
 					stats.hostID = host.hostID";
 		$result = WCF::getDB()->sendQuery($sql);
 		
-		// load data
+		$items = array();
+		
+		// get available colours
+		$colours = array();
+		
 		while($row = WCF::getDB()->fetchArray($result)) {
+			$colours[] = "#".substr(sha1($row['title']), 0, 6);
+			$items[] = $row;
+		}
+		
+		// add colours to element
+		$element->colours = $colours;
+		
+		// load data
+		foreach($items as $row) {
 			switch($this->type) {
 				case 'pie':
 					$element->addValue(intval($row['requestCount']), $row['title']);

@@ -22,6 +22,11 @@ class FilemanagerListPage extends AbstractPage {
 	public $fileList = null;
 	
 	/**
+	 * Contains a list of all dirs
+	 */
+	public $dirObjects = array();
+	
+	/**
 	 * @see	Page::readData()
 	 */
 	public function readData() {
@@ -32,6 +37,11 @@ class FilemanagerListPage extends AbstractPage {
 		
 		$directory = DirectoryUtil::getInstance(CMS_DIR.'cms_files/');
 		$this->fileList = $directory->getFilesObj();
+		
+		foreach($this->fileList as $fileInfo) {
+			if ($fileInfo->isDir()) $this->dirObjects[$fileInfo->getPathname()] = new RecursiveDirectoryIterator(FileUtil::addTrailingSlash($fileInfo->getPathname()));
+		}
+		print_r($this->dirObjects);
 		
 		// display warning if no htaccess file exists
 		if (!file_exists(CMS_DIR.'cms_files/.htaccess')) WCF::getTPL()->assign('displayNoHtaccessWarning');
@@ -54,7 +64,8 @@ class FilemanagerListPage extends AbstractPage {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'fileList'		=>	$this->fileList
+			'fileList'		=>	$this->fileList,
+			'dirObjects'	=>	$this->dirObjects
 		));
 	}
 }

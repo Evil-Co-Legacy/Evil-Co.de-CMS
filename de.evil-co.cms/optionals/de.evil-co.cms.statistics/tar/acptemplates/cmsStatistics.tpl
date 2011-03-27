@@ -1,3 +1,10 @@
+{capture append='specialStyles'}
+	<style type="text/css">
+		#refererChartLegend {
+			list-style-type: decimal;
+		}
+	</style>
+{/capture}
 {include file='header'}
 
 <div class="mainHeadline">
@@ -22,16 +29,22 @@
 <div id="refererStatistics">
 	<h3 class="subHeadline">{lang}cms.acp.statistics.referer.title{/lang}</h3>
 	
-	<div id="refererChart">
-		<div id="refererChartLeft" style="float: left;">
-			{include file='openFlashChart' openFlashChartSource="index.php?page=RefererStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND_NOT_ENCODED}
-		</div>
-		<div id="refererChartRight" style="float: right;">
-			<ul style="list-style-type: decimal;">
-				{foreach from=$hosts item='host'}
-					<li>{$host.hostname}</li>
-				{/foreach}
-			</ul>
+	<div id="refererChart" class="layout-2">
+		<div class="columnContainer">
+			<div class="column first" id="refererChartLeft">
+				<div class="columnInner">
+					{include file='openFlashChart' openFlashChartSource="index.php?page=RefererStatisticsChartSource&packageID="|concat:PACKAGE_ID:SID_ARG_2ND_NOT_ENCODED}
+				</div>
+			</div>
+			<div class="column second" id="refererChartRight">
+				<div class="columnInner">
+					<ul id="refererChartLegend">
+						{foreach from=$hosts item='host'}
+							<li>{$host.hostname}</li>
+						{/foreach}
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	

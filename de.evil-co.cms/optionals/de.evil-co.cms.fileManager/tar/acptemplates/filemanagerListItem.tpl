@@ -1,3 +1,7 @@
+{if $item->isDir()}
+	{assign var='key' value=$item->getPathname()}
+	{assign var='item' value=$dirObjects.$key}
+{/if}
 <li id="item_{@$item->getPathname()|urlencode}" class="deletable">
 	<div class="buttons">
 		{if $this->user->getPermission('admin.content.cms.filemanager.canEditFiles')}
@@ -9,9 +13,10 @@
 	</div>
 	
 	<h3 class="itemListTitle{if $item->isDir()} itemListCategory{/if}">
-		{$item->getFilename()} ({lang owner=$item->getOwner() timestamp=$item->getMTime() creationTimestamp=$item->getCTime() size=$item->getSize()}cms.filemanager.list.item.details{/lang})
+		{$item->getPathname()} ({lang owner=$item->getOwner() timestamp=$item->getMTime() creationTimestamp=$item->getCTime() size=$item->getSize()}cms.filemanager.list.item.details{/lang})
 	</h3>
 	
+	{* TODO: Find a way to implement this *}
 	{if $item->isDir() && $item->hasChildren()}
 		<ol id="parentItem_{@$item->getPathname()|urlencode}">
 			{foreach from=$item->getChildren() item=$child}
