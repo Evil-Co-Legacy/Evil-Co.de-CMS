@@ -198,12 +198,12 @@
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.developer{/lang}</p>
-			<p class="formField">Johannes Donath</p>
+			<p class="formField">Johannes Donath, Caspar Scriba</p>
 		</div>
 		
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cms.acp.index.credits.designer{/lang}</p>
-			<p class="formField">Johannes Donath, Alexander Pankow<span class="hidden">Der hat eigentlich nix gemacht :-P</span></p>
+			<p class="formField">Johannes Donath, Alexander Pankow</p>
 		</div>
 		
 		<div class="formElement">
