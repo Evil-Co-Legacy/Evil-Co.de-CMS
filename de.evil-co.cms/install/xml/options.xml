@@ -23,6 +23,13 @@
 				<defaultvalue>1</defaultvalue>
 			</option>
 			
+			<option name="cms_disable_wbb_updates">
+				<categoryname>general.page</categoryname>
+				<optiontype>boolean</optiontype>
+				<showorder>9</showorder>
+				<defaultvalue>0</defaultvalue>
+			</option>
+			
 			<!-- date settings -->
 			<option name="show_clock">
 				<categoryname>general.date</categoryname>
