@@ -93,9 +93,11 @@
 					<label for="languageID">{lang}wcf.cms.host.add.expertSettings.languageID{/lang}</label>
 				</div>
 				<div class="formField">
-					<ul class="formOptions">
+					<ul class="formOptionsLong">
 						{foreach from=$availableLanguages item='languageCode' key='langID'}
-							<li><label><input type="radio" name="languageID" value="{$langID}" {if $languageID == $langID}checked="checked" {/if}/> <img src="{@RELATIVE_WCF_DIR}icon/language{$languageCode|ucfirst}S.png" alt="" /> {lang}wcf.global.language.{$languageCode}{/lang}</label></li>
+							<li>
+								<label><input type="radio" name="languageID" value="{$langID}" {if $languageID == $langID}checked="checked" {/if}/> <img src="{@RELATIVE_WCF_DIR}icon/language{$languageCode|ucfirst}S.png" alt="" /> {lang}wcf.global.language.{$languageCode}{/lang}</label>
+							</li>
 						{/foreach}
 					</ul>
 					{if $errorField == 'languageID'}
@@ -104,7 +106,13 @@
 						</p>
 					{/if}
 				</div>
+				<div class="formFieldDesc" id="languageIDHelpMessage">
+					{lang}wcf.cms.host.add.expertSettings.languageID.description{/lang}
+				</div>
 			</div>
+			<script type="text/javascript">
+				inlineHelp.register('languageID');
+			</script>
 		</div>
 	</fieldset>
 	
