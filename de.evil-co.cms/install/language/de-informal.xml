@@ -69,7 +69,7 @@
 	<!-- frontend -->
 	<category name="cms.header.userNote">
 		<item name="cms.header.userNote.guest"><![CDATA[Du bist nicht angemeldet.]]></item>
-		<item name="cms.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&userID={$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
+		<item name="cms.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&amp;userID={$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
 	</category>
 	
 	<category name="cms.header.userMenu">
