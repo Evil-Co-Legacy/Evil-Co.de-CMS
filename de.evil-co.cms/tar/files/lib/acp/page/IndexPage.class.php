@@ -97,6 +97,27 @@ class IndexPage extends AbstractPage {
 		if (WCF::getUser()->getPermission('admin.system.package.canUpdatePackage')) {
 			require_once(WCF_DIR.'lib/acp/package/update/PackageUpdate.class.php');
 			$this->updates = PackageUpdate::getAvailableUpdates();
+			
+			// kick wbb 3.0 updates
+			if (CMS_DISABLE_WBB_UPDATES) {
+				foreach ($this->updates as $packageID => $package) {
+					if ($package['package'] == 'com.woltlab.wbb') {
+						foreach ($package['versions'] as $version => $packageVersion) {
+							if (Package::compareVersion($version, '3.0.0 Beta 1', '>=')) {
+								unset($this->updates[$packageID]['versions'][$version]);
+							}
+						}
+						
+						if (!count($this->updates[$packageID]['versions'])) {
+							$this->updates = PackageUpdate::getAvailableUpdates(false);
+							unset($this->updates[$packageID]);
+						}
+						else {
+							$this->updates[$packageID]['version'] = end($this->updates[$packageID]['versions']);
+						}
+					}
+				}
+			}
 		}
 	}
 	
