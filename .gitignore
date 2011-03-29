@@ -1,1 +1,5 @@
 .settings/
+*.gz
+*.tar
+*.torrent
+*.avi
