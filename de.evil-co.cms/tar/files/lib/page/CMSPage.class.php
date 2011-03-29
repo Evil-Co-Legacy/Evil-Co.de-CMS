@@ -4,11 +4,16 @@ require_once(WCF_DIR.'lib/page/AbstractModulePage.class.php');
 require_once(WCF_DIR.'lib/data/dynamic/page/DynamicPage.class.php');
 
 /**
- * Implements a page for custom pages
+ * Displays content of a page
  * @author		Johannes Donath
- * @copyright	2010 DEVel Fusion
+ * @copyright		2011 DEVel Fusion
+ * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  */
 class CMSPage extends AbstractModulePage {
+	
+	/**
+	 * @see AbstractPage::$templateName
+	 */
 	public $templateName = 'cms';
 	
 	/**
