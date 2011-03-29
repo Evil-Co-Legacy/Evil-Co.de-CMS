@@ -67,10 +67,12 @@ class DynamicHostAddForm extends ACPForm {
 	 * @see	Page::readData()
 	 */
 	public function readData() {
-		parent::readData();
-		
+		// read variables
 		$this->availableLanguages = WCF::getLanguage()->getAvailableLanguageCodes();
 		$this->languageID = WCF::getLanguage()->getLanguageID();
+		
+		// call parent
+		parent::readData();
 	}
 	
 	/**
